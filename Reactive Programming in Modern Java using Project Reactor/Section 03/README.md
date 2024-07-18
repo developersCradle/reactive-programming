@@ -50,3 +50,65 @@
 2. `Future.get()` is getting **actual Result** of asynchronous call.
     - Its **problem** itself. Its **blocking call**, which blocks calling thread.
 - Summary: Great addition, but was not for perfect for supporting this programming model.
+
+<img src="flowAPI.PNG" alt="reactive programming" width="600"/>
+
+<br>
+
+<img src="summary.PNG" alt="reactive programming" width="600"/>
+
+- Are there any better way to solve this?
+    - **YES**, **Reactive programming**
+
+# 6. What is Reactive Programming ? 
+
+<img src="reactiveProgramming.PNG" alt="reactive programming" width="500"/>
+
+1. Data flows as **Event/Message** stream.
+2. This is like Java 8, **Stream API**(lambdas). Reactive programming is **extensions** of functional programming.
+
+<img src="reactiveProgrammingExample.PNG" alt="reactive programming" width="500"/>
+
+- `requestForData()` is received by **db** call is returned **immediately**.
+    - This is **not a blocking call** anymore.
+    - Calling **thread** is released to do useful work.
+
+1. `request(n)` Request is made and **App** is ready to consume the data.
+2. Its followed with **stream of events** when data is ready. This is called the **Reactor stream**. This data is send over with `onNext(n)` function where, **n = number as data**.
+3. When data is **finished** `onComplete()` is sent.
+
+- From developers perspective all these **states** are handled by **Reactive library**.
+
+- You can think about this, that **data is pushed from datasource to the caller**, meaning **Push Based data streams model**.
+    - Data from -> **DB** -> **App**.
+
+## Backpressure
+
+- If you look previous concept we can see that **App** can easily **overwhelmed** with data.
+    - **Backpressure** is to solve this problem.
+
+<img src="backpressure.PNG" alt="reactive programming" width="500"/>
+
+1. Concept where **App** is **controlling** the data flow, is called **Backpressure**. App is calling `cancel()` to end calling for more data. App also could be calling for more data.
+
+<img src="modelsChanges.PNG" alt="reactive programming" width="500"/>
+
+1. With **Backpressure** reactive programming is called **Push-Pull based data flow model**.
+
+<img src="whenUsingReactiveProgramming.PNG" alt="reactive programming" width="500"/>
+
+<br>
+
+<img src="reactiveAppArhitecture.PNG" alt="reactive programming" width="650"/>
+
+1. Requests at server level are needed to handle in **non-blocking** way. **Netty** is popular used for this.
+2. Calls also needs to be non-blocking, we are using **Project Reactor**.
+    - **Spring WebFlux** uses **Netty** and **Project Reactor** for building non blocking or reactive APIs.
+
+# 7. Introduction to Reactive Streams
+
+- **Reactive Streams** are the foundation for **Reactive programming**.
+
+<img src="reactiveStreams.PNG" alt="reactive programming" width="650"/>
+
+<br>
