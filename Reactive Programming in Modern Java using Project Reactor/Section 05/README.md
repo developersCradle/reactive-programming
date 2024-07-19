@@ -1,5 +1,5 @@
-# Section 3: 
+# Section 5: Setting up the Project for this course
 
- Course Slides & Source Code
+Setting up the Project for this course
 
 # What I Learned

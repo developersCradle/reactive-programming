@@ -97,7 +97,7 @@
 
 <img src="whenUsingReactiveProgramming.PNG" alt="reactive programming" width="500"/>
 
-<br>
+<br>d
 
 <img src="reactiveAppArhitecture.PNG" alt="reactive programming" width="650"/>
 
@@ -112,3 +112,54 @@
 <img src="reactiveStreams.PNG" alt="reactive programming" width="650"/>
 
 <br>
+ 
+- Reactive Stream Specifications:
+1. **Publisher**.
+2. **Subscriber**.
+3. **Subscription**.
+4. **Processor**.
+
+<img src="publisher.PNG" alt="reactive programming" width="650"/>
+
+- Has one methods.
+
+1. **Publisher** represents  any **DataSource**.
+    - Or any which holds the data.
+
+<img src="subscriber.PNG" alt="reactive programming" width="700"/>
+
+- Has 5 **methods**.
+
+2. `onNext(T t)` when next data is send. 
+4. `onComplete()` when data sending is finished.
+
+<img src="subscription.PNG" alt="reactive programming" width="600"/>
+
+- Has two methods.
+
+1. `request()` when app requesting for data.
+2. `cancel()` when app decides that data is not needed anymore.
+
+### Reactive Stream works in successful scenario.
+
+- No **error** or **fault** in this scenario.
+
+<img src="reactiveStreamsHowItsWorks.PNG" alt="reactive programming" width="600"/>
+
+1. Subscriber **invokes** `subscribe(this)` of the **Publisher**.
+2. **Publisher** returns **Subscriber** object by invoking `onSubscribe()` on the **Subscriber**.
+3. When **Subscriber** has hold of the **Subscription** object, it will invoke `request(n)` for **Publisher** to send the data.
+4. When **Publisher** is rdy for sending data, it will send the data using `onNext()` as **events**.
+5. When all data is sent,**Publisher** will send `onComplete()`.
+
+### Reactive Stream works in error scenario.
+
+<img src="reactiveStreamsHowItsWorksIfNotWorks.PNG" alt="reactive programming" width="600"/>
+
+1. It will be the same till steps form **1. to 3.**.
+4. Now there will be `onError()`, this will be sent in form of **event** from **Publisher**
+5. This way of **throwing exception** is bit different than how exception is thrown in **traditional way**.
+    - When error is noticed in **reactive stream** will be dead.
+    - **Exceptions** are threaded like **the data**.
+
+<img src="processor.PNG" alt="reactive programming" width="600"/>

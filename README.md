@@ -28,10 +28,10 @@ Insert certificate here when completed
 
 - [x] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2001#section-1-introduction) - Introduction. ✅
 - [x] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2002#section-2-course-slides--source-code) - Course Slides & Source Code. ✅
-- [ ] [Section 03](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2003#section-3-why-reactive-programming) - Introduction to Reactive Programming
-- [ ] [Section 04](#) - Getting Started with Project Reactor
-- [ ] [Section 05](#) -
-- [ ] [Section 06](#) -
+- [x] [Section 03](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2003#section-3-why-reactive-programming) - Introduction to Reactive Programming. ✅
+- [ ] [Section 04](#) - Getting Started with Project Reactor.
+- [ ] [Section 05](#) - Setting up the Project for this course.
+- [ ] [Section 06](#) - Functional Programming in Modern Java.
 - [ ] [Section 07](#) -
 - [ ] [Section 08](#) -
 - [ ] [Section 09](#) -
@@ -49,14 +49,13 @@ Insert certificate here when completed
 - [ ] [Section 21](#) - Build NonBlocking RestClient using WebClient
 - [ ] [Section 22](#) -
 
-
-
-Build NonBlocking RestClient using WebClient
 <hr>
 
 ### Additional stuff
 
 - [ ] Get known to Asynchronous/Concurrency **Future** and **CompletableFuture**.
+- [ ] Read thought Reactor 3 Reference Guide. [Link](https://projectreactor.io/docs/core/release/reference/).
+
 
 
 
