@@ -1,5 +1,8 @@
-# Section 3: 
+# Section 8: Transforming Flux and Mono
 
- Course Slides & Source Code
+Section 8: Transforming Flux and Mono
 
 # What I Learned
+
+
+# 16. Transform using map() Operator
