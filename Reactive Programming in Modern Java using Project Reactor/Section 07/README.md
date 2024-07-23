@@ -170,7 +170,7 @@ public class FluxAndMonoGeneratorServiceTest {
 
 # Assignment 1: Testing Mono using JUnit5
 
-- My Answer:
+- Question:
 
 ```
 Test a Mono<String> using StepVerifier
@@ -184,7 +184,27 @@ public Mono<String> namesMono() {
 
     return Mono.just("alex");
 
+
+
 }
+```
+
+- My Answer:
+
+```
+    @Test
+    void namesMono() {
+        //given
+
+        //when
+        var namesMono = fluxAndMonoGeneratorService.namesMono();
+
+        //then
+        StepVerifier.create(namesMono)
+                .expectNext("alex")
+                .expectNextCount(0)
+                .verifyComplete();
+    } 
 ```
 
 - Instructor Answer:

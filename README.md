@@ -29,11 +29,11 @@ Insert certificate here when completed
 - [x] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2001#section-1-introduction) - Introduction. ✅
 - [x] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2002#section-2-course-slides--source-code) - Course Slides & Source Code. ✅
 - [x] [Section 03](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2003#section-3-why-reactive-programming) - Introduction to Reactive Programming. ✅
-- [ ] [Section 04](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2004#section-4-getting-started-with-project-reactor) - Getting Started with Project Reactor.
-- [ ] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2005#section-5-setting-up-the-project-for-this-course) - Setting up the Project for this course.
-- [ ] [Section 06](#) - Functional Programming in Modern Java.
-- [ ] [Section 07](#) - 
-- [ ] [Section 08](#) -
+- [x] [Section 04](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2004#section-4-getting-started-with-project-reactor) - Getting Started with Project Reactor. ✅
+- [x] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2005#section-5-setting-up-the-project-for-this-course) - Setting up the Project for this course. ✅
+- [x] [Section 06](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2006#section-6-functional-programming-in-modern-java) - Functional Programming in Modern Java. ✅
+- [x] [Section 07](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2007#section-7-lets-create-our-very-first-flux-and-mono) - ✅
+- [ ] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2008#section-8-transforming-flux-and-mono) -
 - [ ] [Section 09](#) -
 - [ ] [Section 10](#) -
 - [ ] [Section 11](#) -
@@ -55,8 +55,7 @@ Insert certificate here when completed
 
 - [ ] Get known to Asynchronous/Concurrency **Future**, **CompletableFuture** and Flow API.
 - [ ] Read thought Reactor 3 Reference Guide. [Link](https://projectreactor.io/docs/core/release/reference/).
-
-
+- [ ] Make some more test cases about `21. Asynchronous Operations using flatMap() Operator`.
 
 ## Build Reactive MicroServices using Spring WebFlux/SpringBoot
 
