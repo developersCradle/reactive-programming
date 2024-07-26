@@ -7,6 +7,9 @@ import reactor.core.publisher.Mono;
 import java.time.Duration;
 import java.util.List;
 import java.util.Random;
+import java.util.function.Function;
+
+import lombok.var;
 
 public class FluxAndMonoGeneratorService {
 
@@ -22,7 +25,6 @@ public class FluxAndMonoGeneratorService {
         return Mono.just("alex");
     }
 
-    
     public Flux<String> nameFlux_map() {
     	return Flux.fromIterable(List.of("alex", "ben", "chloe"))
 //    			.map(String::toUpperCase)  // We are transforming data to UPPER CASE.
@@ -72,6 +74,71 @@ public class FluxAndMonoGeneratorService {
 		
 	}
     
+    public Mono<List<String>> namesMono_flatmap(int stringLength) {
+        return Mono.just("alex")
+                .map(String::toUpperCase)
+                .filter(s -> s.length() > stringLength)
+                .flatMap(this::splitStringMono); //Mono<List of A, L, E  X>
+    }
+
+    public Flux<String> namesMono_flatmapMany(int stringLength) {
+        return Mono.just("alex")
+                //.map(s -> s.toUpperCase())
+                .map(String::toUpperCase)
+                .flatMapMany(this::splitString_withDelay);
+    }
+
+    
+    
+
+    public Flux<String> namesFlux_transform(int stringLength) {
+
+        Function<Flux<String>, Flux<String>> filterMap = name -> name.map(String::toUpperCase)
+                .filter(s -> s.length() > stringLength);
+
+        var namesList = List.of("alex", "ben", "chloe"); // a, l, e , x
+        return Flux.fromIterable(namesList)
+                .transform(filterMap) // gives u the opportunity to combine multiple operations using a single call.
+                .flatMap(this::splitString)
+                .defaultIfEmpty("default");
+        //using "map" would give the return type as Flux<Flux<String>
+
+    }
+
+
+    // "A", "B", "C", "D", "E", "F"
+    public Flux<String> explore_concat() {
+
+        var abcFlux = Flux.just("A", "B", "C");
+
+        var defFlux = Flux.just("D", "E", "F");
+
+        return Flux.concat(abcFlux, defFlux).log();
+
+    }
+ 
+    // "A", "B", "C", "D", "E", "F"
+    public Flux<String> explore_concatWith() {
+
+        var abcFlux = Flux.just("A", "B", "C");
+
+        var defFlux = Flux.just("D", "E", "F");
+
+        return abcFlux.concatWith(defFlux).log();
+
+
+    }
+
+    
+    public Flux<String> explore_concatWith_mono() {
+
+        var aMono = Mono.just("A");
+
+        var bMono = Flux.just("B");
+
+        return aMono.concatWith(bMono);
+
+    }
 
     /**
     * @param stringLength
@@ -103,6 +170,12 @@ public class FluxAndMonoGeneratorService {
                 .delayElements(Duration.ofMillis(delay));
     }
     
+    private Mono<List<String>> splitStringMono(String s) {
+        var charArray = s.split("");
+        return Mono.just(List.of(charArray))
+                .delayElement(Duration.ofSeconds(1));
+    }
+    
     public Flux<String> namesFlux_flatmap_async(int stringLength) {
         var namesList = List.of("alex", "ben", "chloe"); // a, l, e , x
         return Flux.fromIterable(namesList)
@@ -110,6 +183,17 @@ public class FluxAndMonoGeneratorService {
                 .map(String::toUpperCase)
                 .filter(s -> s.length() > stringLength)
                 .flatMap(this::splitString_withDelay);
+    }
+
+    
+    public Flux<String> namesFlux_concatmap(int stringLength) {
+        var namesList = List.of("alex", "ben", "chloe"); // a, l, e , x
+        return Flux.fromIterable(namesList)
+                //.map(s -> s.toUpperCase())
+                .map(String::toUpperCase)
+                .filter(s -> s.length() > stringLength)
+                //.flatMap((name)-> splitString(name));
+                .concatMap(this::splitString_withDelay);
 
     }
 

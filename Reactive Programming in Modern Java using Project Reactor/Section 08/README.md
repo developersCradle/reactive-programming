@@ -320,3 +320,170 @@ void namesMono_map_filter() {
 ```
 
 <img src="mapVsFlatMap.PNG" alt="reactive programming" width="600"/>
+
+# 22. Advanced transform using the concatMap() Operator
+
+<img src="concatMap.PNG" alt="reactive programming" width="600"/>
+
+- `ConcatMap()` preserves order of elements. If **async** operation and want to preserve order, use this one. One note is that execution time is more.
+
+```
+    public Flux<String> namesFlux_concatmap(int stringLength) {
+        var namesList = List.of("alex", "ben", "chloe"); // a, l, e , x
+        return Flux.fromIterable(namesList)
+                //.map(s -> s.toUpperCase())
+                .map(String::toUpperCase)
+                .filter(s -> s.length() > stringLength)
+                //.flatMap((name)-> splitString(name));
+                .concatMap(this::splitString_withDelay);
+    }
+
+```
+
+- And test for this:
+
+```
+
+    @Test
+    void namesFlux_concatMap() {
+
+        //given
+        int stringLength = 3;
+
+        //when
+        var namesFlux = fluxAndMonoGeneratorService.namesFlux_concatmap(stringLength).log();
+
+        //then
+        StepVerifier.create(namesFlux)
+                .expectNext("A", "L", "E", "X")
+                //expectNext("0-A", "1-L", "2-E", "3-X")
+                .expectNextCount(5)
+                .verifyComplete();
+
+    }
+
+```
+
+- Use `concatMap()` if ordering matters.
+
+
+# 23. flatMap( ) operator in Mono
+
+<img src="flatMapInMono.PNG" alt="reactive programming" width="600"/>
+
+
+- We can return list of characters in a single list.
+
+```
+
+  	@Test
+    void namesMono_flatmap() {
+
+        //given
+        int stringLength = 3;
+
+        //when
+        var namesFlux = fluxAndMonoGeneratorService.namesMono_flatmap(stringLength).log();
+
+        //then
+        StepVerifier.create(namesFlux)
+                .expectNext(List.of("A", "L", "E", "X"))
+                .verifyComplete();
+
+    }
+
+```
+
+- Logic itself:
+
+```
+
+    public Mono<List<String>> namesMono_flatmap(int stringLength) {
+        return Mono.just("alex")
+                .map(String::toUpperCase)
+                .filter(s -> s.length() > stringLength)
+                .flatMap(this::splitStringMono); //Mono<List of A, L, E  X>
+    }
+
+		    private Mono<List<String>> splitStringMono(String s) {
+        var charArray = s.split("");
+        return Mono.just(List.of(charArray))
+                .delayElement(Duration.ofSeconds(1));
+    }
+
+```
+
+<img src="flatMapMany.PNG" alt="reactive programming" width="600"/>
+
+1. User case with flatmap with mono.
+2. Only flatMap.
+
+
+# 24. flatMapMany() operator in Mono
+
+<img src="flatMapMany.PNG" alt="reactive programming" width="600"/>
+
+- Use this when you wan't to return  **Flux** in your **Mono** pipeline.
+
+- Logic:
+
+```
+    public Flux<String> namesMono_flatmapMany(int stringLength) {
+        return Mono.just("alex")
+                //.map(s -> s.toUpperCase())
+                .map(String::toUpperCase)
+                .flatMapMany(this::splitString_withDelay);
+    }
+
+
+	private Flux<String> splitString_withDelay(String name) {
+        var delay = new Random().nextInt(1000);
+        var charArray = name.split("");
+        return Flux.fromArray(charArray)
+                .delayElements(Duration.ofMillis(delay));
+    }
+    
+```
+
+- Test:
+
+```
+  @Test
+    void namesMono_flatmapMany() {
+
+        //given
+        int stringLength = 3;
+
+        //when
+        var namesFlux = fluxAndMonoGeneratorService.namesMono_flatmapMany(stringLength).log();
+
+        //then
+        StepVerifier.create(namesFlux)
+                .expectNext("A", "L", "E", "X")
+                .verifyComplete();
+
+    }
+```
+
+# 25. Transform using the transform() Operator
+
+<img src="transform.PNG" alt="reactive programming" width="600"/>
+
+1. Remember **Publisher** are is eather **FLux** or **Mono**.
+
+- Beaty of **Functional interface**, is is that extract functionality and assign it to variable.
+	- Benefit of this is to reduce code with **Functional interface** and pass this method where you are using this. This is called **behaviour parameterization** in **Functional programming**.
+
+```
+ Function<Flux<String>, Flux<String>> filterMap = name -> name.map(String::toUpperCase)
+                .filter(s -> s.length() > stringLength);
+```
+
+# 26. Handling empty data using defaultIfEmpty and switchIfEmpty() Operators
+
+<img src="defaultIfEmpty.PNG" alt="reactive programming" width="600"/>
+
+
+# Assignment 3: DefaultIfEmpty and SwitchIfEmpty in Mono Operator
+
+- todo

@@ -103,7 +103,54 @@ public class FluxAndMonoGeneratorServiceTest {
     }
     
     
+    @Test
+    void namesMono_flatmap() {
+
+        //given
+        int stringLength = 3;
+
+        //when
+        var namesFlux = fluxAndMonoGeneratorService.namesMono_flatmap(stringLength).log();
+
+        //then
+        StepVerifier.create(namesFlux)
+                .expectNext(List.of("A", "L", "E", "X"))
+                .verifyComplete();
+
+    }
     
+
+    @Test
+    void namesMono_flatmapMany() {
+
+        //given
+        int stringLength = 3;
+
+        //when
+        var namesFlux = fluxAndMonoGeneratorService.namesMono_flatmapMany(stringLength).log();
+
+        //then
+        StepVerifier.create(namesFlux)
+                .expectNext("A", "L", "E", "X")
+                .verifyComplete();
+    }
+    
+    @Test
+    void namesFlux_transform() {
+
+        //given
+        int stringLength = 3;
+
+        //when
+        var namesFlux = fluxAndMonoGeneratorService.namesFlux_transform(stringLength).log();
+
+        //then
+        StepVerifier.create(namesFlux)
+                .expectNext("A", "L", "E", "X")
+                .expectNextCount(5)
+                .verifyComplete();
+    }
+
     
     @Test
     void namesFlux_flatmap() {
@@ -123,6 +170,56 @@ public class FluxAndMonoGeneratorServiceTest {
     
     
     @Test
+    void explore_concat() {
+
+        //given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_concat();
+
+        //then
+        StepVerifier.create(value)
+                .expectNext("A", "B", "C", "D", "E", "F")
+                .verifyComplete();
+
+    }
+    
+
+    @Test
+    void explore_concatWith() {
+
+        //given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_concatWith();
+
+        //then
+        StepVerifier.create(value)
+                .expectNext("A", "B", "C", "D", "E", "F")
+                .verifyComplete();
+
+    }
+
+
+
+    @Test
+    void explore_concat_mono() {
+
+        //given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_concatWith_mono();
+
+        //then
+        StepVerifier.create(value)
+                .expectNext("A", "B")
+                .verifyComplete();
+
+    }
+
+    
+    
+    @Test
     void namesFlux_flatmap_async() {
     	
         //given
@@ -135,6 +232,24 @@ public class FluxAndMonoGeneratorServiceTest {
                 .expectNextCount(5)*/
                 .expectNextCount(9)
                 .verifyComplete();
+    }
+    
+    @Test
+    void namesFlux_concatMap() {
+
+        //given
+        int stringLength = 3;
+
+        //when
+        var namesFlux = fluxAndMonoGeneratorService.namesFlux_concatmap(stringLength).log();
+
+        //then
+        StepVerifier.create(namesFlux)
+                .expectNext("A", "L", "E", "X")
+                //expectNext("0-A", "1-L", "2-E", "3-X")
+                .expectNextCount(5)
+                .verifyComplete();
+
     }
     
 }

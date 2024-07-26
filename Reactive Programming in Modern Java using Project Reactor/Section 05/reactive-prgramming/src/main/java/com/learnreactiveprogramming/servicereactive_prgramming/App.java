@@ -1,5 +1,4 @@
-package reactive_prgramming.reactive_prgramming;
-
+package com.learnreactiveprogramming.servicereactive_prgramming;
 /**
  * Hello world!
  *
