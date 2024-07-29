@@ -11,6 +11,8 @@ Contains my own notes with some course material to enforce learning experience.
 
 If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
 
+This repository is made with **Eclipse**, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
+
 [The course at Udemy](https://www.udemy.com/course/reactive-programming-in-modern-java-using-project-reactor/). 
 
 [Website of maker](https://dilipsundarraj.com/).
@@ -34,20 +36,20 @@ Insert certificate here when completed
 - [x] [Section 06](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2006#section-6-functional-programming-in-modern-java) - Functional Programming in Modern Java. ✅
 - [x] [Section 07](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2007#section-7-lets-create-our-very-first-flux-and-mono) - Lets create our very first Flux and Mono. ✅
 - [x] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2008#section-8-transforming-flux-and-mono) -  Transforming Flux and Mono. ✅
-- [ ] [Section 09](#) -
-- [ ] [Section 10](#) -
-- [ ] [Section 11](#) -
-- [ ] [Section 12](#) -
-- [ ] [Section 13](#) -
+- [ ] [Section 09](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2009#section-9-combining-flux-and-mono) - Combining Flux and Mono.
+- [ ] [Section 10](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2010#section-10-build-movie-reactiveservice-using-project-reactor) - Build Movie ReactiveService using Project Reactor.
+- [ ] [Section 11](#) - doOn* CallBacks - Peeking into a Sequence.
+- [ ] [Section 12](#) - Exception/Error Handling in Flux and Mono.
+- [ ] [Section 13](#) - Implement Exception Handling in Movies Reactive Service
 - [ ] [Section 14](#) -
 - [ ] [Section 15](#) -
-- [ ] [Section 16](#) -
+- [ ] [Section 16](#) - Making Blocking Calls in MovieReactiveService
 - [ ] [Section 17](#) -
 - [ ] [Section 18](#) -
 - [ ] [Section 19](#) -
 - [ ] [Section 20](#) -
 - [ ] [Section 21](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2021#section-21-build-nonblocking-restclient-using-webclient) - Build NonBlocking RestClient using WebClient.
-- [ ] [Section 22](#) -
+- [ ] [Section 22](#) - 
 
 <hr>
 
@@ -72,6 +74,8 @@ Contains my own notes with some course material to enforce learning experience.
 
 If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
 
+This repository is made with **Eclipse**, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
+
 [The course at Udemy](https://www.udemy.com/course/build-reactive-restful-apis-using-spring-boot-webflux). 
 
 [Website of maker](https://dilipsundarraj.com/).
@@ -93,7 +97,7 @@ Insert certificate here when completed
 
 ### Additional stuff
 
-- [ ] here some
+- [ ] Here some
 
 ## Mastering Java Reactive Programming [ From Scratch - 2024 ]
 
@@ -104,6 +108,8 @@ All course material from Mastering Java Reactive Programming [ From Scratch - 20
 Contains my own notes with some course material to enforce learning experience.
 
 If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
+
+This repository is made with **Eclipse**, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
 
 [The course at Udemy](https://www.udemy.com/course/complete-java-reactive-programming/). 
 
