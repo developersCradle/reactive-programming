@@ -40,10 +40,10 @@ Insert certificate here when completed
 - [ ] [Section 10](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2010#section-10-build-movie-reactiveservice-using-project-reactor) - Build Movie ReactiveService using Project Reactor.
 - [ ] [Section 11](#) - doOn* CallBacks - Peeking into a Sequence.
 - [ ] [Section 12](#) - Exception/Error Handling in Flux and Mono.
-- [ ] [Section 13](#) - Implement Exception Handling in Movies Reactive Service
+- [ ] [Section 13](#) - Implement Exception Handling in Movies Reactive Service.
 - [ ] [Section 14](#) -
 - [ ] [Section 15](#) -
-- [ ] [Section 16](#) - Making Blocking Calls in MovieReactiveService
+- [ ] [Section 16](#) - Making Blocking Calls in MovieReactiveService.
 - [ ] [Section 17](#) -
 - [ ] [Section 18](#) -
 - [ ] [Section 19](#) -

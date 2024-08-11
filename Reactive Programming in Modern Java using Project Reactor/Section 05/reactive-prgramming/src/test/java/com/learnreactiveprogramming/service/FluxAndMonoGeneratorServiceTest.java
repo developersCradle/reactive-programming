@@ -56,6 +56,24 @@ public class FluxAndMonoGeneratorServiceTest {
     	.verifyComplete();
     }
     
+
+    @Test
+    void namesFlux_map_withDoOn() {
+
+        //given
+        int stringLength = 3;
+
+        //when
+        var namesFlux = fluxAndMonoGeneratorService.namesFlux_map(stringLength).log();
+
+        //then
+        StepVerifier.create(namesFlux)
+                //.expectNext("ALEX", "BEN", "CHLOE")
+                .expectNext("4-ALEX", "5-CHLOE")
+                .verifyComplete();
+    }
+
+    
     @Test
     public void nameFlux_map_with_filter() {
     	
