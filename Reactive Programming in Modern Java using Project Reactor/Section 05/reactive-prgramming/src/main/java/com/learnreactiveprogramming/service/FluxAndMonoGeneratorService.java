@@ -12,7 +12,9 @@ import java.util.function.Function;
 import com.learnreactiveprogramming.domain.Movie;
 
 import lombok.var;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class FluxAndMonoGeneratorService {
 
     public Flux<String> namesFlux() {
@@ -154,6 +156,79 @@ public class FluxAndMonoGeneratorService {
                 // ALEX,CHLOE -> A, L, E, X, C, H, L , O, E
                 .flatMap(s -> splitString(s));
     }
+    
+    
+
+    public Flux<String> exception_flux() {
+
+        var flux = Flux.just("A", "B", "C")
+                .concatWith(Flux.error(new RuntimeException("Exception Occurred")))
+                		.concatWith(Flux.just("D"));
+     
+        return flux;
+
+    }
+    
+
+    /**
+     * This provides a single fallback value
+     *
+     * @return
+     */
+    public Flux<String> explore_OnErrorReturn() {
+
+        var flux = Flux.just("A", "B", "C")
+                .concatWith(Flux.error(new IllegalStateException("Exception Occurred")))
+                .onErrorReturn("D"); // defualt value
+
+        return flux;
+
+    }
+    /**
+     * This provides a fallback value as a Reactive Stream
+     *
+     * @param e
+     * @return
+     */
+    public Flux<String> explore_OnErrorResume(Exception e) {
+
+        var recoveryFlux = Flux.just("D", "E", "F");
+
+        var flux = Flux.just("A", "B", "C")
+                .concatWith(Flux.error(e))
+                .onErrorResume((exception) -> {
+                    log.error("Exception is ", exception);
+                    if (exception instanceof IllegalStateException)
+                        return recoveryFlux;
+                    else
+                        return Flux.error(exception);
+                });
+
+        return flux;
+
+    }
+    
+    public Flux<String> explore_OnErrorContinue() {
+
+        var flux = Flux.just("A", "B", "C")
+                .map(name -> {
+                    if (name.equals("B")) {
+                        throw new IllegalStateException("Exception Occurred");
+                    }
+                    return name;
+                })
+                .concatWith(Flux.just("D"))
+                .onErrorContinue((exception, value) -> {
+                    System.out.println("Value is : " + value);
+                    System.out.println("Exception is : " + exception.getMessage());
+                });
+
+
+        return flux;
+
+    }
+
+
     
 
     public Flux<String> namesFlux_map(int stringLength) {

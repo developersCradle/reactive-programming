@@ -73,6 +73,57 @@ public class FluxAndMonoGeneratorServiceTest {
                 .verifyComplete();
     }
 
+    @Test
+    void exception_flux() {
+
+        //given
+
+        //when
+        var flux = fluxAndMonoGeneratorService.exception_flux();
+
+        //then
+        StepVerifier.create(flux)
+                .expectNext("A", "B", "C")
+                .expectError(RuntimeException.class)
+                .verify(); // you cannot do a verify complete in here
+
+    }
+    
+    
+
+    @Test
+    void explore_OnErrorResume() {
+
+        //given
+        var e = new IllegalStateException("Not a valid state");
+
+        //when
+        var flux = fluxAndMonoGeneratorService.explore_OnErrorResume(e).log();
+
+        //then
+        StepVerifier.create(flux)
+                .expectNext("A", "B", "C", "D", "E", "F")
+                .verifyComplete();
+
+    }
+
+    @Test
+    void explore_OnErrorResume_1() {
+
+        //given
+        var e = new RuntimeException("Not a valid state");
+
+        //when
+        var flux = fluxAndMonoGeneratorService.explore_OnErrorResume(e).log();
+
+        //then
+        StepVerifier.create(flux)
+                .expectNext("A", "B", "C")
+                .expectError(RuntimeException.class)
+                .verify();
+
+    }
+
     
     @Test
     public void nameFlux_map_with_filter() {
@@ -89,7 +140,6 @@ public class FluxAndMonoGeneratorServiceTest {
     	.verifyComplete();
     }
 
-    
     @Test
     void nameFlux_immutability() 
     {

@@ -38,18 +38,19 @@ Insert certificate here when completed
 - [x] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2008#section-8-transforming-flux-and-mono) -  Transforming Flux and Mono. ✅
 - [ ] [Section 09](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2009#section-9-combining-flux-and-mono) - Combining Flux and Mono.
 - [ ] [Section 10](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2010#section-10-build-movie-reactiveservice-using-project-reactor) - Build Movie ReactiveService using Project Reactor.
-- [ ] [Section 11](#) - doOn* CallBacks - Peeking into a Sequence.
+- [x] [Section 11](#) - doOn* CallBacks - Peeking into a Sequence. ✅
 - [ ] [Section 12](#) - Exception/Error Handling in Flux and Mono.
 - [ ] [Section 13](#) - Implement Exception Handling in Movies Reactive Service.
-- [ ] [Section 14](#) -
-- [ ] [Section 15](#) -
+- [ ] [Section 14](#) - Retry, Repeat using retry(), retryWhen(), repeat().
+- [ ] [Section 15](#) - Reactors Execution Model - Schedulers, Threads and Threadpool.
 - [ ] [Section 16](#) - Making Blocking Calls in MovieReactiveService.
-- [ ] [Section 17](#) -
-- [ ] [Section 18](#) -
-- [ ] [Section 19](#) -
-- [ ] [Section 20](#) -
+- [ ] [Section 17](#) - BackPressure.
+- [ ] [Section 18](#) - Explore Data Parallelism in Project Reactor.
+- [ ] [Section 19](#) - Cold & Hot Streams.
+- [ ] [Section 20](#) - Testing using VirtualTimeScheduler.
 - [ ] [Section 21](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2021#section-21-build-nonblocking-restclient-using-webclient) - Build NonBlocking RestClient using WebClient.
-- [ ] [Section 22](#) - 
+- [ ] [Section 22](#) - Programmatically Creating a Flux/Mono.
+- [ ] [Section 23](#) - Debugging in Project Reactor.
 
 <hr>
 
@@ -91,7 +92,37 @@ Insert certificate here when completed
 
 ## Progress/Curriculum new
 
-- [ ] [Section 01](#) -
+- [ ] [Section 01](#) - Getting Started with the Course.
+- [ ] [Section 02](#) -
+- [ ] [Section 03](#) -
+- [ ] [Section 04](#) -
+- [ ] [Section 05](#) -
+- [ ] [Section 06](#) -
+- [ ] [Section 07](#) -
+- [ ] [Section 08](#) -
+- [ ] [Section 09](#) -
+- [ ] [Section 10](#) -
+- [ ] [Section 11](#) -
+- [ ] [Section 12](#) -
+- [ ] [Section 13](#) -
+- [ ] [Section 14](#) -
+- [ ] [Section 15](#) -
+- [ ] [Section 16](#) -
+- [ ] [Section 17](#) -
+- [ ] [Section 18](#) -
+- [ ] [Section 19](#) -
+- [ ] [Section 20](#) -
+- [ ] [Section 21](#) -
+- [ ] [Section 22](#) -
+- [ ] [Section 23](#) -
+- [ ] [Section 24](#) -
+- [ ] [Section 25](#) -
+- [ ] [Section 26](#) -
+- [ ] [Section 27](#) -
+- [ ] [Section 28](#) -
+- [ ] [Section 29](#) -
+- [ ] [Section 30](#) -
+- [ ] [Section 31](#) -
 
 <hr>
 
@@ -127,6 +158,21 @@ Insert certificate here when completed
 ## Progress/Curriculum new
 
 - [ ] [Section 01](#) -
+- [ ] [Section 02](#) -
+- [ ] [Section 03](#) -
+- [ ] [Section 04](#) -
+- [ ] [Section 05](#) -
+- [ ] [Section 06](#) -
+- [ ] [Section 07](#) -
+- [ ] [Section 08](#) -
+- [ ] [Section 09](#) -
+- [ ] [Section 10](#) -
+- [ ] [Section 11](#) -
+- [ ] [Section 12](#) -
+- [ ] [Section 13](#) -
+- [ ] [Section 14](#) -
+- [ ] [Section 15](#) -
+
 
 <hr>
 
