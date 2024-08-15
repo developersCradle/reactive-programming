@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import com.learnreactiveprogramming.exception.ReactorException;
+
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
 
@@ -320,4 +322,98 @@ public class FluxAndMonoGeneratorServiceTest {
 
     }
     
+    @Test
+    void explore_OnErrorContinue() {
+
+        //given
+
+        //when
+        var flux = fluxAndMonoGeneratorService.explore_OnErrorContinue().log();
+
+        //then
+        StepVerifier.create(flux)
+                .expectNext("A", "C", "D")
+                .verifyComplete();
+
+    }
+
+    
+    @Test
+    void explore_OnErrorMap() {
+
+        //given
+        var e = new RuntimeException("Not a valid state");
+
+        //when
+        var flux = fluxAndMonoGeneratorService.explore_OnErrorMap(e)
+                .log();
+
+        //then
+        StepVerifier.create(flux)
+                .expectNext("A")
+                .expectError(ReactorException.class)
+                .verify();
+    }
+    
+    
+    @Test
+    void exception_mono_onErrorReturn() {
+
+        //given
+
+
+        //when
+        var mono = fluxAndMonoGeneratorService.exception_mono_onErrorReturn();
+
+        //then
+        StepVerifier.create(mono)
+                .expectNext("abc")
+                .verifyComplete();
+    }
+    
+    @Test
+    void exception_mono_onErrorContinue() {
+
+        //given
+        var input = "abc";
+
+        //when
+        var mono = fluxAndMonoGeneratorService.exception_mono_onErrorContinue(input);
+
+        //then
+        StepVerifier.create(mono)
+                .verifyComplete();
+    }
+    
+    @Test
+    void exception_mono_onErrorContinue_1() {
+
+        //given
+        var input = "reactor";
+
+        //when
+        var mono = fluxAndMonoGeneratorService.exception_mono_onErrorContinue(input);
+
+        //then
+        StepVerifier.create(mono)
+                .expectNext(input)
+                .verifyComplete();
+    }
+    @Test
+    void doOnError() {
+
+        //given
+        var e = new RuntimeException("Not a valid state");
+
+        //when
+        var flux = fluxAndMonoGeneratorService.explore_doOnError(e);
+
+        //then
+        StepVerifier.create(flux)
+                .expectNext("A", "B", "C")
+                .expectError(RuntimeException.class)
+                .verify();
+
+
+    }
 }

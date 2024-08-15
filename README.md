@@ -38,8 +38,8 @@ Insert certificate here when completed
 - [x] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2008#section-8-transforming-flux-and-mono) -  Transforming Flux and Mono. ✅
 - [ ] [Section 09](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2009#section-9-combining-flux-and-mono) - Combining Flux and Mono.
 - [ ] [Section 10](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2010#section-10-build-movie-reactiveservice-using-project-reactor) - Build Movie ReactiveService using Project Reactor.
-- [x] [Section 11](#) - doOn* CallBacks - Peeking into a Sequence. ✅
-- [ ] [Section 12](#) - Exception/Error Handling in Flux and Mono.
+- [x] [Section 11](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2011#section-11-doon-callbacks---peeking-into-a-sequence) - doOn* CallBacks - Peeking into a Sequence. ✅
+- [ ] [Section 12](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2012#section-12-exceptionerror-handling-in-flux-and-mono) - Exception/Error Handling in Flux and Mono.
 - [ ] [Section 13](#) - Implement Exception Handling in Movies Reactive Service.
 - [ ] [Section 14](#) - Retry, Repeat using retry(), retryWhen(), repeat().
 - [ ] [Section 15](#) - Reactors Execution Model - Schedulers, Threads and Threadpool.

@@ -10,6 +10,7 @@ import java.util.Random;
 import java.util.function.Function;
 
 import com.learnreactiveprogramming.domain.Movie;
+import com.learnreactiveprogramming.exception.ReactorException;
 
 import lombok.var;
 import lombok.extern.slf4j.Slf4j;
@@ -227,8 +228,78 @@ public class FluxAndMonoGeneratorService {
         return flux;
 
     }
+    
+    /**
+     * Used to tranform the error from one type to another
+     *
+     * @param e
+     * @return
+     */
+    public Flux<String> explore_OnErrorMap(Exception e) {
+
+        var flux = Flux.just("A", "B", "C")
+                .map(name -> {
+                    if (name.equals("B")) {
+                        throw new IllegalStateException("Exception Occurred");
+                    }
+                    return name;
+                })
+                .onErrorMap((exception) -> {
+                    // log.error("Exception is : " , exception);
+                    // difference between errorResume and this one is that you dont need to add
+                    // Flux.error() to throw the exception
+                    return new ReactorException(exception, exception.getMessage());
+                });
+
+        return flux;
+
+    }
+    
+
+    public Flux<String> explore_doOnError(Exception e) {
+
+        var flux = Flux.just("A", "B", "C")
+                .concatWith(Flux.error(e))
+                .doOnError((exception) -> {
+                    System.out.println("Exception is : " + e);
+                    //Write any logic you would like to perform when an exception happens
+                });
+
+        return flux;
+
+    }
+
+    
+    /**
+     * This operator can be used to provide a default value when an error occurs
+     *
+     * @return
+     */
+    public Mono<Object> exception_mono_onErrorReturn() {
+
+        return Mono.just("B")
+                .map(value -> {
+                    throw new RuntimeException("Exception Occurred");
+                }).onErrorReturn("abc");
+    }
 
 
+
+    public Mono<String> exception_mono_onErrorContinue(String input) {
+        return Mono.just(input).
+                map(data -> {
+                    if (data.equals("abc"))
+                        throw new RuntimeException("Exception Occurred");
+                    else
+                        return data;
+                }).
+                onErrorContinue((ex, val) -> {
+                    log.error("Exception is " + ex);
+                    log.error("Value that caused the exception is " + val);
+
+                });
+    	
+    }
     
 
     public Flux<String> namesFlux_map(int stringLength) {
