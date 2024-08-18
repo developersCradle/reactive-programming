@@ -1,6 +1,6 @@
 # Section 7: Lets create our very first Flux and Mono
 
-Section 7: Lets create our very first Flux and Mono.
+Lets create our very first Flux and Mono.
 
 # What I Learned
 

@@ -1,6 +1,6 @@
 # Section 8: Transforming Flux and Mono
 
-Section 8: Transforming Flux and Mono.
+Transforming Flux and Mono.
 
 # What I Learned
 

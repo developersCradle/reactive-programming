@@ -1,5 +1,5 @@
 # Section 17: BackPressure.
 
-Section 17: BackPressure.
+BackPressure.
 
 # What I Learned

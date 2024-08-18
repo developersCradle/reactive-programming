@@ -1,6 +1,6 @@
 # Section 6: Functional Programming in Modern Java
 
- Section 6: Functional Programming in Modern Java
+ Functional Programming in Modern Java
 
 # What I Learned
 

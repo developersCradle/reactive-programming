@@ -1,6 +1,6 @@
 # Section 12: Exception/Error Handling in Flux and Mono
 
-Exception/Error Handling in Flux and Mono
+Exception/Error Handling in Flux and Mono.
 
 # What I Learned
 
