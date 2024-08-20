@@ -35,7 +35,7 @@ public class MovieInfoServiceTest {
 	    	Long movieId = 1L;
 	    	
 	        //When
-	        var movieInfoFlux = movieInfoService.retrieveAllMovieInfo_RestClient(movieId);
+	        var movieInfoFlux = movieInfoService.retrieveMovieInfoById_RestClient(movieId);
 
 	        //Then
 	        StepVerifier.create(movieInfoFlux)

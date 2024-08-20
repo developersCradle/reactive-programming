@@ -41,16 +41,16 @@ Insert certificate here when completed
 - [x] [Section 11](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2011#section-11-doon-callbacks---peeking-into-a-sequence) - doOn* CallBacks - Peeking into a Sequence. ✅
 - [x] [Section 12](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2012#section-12-exceptionerror-handling-in-flux-and-mono) - Exception/Error Handling in Flux and Mono. ✅
 - [x] [Section 13](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2013#section-13-implement-exception-handling-in-movies-reactive-service) - Implement Exception Handling in Movies Reactive Service. ✅
-- [ ] [Section 14](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2014#section-14-retry-repeat-using-retry-retrywhen-repeat) - Retry, Repeat using retry(), retryWhen(), repeat().
+- [x] [Section 14](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2014#section-14-retry-repeat-using-retry-retrywhen-repeat) - Retry, Repeat using retry(), retryWhen(), repeat(). ✅
 - [ ] [Section 15](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2015#section-15-reactors-execution-model---schedulers-threads-and-threadpool) - Reactors Execution Model - Schedulers, Threads and Threadpool.
 - [ ] [Section 16](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2016#section-16-making-blocking-calls-in-moviereactiveservice) - Making Blocking Calls in MovieReactiveService.
 - [ ] [Section 17](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2017#section-17-backpressure) - BackPressure.
 - [ ] [Section 18](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2018#section-18-explore-data-parallelism-in-project-reactor) - Explore Data Parallelism in Project Reactor.
 - [ ] [Section 19](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2019#section-19-cold--hot-streams) - Cold & Hot Streams.
-- [ ] [Section 20](#) - Testing using VirtualTimeScheduler.
+- [ ] [Section 20](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2020#section-20-testing-using-virtualtimescheduler) - Testing using VirtualTimeScheduler.
 - [ ] [Section 21](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2021#section-21-build-nonblocking-restclient-using-webclient) - Build NonBlocking RestClient using WebClient.
-- [ ] [Section 22](#) - Programmatically Creating a Flux/Mono.
-- [ ] [Section 23](#) - Debugging in Project Reactor.
+- [ ] [Section 22](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2022#section-22-programmatically-creating-a-fluxmono) - Programmatically Creating a Flux/Mono.
+- [ ] [Section 23](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2023#section-23-debugging-in-project-reactor) - Debugging in Project Reactor.
 
 <hr>
 

@@ -19,8 +19,6 @@ import java.util.List;
 @Slf4j
 public class MovieReactiveService {
 
-	
-	
     private MovieInfoService movieInfoService;
     private ReviewService reviewService;
     
@@ -32,7 +30,7 @@ public class MovieReactiveService {
  
 
     public Flux<Movie> getAllMovies() {
-
+			
         var moviesInfoFlux = movieInfoService.retrieveMoviesFlux();
         return moviesInfoFlux
                 .flatMap(movieInfo -> {
@@ -48,6 +46,25 @@ public class MovieReactiveService {
                 .log();
     }
     
+    /*
+     * These functions returns actual data.
+     */
+    public Flux<Movie> getAllMovies_restClient() {
+		
+        var moviesInfoFlux = movieInfoService.retrieveAllMovieInfo_RestClient();
+        return moviesInfoFlux
+                .flatMap(movieInfo -> {
+                    Mono<List<Review>> reviewsMono = reviewService.retrieveReviewsFlux_RestClient(movieInfo.getMovieInfoId())
+                    .collectList();
+                    return reviewsMono
+                            .map(reviewsList -> new Movie(movieInfo,reviewsList));
+                })
+                .onErrorMap( (ex) ->{
+                	log.error("Expection is : ", ex);
+                	throw new MovieException(ex.getMessage());
+                })
+                .log();
+    }
     
     public Flux<Movie> getAllMovies_retry() {
 
@@ -168,6 +185,15 @@ public class MovieReactiveService {
     			.collectList();
     	
     	return movieInfoMono.zipWith(reviewsFlux, (movieInfo, reviews) -> new Movie(movieInfo, reviews));
+    }
+    
+    public Mono<Movie> getMovieById_RestClient(long movieId)
+    {
+    	var movieInfoMono = movieInfoService.retrieveMovieInfoById_RestClient(movieId);
+    	var reviewsFlux = reviewService.retrieveReviewsFlux_RestClient(movieId)
+    			.collectList();
+    	
+    	return movieInfoMono.zipWith(reviewsFlux, (movieInfo, reviews) -> new Movie(movieInfo, reviews)).log();
     }
     
 

@@ -31,7 +31,7 @@ public class MovieInfoService {
                 .log();
     }
     
-    public Mono<MovieInfo> retrieveAllMovieInfo_RestClient(Long movieInfoId){
+    public Mono<MovieInfo> retrieveMovieInfoById_RestClient(Long movieInfoId){
 
         return webClient.get().uri("/v1/movie_infos/{id}", movieInfoId)
                 .retrieve()

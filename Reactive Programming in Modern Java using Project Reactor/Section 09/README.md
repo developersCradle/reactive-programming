@@ -203,3 +203,24 @@ Questions for this assignment
 # 29. Combining Reactive Streams using merge() and mergeWith() Operators
 
 - Todo
+
+# 31. Combining Reactive Streams using zip and zipWith() Operator
+
+- `zip()` is used to zip multiple publishers into one.
+
+<img src="zip.PNG" alt="reactive programming" width="600"/>
+
+1. Source **Flux**.
+2. Combinator lambda.
+
+- First one will be `AD` second `BE` third one `CF`.
+
+- Difference with `zip()` is that, first emitting is waited for all element then its moved to second element.
+
+<img src="zip2.PNG" alt="reactive programming" width="600"/>
+
+<br>
+
+<img src="zip3.PNG" alt="reactive programming" width="600"/>
+
+- todo 2:15.
