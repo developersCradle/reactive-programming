@@ -177,5 +177,3 @@ Questions for this assignment
                 .verifyComplete();
     }
 ```
-
-- todo teachers.

@@ -19,7 +19,7 @@ Transforming Flux and Mono.
     }
 ```
 
-- Test for .map operation.
+- Test for `.map` operation.
 
 ```
     @Test
@@ -57,7 +57,6 @@ Transforming Flux and Mono.
 ```
 
 - This is being applied to another flux `nameFlux.map(String::toUpperCase);` so returned value will be lowercase version.
-
 
 - For this case, this would be working as test.
 
@@ -146,11 +145,8 @@ Questions for this assignment:
 
 	Use the filter operator to apply the filtering operation on the string "alex" using the stringLength parameter.
 
-
-
 	2. Write a test case for the function namesMono_map_filter.
 ```
-
 
 - My Answer:
 
@@ -162,6 +158,7 @@ Questions for this assignment:
 		
 	}
 ```
+
 - And my Test:
 
 ```
@@ -276,10 +273,7 @@ void namesMono_map_filter() {
 
 - FlatMap is Asynchronous nature. If we introduce timing into Flux. This will return randomly the characters.
 
-
-
-
-- Feature:
+- The logic:
 
 ```
     private Flux<String> splitString_withDelay(String name) {
@@ -300,7 +294,7 @@ void namesMono_map_filter() {
     }
 ```
 
-- Test:
+- The Test:
 
 ```
     @Test
@@ -425,7 +419,7 @@ void namesMono_map_filter() {
 
 - Use this when you wan't to return  **Flux** in your **Mono** pipeline.
 
-- Logic:
+- The Logic:
 
 ```
     public Flux<String> namesMono_flatmapMany(int stringLength) {
@@ -445,7 +439,7 @@ void namesMono_map_filter() {
     
 ```
 
-- Test:
+- The Test:
 
 ```
   @Test
@@ -469,9 +463,9 @@ void namesMono_map_filter() {
 
 <img src="transform.PNG" alt="reactive programming" width="600"/>
 
-1. Remember **Publisher** are is eather **FLux** or **Mono**.
+1. Remember **Publisher** are is either **FLux** or **Mono**.
 
-- Beaty of **Functional interface**, is is that extract functionality and assign it to variable.
+- Beauty of **Functional interface**, is is that extract functionality and assign it to variable.
 	- Benefit of this is to reduce code with **Functional interface** and pass this method where you are using this. This is called **behaviour parameterization** in **Functional programming**.
 
 ```
@@ -484,6 +478,24 @@ void namesMono_map_filter() {
 <img src="defaultIfEmpty.PNG" alt="reactive programming" width="600"/>
 
 
-# Assignment 3: DefaultIfEmpty and SwitchIfEmpty in Mono Operator
+- We will return `Flux.empty()` for if there is no `onNext()`. Example like this.
 
-- todo
+```
+   StepVerifier.create(namesFlux)
+        		.expectNext("A", "L", "E", "X", "C", "H", "L", "O", "E")
+                .verifyComplete();
+    }
+```
+
+- We can tell **Flux** for default values if there is empty like such. `.defaultIfEmpty("default");`
+
+```
+        return Flux.fromIterable(namesList)
+                .transform(filterMap) // gives u the opportunity to combine multiple operations using a single call.
+                .flatMap(this::splitString)
+                .defaultIfEmpty("default");
+```
+
+- Accepts **Publisher**
+
+# Assignment 3: DefaultIfEmpty and SwitchIfEmpty in Mono Operator

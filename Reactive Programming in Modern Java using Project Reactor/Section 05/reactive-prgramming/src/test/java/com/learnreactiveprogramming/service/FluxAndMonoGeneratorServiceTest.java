@@ -1,12 +1,15 @@
 package com.learnreactiveprogramming.service;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
 import com.learnreactiveprogramming.exception.ReactorException;
 
+import lombok.var;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
 public class FluxAndMonoGeneratorServiceTest {
@@ -57,7 +60,36 @@ public class FluxAndMonoGeneratorServiceTest {
     	.expectNext("ALEX", "BEN", "CHLOE")    
     	.verifyComplete();
     }
+
+    @Test
+    void explore_zip() {
+    	//given
+    	
+    	//when
+    	var value = fluxAndMonoGeneratorService.explore_zip();
+    	
+    	//then
+    	
+    	StepVerifier.create(value)
+    	.expectNext("AD", "BE", "CF")    
+    	.verifyComplete();
+    }
     
+    @Test
+    void explore_zip_1() {
+    	//given
+    	
+    	//when
+    	var value = fluxAndMonoGeneratorService.explore_zip_1();
+    	
+    	//then
+    	
+    	StepVerifier.create(value)
+    	.expectNext("AD14", "BE25", "CF36")    
+    	.verifyComplete();
+    }
+    
+
 
     @Test
     void namesFlux_map_withDoOn() {
@@ -221,6 +253,25 @@ public class FluxAndMonoGeneratorServiceTest {
                 .verifyComplete();
     }
 
+
+    @Test
+    void namesFlux_transform_1() {
+
+        //given
+        int stringLength = 6;
+
+        //when
+        var namesFlux = fluxAndMonoGeneratorService.namesFlux_transform(stringLength).log();
+
+        
+//       Flux.empty() this represents empty value.
+        //then
+        StepVerifier.create(namesFlux)
+        		.expectNext("A", "L", "E", "X", "C", "H", "L", "O", "E")
+                .verifyComplete();
+    }
+
+    
     
     @Test
     void namesFlux_flatmap() {
@@ -270,8 +321,102 @@ public class FluxAndMonoGeneratorServiceTest {
 
     }
 
+    @Test
+    void explore_zipWith() {
+
+        //given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_zipWith();
+
+        //then
+        StepVerifier.create(value)
+                .expectNext("AD","BE","CF")
+                .verifyComplete();
+    }
+
+    @Test
+    void explore_ZipWith_mono(){
+
+    	//given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_ZipWith_mono();
+
+        //then
+        StepVerifier.create(value)
+                .expectNext("AB")
+                .verifyComplete();
+
+    }
+
+    
+    
+    @Test
+    void explore_merge() {
+
+        //given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_merge();
+
+        //then
+        StepVerifier.create(value)
+                .expectNext("A", "D", "B","E", "C", "F")
+                .verifyComplete();
+
+    }
 
 
+    
+    @Test
+    void explore_mergeWith() {
+
+        //given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_mergeWith();
+
+        //then
+        StepVerifier.create(value)
+
+                .expectNext("A", "D", "B", "E", "C", "F")
+                .verifyComplete();
+
+    }
+
+    
+    @Test
+    void explore_mergeSequential() {
+
+        //given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_mergeSequential();
+
+        //then
+        StepVerifier.create(value)
+                .expectNext("A", "B", "C", "D", "E", "F")
+                .verifyComplete();
+    }
+
+    
+    @Test
+    void explore_mergeWith_mono() {
+
+        //given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_mergeWith_mono();
+
+        //then
+        StepVerifier.create(value)
+                .expectNext("A", "B")
+                .verifyComplete();
+
+    }
+    
+    
     @Test
     void explore_concat_mono() {
 

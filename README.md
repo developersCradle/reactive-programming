@@ -36,8 +36,8 @@ Insert certificate here when completed
 - [x] [Section 06](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2006#section-6-functional-programming-in-modern-java) - Functional Programming in Modern Java. ✅
 - [x] [Section 07](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2007#section-7-lets-create-our-very-first-flux-and-mono) - Lets create our very first Flux and Mono. ✅
 - [x] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2008#section-8-transforming-flux-and-mono) -  Transforming Flux and Mono. ✅
-- [ ] [Section 09](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2009#section-9-combining-flux-and-mono) - Combining Flux and Mono.
-- [ ] [Section 10](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2010#section-10-build-movie-reactiveservice-using-project-reactor) - Build Movie ReactiveService using Project Reactor.
+- [x] [Section 09](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2009#section-9-combining-flux-and-mono) - Combining Flux and Mono. ✅
+- [x] [Section 10](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2010#section-10-build-movie-reactiveservice-using-project-reactor) - Build Movie ReactiveService using Project Reactor. ✅
 - [x] [Section 11](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2011#section-11-doon-callbacks---peeking-into-a-sequence) - doOn* CallBacks - Peeking into a Sequence. ✅
 - [x] [Section 12](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2012#section-12-exceptionerror-handling-in-flux-and-mono) - Exception/Error Handling in Flux and Mono. ✅
 - [x] [Section 13](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2013#section-13-implement-exception-handling-in-movies-reactive-service) - Implement Exception Handling in Movies Reactive Service. ✅
@@ -77,6 +77,8 @@ If the content sparked :fire: your interest, please consider buying the course a
 
 This repository is made with **Eclipse**, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
 
+Also will be using **Maven**, even thought in video there is **Gradle** in use.
+
 [The course at Udemy](https://www.udemy.com/course/build-reactive-restful-apis-using-spring-boot-webflux). 
 
 [Website of maker](https://dilipsundarraj.com/).
@@ -92,16 +94,16 @@ Insert certificate here when completed
 
 ## Progress/Curriculum new
 
-- [ ] [Section 01](#) - Getting Started with the Course.
-- [ ] [Section 02](#) -
-- [ ] [Section 03](#) -
+- [x] [Section 01](#) - Getting Started with the Course. ✅ 
+- [x] [Section 02](#) - Source Code and Course Slides for this Course. ✅
+- [ ] [Section 03](#) - Why Reactive Programming ? 
 - [ ] [Section 04](#) -
 - [ ] [Section 05](#) -
 - [ ] [Section 06](#) -
 - [ ] [Section 07](#) -
 - [ ] [Section 08](#) -
-- [ ] [Section 09](#) -
-- [ ] [Section 10](#) -
+- [x] [Section 09](#) - Introduction to Spring WebFlux. ✅
+- [ ] [Section 10](#) - Build Movie ReactiveService using Project Reactor. 
 - [ ] [Section 11](#) -
 - [ ] [Section 12](#) -
 - [ ] [Section 13](#) -
@@ -128,7 +130,7 @@ Insert certificate here when completed
 
 ### Additional stuff
 
-- [ ] Here some
+- [x] Example which using Maven. [Link To GitHub](https://github.com/ferfujikawa/reactive-spring?tab=readme-ov-file) 
 
 ## Mastering Java Reactive Programming [ From Scratch - 2024 ]
 

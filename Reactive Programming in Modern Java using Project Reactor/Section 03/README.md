@@ -156,9 +156,9 @@
 
 <img src="reactiveStreamsHowItsWorksIfNotWorks.PNG" alt="reactive programming" width="600"/>
 
-1. It will be the same till steps form **1. to 3.**.
-4. Now there will be `onError()`, this will be sent in form of **event** from **Publisher**
-5. This way of **throwing exception** is bit different than how exception is thrown in **traditional way**.
+**1.** It will be the same till steps form **1. to 3.**.
+**4.** Now there will be `onError()`, this will be sent in form of **event** from **Publisher**.
+**5.** This way of **throwing exception** is bit different than how exception is thrown in **traditional way**.
     - When error is noticed in **reactive stream** will be dead.
     - **Exceptions** are threaded like **the data**.
 

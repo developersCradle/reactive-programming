@@ -1,6 +1,6 @@
 # Section 9: Combining Flux and Mono
 
-Combining Flux and Mono
+Combining Flux and Mono.
 
 # What I Learned
 
@@ -54,7 +54,6 @@ Combining Flux and Mono
     }
 ````
 
-
 - And tests for these.
 
 ````
@@ -94,7 +93,7 @@ Combining Flux and Mono
 
 - We can combine results to one. This is common use case.
 
-- Logic for making combination.
+- Logic for making combination:
 
 ````  
 
@@ -110,7 +109,7 @@ Combining Flux and Mono
 
 ````
 
-- Test for this.
+- Test for this:
 
 ````
 
@@ -202,7 +201,214 @@ Questions for this assignment
 
 # 29. Combining Reactive Streams using merge() and mergeWith() Operators
 
-- Todo
+- `merge()` and `mergeWith()` are used to combine the publishers.
+
+<img src="merge.PNG" alt="reactive programming" width="700"/>
+
+1. We will merge these two **Flux** to one. 
+    - As you can see the two **Flux**:es are combined in interleaved fashion.
+
+<img src="mergeAndMergeWith.PNG" alt="reactive programming" width="600"/>
+
+
+- The Logic:
+
+```    public Flux<String> explore_merge() {
+
+        var abcFlux = Flux.just("A", "B", "C")
+        		.delayElements(Duration.ofMillis(100));
+
+        var defFlux = Flux.just("D", "E", "F")
+        		.delayElements(Duration.ofMillis(120));;
+
+        return Flux.merge(abcFlux, defFlux).log();
+
+    }
+ 
+```
+
+- The Test:
+
+```
+
+    @Test
+    void explore_merge() {
+
+        //given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_merge();
+
+        //then
+        StepVerifier.create(value)
+                .expectNext("A", "D", "B","E", "C", "F")
+                .verifyComplete();
+
+    }
+
+```
+
+- The Logic:
+
+```
+    public Flux<String> explore_mergeWith() {
+
+        var abcFlux = Flux.just("A", "B", "C")
+        		.delayElements(Duration.ofMillis(100));
+
+        var defFlux = Flux.just("D", "E", "F")
+        		.delayElements(Duration.ofMillis(120));;
+
+        return abcFlux.mergeWith(defFlux).log(); // Yields same result as merge()
+
+    }
+
+```
+
+- The Test:
+
+```
+@Test
+void explore_mergeWith() {
+
+    //given
+
+    //when
+    var value = fluxAndMonoGeneratorService.explore_mergeWith();
+
+    //then
+    StepVerifier.create(value)
+
+            .expectNext("A", "D", "B", "E", "C", "F")
+            .verifyComplete();
+
+}
+```
+
+- The Logic:
+ 
+```
+    public Flux<String> explore_mergeWith_mono() {
+
+        var aMono = Mono.just("A");
+
+        var bMono = Flux.just("B");
+
+        return aMono.mergeWith(bMono).log();
+
+    }
+```
+
+- The Test:
+
+```
+
+    @Test
+    void explore_mergeWith_mono() {
+
+        //given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_mergeWith_mono();
+
+        //then
+        StepVerifier.create(value)
+                .expectNext("A", "B")
+                .verifyComplete();
+
+    }
+
+```
+
+# Assignment 5: Assignment for Writing JUnit5 Test Cases for mergeWith using Flux and Mono
+
+```
+Write the test case for explore_mergeWith() and explore_mergeWith_mono() methods in the FluxAndMonoGeneratorService class.
+
+    Questions for this assignment
+
+    1. Write the test case for explore_mergeWith() method in FluxAndMonoGeneratorService class.
+    2. Write the test case for explore_mergeWith_mono() method in FluxAndMonoGeneratorService class.
+```
+
+- My Answers:
+
+```
+
+    @Test
+    void explore_mergeWith_mono() {
+
+        //given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_mergeWith_mono();
+
+        //then
+        StepVerifier.create(value)
+                .expectNext("A", "B")
+                .verifyComplete();
+
+    }
+
+```
+
+```
+    @Test
+    void explore_mergeWith() {
+
+        //given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_mergeWith();
+
+        //then
+        StepVerifier.create(value)
+                .expectNext("A", "B", "C", "D", "E", "F")
+                .verifyComplete();
+
+    }
+```
+
+# 30. Combining Reactive Streams using mergeSequential() operator
+
+<img src="mergeSequential.PNG" alt="reactive programming" width="600"/>
+
+- The Logic:
+
+```
+    public Flux<String> explore_mergeSequential() {
+
+        var abcFlux = Flux.just("A", "B", "C")
+        		.delayElements(Duration.ofMillis(100));
+
+        var defFlux = Flux.just("D", "E", "F")
+        		.delayElements(Duration.ofMillis(120));;
+
+        return Flux.mergeSequential(abcFlux, defFlux).log(); // Yields same result as merge()
+
+    }
+
+```
+
+- The Test:
+
+```
+    @Test
+    void explore_mergeSequential() {
+
+        //given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_mergeSequential();
+
+        //then
+        StepVerifier.create(value)
+                .expectNext("A", "B", "C", "D", "E", "F")
+                .verifyComplete();
+    }
+
+
+```
 
 # 31. Combining Reactive Streams using zip and zipWith() Operator
 
@@ -223,4 +429,209 @@ Questions for this assignment
 
 <img src="zip3.PNG" alt="reactive programming" width="600"/>
 
-- todo 2:15.
+1. Will return **Tuple** with 4 values.
+    - This will make 4 values into one.
+2. Will combine first values from each **Tuple**.
+
+- Logic for `zip()`.
+
+```
+   
+    public Flux<String> explore_zip(){
+
+        var abcFlux = Flux.just("A","B","C");
+
+        var defFlux = Flux.just("D","E","F");
+
+        return Flux.zip(abcFlux,defFlux,(first, second)-> first+second)
+                .log(); //AD, BE, CF
+
+    }
+    
+```
+
+- Test for `zip()`.
+
+```
+    @Test
+    void explore_zip() {
+    	//given
+    	
+    	//when
+    	var value = fluxAndMonoGeneratorService.explore_zip();
+    	
+    	//then
+    	
+    	StepVerifier.create(value)
+    	.expectNext("AD", "BE", "CF")    
+    	.verifyComplete();
+    }
+    
+```
+
+- The Logic for  other `zip()`.
+
+```
+    public Flux<String> explore_zip_1(){
+
+        var abcFlux = Flux.just("A","B","C");
+
+        var defFlux = Flux.just("D","E","F");
+        
+        var _123Flux = Flux.just("1","2","3");
+        var _456Flux = Flux.just("4","5","6");
+
+        return Flux.zip(abcFlux,defFlux, _123Flux, _456Flux)
+        		.map(tuple4 -> tuple4.getT1()+tuple4.getT2()+tuple4.getT3()+tuple4.getT4())
+                .log(); 
+        
+        // Results will be AD14, BE25, CF36
+
+    }
+
+```
+
+- Test with other type of `zip()`.
+
+```
+    @Test
+    void explore_zip_1() {
+    	//given
+    	
+    	//when
+    	var value = fluxAndMonoGeneratorService.explore_zip_1();
+    	
+    	//then
+    	
+    	StepVerifier.create(value)
+    	.expectNext("AD14", "BE25", "CF36")    
+    	.verifyComplete();
+    }
+    
+```
+
+- These sames with `zipWith()`.
+    - We are going to combine two publishers.
+
+```
+    public Flux<String> explore_zipWith(){
+
+        var abcFlux = Flux.just("A","B","C");
+
+        var defFlux = Flux.just("D","E","F");
+        
+        return abcFlux.zipWith(defFlux, (first, second) -> first+second).log();
+        // return will be AD, BE, CF
+
+    }
+```
+
+- The test with these logic:
+
+```
+    @Test
+    void explore_zipWith() {
+
+        //given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_zipWith();
+
+        //then
+        StepVerifier.create(value)
+                .expectNext("AD","BE","CF")
+                .verifyComplete();
+    }
+
+```
+
+- Making `zipWith` with **Mono**. The logic.
+
+```
+
+    public Mono<String> explore_ZipWith_mono(){
+
+        var aMono = Mono.just("A"); //A
+
+        var bMono = Mono.just("B"); //B
+ 
+        return aMono.zipWith(bMono)
+                .map(t2-> t2.getT1()+t2.getT2()) //AB
+                .log(); // A, B
+
+    }
+
+```
+
+- The test code for this.
+
+```
+
+    @Test
+    void explore_ZipWith_mono(){
+
+        //given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_ZipWith_mono();
+
+        //then
+        StepVerifier.create(value)
+                .expectNext("AB")
+                .verifyComplete();
+
+    }
+
+```
+
+ # Assignment 6: Assignment for Writing JUnit5 Test Cases for zipWith using Flux and Mono
+
+ - Assignment: 
+ 
+ ```
+
+ Write the test case for explore_zipWith() and explore_zipWith_mono() methods in the FluxAndMonoGeneratorService class.
+
+Questions for this assignment
+    1. Write the test case for explore_zipWith() method in FluxAndMonoGeneratorService class.
+
+    2. Write the test case for explore_zipWith_mono() method in FluxAndMonoGeneratorService class.
+
+ ```
+
+- My answers:
+
+```
+    @Test
+    void explore_zipWith() {
+
+        //given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_zipWith();
+
+        //then
+        StepVerifier.create(value)
+                .expectNext("AD","BE","CF")
+                .verifyComplete();
+    }
+
+```
+
+```
+    @Test
+    void explore_ZipWith_mono(){
+
+    	//given
+
+        //when
+        var value = fluxAndMonoGeneratorService.explore_ZipWith_mono();
+
+        //then
+        StepVerifier.create(value)
+                .expectNext("AB")
+                .verifyComplete();
+
+    }
+
+```
