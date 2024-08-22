@@ -37,3 +37,27 @@ Why Reactive Programming ?
 1. We can also reduce latency of the app, by improving indie our app.
 
 # 6. Why Reactive Programming - Part 2?
+
+- To make Java calls work in parallel we can use.
+    - Callbacks.
+    - Futures.
+
+<img src="callbacks.PNG" alt="reactive programming" width="700"/>
+
+<br>
+
+<img src="concurrencyAPI.PNG" alt="reactive programming" width="700"/>
+
+<br>
+
+<img src="drawbackOfSpirgMVC.PNG" alt="reactive programming" width="700"/>
+
+1. Even thought you write efficient code, **Servlet API** will be the bottleneck.
+
+- **Reactive programming** will come to solve this problem.
+
+<img src="summary.PNG" alt="reactive programming" width="700"/>
+
+1. This does not mean that Spring MVC is still bad.
+
+

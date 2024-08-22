@@ -94,16 +94,16 @@ Insert certificate here when completed
 
 ## Progress/Curriculum new
 
-- [x] [Section 01](#) - Getting Started with the Course. ✅ 
-- [x] [Section 02](#) - Source Code and Course Slides for this Course. ✅
-- [ ] [Section 03](#) - Why Reactive Programming ? 
-- [ ] [Section 04](#) -
-- [ ] [Section 05](#) -
-- [ ] [Section 06](#) -
-- [ ] [Section 07](#) -
-- [ ] [Section 08](#) -
+- [x] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2001#section-1-getting-started-with-the-course) - Getting Started with the Course. ✅ 
+- [x] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2002#section-2-source-code-and-course-slides-for-this-course) - Source Code and Course Slides for this Course. ✅
+- [x] [Section 03](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2003#section-3-why-reactive-programming-) - Why Reactive Programming? ✅
+- [x] [Section 04](#) - Introduction to Reactive Programming. ✅
+- [x] [Section 05](#) - Introduction to Spring WebFlux. ✅
+- [x] [Section 06](#) - Getting Started with Project Reactor. ✅
+- [x] [Section 07](#) - Setting up the base project for this course. ✅
+- [x] [Section 08](#) - Lets Explore Flux and Mono - Hands On. Same as  in **Reactive Programming in Modern Java using Project Reactor**. ✅
 - [x] [Section 09](#) - Introduction to Spring WebFlux. ✅
-- [ ] [Section 10](#) - Build Movie ReactiveService using Project Reactor. 
+- [ ] [Section 10](#) - Build Movie ReactiveService using Project Reactor.
 - [ ] [Section 11](#) -
 - [ ] [Section 12](#) -
 - [ ] [Section 13](#) -
@@ -130,7 +130,8 @@ Insert certificate here when completed
 
 ### Additional stuff
 
-- [x] Example which using Maven. [Link To GitHub](https://github.com/ferfujikawa/reactive-spring?tab=readme-ov-file) 
+- [x] Example which using Maven. [Link To GitHub](https://github.com/ferfujikawa/reactive-spring?tab=readme-ov-file). 
+- [ ] Do section 08 as refresher. Same content as in  **Reactive Programming in Modern Java using Project Reactor**.
 
 ## Mastering Java Reactive Programming [ From Scratch - 2024 ]
 
