@@ -97,19 +97,19 @@ Insert certificate here when completed
 - [x] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2001#section-1-getting-started-with-the-course) - Getting Started with the Course. ✅ 
 - [x] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2002#section-2-source-code-and-course-slides-for-this-course) - Source Code and Course Slides for this Course. ✅
 - [x] [Section 03](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2003#section-3-why-reactive-programming-) - Why Reactive Programming? ✅
-- [x] [Section 04](#) - Introduction to Reactive Programming. ✅
-- [x] [Section 05](#) - Introduction to Spring WebFlux. ✅
-- [x] [Section 06](#) - Getting Started with Project Reactor. ✅
-- [x] [Section 07](#) - Setting up the base project for this course. ✅
-- [x] [Section 08](#) - Lets Explore Flux and Mono - Hands On. Same as  in **Reactive Programming in Modern Java using Project Reactor**. ✅
-- [x] [Section 09](#) - Introduction to Spring WebFlux. ✅
-- [ ] [Section 10](#) - Build Movie ReactiveService using Project Reactor.
-- [ ] [Section 11](#) -
-- [ ] [Section 12](#) -
-- [ ] [Section 13](#) -
+- [x] [Section 04](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2004#section-04-introduction-to-reactive-programming) - Introduction to Reactive Programming. ✅
+- [x] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2005#section-5-introduction-to-spring-webflux) - Introduction to Spring WebFlux. ✅
+- [x] [Section 06](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2006#section-6-getting-started-with-project-reactor) - Getting Started with Project Reactor. ✅
+- [x] [Section 07](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2007#section-7-setting-up-the-base-project-for-this-course) - Setting up the base project for this course. ✅
+- [x] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2008#section-8-lets-explore-flux-and-mono---hands-on) - Lets Explore Flux and Mono - Hands On. Same as  in **Reactive Programming in Modern Java using Project Reactor** course. ✅
+- [x] [Section 09](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2009#section-9-introduction-to-spring-webflux) - Introduction to Spring WebFlux. ✅
+- [x] [Section 10](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2010#section-10-set-up-the-moviesinfoservice-service) - Build Movie ReactiveService using Project Reactor. ✅
+- [x] [Section 11](#) - Simple Non Blocking RESTFUL API using Annotated Controller Approach. ✅
+- [x] [Section 12](#) - Automated Tests using JUnit5 and @WebFluxTest. ✅
+- [ ] [Section 13](#) - Reactive Programming in Mongo DB for the MovieInfo Service. 
 - [ ] [Section 14](#) -
 - [ ] [Section 15](#) -
-- [ ] [Section 16](#) -
+- [ ] [Section 16](#) - Bean Validation using Validators and ControllerAdvice
 - [ ] [Section 17](#) -
 - [ ] [Section 18](#) -
 - [ ] [Section 19](#) -
