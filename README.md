@@ -104,27 +104,27 @@ Insert certificate here when completed
 - [x] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2008#section-8-lets-explore-flux-and-mono---hands-on) - Lets Explore Flux and Mono - Hands On. Same as  in **Reactive Programming in Modern Java using Project Reactor** course. ✅
 - [x] [Section 09](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2009#section-9-introduction-to-spring-webflux) - Introduction to Spring WebFlux. ✅
 - [x] [Section 10](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2010#section-10-set-up-the-moviesinfoservice-service) - Build Movie ReactiveService using Project Reactor. ✅
-- [x] [Section 11](#) - Simple Non Blocking RESTFUL API using Annotated Controller Approach. ✅
-- [x] [Section 12](#) - Automated Tests using JUnit5 and @WebFluxTest. ✅
-- [ ] [Section 13](#) - Reactive Programming in Mongo DB for the MovieInfo Service. 
-- [ ] [Section 14](#) -
-- [ ] [Section 15](#) -
-- [ ] [Section 16](#) - Bean Validation using Validators and ControllerAdvice
-- [ ] [Section 17](#) -
-- [ ] [Section 18](#) -
-- [ ] [Section 19](#) -
-- [ ] [Section 20](#) -
-- [ ] [Section 21](#) -
-- [ ] [Section 22](#) -
-- [ ] [Section 23](#) -
-- [ ] [Section 24](#) -
-- [ ] [Section 25](#) -
-- [ ] [Section 26](#) -
-- [ ] [Section 27](#) -
-- [ ] [Section 28](#) -
-- [ ] [Section 29](#) -
-- [ ] [Section 30](#) -
-- [ ] [Section 31](#) -
+- [x] [Section 11](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2011#section-11-simple-non-blocking-restful-api-using-annotated-controller-approach) - Simple Non Blocking RESTFUL API using Annotated Controller Approach. ✅
+- [x] [Section 12](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2012#section-12-automated-tests-using-junit5-and-webfluxtest) - Automated Tests using JUnit5 and @WebFluxTest. ✅
+- [x] [Section 13](#) - Reactive Programming in Mongo DB for the MovieInfo Service. ✅
+- [x] [Section 14](#) - Build MovieInfo Service using Rest Controller Approach. ✅
+- [ ] [Section 15](#) - Unit Testing in Spring WebFlux.
+- [ ] [Section 16](#) - Bean Validation using Validators and ControllerAdvice.
+- [ ] [Section 17](#) - Using ResponseEntity with Reactive Types.
+- [ ] [Section 18](#) - Writing Custom Queries using ReactiveMongoRepository.
+- [ ] [Section 19](#) - Spring WebFlux Under the Hood - Netty and Threading Model.
+- [ ] [Section 20](#) - Introduction to Functional Web Module in Spring WebFlux.
+- [ ] [Section 21](#) - Build MoviesReview Service using  Functional Web.
+- [ ] [Section 22](#) - Unit Testing Functional Web.
+- [ ] [Section 23](#) - Bean Validations using Functional Web.
+- [ ] [Section 24](#) - Custom Global ErrorHandler in Functional Web.
+- [ ] [Section 25](#) - Handling ResourceNotFound in Functional Web.
+- [ ] [Section 26](#) - MoviesService - Rest Service connects the MovieInfo and MovieReview Service.
+- [ ] [Section 27](#) - Handling Network Exceptions in WebClient.
+- [ ] [Section 28](#) - Integration Testing External Services using WireMock.
+- [ ] [Section 29](#) - Retrying Failed HTTP Calls.
+- [ ] [Section 30](#) - Server Sent Events (SSE).
+- [ ] [Section 31](#) - Bonus Section.
 
 <hr>
 

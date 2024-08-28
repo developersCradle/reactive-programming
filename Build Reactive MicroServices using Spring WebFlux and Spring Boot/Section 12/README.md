@@ -1,10 +1,10 @@
-# Section 12: Automated Tests using JUnit5 and @WebFluxTest
+# Section 12: Automated Tests using JUnit5 and @WebFluxTest.
 
 Automated Tests using JUnit5 and @WebFluxTest.
 
-# What I Learned
+# What I Learned.
 
-# 39. Introduction to Automated Tests
+# 39. Introduction to Automated Tests.
 
 <img src="automatedTest.PNG" alt="reactive programming" width="600"/>
 
@@ -24,7 +24,7 @@ Automated Tests using JUnit5 and @WebFluxTest.
     - Integration tests.
     - Unit tests.
 
-# 40. Testing Spring Webflux Endpoint using@WebFlux Test Annotation
+# 40. Testing Spring Webflux Endpoint using@WebFlux Test Annotation.
 
 - For simple **Controller** classes we don't need usually write integration test just good unit tests.
 
@@ -56,7 +56,7 @@ WebTestClient webTestClient;
     }
 ```
 
-# 41. Different Approaches of Testing an Endpoint
+# 41. Different Approaches of Testing an Endpoint.
 
 ```
 
@@ -123,7 +123,7 @@ WebTestClient webTestClient;
     }
 ```
 
-# 43. JUnit Test Streaming Endpoint - SSE
+# 43. JUnit Test Streaming Endpoint - SSE.
 
 - Test for streaming endpoint.
 
@@ -145,4 +145,4 @@ WebTestClient webTestClient;
                 .thenCancel()
         .verify();
     }
-```
+```q
