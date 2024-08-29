@@ -108,9 +108,9 @@ Insert certificate here when completed
 - [x] [Section 12](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2012#section-12-automated-tests-using-junit5-and-webfluxtest) - Automated Tests using JUnit5 and @WebFluxTest. ✅
 - [x] [Section 13](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2013#section-13-reactive-programming-in-mongo-db-for-the-movieinfo-service) - Reactive Programming in Mongo DB for the MovieInfo Service. ✅
 - [x] [Section 14](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2014#section-14-build-movieinfo-service-using-rest-controller-approach) - Build MovieInfo Service using Rest Controller Approach. ✅
-- [ ] [Section 15](#) - Unit Testing in Spring WebFlux.
-- [ ] [Section 16](#) - Bean Validation using Validators and ControllerAdvice.
-- [ ] [Section 17](#) - Using ResponseEntity with Reactive Types.
+- [x] [Section 15](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2015#section-15-unit-testing-in-spring-webflux) - Unit Testing in Spring WebFlux. ✅
+- [ ] [Section 16](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2015#section-15-unit-testing-in-spring-webflux) - Bean Validation using Validators and ControllerAdvice.
+- [ ] [Section 17](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2017#section-17-using-responseentity-with-reactive-types) - Using ResponseEntity with Reactive Types.
 - [ ] [Section 18](#) - Writing Custom Queries using ReactiveMongoRepository.
 - [ ] [Section 19](#) - Spring WebFlux Under the Hood - Netty and Threading Model.
 - [ ] [Section 20](#) - Introduction to Functional Web Module in Spring WebFlux.
