@@ -4,7 +4,7 @@ Set up the MoviesInfoService Service.
 
 # What I Learned
 
-# 35. Project SetUp
+# 35. Project SetUp.
 
 - We need to have MongoDB installed.
     - In [Windows](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/).

@@ -4,11 +4,10 @@
 
 # What I Learned
 
-# 3. Source Code
+# 3. Source Code.
 
 - [GitHub for this one](https://github.com/dilipsundarraj1/reactive-spring-webflux/tree/final)
 
-
-# 4. Course Slides
+# 4. Course Slides.
 
 - ✅

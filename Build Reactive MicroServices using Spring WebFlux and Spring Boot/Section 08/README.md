@@ -2,6 +2,6 @@
 
 # What I Learned
 
-# 13. Let's write our very first Flux
+# 13. Let's write our very first Flux.
 
 - This is has the same content as Course Reactive Programming in Modern Java using Project Reactor.

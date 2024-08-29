@@ -4,7 +4,7 @@ Getting Started with Project Reactor.
 
 # What I Learned
 
-# 10. Introduction to Project Reactor
+# 10. Introduction to Project Reactor.
 
 <img src="projectReactor.PNG" alt="reactive programming" width="700"/>
 
@@ -15,7 +15,7 @@ Getting Started with Project Reactor.
 
 -  Reactor Core is the main one, fundamentals.
 
-# 11. Reactor Reactive Types - Flux and Mono
+# 11. Reactor Reactive Types - Flux and Mono.
 
 <img src="FluxAndMono.PNG" alt="reactive programming" width="700"/>
 

@@ -4,7 +4,7 @@ Introduction to Spring WebFlux.
 
 # What I Learned
 
-# 9. Non-Blocking(Reactive) RestFul API using Spring WebFlux
+# 9. Non-Blocking(Reactive) RestFul API using Spring WebFlux.
 
 <img src="nonBlocking.PNG" alt="reactive programming" width="700"/>
 

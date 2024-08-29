@@ -4,7 +4,7 @@ Setting up the base project for this course.
 
 # What I Learned
 
-# 12. Project SetUp
+# 12. Project SetUp.
 
 - [GitHub Repos](https://github.com/dilipsundarraj1/reactive-spring-webflux).
 

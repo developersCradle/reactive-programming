@@ -4,7 +4,7 @@ Introduction to Reactive Programming.
 
 # What I Learned
 
-# 7. What is Reactive Programming ?
+# 7. What is Reactive Programming?
 
 <img src="whatIsReactiveProgramming.PNG" alt="reactive programming" width="700"/>
 

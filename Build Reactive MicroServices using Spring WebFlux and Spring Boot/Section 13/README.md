@@ -158,7 +158,7 @@ class MovieInfoRepositoryIntgTest {
 }
 ```
 
-# 48. Write Integration Test for findAll() MovieInfo Document
+# 48. Write Integration Test for findAll() MovieInfo Document.
 
 ```
 package com.reactivespring.repository;
@@ -227,7 +227,7 @@ class MovieInfoRepositoryIntgTest {
 
 - `.blockLast();` will these wait for these to happen before proceeding, because nature of asynchronous. This is only in **test** cases.
 
-# 49. Write Integration Test for findById() MovieInfo Document
+# 49. Write Integration Test for findById() MovieInfo Document.
 
 - Find by id integration test.
 
@@ -250,7 +250,7 @@ class MovieInfoRepositoryIntgTest {
     }
 ```
 
-# 50. Write Integration Test for saving the MovieInfo Document
+# 50. Write Integration Test for saving the MovieInfo Document.
 
 - Saving new document to repository.
 
@@ -277,7 +277,7 @@ class MovieInfoRepositoryIntgTest {
 
 ```
 
-# 51. Write Integration Test for updating the MovieInfo Document
+# 51. Write Integration Test for updating the MovieInfo Document.
 
 - Update year on Document.
 
@@ -304,8 +304,9 @@ class MovieInfoRepositoryIntgTest {
 
 ```
 
-# 52. Write Integration Test for deleting the MovieInfo Document
+# 52. Write Integration Test for deleting the MovieInfo Document.
 
+- Delete by id test.
 
 ```
 
