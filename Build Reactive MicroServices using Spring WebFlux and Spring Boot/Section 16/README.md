@@ -134,5 +134,5 @@ public class GlobalErrorHandler {
 
 # 65. Bean Validation for List Field using @NotBlank Annotation
 
-- List is having bean validator inside.
+- List is having **bean validator** inside.
 `private List<@NotBlank(message = "movieInfo.cast must be present") String> cast;`

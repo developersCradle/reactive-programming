@@ -111,8 +111,8 @@ Insert certificate here when completed
 - [x] [Section 15](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2015#section-15-unit-testing-in-spring-webflux) - Unit Testing in Spring WebFlux. ✅
 - [x] [Section 16](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2016#section-16-bean-validation-using-validators-and-controlleradvice) - Bean Validation using Validators and ControllerAdvice. ✅
 - [x] [Section 17](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2017#section-17-using-responseentity-with-reactive-types) - Using ResponseEntity with Reactive Types. ✅
-- [ ] [Section 18](#) - Writing Custom Queries using ReactiveMongoRepository.
-- [ ] [Section 19](#) - Spring WebFlux Under the Hood - Netty and Threading Model.
+- [x] [Section 18](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2018#section-18-writing-custom-queries-using-reactivemongorepository) - Writing Custom Queries using ReactiveMongoRepository. ✅
+- [x] [Section 19](#) - Spring WebFlux Under the Hood - Netty and Threading Model. ✅
 - [ ] [Section 20](#) - Introduction to Functional Web Module in Spring WebFlux.
 - [ ] [Section 21](#) - Build MoviesReview Service using  Functional Web.
 - [ ] [Section 22](#) - Unit Testing Functional Web.
@@ -132,6 +132,10 @@ Insert certificate here when completed
 
 - [x] Example which using Maven. [Link To GitHub](https://github.com/ferfujikawa/reactive-spring?tab=readme-ov-file). 
 - [ ] Do section 08 as refresher. Same content as in  **Reactive Programming in Modern Java using Project Reactor**.
+- [ ] Refresh again 71. How does Netty handle the Request?
+- [ ] Read Netty in Action.
+- [ ] Do chapters Functional Web 20-25.
+
 
 ## Mastering Java Reactive Programming [ From Scratch - 2024 ]
 
