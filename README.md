@@ -1,7 +1,7 @@
 
 > Inspired to learn **reactive programming** after challenge from **Nordea**.
 
-## Reactive Programming in Modern Java using Project Reactor
+## Reactive Programming in Modern Java using Project Reactor.
 
 ![Reactive programming](reactiveProgramming.PNG)
 
@@ -26,7 +26,7 @@ Insert certificate here when completed
 
 **Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
 
-## Progress/Curriculum
+## Progress/Curriculum.
 
 - [x] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2001#section-1-introduction) - Introduction. ✅
 - [x] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2002#section-2-course-slides--source-code) - Course Slides & Source Code. ✅
@@ -54,7 +54,7 @@ Insert certificate here when completed
 
 <hr>
 
-### Additional stuff
+### Additional stuff.
 
 - [ ] Get known to Asynchronous/Concurrency **Future**, **CompletableFuture** and Flow API.
 - [ ] Read thought Reactor 3 Reference Guide. [Link](https://projectreactor.io/docs/core/release/reference/).
@@ -64,8 +64,7 @@ Insert certificate here when completed
 - [ ] Explore with more concepts `26. Handling empty data using defaultIfEmpty and switchIfEmpty() Operators`.
 
 
-
-## Build Reactive MicroServices using Spring WebFlux/SpringBoot
+## Build Reactive MicroServices using Spring WebFlux/SpringBoot.
 
 ![Spring WebFlux](springWebFlux.PNG)
 
@@ -112,16 +111,16 @@ Insert certificate here when completed
 - [x] [Section 16](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2016#section-16-bean-validation-using-validators-and-controlleradvice) - Bean Validation using Validators and ControllerAdvice. ✅
 - [x] [Section 17](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2017#section-17-using-responseentity-with-reactive-types) - Using ResponseEntity with Reactive Types. ✅
 - [x] [Section 18](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2018#section-18-writing-custom-queries-using-reactivemongorepository) - Writing Custom Queries using ReactiveMongoRepository. ✅
-- [x] [Section 19](#) - Spring WebFlux Under the Hood - Netty and Threading Model. ✅
+- [x] [Section 19](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2019#section-19-spring-webflux-under-the-hood---netty-and-threading-model) - Spring WebFlux Under the Hood - Netty and Threading Model. ✅
 - [ ] [Section 20](#) - Introduction to Functional Web Module in Spring WebFlux.
 - [ ] [Section 21](#) - Build MoviesReview Service using  Functional Web.
 - [ ] [Section 22](#) - Unit Testing Functional Web.
 - [ ] [Section 23](#) - Bean Validations using Functional Web.
 - [ ] [Section 24](#) - Custom Global ErrorHandler in Functional Web.
 - [ ] [Section 25](#) - Handling ResourceNotFound in Functional Web.
-- [ ] [Section 26](#) - MoviesService - Rest Service connects the MovieInfo and MovieReview Service.
-- [ ] [Section 27](#) - Handling Network Exceptions in WebClient.
-- [ ] [Section 28](#) - Integration Testing External Services using WireMock.
+- [x] [Section 26](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2019#section-19-spring-webflux-under-the-hood---netty-and-threading-model) - MoviesService - Rest Service connects the MovieInfo and MovieReview Service. ✅
+- [ ] [Section 27](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2027#section-27-handling-network-exceptions-in-webclient) - Handling Network Exceptions in WebClient.
+- [ ] [Section 28](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2028#section-28-integration-testing-external-services-using-wiremock) - Integration Testing External Services using WireMock.
 - [ ] [Section 29](#) - Retrying Failed HTTP Calls.
 - [ ] [Section 30](#) - Server Sent Events (SSE).
 - [ ] [Section 31](#) - Bonus Section.
@@ -132,8 +131,8 @@ Insert certificate here when completed
 
 - [x] Example which using Maven. [Link To GitHub](https://github.com/ferfujikawa/reactive-spring?tab=readme-ov-file). 
 - [ ] Do section 08 as refresher. Same content as in  **Reactive Programming in Modern Java using Project Reactor**.
-- [ ] Refresh again 71. How does Netty handle the Request?
-- [ ] Read Netty in Action.
+- [ ] Refresh again `71. How does Netty handle the Request?`.
+- [ ] Read `Netty in Action` book.
 - [ ] Do chapters Functional Web 20-25.
 
 
@@ -162,7 +161,7 @@ Insert certificate here when completed
 
 **Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
 
-## Progress/Curriculum new
+## Progress/Curriculum new.
 
 - [ ] [Section 01](#) -
 - [ ] [Section 02](#) -
@@ -180,11 +179,10 @@ Insert certificate here when completed
 - [ ] [Section 14](#) -
 - [ ] [Section 15](#) -
 
-
-<hr>
-
-### Additional stuff
+### Additional stuff.
 
 - [ ]
 
+<hr>
 
+- Todo put here reactive course from Angular.
