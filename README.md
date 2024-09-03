@@ -119,8 +119,8 @@ Insert certificate here when completed
 - [ ] [Section 24](#) - Custom Global ErrorHandler in Functional Web.
 - [ ] [Section 25](#) - Handling ResourceNotFound in Functional Web.
 - [x] [Section 26](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2019#section-19-spring-webflux-under-the-hood---netty-and-threading-model) - MoviesService - Rest Service connects the MovieInfo and MovieReview Service. ✅
-- [ ] [Section 27](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2027#section-27-handling-network-exceptions-in-webclient) - Handling Network Exceptions in WebClient.
-- [ ] [Section 28](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2028#section-28-integration-testing-external-services-using-wiremock) - Integration Testing External Services using WireMock.
+- [x] [Section 27](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2027#section-27-handling-network-exceptions-in-webclient) - Handling Network Exceptions in WebClient. ✅
+- [x] [Section 28](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2028#section-28-integration-testing-external-services-using-wiremock) - Integration Testing External Services using WireMock. ✅
 - [ ] [Section 29](#) - Retrying Failed HTTP Calls.
 - [ ] [Section 30](#) - Server Sent Events (SSE).
 - [ ] [Section 31](#) - Bonus Section.
@@ -131,6 +131,7 @@ Insert certificate here when completed
 
 - [x] Example which using Maven. [Link To GitHub](https://github.com/ferfujikawa/reactive-spring?tab=readme-ov-file). 
 - [ ] Do section 08 as refresher. Same content as in  **Reactive Programming in Modern Java using Project Reactor**.
+- [ ] Go trough full course. [WireMock Full Course](https://www.udemy.com/course/wiremock-for-java-developers/).
 - [ ] Refresh again `71. How does Netty handle the Request?`.
 - [ ] Read `Netty in Action` book.
 - [ ] Do chapters Functional Web 20-25.
