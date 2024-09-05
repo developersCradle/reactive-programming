@@ -121,7 +121,7 @@ Insert certificate here when completed
 - [x] [Section 26](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2019#section-19-spring-webflux-under-the-hood---netty-and-threading-model) - MoviesService - Rest Service connects the MovieInfo and MovieReview Service. ✅
 - [x] [Section 27](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2027#section-27-handling-network-exceptions-in-webclient) - Handling Network Exceptions in WebClient. ✅
 - [x] [Section 28](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2028#section-28-integration-testing-external-services-using-wiremock) - Integration Testing External Services using WireMock. ✅
-- [ ] [Section 29](#) - Retrying Failed HTTP Calls.
+- [x] [Section 29](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2029#section-29-retrying-failed-http-calls) - Retrying Failed HTTP Calls. ✅
 - [ ] [Section 30](#) - Server Sent Events (SSE).
 - [ ] [Section 31](#) - Bonus Section.
 
