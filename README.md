@@ -42,15 +42,15 @@ Insert certificate here when completed
 - [x] [Section 12](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2012#section-12-exceptionerror-handling-in-flux-and-mono) - Exception/Error Handling in Flux and Mono. ✅
 - [x] [Section 13](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2013#section-13-implement-exception-handling-in-movies-reactive-service) - Implement Exception Handling in Movies Reactive Service. ✅
 - [x] [Section 14](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2014#section-14-retry-repeat-using-retry-retrywhen-repeat) - Retry, Repeat using retry(), retryWhen(), repeat(). ✅
-- [x] [Section 15](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2015#section-15-reactors-execution-model---schedulers-threads-and-threadpool) - Reactors Execution Model - Schedulers, Threads and Threadpool.
-- [x] [Section 16](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2016#section-16-making-blocking-calls-in-moviereactiveservice) - Making Blocking Calls in MovieReactiveService.
-- [x] [Section 17](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2017#section-17-backpressure) - BackPressure.
-- [x] [Section 18](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2018#section-18-explore-data-parallelism-in-project-reactor) - Explore Data Parallelism in Project Reactor.
-- [x] [Section 19](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2019#section-19-cold--hot-streams) - Cold & Hot Streams.
-- [x] [Section 20](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2020#section-20-testing-using-virtualtimescheduler) - Testing using VirtualTimeScheduler.
-- [x] [Section 21](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2021#section-21-build-nonblocking-restclient-using-webclient) - Build NonBlocking RestClient using WebClient.
-- [x] [Section 22](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2022#section-22-programmatically-creating-a-fluxmono) - Programmatically Creating a Flux/Mono.
-- [x] [Section 23](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2023#section-23-debugging-in-project-reactor) - Debugging in Project Reactor.
+- [ ] [Section 15](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2015#section-15-reactors-execution-model---schedulers-threads-and-threadpool) - Reactors Execution Model - Schedulers, Threads and Threadpool.
+- [ ] [Section 16](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2016#section-16-making-blocking-calls-in-moviereactiveservice) - Making Blocking Calls in MovieReactiveService.
+- [ ] [Section 17](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2017#section-17-backpressure) - BackPressure.
+- [ ] [Section 18](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2018#section-18-explore-data-parallelism-in-project-reactor) - Explore Data Parallelism in Project Reactor.
+- [ ] [Section 19](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2019#section-19-cold--hot-streams) - Cold & Hot Streams.
+- [ ] [Section 20](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2020#section-20-testing-using-virtualtimescheduler) - Testing using VirtualTimeScheduler.
+- [ ] [Section 21](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2021#section-21-build-nonblocking-restclient-using-webclient) - Build NonBlocking RestClient using WebClient.
+- [ ] [Section 22](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2022#section-22-programmatically-creating-a-fluxmono) - Programmatically Creating a Flux/Mono.
+- [ ] [Section 23](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2023#section-23-debugging-in-project-reactor) - Debugging in Project Reactor.
 
 <hr>
 
@@ -62,7 +62,6 @@ Insert certificate here when completed
 - [ ] Make some concept to drive in `flatMapMany()` concept.
 - [ ] Explore with more concepts `25. Transform using the transform() Operator`.
 - [ ] Explore with more concepts `26. Handling empty data using defaultIfEmpty and switchIfEmpty() Operators`.
-
 
 ## Build Reactive MicroServices using Spring WebFlux/SpringBoot.
 
@@ -87,7 +86,8 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 ?trk=public_profile_see-credential 
 -->
 
-Insert certificate here when completed
+<img id="Build Reactive MicroServices using Spring WebFluxSpringBoot certificate?trk=public_profile_see-credential" src="Build Reactive MicroServices using Spring WebFluxSpringBoot certificate.jpg" alt="alt text" width="600"/>
+
 
 **Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
 
@@ -112,12 +112,12 @@ Insert certificate here when completed
 - [x] [Section 17](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2017#section-17-using-responseentity-with-reactive-types) - Using ResponseEntity with Reactive Types. ✅
 - [x] [Section 18](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2018#section-18-writing-custom-queries-using-reactivemongorepository) - Writing Custom Queries using ReactiveMongoRepository. ✅
 - [x] [Section 19](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2019#section-19-spring-webflux-under-the-hood---netty-and-threading-model) - Spring WebFlux Under the Hood - Netty and Threading Model. ✅
-- [ ] [Section 20](#) - Introduction to Functional Web Module in Spring WebFlux.
-- [ ] [Section 21](#) - Build MoviesReview Service using  Functional Web.
-- [ ] [Section 22](#) - Unit Testing Functional Web.
-- [ ] [Section 23](#) - Bean Validations using Functional Web.
-- [ ] [Section 24](#) - Custom Global ErrorHandler in Functional Web.
-- [ ] [Section 25](#) - Handling ResourceNotFound in Functional Web.
+- [x] [Section 20](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2020#section-20-introduction-to-functional-web-module-in-spring-webflux) - Introduction to Functional Web Module in Spring WebFlux.
+- [x] [Section 21](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2021#section-21-build-moviesreview-service-using-functional-web) - Build MoviesReview Service using  Functional Web.
+- [x] [Section 22](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2022#section-22-unit-testing-functional-web) - Unit Testing Functional Web.
+- [x] [Section 23](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2023#section-23-bean-validations-using-functional-web) - Bean Validations using Functional Web.
+- [x] [Section 24](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2024#section-24-custom-global-errorhandler-in-functional-web) - Custom Global ErrorHandler in Functional Web.
+- [x] [Section 25](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2025#section-25-handling-resourcenotfound-in-functionalweb) - Handling ResourceNotFound in Functional Web.
 - [x] [Section 26](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2019#section-19-spring-webflux-under-the-hood---netty-and-threading-model) - MoviesService - Rest Service connects the MovieInfo and MovieReview Service. ✅
 - [x] [Section 27](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2027#section-27-handling-network-exceptions-in-webclient) - Handling Network Exceptions in WebClient. ✅
 - [x] [Section 28](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2028#section-28-integration-testing-external-services-using-wiremock) - Integration Testing External Services using WireMock. ✅

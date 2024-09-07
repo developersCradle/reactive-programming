@@ -4,7 +4,7 @@ Section 15: Unit Testing in Spring WebFlux.
 
 # What I Learned
 
-# 59. Setting up the UnitTest in WebFlux
+# 59. Setting up the UnitTest in WebFlux.
 
 <img src="unitTests.PNG " alt="reactive programming" width="600"/>
 
@@ -17,6 +17,7 @@ Section 15: Unit Testing in Spring WebFlux.
 - When using Mockito we would use something following.
 
 ``` 
+
     @Mock
     ReviewService reviewService;
 
@@ -248,11 +249,11 @@ Questions for this assignment
 
  ```
 
-  # 62. Unit Test for the update MovieInfo Endpoint - PUT
+# 62. Unit Test for the update MovieInfo Endpoint - PUT
 
- - Mock and test for this method.
+- Mock and test for this method.
 
-  ```
+```
   
     @Test
     void updateMovieInfo() {
@@ -287,9 +288,9 @@ Questions for this assignment
         //then
     }
 
-  ```
+```
 
-  # Assignment 3: Assignment : Unit Test for Delete Movie Info
+# Assignment 3: Assignment : Unit Test for Delete Movie Info
 
 ```
 Use the same pattern as the other Unit tests and mock the deleteMovieInfo method call in the MoviesInfoService
@@ -299,6 +300,7 @@ Questions for this assignment
 ```
 
 ```
+
     @Test
     void deleteMovieInfo() {
 
