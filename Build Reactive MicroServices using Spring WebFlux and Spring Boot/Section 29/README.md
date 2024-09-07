@@ -6,7 +6,6 @@ Retrying Failed HTTP Calls
 
 # 105. Why Retry failed HTTP calls?
 
-
 <img src="handlingNetworkErrors.PNG" alt="reactive programming" width="700"/>
 
 1. We need to make these ones resilient  and handle these failures.
