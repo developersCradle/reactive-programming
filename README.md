@@ -118,7 +118,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [x] [Section 23](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2023#section-23-bean-validations-using-functional-web) - Bean Validations using Functional Web.
 - [x] [Section 24](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2024#section-24-custom-global-errorhandler-in-functional-web) - Custom Global ErrorHandler in Functional Web.
 - [x] [Section 25](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2025#section-25-handling-resourcenotfound-in-functionalweb) - Handling ResourceNotFound in Functional Web.
-- [x] [Section 26](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2019#section-19-spring-webflux-under-the-hood---netty-and-threading-model) - MoviesService - Rest Service connects the MovieInfo and MovieReview Service. ✅
+- [x] [Section 26](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2026#chapter-26-moviesservice---rest-service-connects-the-movieinfo-and-moviereview-service) - MoviesService - Rest Service connects the MovieInfo and MovieReview Service. ✅
 - [x] [Section 27](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2027#section-27-handling-network-exceptions-in-webclient) - Handling Network Exceptions in WebClient. ✅
 - [x] [Section 28](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2028#section-28-integration-testing-external-services-using-wiremock) - Integration Testing External Services using WireMock. ✅
 - [x] [Section 29](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2029#section-29-retrying-failed-http-calls) - Retrying Failed HTTP Calls. ✅
@@ -172,7 +172,7 @@ Insert certificate here when completed
 - [ ] [Section 06](#) -
 - [ ] [Section 07](#) -
 - [ ] [Section 08](#) -
-- [ ] [Section 09](#) -
+- [ ] [Section 09](#) - Combining Publishers.
 - [ ] [Section 10](#) -
 - [ ] [Section 11](#) -
 - [ ] [Section 12](#) -
@@ -183,6 +183,55 @@ Insert certificate here when completed
 ### Additional stuff.
 
 - [ ]
+
+
+## Spring WebFlux Masterclass: Reactive Microservices.
+
+![Spring WebFlux Masterclass: Reactive Microservices](SpringWebFluxMasterclass.PNG)
+
+All course material from Spring WebFlux Masterclass: Reactive Microservices [ From Scratch - 2024 ] by **Vinoth Selvaraj**.
+
+Contains my own notes with some course material to enforce learning experience.
+
+If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
+
+This repository is made with **Eclipse**, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
+
+[The course at Udemy](https://www.udemy.com/course/spring-webflux/). 
+
+[Website of maker](https://www.vinsguru.com/).
+
+<!-- 
+Linkedin puts this shit front, when clicking from private mode x(. Need to put this to make jump working every case
+?trk=public_profile_see-credential 
+-->
+
+Insert certificate here when completed
+
+**Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
+
+## Progress/Curriculum new.
+
+- [ ] [Section 01](#) -
+- [ ] [Section 02](#) -
+- [ ] [Section 03](#) -
+- [ ] [Section 04](#) -
+- [ ] [Section 05](#) -
+- [ ] [Section 06](#) -
+- [ ] [Section 07](#) -
+- [ ] [Section 08](#) -
+- [ ] [Section 09](#) - 
+- [ ] [Section 10](#) -
+- [ ] [Section 11](#) -
+- [ ] [Section 12](#) -
+- [ ] [Section 13](#) -
+- [ ] [Section 14](#) -
+- [ ] [Section 15](#) -
+
+### Additional stuff.
+
+- [ ]
+
 
 <hr>
 
