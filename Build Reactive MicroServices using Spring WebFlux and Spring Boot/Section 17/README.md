@@ -6,11 +6,17 @@ Using ResponseEntity with Reactive Types.
 
 # 66. Need for ResponseEntity in Spring WebFlux.
 
-- We can have **two** approaches to answers **Status Entity**.
+- We can have **two** approaches to return the answer **Status Entity**.
     - We write ResponseEntity into return call, like such `return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);`.
-    - With annotations `@ResponseStatus(HttpStatus.CREATED)`, top of controller methods.
+    - Or with annotations `@ResponseStatus(HttpStatus.CREATED)`, top of controller methods.
 
-- [ResponseEntity](https://docs.spring.io/spring-framework/reference/web/webflux/controller/ann-methods/responseentity.html).
+- [ResponseEntity documentation](https://docs.spring.io/spring-framework/reference/web/webflux/controller/ann-methods/responseentity.html).
+
+- There is multiple ways how to include **Status Entity** with **Reactor** stack.
+1. `ResponseEntity<Mono<T>> or ResponseEntity<Flux<T>>` way. Check documentation!
+    - **Status code** will be **known**, while content of error is still being processed!
+2. `Mono<ResponseEntity<T>>` way. Check documentation!
+3. `Mono<ResponseEntity<Mono<T>>> or Mono<ResponseEntity<Flux<T>>>`  way. Check documentation!
 
 - We can use **Mono** and **Flux** with response entity.
 

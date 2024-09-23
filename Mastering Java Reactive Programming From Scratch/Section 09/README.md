@@ -15,8 +15,7 @@ Combining Publishers.
     - For one front end request.
         - There is usually multiple smaller request in backend.
             - These minor request can have specific order and shape of data.
-
-
+            
 - Some popular options for transforming data.
 
 <img src="options.PNG" alt="reactive programming" width="400"/>

@@ -6,6 +6,10 @@ Integration Testing External Services using WireMock.
 
 # 100. Introduction to WireMock.
 
+<img src="wireMockBefore.PNG" alt="reactive programming" width="700"/>
+
+1. These needs to be mocked, when we want to integrate test **MoviesService**.
+
 <img src="wireMock.PNG" alt="reactive programming" width="700"/>
 
 1. We can mock these ones with **WireMock**.
@@ -13,8 +17,9 @@ Integration Testing External Services using WireMock.
 
 <img src="benefitOfWireMock.PNG" alt="reactive programming" width="700"/>
 
-- We can easy to test network exception and more.   
+- We can easy to test network exceptions and more.   
     - Previously we needed to bring our service to down to test this microservice.
+    - This can be impossible if we are testing against **external API:s**.
 
 - **WireMock** is a tool used for **mocking HTTP services**.
     - In contrast, **SpringBootTest** will  load full context fo the application.
@@ -28,7 +33,7 @@ Integration Testing External Services using WireMock.
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-contract-stub-runner</artifactId>
 			<scope>test</scope>
-		</dependency>
+</dependency>
 
 ```
 
@@ -231,6 +236,8 @@ public class MoviesControllerIntgTest {
 
 # 102. Stubs for MoviesInfoService and ReviewService.
 
+- in **WireMock** `stubFor()` is for HTTP call.
+
 - Returning `.json` from stubbed API call.
 
 ```
@@ -245,7 +252,7 @@ public class MoviesControllerIntgTest {
                 .withBodyFile("reviews.json")));
 ```
 
-- `json` file from resources folder.
+- `.json` file from resources folder. This folder in **WireMock** is commonly called `__files`, my case it was `resources/__files`.
 
 # movieinfo.json
 

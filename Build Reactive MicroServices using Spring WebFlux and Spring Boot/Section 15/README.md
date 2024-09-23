@@ -12,10 +12,13 @@ Section 15: Unit Testing in Spring WebFlux.
 
 <img src="benifitsOfUnitTests.PNG " alt="reactive programming" width="600"/>
 
-- Unit test are good for **Bean validation**.
+- Unit tests.
+    - Are handy for **Bean validation**.
+    - Faster than Integration Tests.
+    - Necessary for any serious application.
 
-- When using Mockito we would use something following.
-
+- When using **Mockito** we would use something following.
+    - `@Mock` and `@InjectMocks`.
 ``` 
 
     @Mock
@@ -26,7 +29,8 @@ Section 15: Unit Testing in Spring WebFlux.
 
 ```
 
-- In **Spring** context we would mock **Bean** out using `@MockBean`.
+- In **Spring**, `@MockBean` loads into Spring context. Use this if need Spring context!  
+    - `@MockBean` **ís not** `@Mock.`
 
 ```
 

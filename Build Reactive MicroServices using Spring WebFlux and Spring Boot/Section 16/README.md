@@ -6,7 +6,7 @@ Bean Validation using Validators and ControllerAdvice.
 
 # 63. Bean Validation for Name,Year with @NotBlank and @Positive Annotation Validators.
 
-- For Spring bean validation we need following POM.
+- For Spring bean validation we need following POM. **spring-boot-starter-validation**.
 
 ```
 <dependency>

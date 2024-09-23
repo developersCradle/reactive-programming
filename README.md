@@ -164,7 +164,7 @@ Insert certificate here when completed
 
 ## Progress/Curriculum new.
 
-- [ ] [Section 01](#) -
+- [ ] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2001#section-01-introduction) - Introduction.
 - [ ] [Section 02](#) -
 - [ ] [Section 03](#) -
 - [ ] [Section 04](#) -
@@ -172,7 +172,7 @@ Insert certificate here when completed
 - [ ] [Section 06](#) -
 - [ ] [Section 07](#) -
 - [ ] [Section 08](#) -
-- [ ] [Section 09](#) - Combining Publishers.
+- [ ] [Section 09](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#section-09-combining-publishers) - Combining Publishers.
 - [ ] [Section 10](#) -
 - [ ] [Section 11](#) -
 - [ ] [Section 12](#) -
@@ -216,7 +216,7 @@ Insert certificate here when completed
 - [ ] [Section 02](#) -
 - [ ] [Section 03](#) -
 - [ ] [Section 04](#) -
-- [ ] [Section 05](#) -
+- [ ] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Masterclass%20Reactive%20Microservices/Section%2005#section-05-reactive-crud-apis) - Reactive CRUD APIs.
 - [ ] [Section 06](#) -
 - [ ] [Section 07](#) -
 - [ ] [Section 08](#) -
