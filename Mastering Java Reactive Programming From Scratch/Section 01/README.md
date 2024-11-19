@@ -4,6 +4,50 @@ Introduction.
 
 # What i learned.
 
+
+# 1. Before You Enroll...
+
+- This is having lot of hands on.
+
+<img src="targeAudiance.JPG" alt="reactive programming" width="700"/>
+
+- This is for you, if you are working on **Microservices**.
+
+- This will be Slow-paced Course.
+
+<img src="OOPpillars.JPG" alt="reactive programming" width="700"/>
+
+1.  Mastering **reactive programming** comes mastering these concepts.
+    - These **cannot** be solved by traditional programming.
+
+# 2. [THEORY] - Process / Thread / CPU / RAM / Scheduler.
+
+<img src="process.JPG" alt="reactive programming" width="700"/>
+
+1. Instance of program is loaded into **memory**. This is executed in **CPU**. Process is **heavy weight**.
+
+<img src="process2.JPG" alt="reactive programming" width="700"/>
+
+<img src="thread.JPG" alt="reactive programming" width="700"/>
+
+- **Threads** whit in process **share** the memory space.
+
+<img src="scheduler.JPG" alt="reactive programming" width="700"/>
+
+1. Your OS has scheduler, it will assigns time for threads to process inside **CPU**.
+
+<img src="switch.JPG" alt="reactive programming" width="700"/>
+
+1. **Scheduler** keeps **switching** threads for process times. We call this **context switch**.
+
+- Old thread **state** will be stored.
+
+2. We call these **threads** OS threads or kernel threads.
+
+<img src="javaThread.JPG" alt="reactive programming" width="700"/>
+
+- **Java Thread** is just wrapped to **OS Thread**.
+
 # 6. [THEORY] - Reactive Streams Specification.
 
 <img src="observerPattern.PNG" alt="reactive programming" width="700"/>

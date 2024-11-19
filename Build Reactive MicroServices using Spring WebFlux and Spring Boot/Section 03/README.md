@@ -34,7 +34,7 @@ Why Reactive Programming ?
 
 <img src="redusingLatencyOfTheApp.PNG" alt="reactive programming" width="700"/>
 
-1. We can also reduce latency of the app, by improving indie our app.
+1. We can also reduce latency of the app, by improving communication inside our app.
 
 # 6. Why Reactive Programming - Part 2?
 

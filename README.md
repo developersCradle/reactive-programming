@@ -91,7 +91,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 **Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
 
-## Progress/Curriculum
+## Progress/Curriculum.
 
 - [x] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2001#section-1-getting-started-with-the-course) - Getting Started with the Course. ✅ 
 - [x] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2002#section-2-source-code-and-course-slides-for-this-course) - Source Code and Course Slides for this Course. ✅
@@ -127,7 +127,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 <hr>
 
-### Additional stuff
+### Additional stuff.
 
 - [x] Example which using Maven. [Link To GitHub](https://github.com/ferfujikawa/reactive-spring?tab=readme-ov-file). 
 - [ ] Do section 08 as refresher. Same content as in  **Reactive Programming in Modern Java using Project Reactor**.
@@ -137,7 +137,11 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] Do chapters Functional Web 20-25.
 
 
-## Mastering Java Reactive Programming [ From Scratch - 2024 ]
+# Reactive course series by Vinoth Selvaraj.
+
+<img src="reactiveSeries.JPG" alt="reactive programming" width="700"/>
+
+## 1. Mastering Java Reactive Programming [ From Scratch - 2024 ].
 
 ![Mastering Java Reactive](masteringReactiveProgramming.PNG)
 
@@ -147,7 +151,7 @@ Contains my own notes with some course material to enforce learning experience.
 
 If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
 
-This repository is made with **Eclipse**, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
+This repository is made with **Eclipse**, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️.
 
 [The course at Udemy](https://www.udemy.com/course/complete-java-reactive-programming/). 
 
@@ -185,7 +189,7 @@ Insert certificate here when completed
 - [ ]
 
 
-## Spring WebFlux Masterclass: Reactive Microservices.
+## 2. Spring WebFlux Masterclass: Reactive Microservices.
 
 ![Spring WebFlux Masterclass: Reactive Microservices](SpringWebFluxMasterclass.PNG)
 
@@ -195,7 +199,7 @@ Contains my own notes with some course material to enforce learning experience.
 
 If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
 
-This repository is made with **Eclipse**, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
+This repository is made with **Eclipse**, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️.
 
 [The course at Udemy](https://www.udemy.com/course/spring-webflux/). 
 
@@ -217,7 +221,7 @@ Insert certificate here when completed
 - [ ] [Section 03](#) -
 - [ ] [Section 04](#) -
 - [ ] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Masterclass%20Reactive%20Microservices/Section%2005#section-05-reactive-crud-apis) - Reactive CRUD APIs.
-- [ ] [Section 06](#) -
+- [ ] [Section 06](#) - Input Validation / Error Handling.
 - [ ] [Section 07](#) -
 - [ ] [Section 08](#) -
 - [ ] [Section 09](#) - 
