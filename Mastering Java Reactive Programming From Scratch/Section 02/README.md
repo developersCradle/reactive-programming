@@ -1,1 +1,7 @@
-# Section 12: 
+# Section 02: Mono.
+
+Mono.
+
+# What i learned.
+
+

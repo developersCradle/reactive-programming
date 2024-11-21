@@ -168,8 +168,8 @@ Insert certificate here when completed
 
 ## Progress/Curriculum new.
 
-- [ ] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2001#section-01-introduction) - Introduction.
-- [ ] [Section 02](#) -
+- [ ] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2001#section-01-introduction) - Introduction. ✅
+- [ ] [Section 02](#) - Mono.
 - [ ] [Section 03](#) -
 - [ ] [Section 04](#) -
 - [ ] [Section 05](#) -

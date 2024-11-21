@@ -48,6 +48,72 @@ Introduction.
 
 - **Java Thread** is just wrapped to **OS Thread**.
 
+<img src="applicationCode.JPG" alt="reactive programming" width="700"/>
+
+1. `2.` These needs to be stored in **Stack Memory**.
+
+<img src="heapVsStack.JPG" alt="reactive programming" width="700"/>
+
+1. **Heap** stores what objects what we dynamically crate. **ArrayList**, **Method References** etc... .
+2. Local variables etc. Every Thread is having own **Stack memory**.
+3. **Java** will assign different memory size for thread in different context.
+
+<img src="problemStatement.JPG" alt="reactive programming" width="700"/>
+
+# 3. [THEORY] - IO Models.
+ 
+ - Different types of **Inbound** in **Outbound**.
+
+ <img src="inboundOutbound.JPG" alt="reactive programming" width="700"/>
+
+<img src="io.JPG" alt="reactive programming" width="700"/>
+
+1. This was the old way.
+2. **Reactive Programming** is model to **simplify** thus non-blocking communication.
+3. I will **call** **company**, they will tell "give your number and we will call u back".
+    - I give my friends number, so **I** and **my friend** **non-block** or **free to do other tasks**.
+        - **My friend** would get a call when **company** would be 
+        free.
+
+# 4. [THEORY] - Communication Patterns.
+
+- Do i need to use **Reactive Programming**.
+
+<img src="CommunicationPattern.JPG" alt="reactive programming" width="700"/>
+
+1. For **One** and **One** Response. If this is siple case, no need to get with complicated with **reactive programming**.
+
+<img src="CommunicationPatternWithReactiveJPG.JPG" alt="reactive programming" width="700"/>
+
+- We can achieve additional 4 different patterns with **Reactive Programming**.
+
+1. We send request for making pizza. 
+    - We get **stream** like answers, pizza is in making.
+    - Pizza is being delivered.
+- We send **one** request and getting.
+
+2. Messages are sent as stream to remote server.
+
+<img src="observerPattern.PNG" alt="reactive programming" width="700"/>
+
+<img src="reactiveProgramming.JPG" alt="reactive programming" width="700"/>
+
+1. **reactive programming** 
+
+# 5. [THEORY] - What Is Reactive Programming?
+
+<img src="reactiveStream.JPG" alt="reactive programming" width="700"/>
+ 
+ - Back pressure is important also.
+
+<img src="reactiveStream1.JPG" alt="reactive programming" width="700"/>
+
+<img src="reactiveStream2.JPG" alt="reactive programming" width="700"/>
+
+<img src="reactiveProgramming.JPG" alt="reactive programming" width="700"/>
+
+1. **Reactive Programming** is for **IO** calls.
+
 # 6. [THEORY] - Reactive Streams Specification.
 
 <img src="observerPattern.PNG" alt="reactive programming" width="700"/>
@@ -96,3 +162,54 @@ Introduction.
 <img src="goodCommunity.PNG" alt="reactive programming" width="700"/>
 
 1. Reactor specification is having multiple implementations.
+
+# 7. [THEORY] - Publisher/Subscriber Communication - Step By Step.
+
+# This concept is very important!
+
+<img src="publisherAndSubscriber.JPG" alt="reactive programming" width="700"/>
+
+1. There is **two** instances!  ***Subscriber** wants updates from **Publisher**. 
+
+<img src="publisherAndSubscriber2.JPG" alt="reactive programming" width="700"/>
+
+1. When **publisher** accepts the **Subscriber** object, it handles the **publisher** object to the **Subscriber**.
+
+<img src="publisherAndSubscriber3.JPG" alt="reactive programming" width="700"/>
+
+1. **Subscriber** talks to the **Publisher** via **Subscription object**.
+
+<img src="publisherAndSubscriber4.JPG" alt="reactive programming" width="700"/>
+
+1. Using **Subscription** object **Subscriber** gets items one by one to the **Subscriber**.
+    - It will give only the **request amount** or less.
+
+<img src="publisherAndSubscriber5.JPG" alt="reactive programming" width="700"/>
+
+- **Publisher** has no items to send, it will invoke `onComplete()`.
+
+<img src="publisherAndSubscriber6.JPG" alt="reactive programming" width="700"/>
+
+- If **Publisher**, is having error returning items to **Subscriber**.
+
+<img src="summary.JPG" alt="reactive programming" width="700"/>
+
+<img src="terminologia.JPG" alt="reactive programming" width="700"/>
+
+<img src="pubSub.JPG" alt="reactive programming" width="700"/>
+
+1. We model this using **classes**.
+
+# 8. Summary
+
+<img src="summary2.JPG" alt="reactive programming" width="700"/>
+
+1. If we use **non-blocking** communication, we just need **one Thread**.
+
+<img src="summary3.JPG" alt="reactive programming" width="700"/>
+
+1. **Reactive Programming** is having more communication pattern.
+
+<img src="summary4.JPG" alt="reactive programming" width="700"/>
+
+
