@@ -24,8 +24,8 @@ Combining Publishers.
 
 <img src="FlatMapOperation.PNG" alt="reactive programming" width="400"/>
 
-1. These operations will not work, if there is multiple sources of calls.
+1. These operations will **not** work, if there are multiple sources of calls.
 
 <img src="dependentSequantialCall.PNG" alt="reactive programming" width="400"/>
 
-- Todo jöin 2:00
+1. We want user **ID**, do we need to wait previous one finish to call the next microservice call?

@@ -41,7 +41,7 @@ Transforming Flux and Mono.
 
 <img src="whyTransformData.PNG" alt="reactive programming" width="700"/>
 
-1. Sometimes we wan't transform data to another form.
+1. Sometimes we want to transform data to another form.
 
 # 18. Reactive Streams are Immutable
 
@@ -229,7 +229,9 @@ void namesMono_map_filter() {
     
 ```
 
-- Flattens the Flux as individual elements.
+- While `.flatMap` Flattens the Flux as individual elements inside **one** stream.
+
+`.flatMap` is responsible for flattening the resulting streams of characters (from each name) into one unified stream.
 
 ```
 

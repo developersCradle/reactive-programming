@@ -58,7 +58,6 @@ Insert certificate here when completed
 
 - [ ] Get known to Asynchronous/Concurrency **Future**, **CompletableFuture** and Flow API.
 - [ ] Read thought Reactor 3 Reference Guide. [Link](https://projectreactor.io/docs/core/release/reference/).
-- [ ] Make some more test cases about `21. Asynchronous Operations using flatMap() Operator`.
 - [ ] Make some concept to drive in `flatMapMany()` concept.
 - [ ] Explore with more concepts `25. Transform using the transform() Operator`.
 - [ ] Explore with more concepts `26. Handling empty data using defaultIfEmpty and switchIfEmpty() Operators`.

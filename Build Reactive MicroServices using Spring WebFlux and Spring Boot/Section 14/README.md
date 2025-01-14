@@ -8,7 +8,7 @@ Build MovieInfo Service using Rest Controller Approach.
 # 53. Build a POST endpoint to create a new MovieInfo.
 
 - We can use `@ResponseStatus(HttpStatus.CREATED)` for more robust way of returning HTTP codes.
-    - It is also uses **declarative** way.
+    - It also can be used **declarative** way.
     - Just be **Consistent** about the styles, which every u choose.
 
 ### Controller.
