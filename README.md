@@ -3,10 +3,7 @@
     <img id="nordea" src="reactive.gif" width=600>
 </p>
 
-> [!NOTE]
-> Inspired to learn **reactive programming** after challenge from **Nordea**.
-
-## Reactive Programming in Modern Java using Project Reactor.
+# Reactive Programming in Modern Java using Project Reactor.
 
 ![Reactive programming](reactiveProgramming.PNG)
 
@@ -67,7 +64,7 @@ Insert certificate here when completed
 - [ ] Explore with more concepts `25. Transform using the transform() Operator`.
 - [ ] Explore with more concepts `26. Handling empty data using defaultIfEmpty and switchIfEmpty() Operators`.
 
-## Build Reactive MicroServices using Spring WebFlux/SpringBoot.
+# Build Reactive MicroServices using Spring WebFlux/SpringBoot.
 
 ![Spring WebFlux](springWebFlux.PNG)
 
@@ -145,7 +142,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 <img src="reactiveSeries.JPG" alt="reactive programming" width="700"/>
 
-## 1. Mastering Java Reactive Programming [ From Scratch - 2024 ].
+# Mastering Java Reactive Programming [ From Scratch - 2024 ].
 
 ![Mastering Java Reactive](masteringReactiveProgramming.PNG)
 
