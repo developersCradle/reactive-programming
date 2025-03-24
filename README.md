@@ -1,4 +1,9 @@
 
+<p align="center">
+    <img id="nordea" src="reactive.gif" width=600>
+</p>
+
+> [!NOTE]
 > Inspired to learn **reactive programming** after challenge from **Nordea**.
 
 ## Reactive Programming in Modern Java using Project Reactor.
@@ -233,7 +238,10 @@ Insert certificate here when completed
 
 ### Additional stuff.
 
-- [ ]
+- [ ] Read thought [Manifesto](https://www.reactivemanifesto.org/).
+- [ ] Intro to [Reactive Programming](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754).
+- [ ] Read thought [Manifesto](https://www.reactivemanifesto.org/).
+- [ ] Some about Reactive Proramming [PDF](https://soft.vub.ac.be/Publications/2012/vub-soft-tr-12-13.pdf).
 
 
 <hr>
