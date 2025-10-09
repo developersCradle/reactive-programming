@@ -3,7 +3,10 @@
     <img id="nordea" src="reactive programming in general caption.gif" width=600>
 </p>
 
-# Reactive Programming in Modern Java using Project Reactor.
+<p align="center">
+    <img id="nordea" src="Reactive Programming in Modern Java using Project Reactor caption real.png" height=70 width=900>
+</p>
+
 
 ![Reactive programming](Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor%20caption.PNG)
 
@@ -65,6 +68,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] Make some concept to drive in `flatMapMany()` concept.
 - [ ] Explore with more concepts `25. Transform using the transform() Operator`.
 - [ ] Explore with more concepts `26. Handling empty data using defaultIfEmpty and switchIfEmpty() Operators`.
+- [ ] Remove numbers from packages and from lecture notes `.md` if there is.
 
 # Build Reactive MicroServices using Spring WebFlux/SpringBoot.
 
@@ -133,7 +137,6 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [x] [Section 30](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2030#section-30-server-sent-events-sse) - Server Sent Events (SSE). ✅
 - [x] [Section 31](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2031#section-31-bonus-lecture) - Bonus Section. ✅
 
-
 #### Additional stuff.
 
 - [x] Example which using Maven. [Link To GitHub](https://github.com/ferfujikawa/reactive-spring?tab=readme-ov-file). 
@@ -142,6 +145,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] Refresh again `71. How does Netty handle the Request?`.
 - [ ] Read `Netty in Action` book.
 - [ ] Do chapter Functional Web 20-25.
+- [ ] Remove numbers from packages and from lecture notes `.md` if there is.
 
 # Reactive course series by Vinoth Selvaraj.
 
@@ -151,7 +155,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 ![Mastering Java Reactive](Mastering%20Java%20Reactive%20Programming%20%20From%20Scratch%20%20caption.PNG)
 
-All course material from Mastering Java Reactive Programming [ From Scratch ] **Vinoth Selvaraj**.
+All course material from Mastering Java Reactive Programming [From Scratch] **Vinoth Selvaraj**.
 
 Contains my own notes with some course material to enforce learning experience.
 
@@ -195,6 +199,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 #### Additional stuff.
 
 - [ ] Some stuff.
+- [ ] Remove numbers from packages and from lecture notes `.md` if there is.
 
 ## 2. Spring WebFlux Masterclass: Reactive Microservices [New].
 
@@ -248,6 +253,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] Intro to [Reactive Programming](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754).
 - [ ] Read thought [Manifesto](https://www.reactivemanifesto.org/).
 - [ ] Some about Reactive Programming [PDF](https://soft.vub.ac.be/Publications/2012/vub-soft-tr-12-13.pdf).
+- [ ] Remove numbers from packages and from lecture notes `.md` if there is.
 
 ## Reactive Microservices Architecture & Design Patterns.
 
