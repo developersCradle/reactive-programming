@@ -20,7 +20,7 @@ Introduction.
     <img src="OOPpillars.JPG" alt="reactive programming" width="700"/>
 </div>
 
-1.  Mastering **Reactive programming** comes mastering these concepts.
+1.  Mastering **Reactive Programming** comes mastering these concepts.
     - These **cannot** be solved by traditional programming.
 
 <div align="center">
@@ -94,6 +94,9 @@ Introduction.
 
 1. We should be using threads and CPU efficiently.
 
+> [!IMPORTANT]
+> **Reactive Programming** is to simplify this io model.
+
 # [THEORY] - IO Models.
  
 - Different types of **Inbound** in **Outbound**.
@@ -115,13 +118,20 @@ Introduction.
 
 # [THEORY] - Communication Patterns.
 
-- Do I need to use **Reactive Programming**.
+- TODO Continue here Heikki.
+ 
+<div align="center">
+    <img src="whyNotVirtaulThreads.PNG" alt="reactive programming" width="700"/>
+</div>
+
+1. Do I need to use **Reactive Programming**, if we have **Virtual Threads**?
+    - Below for thought process, which could be helpful. 
 
 <div align="center">
     <img src="CommunicationPattern.JPG" alt="reactive programming" width="700"/>
 </div>
 
-1. For **One** and **One** Response. If this is simple case, no need to get with complicated with **reactive programming**.
+1. For **One** and **One** Response. If this is simple case, no need to get with complicated with **Reactive Programming**.
 
 <div align="center">
     <img src="CommunicationPatternWithReactiveJPG.JPG" alt="reactive programming" width="700"/>
@@ -207,7 +217,7 @@ Introduction.
 </div>
 
 1. This user would be **Processor**.
-2. `1.` would be acting as **Subscriber** for the the number **2**.
+2. `1.` would be acting as **Subscriber** for the number **2**.
 3. `1.` would be acting as **Publisher** for the `3.` the **two** subscribers.
 
 - There will be **Publisher** in the top.

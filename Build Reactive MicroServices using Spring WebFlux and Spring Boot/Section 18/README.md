@@ -2,9 +2,9 @@
 
 Writing Custom Queries using ReactiveMongoRepository.
 
-# What I Learned
+# What I Learned.
 
-# 68. Implement a Custom Query to retrieve MovieInfo by Year
+# Implement a Custom Query to retrieve MovieInfo by Year.
 
 - Custom queries with name.
 
@@ -36,7 +36,7 @@ public interface MovieInfoRepository extends ReactiveMongoRepository<MovieInfo, 
             .verifyComplete();
     }
 ```
-# 69. GET Endpoint to retrieve a MovieInfo by Year - Using @RequestParam
+# GET Endpoint to retrieve a MovieInfo by Year - Using @RequestParam.
 
 - Adding year to the find by year. Test to this.
 
@@ -65,7 +65,7 @@ public interface MovieInfoRepository extends ReactiveMongoRepository<MovieInfo, 
     - `public Mono<MovieInfo> addMovieInfo(@RequestBody @Valid MovieInfo movieInfo) {`. **@RequestBody**.
 
 
-# Assignment 5: Build a Custom Repository function to retrieve MovieInfo by name
+# Assignment 5: Build a Custom Repository function to retrieve MovieInfo by name.
 
 ```
 Use the same technique that we used to implement a custom function to retrieve a MovieInfos by Year.

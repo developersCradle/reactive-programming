@@ -2,11 +2,11 @@
 
 Bonus Lecture.
 
-# What I Learned
+# What I Learned.
 
 Different courses.
 
-# 117. Bonus Lecture.
+# Bonus Lecture.
 
 Bonus Lecture
 Dear Friends,

@@ -2,9 +2,9 @@
 
 Simple Non Blocking RESTFUL API using Annotated Controller Approach.
 
-# What I Learned
+# What I Learned.
 
-# 36. Build a Simple Non Blocking API - Flux
+# Build a Simple Non Blocking API - Flux.
 
 - When we write endpoint to return something. It will be by nature returning **asynchronous and non-blocking** rector type.
 
@@ -16,7 +16,7 @@ Simple Non Blocking RESTFUL API using Annotated Controller Approach.
     
 ```
 
-# 37. Build a simple Non Blocking API - Mono
+# Build a simple Non Blocking API - Mono.
 
 ```
     @GetMapping("/mono")
@@ -25,9 +25,11 @@ Simple Non Blocking RESTFUL API using Annotated Controller Approach.
     }
 ```
 
-# 38. Build Infinite Streams API (SSE)
+# Build Infinite Streams API (SSE).
 
-<img src="streamingEndpoint.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+  <img src="streamingEndpoint.PNG" alt="reactive programming" width="700"/>
+</div>
 
 - We are streaming data every second.
 
@@ -39,8 +41,10 @@ Simple Non Blocking RESTFUL API using Annotated Controller Approach.
     
 ```
 
-<img src="reactorThreadGettingSwithched.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+  <img src="reactorThreadGettingSwithched.PNG" alt="reactive programming" width="700"/>
+</div>
 
-1. **Request thread** and **Data handling thread** is made in separated treads. As **non-blocking** 
+1. **Request thread** and **Data handling thread** is made in separated treads. As **non-blocking**.
 
 - This way implement nowadays thanks to **Spring of Flux**. This was much harder in old days.

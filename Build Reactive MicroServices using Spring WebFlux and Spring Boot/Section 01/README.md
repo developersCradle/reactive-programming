@@ -4,14 +4,21 @@ Getting Started with the Course
 
 # What I Learned
 
-# 1. Course Introduction.
+# Course Introduction.
 
-<img src="whatIsCovered.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+    <img src="whatIsCovered.PNG" alt="reactive programming" width="700"/>
+</div>
 
 <br>
 
-<img src="targetAudiance.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+    <img src="targetAudiance.PNG" alt="reactive programming" width="700"/>
+</div>
 
-# 2. Prerequisites.
+# Prerequisites.
 
-<img src="Prerequisites.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+    <img src="Prerequisites.PNG" alt="reactive programming" width="700"/>
+</div>
+

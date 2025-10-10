@@ -1,12 +1,14 @@
-# Section 6: Getting Started with Project Reactor.
+# Section 06: Getting Started with Project Reactor.
 
 Getting Started with Project Reactor.
 
-# What I Learned
+# What I Learned.
 
-# 10. Introduction to Project Reactor.
+# Introduction to Project Reactor.
 
-<img src="projectReactor.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+    <img src="projectReactor.PNG" alt="reactive programming" width="700"/>
+</div>
 
 1. Any Library that implements **Reactive Stream Specification** is called **Reactive library**.
 2. **Spring WebFlux** is using **Project Reactor** by default.
@@ -15,15 +17,19 @@ Getting Started with Project Reactor.
 
 -  Reactor Core is the main one, fundamentals.
 
-# 11. Reactor Reactive Types - Flux and Mono.
+# Reactor Reactive Types - Flux and Mono.
 
-<img src="FluxAndMono.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+    <img src="FluxAndMono.PNG" alt="reactive programming" width="700"/>
+</div>
 
 1. Data is here.
 2. Operations here.
 3. Results here.
 
-<img src="MonoType.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+    <img src="MonoType.PNG" alt="reactive programming" width="700"/>
+</div>
 
 - Mono represents single elements.
 

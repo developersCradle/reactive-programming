@@ -4,9 +4,11 @@ Reactive Programming in Mongo DB for the MovieInfo Service.
 
 # What I Learned.
 
-# 44. Set up the MovieInfo Document.
+# Set up the MovieInfo Document.
 
-<img src="weAreImplementingSuchScenario.PNG " alt="reactive programming" width="600"/>
+<div align="center">
+    <img src="weAreImplementingSuchScenario.PNG " alt="reactive programming" width="600"/>
+</div>
 
 - The **Entity** in **MongoDB**.
 
@@ -48,7 +50,7 @@ public class MovieInfo {
 
 - **@Document** in MongoDB represents an **Entity**.
 
-# 45. Configure the ReactiveMongoDB Repository for MovieInfo Document.
+# Configure the ReactiveMongoDB Repository for MovieInfo Document.
 
 - We are using Reactive programming with **MongoDB.**
 
@@ -71,8 +73,7 @@ public interface MovieInfoRepository extends ReactiveMongoRepository<MovieInfo, 
 
 ```
 
-# 46. Configure the Mongo DB server details in the application.yml file.
-
+# Configure the Mongo DB server details in the application.yml file.
 
 - We are going use **Spring Boot** auto-configuration feature.
     - We are using **.YAML** file for providing **.properties** for the application.
@@ -138,7 +139,7 @@ spring:
 
 - Other way to name environments **.yaml** `environment-prod.yml`. These are `.yaml` based for environments.
 
-# 47. Setup the Integration Test using @DataMongoTest.
+# Setup the Integration Test using @DataMongoTest.
 
 - We are going to spin up **embedded mongoDB**, before start of **integration tests**.
     - We don't need to install **mongoDB** separately.
@@ -158,7 +159,7 @@ class MovieInfoRepositoryIntgTest {
 }
 ```
 
-# 48. Write Integration Test for findAll() MovieInfo Document.
+# Write Integration Test for findAll() MovieInfo Document.
 
 ```
 package com.reactivespring.repository;
@@ -217,7 +218,7 @@ class MovieInfoRepositoryIntgTest {
 }
 ```
 
-- We are saving these entries to mongoDB with following.
+- We are saving these entries to **MongoDB** with following.
     
 ```
 
@@ -227,7 +228,7 @@ class MovieInfoRepositoryIntgTest {
 
 - `.blockLast();` will these wait for these to happen before proceeding, because nature of asynchronous. This is only in **test** cases.
 
-# 49. Write Integration Test for findById() MovieInfo Document.
+# Write Integration Test for findById() MovieInfo Document.
 
 - Find by id integration test.
 
@@ -250,7 +251,7 @@ class MovieInfoRepositoryIntgTest {
     }
 ```
 
-# 50. Write Integration Test for saving the MovieInfo Document.
+# Write Integration Test for saving the MovieInfo Document.
 
 - Saving new document to repository.
 
@@ -277,7 +278,7 @@ class MovieInfoRepositoryIntgTest {
 
 ```
 
-# 51. Write Integration Test for updating the MovieInfo Document.
+# Write Integration Test for updating the MovieInfo Document.
 
 - Update year on Document.
 
@@ -304,7 +305,7 @@ class MovieInfoRepositoryIntgTest {
 
 ```
 
-# 52. Write Integration Test for deleting the MovieInfo Document.
+# Write Integration Test for deleting the MovieInfo Document.
 
 - Delete by id test.
 

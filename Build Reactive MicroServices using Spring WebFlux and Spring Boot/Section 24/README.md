@@ -2,6 +2,6 @@
 
 Custom Global ErrorHandler in Functional Web.
 
-# What I Learned
+# What I Learned.
 
-# 87. Implement the GlobalErrorHandler in Functional Web.
+# Implement the GlobalErrorHandler in Functional Web.

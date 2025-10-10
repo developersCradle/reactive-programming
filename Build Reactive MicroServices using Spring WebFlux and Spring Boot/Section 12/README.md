@@ -4,27 +4,35 @@ Automated Tests using JUnit5 and @WebFluxTest.
 
 # What I Learned.
 
-# 39. Introduction to Automated Tests.
+# Introduction to Automated Tests.
 
-<img src="automatedTest.PNG" alt="reactive programming" width="600"/>
-
-<br>
-
-<img src="automatedTest.PNG" alt="reactive programming" width="600"/>
+<div align="center">
+    <img src="automatedTest.PNG" alt="reactive programming" width="600"/>
+</div>
 
 <br>
 
-<img src="integrationTest.PNG" alt="reactive programming" width="600"/>
+<div align="center">
+    <img src="automatedTest.PNG" alt="reactive programming" width="600"/>
+</div>
+
+<br>
+
+<div align="center">
+    <img src="integrationTest.PNG" alt="reactive programming" width="600"/>
+</div>
 
 1. Integration test interacts from Controller layer to the Repository layer.
 
-<img src="unitTest.PNG" alt="reactive programming" width="600"/>
+<div align="center">
+    <img src="unitTest.PNG" alt="reactive programming" width="600"/>
+</div>
 
 - Different folders for:
     - Integration tests.
     - Unit tests.
 
-# 40. Testing Spring Webflux Endpoint using@WebFlux Test Annotation.
+# Testing Spring Webflux Endpoint using@WebFlux Test Annotation.
 
 - For simple **Controller** classes we don't need usually write integration test just good unit tests.
 
@@ -56,7 +64,7 @@ WebTestClient webTestClient;
     }
 ```
 
-# 41. Different Approaches of Testing an Endpoint.
+# Different Approaches of Testing an Endpoint.
 
 ```
 
@@ -100,7 +108,7 @@ WebTestClient webTestClient;
     }
 ```
 
-# 42. JUnit Test for the Mono Endpoint
+# JUnit Test for the Mono Endpoint.
 
 - Testing **Mono** endpoint.
 
@@ -123,7 +131,7 @@ WebTestClient webTestClient;
     }
 ```
 
-# 43. JUnit Test Streaming Endpoint - SSE.
+# JUnit Test Streaming Endpoint - SSE.
 
 - Test for streaming endpoint.
 
@@ -145,4 +153,4 @@ WebTestClient webTestClient;
                 .thenCancel()
         .verify();
     }
-```q
+```

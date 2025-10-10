@@ -2,15 +2,19 @@
 
 Section 15: Unit Testing in Spring WebFlux.
 
-# What I Learned
+# What I Learned.
 
-# 59. Setting up the UnitTest in WebFlux.
+# Setting up the UnitTest in WebFlux.
 
-<img src="unitTests.PNG " alt="reactive programming" width="600"/>
+<div align="center">
+    <img src="unitTests.PNG " alt="reactive programming" width="600"/>
+</div>
 
 1. Our test will be like this.
 
-<img src="benifitsOfUnitTests.PNG " alt="reactive programming" width="600"/>
+<div align="center">
+    <img src="benifitsOfUnitTests.PNG " alt="reactive programming" width="600"/>
+</div>
 
 - Unit tests.
     - Are handy for **Bean validation**.
@@ -56,7 +60,7 @@ public class MoviesInfoControllerUnitTest {
 
 ```
 
- # 60. Unit Test for GetAllMovieInfos endpoint - GET
+ # Unit Test for GetAllMovieInfos endpoint - GET.
 
 - One benefit of this that we don't need embedded mongoDB, when mocking.
 
@@ -182,7 +186,7 @@ public class MoviesInfoControllerUnitTest {
 
 ```
 
-# Assignment 2: Unit Test for getMovieInfoById
+# Assignment 2: Unit Test for getMovieInfoById.
 
 ```
 Follow the same patterns as the other one unit test that we wrote for getAllMovieInfos
@@ -214,7 +218,7 @@ Questions for this assignment
 
 ```
 
- # 61. Unit Test for the create MovieInfo Endpoint - POST
+ # Unit Test for the create MovieInfo Endpoint - POST.
  
  - Mock and test for this method.
 
@@ -253,7 +257,7 @@ Questions for this assignment
 
  ```
 
-# 62. Unit Test for the update MovieInfo Endpoint - PUT
+# Unit Test for the update MovieInfo Endpoint - PUT.
 
 - Mock and test for this method.
 
@@ -294,7 +298,7 @@ Questions for this assignment
 
 ```
 
-# Assignment 3: Assignment : Unit Test for Delete Movie Info
+# Assignment 3: Assignment : Unit Test for Delete Movie Info.
 
 ```
 Use the same pattern as the other Unit tests and mock the deleteMovieInfo method call in the MoviesInfoService

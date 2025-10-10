@@ -4,27 +4,33 @@ Integration Testing External Services using WireMock.
 
 # What I Learned.
 
-# 100. Introduction to WireMock.
+# Introduction to WireMock.
 
-<img src="wireMockBefore.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+    <img src="wireMockBefore.PNG" alt="reactive programming" width="700"/>
+</div>
 
 1. These needs to be mocked, when we want to integrate test **MoviesService**.
 
-<img src="wireMock.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+    <img src="wireMock.PNG" alt="reactive programming" width="700"/>
+</div>
 
 1. We can mock these ones with **WireMock**.
     - HTTP mocking library **WireMock**.
 
-<img src="benefitOfWireMock.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+    <img src="benefitOfWireMock.PNG" alt="reactive programming" width="700"/>
+</div>
 
 - We can easy to test network exceptions and more.   
     - Previously we needed to bring our service to down to test this microservice.
     - This can be impossible if we are testing against **external API:s**.
 
 - **WireMock** is a tool used for **mocking HTTP services**.
-    - In contrast, **SpringBootTest** will  load full context fo the application.
+    - In contrast, **SpringBootTest** will load full context fo the application.
 
-# 101. SetUp Wiremock in Integration Tests
+# SetUp Wiremock in Integration Tests.
 
 - We need to import **WireMock**.
 
@@ -36,7 +42,6 @@ Integration Testing External Services using WireMock.
 </dependency>
 
 ```
-
 
 # MoviesControllerIntgTest.java
 
@@ -234,9 +239,9 @@ public class MoviesControllerIntgTest {
     }
 ```
 
-# 102. Stubs for MoviesInfoService and ReviewService.
+# Stubs for MoviesInfoService and ReviewService.
 
-- in **WireMock** `stubFor()` is for HTTP call.
+- In **WireMock** `stubFor()` is for HTTP call.
 
 - Returning `.json` from stubbed API call.
 
@@ -304,7 +309,7 @@ public class MoviesControllerIntgTest {
     }
 ```
 
-# 103. Simulate 4xx Errors in Wiremock.
+# Simulate 4xx Errors in Wiremock.
 
 ```
 
@@ -368,7 +373,7 @@ public class MoviesControllerIntgTest {
 
 ```
 
-# 104. Simulate 5xx Errors in Wiremock.
+# Simulate 5xx Errors in Wiremock.
 
 - WireMock can simulate many error scenarios.
     - Time out example.

@@ -2,13 +2,13 @@
 
 Unit Testing Functional Web.
 
-# What I Learned
+# What I Learned.
 
-# 82. Setting up Test Class for Unit Testing
+# Setting up Test Class for Unit Testing.
 
 - Todo these ones.
 
-# Assignment 7: Unit Test Cases for the Reviews Service in the ReviewsUnitTest class
+# Assignment 7: Unit Test Cases for the Reviews Service in the ReviewsUnitTest class.
 
 ```
 

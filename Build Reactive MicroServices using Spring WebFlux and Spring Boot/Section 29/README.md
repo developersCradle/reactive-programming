@@ -1,26 +1,30 @@
-# Section 29: Retrying Failed HTTP Calls
+# Section 29: Retrying Failed HTTP Calls.
 
 Retrying Failed HTTP Calls
 
-# What I Learned
+# What I Learned.
 
-# 105. Why Retry failed HTTP calls?
+# Why Retry failed HTTP calls?
 
-<img src="handlingNetworkErrors.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+    <img src="handlingNetworkErrors.PNG" alt="reactive programming" width="700"/>
+</div>
 
 1. We need to make these ones resilient  and handle these failures.
 
-<img src="retry.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+    <img src="retry.PNG" alt="reactive programming" width="700"/>
+</div>
 
 1. Recommend pattern is **retry pattern**. 
 
-# 106. Retry failed Http calls using retry()
+# Retry failed Http calls using retry().
 
 - Verifying calling with **WireMock**.
 
 - `WireMock.verify(4, getRequestedFor(urlEqualTo("/v1/movieinfos/" + movieId)));`.
 
-# 107. Retry failed Http calls using retrySpec() - With BackOff before Retry Attempt
+# Retry failed Http calls using retrySpec() - With BackOff before Retry Attempt
 
 - Problem with `retry()`, it will immediately invoke after each time.  
     - Retry with `BackOff`
@@ -28,7 +32,7 @@ Retrying Failed HTTP Calls
 - Examples with `.retryWhen(RetryUtil.retrySpec());`.
 
 
-# 108. Retry failed Http calls using retrySpec() - Retrying Specific Exceptions.
+# Retry failed Http calls using retrySpec() - Retrying Specific Exceptions.
 
 ```
     public static Retry retrySpec() {
@@ -51,6 +55,6 @@ Retrying Failed HTTP Calls
 
 - We can re-try with specific exceptions.
 
- # 109. Reusing the retry logic across different Rest Clients
+ # Reusing the retry logic across different Rest Clients
 
 - We are implementing re-try pattern for every Rest client. 

@@ -2,13 +2,15 @@
 
 Combining Publishers.
 
-# What i learned.
+# What I learned.
 
-# 128. Introduction
+# Introduction.
 
-<img src="multiplePublishers.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+    <img src="multiplePublishers.PNG" alt="reactive programming" width="700"/>
+</div>
 
-1. Many times **microarchitecture** has multiple sources of data.
+1. Often times **microarchitecture** has multiple sources of data.
     - Many time back end will ask **multiple sources** and collects aggregate data for the **front end**.
 
 - The **point** here is that:
@@ -18,14 +20,20 @@ Combining Publishers.
             
 - Some popular options for transforming data.
 
-<img src="options.PNG" alt="reactive programming" width="400"/>
+<div align="center">
+    <img src="options.PNG" alt="reactive programming" width="400"/>
+</div>
 
-# 137. FlatMap - Introduction
+# FlatMap - Introduction.
 
-<img src="FlatMapOperation.PNG" alt="reactive programming" width="400"/>
+<div align="center">
+    <img src="FlatMapOperation.PNG" alt="reactive programming" width="400"/>
+</div>
 
 1. These operations will **not** work, if there are multiple sources of calls.
 
-<img src="dependentSequantialCall.PNG" alt="reactive programming" width="400"/>
+<div align="center">
+    <img src="dependentSequantialCall.PNG" alt="reactive programming" width="400"/>
+</div>
 
 1. We want user **ID**, do we need to wait previous one finish to call the next microservice call?

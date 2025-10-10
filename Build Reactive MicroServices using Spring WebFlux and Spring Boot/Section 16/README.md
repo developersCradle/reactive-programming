@@ -2,9 +2,9 @@
 
 Bean Validation using Validators and ControllerAdvice.
 
-# What I Learned
+# What I Learned.
 
-# 63. Bean Validation for Name,Year with @NotBlank and @Positive Annotation Validators.
+# Bean Validation for Name,Year with @NotBlank and @Positive Annotation Validators.
 
 - For Spring bean validation we need following POM. **spring-boot-starter-validation**.
 
@@ -100,7 +100,7 @@ public class MovieInfo {
 
 ```
 
-# 64. Customize the Default Error handling using ControllerAdvice
+# Customize the Default Error handling using ControllerAdvice.
 
 - When doing **Bean Validation**, we would wan't to have proper error massages that have been implemented in domain class, not some random error message.
     - This approach to send clear error for customer.
@@ -132,7 +132,7 @@ public class GlobalErrorHandler {
 
 - We need to extract the errors, it can be possible that multiple fields have different error messages.
 
-# 65. Bean Validation for List Field using @NotBlank Annotation
+# Bean Validation for List Field using @NotBlank Annotation.
 
 - List is having **bean validator** inside.
 `private List<@NotBlank(message = "movieInfo.cast must be present") String> cast;`

@@ -4,16 +4,18 @@ Server Sent Events (SSE).
 
 # What I Learned.
 
-# 110. Catching up on Server Sent Events (SSE),
+# Catching up on Server Sent Events (SSE).
 
-<img src="serverSentEvents.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+    <img src="serverSentEvents.PNG" alt="reactive programming" width="700"/>
+</div>
 
 1. Request is sent.
 2. Data is sent in data of streams.
 
 - **SSE** Server Side Events.
 
-# 111. Introduction to Sinks
+# Introduction to Sinks.
 
 - **Publisher** and **Subscriber** at same time.
 
@@ -24,7 +26,7 @@ Server Sent Events (SSE).
 
 - [Sinks](https://projectreactor.io/docs/core/release/reference/#sinks).
 
-# 112. Sinks - Hands On.
+# Sinks - Hands On.
 
 - We are emitting and `replaying` all the events to subscriber. 
 
@@ -150,7 +152,7 @@ Server Sent Events (SSE).
 
 - For **unicast** you can only have one subscriber.
 
-# 113. Build a Streaming Endpoint in MoviesInfoService.
+# Build a Streaming Endpoint in MoviesInfoService.
 
 - Whenever we are going to `addMovie()` we are emitting to the sink.
 
@@ -185,7 +187,7 @@ Server Sent Events (SSE).
 
 ```
 
-# 114. Integration Test for the Streaming Endpoint.
+# Integration Test for the Streaming Endpoint.
 
 - We are writing integration test for **stream** end point.
 
@@ -208,7 +210,7 @@ Server Sent Events (SSE).
     }
 ```
 
-# 115. Build a Streaming Endpoint in MoviesReviewService.
+# Build a Streaming Endpoint in MoviesReviewService.
 
 - We are adding router `.GET` streaming endpoint. 
 
@@ -241,7 +243,7 @@ Server Sent Events (SSE).
             .log();
     }
 ```
-# 116. Build a Streaming Client using WebClent in MoviesService.
+# Build a Streaming Client using WebClent in MoviesService.
 
 - Streaming endpoint.
 

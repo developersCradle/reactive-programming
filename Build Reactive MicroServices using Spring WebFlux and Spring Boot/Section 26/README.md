@@ -2,11 +2,13 @@
 
 MoviesService - Rest Service connects the MovieInfo and MovieReview Service.
 
-# What I Learned
+# What I Learned.
 
-# 90. Overview of the Application.
+# Overview of the Application.
 
-<img src="weWillBeBuilding.PNG " alt="reactive programming" width="600"/>
+<div align="center">
+    <img src="weWillBeBuilding.PNG " alt="reactive programming" width="600"/>
+</div>
 
 - We are going build **MoviesService** and we are going use **WebClient**.
 
@@ -68,9 +70,11 @@ public class MoviesController {
 
 ```
 
-# 92. Introduction to Spring WebClient & Configure WebClient.
+# Introduction to Spring WebClient & Configure WebClient.
 
-<img src="WebClient.PNG" alt="reactive programming" width="600"/>
+<div align="center">
+    <img src="WebClient.PNG" alt="reactive programming" width="600"/>
+</div>
 
 1. One of benefit of this, is that its **non-blocking**.
 2. It allows non-blocking communication. 
@@ -94,7 +98,7 @@ public class WebClientConfig {
 }
 ```
 
-# 93. Build the NonBlocking REST Client for MovieInfoService using Spring WebClient.
+# Build the NonBlocking REST Client for MovieInfoService using Spring WebClient.
 
 
 - We need to inject url from properties file with following code.
@@ -108,6 +112,7 @@ private String moviesInfoUrl;
     - We are hardcoding URL values to this **yml.**.
 
 # application.yml
+
 ```
 spring:
     application:
@@ -122,7 +127,9 @@ server:
 
 ```
 
-<img src="injectingValue.PNG " alt="reactive programming" width="600"/>
+<div align="center">
+    <img src="injectingValue.PNG " alt="reactive programming" width="600"/>
+</div>
 
 1. We can **Inject** value form this **.yml** file.
 
@@ -137,14 +144,14 @@ server:
             .log();
 ```
 
-# 94. Build the NonBlocking REST Client for ReviewService using Spring WebClient.
+# Build the NonBlocking REST Client for ReviewService using Spring WebClient.
 
 
 - We can build URI with different builders.
     - **UriComponentsBuilder** from Spring library.
     - **UriBuilder** from Java library.
 
-- We going to use such **UriComponentsBuilder** and be using **WebClient**.
+- We're going to use such **UriComponentsBuilder** and be using **WebClient**.
 
 ```
 @Component
@@ -174,9 +181,11 @@ public class ReviewsRestClient {
     }
 ```
 
-# 95. Combine the MoviesInfoRestClient and ReviewRestClient.
+# Combine the MoviesInfoRestClient and ReviewRestClient.
 
-<img src="movieHavingMultipleReviews.PNG " alt="reactive programming" width="600"/>
+<div align="center">
+    <img src="movieHavingMultipleReviews.PNG " alt="reactive programming" width="600"/>
+</div>
 
 - You can see that **Movie** is having multiple **reviews**.
 

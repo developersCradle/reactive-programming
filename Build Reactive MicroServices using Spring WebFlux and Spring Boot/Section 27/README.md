@@ -4,17 +4,21 @@ Handling Network Exceptions in WebClient.
 
 # What I Learned.
 
-# 96. Network Exceptions in Service to Service Communications.
+# Network Exceptions in Service to Service Communications.
 
-<img src="expectionsThrowing.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+    <img src="expectionsThrowing.PNG" alt="reactive programming" width="700"/>
+</div>
 
 - Services can fall for HTTP failures, its common these are throwing executions.
 
-<img src="httpFailures.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+    <img src="httpFailures.PNG" alt="reactive programming" width="700"/>
+</div>
 
 - There is two main **Http** failures.
 
-# 97. Handling 4XX in MoviesInfoService in WebClient.
+# Handling 4XX in MoviesInfoService in WebClient.
 
 - Handling exceptions.
 
@@ -89,7 +93,7 @@ Handling Network Exceptions in WebClient.
 
 - We can attach error handling to **services itself** and to the the service which will be calling the other service as **Global error handler**. 
 
-# 98. Handling 5xx in MoviesInfoService in WebClient.
+# Handling 5xx in MoviesInfoService in WebClient.
 
 - We can implement microservice specific error messages.
 
@@ -110,8 +114,7 @@ Handling Network Exceptions in WebClient.
 - There is the way to test microservices with other microservices, with integration testing.
     - We will bring **Microservice** down and test the exception handling.
 
-# 99. Implement the 4XX and 5XX error handling in ReviewsClient.
-
+# Implement the 4XX and 5XX error handling in ReviewsClient.
 
 ```
 package com.reactivespring.client;

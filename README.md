@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-    <img id="nordea" src="Reactive Programming in Modern Java using Project Reactor caption real.png" height=70 width=900>
+    <img id="nordea" src="Reactive Programming in Modern Java using Project Reactor caption real.png" height=100 width=900>
 </p>
 
 
@@ -43,7 +43,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [x] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2005#section-5-setting-up-the-project-for-this-course) - Setting up the Project for this course. ✅
 - [x] [Section 06](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2006#section-6-functional-programming-in-modern-java) - Functional Programming in Modern Java. ✅
 - [x] [Section 07](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2007#section-7-lets-create-our-very-first-flux-and-mono) - Lets create our very first Flux and Mono. ✅
-- [x] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2008#section-8-transforming-flux-and-mono) -  Transforming Flux and Mono. ✅
+- [x] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2008#section-8-transforming-flux-and-mono) - Transforming Flux and Mono. ✅
 - [x] [Section 09](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2009#section-9-combining-flux-and-mono) - Combining Flux and Mono. ✅
 - [x] [Section 10](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2010#section-10-build-movie-reactiveservice-using-project-reactor) - Build Movie ReactiveService using Project Reactor. ✅
 - [x] [Section 11](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2011#section-11-doon-callbacks---peeking-into-a-sequence) - doOn* CallBacks - Peeking into a Sequence. ✅
@@ -69,8 +69,6 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] Explore with more concepts `25. Transform using the transform() Operator`.
 - [ ] Explore with more concepts `26. Handling empty data using defaultIfEmpty and switchIfEmpty() Operators`.
 - [ ] Remove numbers from packages and from lecture notes `.md` if there is.
-
-# Build Reactive MicroServices using Spring WebFlux/SpringBoot.
 
 <p align="center">
     <img id="Build Reactive MicroServices using Spring WebFluxSpringBoot" src="Build Reactive MicroServices using Spring WebFluxSpringBoot caption.png" height=80>
@@ -149,9 +147,11 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 # Reactive course series by Vinoth Selvaraj.
 
-<img src="reactiveSeries.JPG" alt="reactive programming" width="700"/>
+<p align="center">
+    <img src="reactiveSeries.JPG" alt="reactive programming" width="700"/>
+</p>
 
-# Mastering Java Reactive Programming [ From Scratch - 2024 ].
+# Mastering Java Reactive Programming [ From Scratch ].
 
 ![Mastering Java Reactive](Mastering%20Java%20Reactive%20Programming%20%20From%20Scratch%20%20caption.PNG)
 
@@ -198,10 +198,13 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 #### Additional stuff.
 
-- [ ] Some stuff.
-- [ ] Remove numbers from packages and from lecture notes `.md` if there is.
+- [ ] Remove numbers from packages(from projects and transfer to IntelliJ).
+- [ ] Do the io model chapter for simplicity’s sake.
+- [ ] You can check the [Virtaul Thread](https://www.udemy.com/course/java-virtual-thread/) vs reactive programming.
 
-## 2. Spring WebFlux Masterclass: Reactive Microservices [New].
+<p align="center">
+    <img src="Spring WebFlux Masterclass Reactive Microservices new caption.png" alt="reactive programming" width="1000" height="80"/>    
+</p>
 
 ![Spring WebFlux Masterclass: Reactive Microservices](Spring%20WebFlux%20Masterclass%20Reactive%20Microservices%20New%20caption.PNG)
 

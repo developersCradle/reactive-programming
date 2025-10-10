@@ -5,7 +5,7 @@ Build MovieInfo Service using Rest Controller Approach.
 
 # What I Learned.
 
-# 53. Build a POST endpoint to create a new MovieInfo.
+# Build a POST endpoint to create a new MovieInfo.
 
 - We can use `@ResponseStatus(HttpStatus.CREATED)` for more robust way of returning HTTP codes.
     - It also can be used **declarative** way.
@@ -69,7 +69,7 @@ public class MoviesInfoService {
 
 ```
 
-# 54. Integration Test for the POST end point using JUnit5.
+# Integration Test for the POST end point using JUnit5.
 
 - Testing persisting method.
 
@@ -102,7 +102,7 @@ public class MoviesInfoService {
     }
 ```
 
-# 55. Build a GET Endpoint to get all the MoviesInfo.
+# Build a GET Endpoint to get all the MoviesInfo.
 
 ### Controller.
 
@@ -142,7 +142,7 @@ public class MoviesInfoService {
     }
 ```
 
-# 56. Build a GET Endpoint to retrieve a MovieInfo by ID.
+# Build a GET Endpoint to retrieve a MovieInfo by ID.
 
 ### Controller.
 
@@ -186,7 +186,7 @@ public class MoviesInfoService {
     }
 ```
 
-# 57. Build a PUT Endpoint to update a MovieInfo by ID.
+# Build a PUT Endpoint to update a MovieInfo by ID.
 
 # Controller.
 
@@ -257,7 +257,7 @@ public class MoviesInfoService {
 
  ```
 
-# 58. Build the DELETE endpoint to delete a MovieInfo by ID.
+# Build the DELETE endpoint to delete a MovieInfo by ID.
 
 # Controller.
 
