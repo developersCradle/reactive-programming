@@ -1,26 +1,31 @@
-# Section 9: Combining Flux and Mono
+# Section 09: Combining Flux and Mono.
 
 Combining Flux and Mono.
 
-# What I Learned
+# What I Learned.
 
-# 27. Introduction to Combining Reactive Streams
+# Introduction to Combining Reactive Streams.
 
-<img src="whyCombining.PNG" alt="reactive programming" width="600"/>
+<div align="center">
+    <img src="whyCombining.PNG" alt="reactive programming" width="600"/>
+</div>
 
-1. We need combine results from multiple sources. This is ver common in **microservice architecture**.
+1. We need to combine results from **multiple sources**. This is very common in **microservice architecture**.
 2. These are combined for result. **Project Reactor** has many operations for combining.
 
+# concat() & concatWith() operator.
 
-# 28. concat() & concatWith() operator
-
-<img src="concat.PNG" alt="reactive programming" width="600"/>
+<div align="center">
+    <img src="concat.PNG" alt="reactive programming" width="600"/>
+</div>
 
 1. We can combine **fluxes** or **monos** into one stream.   
 
 <br>
 
-<img src="concatAndConcatWith.PNG" alt="reactive programming" width="600"/>
+<div align="center">
+    <img src="concatAndConcatWith.PNG" alt="reactive programming" width="600"/>
+</div>
 
 1.  These happen in **sequence**, meaning **first** one finishes and after this one second starts.
 2. Mono does not need this.
@@ -143,9 +148,7 @@ Combining Flux and Mono.
 
 ````
 
-
 # Assignment 4: Assignment for Writing JUnit5 Test Cases for concatWith() using Flux and Mono
-
 
 ```
 
@@ -199,17 +202,20 @@ Questions for this assignment
 
 ````
 
-# 29. Combining Reactive Streams using merge() and mergeWith() Operators
+# Combining Reactive Streams using merge() and mergeWith() Operators.
 
 - `merge()` and `mergeWith()` are used to combine the publishers.
 
-<img src="merge.PNG" alt="reactive programming" width="700"/>
+<div align="center">
+    <img src="merge.PNG" alt="reactive programming" width="700"/>
+</div>
 
 1. We will merge these two **Flux** to one. 
     - As you can see the two **Flux**:es are combined in interleaved fashion.
 
-<img src="mergeAndMergeWith.PNG" alt="reactive programming" width="600"/>
-
+<div align="center">
+    <img src="mergeAndMergeWith.PNG" alt="reactive programming" width="600"/>
+</div>
 
 - The Logic:
 
@@ -369,9 +375,12 @@ Write the test case for explore_mergeWith() and explore_mergeWith_mono() methods
     }
 ```
 
-# 30. Combining Reactive Streams using mergeSequential() operator
+# Combining Reactive Streams using mergeSequential() operator.
 
-<img src="mergeSequential.PNG" alt="reactive programming" width="600"/>
+<div align="center">
+    <img src="mergeSequential.PNG" alt="reactive programming" width="600"/>
+
+</div>
 
 - The Logic:
 
@@ -410,11 +419,13 @@ Write the test case for explore_mergeWith() and explore_mergeWith_mono() methods
 
 ```
 
-# 31. Combining Reactive Streams using zip and zipWith() Operator
+# Combining Reactive Streams using zip and zipWith() Operator.
 
 - `zip()` is used to zip multiple publishers into one.
 
-<img src="zip.PNG" alt="reactive programming" width="600"/>
+<div align="center">
+    <img src="zip.PNG" alt="reactive programming" width="600"/>
+</div>
 
 1. Source **Flux**.
 2. Combinator lambda.
@@ -423,11 +434,15 @@ Write the test case for explore_mergeWith() and explore_mergeWith_mono() methods
 
 - Difference with `zip()` is that, first emitting is waited for all element then its moved to second element.
 
-<img src="zip2.PNG" alt="reactive programming" width="600"/>
+<div align="center">
+    <img src="zip2.PNG" alt="reactive programming" width="600"/>
+</div>
 
 <br>
 
-<img src="zip3.PNG" alt="reactive programming" width="600"/>
+<div align="center">
+    <img src="zip3.PNG" alt="reactive programming" width="600"/>
+</div>
 
 1. Will return **Tuple** with 4 values.
     - This will make 4 values into one.
@@ -469,7 +484,7 @@ Write the test case for explore_mergeWith() and explore_mergeWith_mono() methods
     
 ```
 
-- The Logic for  other `zip()`.
+- The Logic for other `zip()`.
 
 ```
     public Flux<String> explore_zip_1(){
@@ -526,7 +541,7 @@ Write the test case for explore_mergeWith() and explore_mergeWith_mono() methods
     }
 ```
 
-- The test with these logic:
+- The test with this logic:
 
 ```
     @Test

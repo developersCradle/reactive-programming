@@ -118,33 +118,93 @@ Introduction.
 
 # [THEORY] - Communication Patterns.
 
-- TODO Continue here Heikki.
  
 <div align="center">
     <img src="whyNotVirtaulThreads.PNG" alt="reactive programming" width="700"/>
 </div>
 
 1. Do I need to use **Reactive Programming**, if we have **Virtual Threads**?
-    - Below for thought process, which could be helpful. 
+    - Below for thought process, which could be helpful.
+        - This could be case when, if you **virtual threads** are not enough. 
 
 <div align="center">
     <img src="CommunicationPattern.JPG" alt="reactive programming" width="700"/>
 </div>
 
-1. For **One** and **One** Response. If this is simple case, no need to get with complicated with **Reactive Programming**.
+1. If the **Request** and **Response** is sufficient for your needs, then the **Virtual Threads** are more than enough.
+    - Then no need to complicate things with **Reactive Programming**.
 
 <div align="center">
-    <img src="CommunicationPatternWithReactiveJPG.JPG" alt="reactive programming" width="700"/>
+    <img src="reactiveProgrammingOpens.jpeg" alt="reactive programming" width="500"/>
 </div>
 
-- We can achieve additional 4 different patterns with **Reactive Programming**.
+- But, the **main** difference is that we can achieve additional 4 different patterns with **Reactive Programming**.
 
-1. We send request for making pizza. 
-    - We get **stream** like answers, pizza is in making.
-    - Pizza is being delivered.
-- We send **one** request and getting.
+<div align="center">
+    <img src="CommunicationPatternWithReactive.PNG" alt="reactive programming" width="700"/>
+</div>
 
-2. Messages are sent as stream to remote server.
+1. **First one** is **Request** and **Response**.
+    - Send **Request** and get **Response**.
+2. **Second one** is **Request** and **Streaming Response**.
+    - Send **Request** get multiple **Responses**.
+3. **Third one** is the **Streaming Request** and **Response**.
+     - We send **one requests**, which contains a **stream of messages**.
+        - Example. Apple Watch, which sends **hearth rate** to the server.
+4. **Fourth one** is the **Bidirectional Streaming**.
+    - This two application can stream to each other.
+        - Example. **WebSocket**
+
+<div align="center">
+    <img src="useCasesForTheDifferentCommunicationPatternsInTheReactiveProgramming.jpeg" alt="reactive programming" width="500"/>
+</div>
+
+- In **practice**, this will be tied, to how we will be using the **Mono**'s and **Flux**'s in the code!
+    - 1️⃣ `Mono` → `Mono` : **request** → **response**.
+    - 2️⃣ `Mono` → `Flux` : **request** → **streaming response**.
+    - 3️⃣ `Flux` → `Mono` : **streaming request** → **response**.
+    - 4️⃣ `Flux` → `Flux` : **bidirectional streaming**.
+
+- Example in code:
+
+````
+// 1. Request → Response
+@GetMapping("/user/{id}")
+Mono<User> getUser(@PathVariable String id) { ... }
+
+// 2. Request → Streaming Response
+@GetMapping(value = "/prices", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+Flux<Price> streamPrices() { ... }
++
+// 3. Streaming Request → Response
+@PostMapping("/aggregate")
+Mono<Result> uploadData(@RequestBody Flux<Input> data) { ... }
+
+// 4. Bidirectional Streaming (WebSocket or RSocket)
+@MessageMapping("chat")
+Flux<Message> chat(Flux<Message> incoming) { ... }
+````
+#  [THEORY] - What Is Reactive Programming?
+
+<div align="center">
+    <img src="microserviceCommunication.PNG" alt="reactive programming" width="700"/>
+</div>
+
+1. There will be coming multiple **requests**!
+    - **Client** will be sending the lot of streams of data.
+2. **Request** and **Response** is not enough!
+
+<div align="center">
+    <img src="reactiveSpesification.PNG" alt="reactive programming" width="700"/>
+</div>
+
+1. There is **Specification** for the **Reactive programming model**.
+
+
+-Todo jatka tästä
+
+
+# [THEORY] - Reactive Streams Specification.
 
 <div align="center">
     <img src="observerPattern.PNG" alt="reactive programming" width="700"/>

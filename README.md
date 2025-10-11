@@ -206,7 +206,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
     <img src="Spring WebFlux Masterclass Reactive Microservices new caption.png" alt="reactive programming" width="1000" height="80"/>    
 </p>
 
-![Spring WebFlux Masterclass: Reactive Microservices](Spring%20WebFlux%20Masterclass%20Reactive%20Microservices%20New%20caption.PNG)
+![Spring WebFlux Masterclass: Reactive Microservices](Spring%20WebFlux%20Masterclass%20Reactive%20Microservices%20New%20desc.PNG)
 
 All course material from Spring WebFlux Masterclass: Reactive Microservices [New] by **Vinoth Selvaraj**.
 
