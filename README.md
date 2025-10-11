@@ -4,9 +4,8 @@
 </p>
 
 <p align="center">
-    <img id="nordea" src="Reactive Programming in Modern Java using Project Reactor caption real.png" height=100 width=900>
+    <img id="nordea" src="Reactive Programming in Modern Java using Project Reactor caption real.png" style="width:1000px;height:80px;">
 </p>
-
 
 ![Reactive programming](Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor%20caption.PNG)
 
@@ -60,7 +59,6 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] [Section 22](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2022#section-22-programmatically-creating-a-fluxmono) - Programmatically Creating a Flux/Mono.
 - [ ] [Section 23](https://github.com/developersCradle/reactive-programming/tree/main/Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor/Section%2023#section-23-debugging-in-project-reactor) - Debugging in Project Reactor.
 
-
 #### Additional stuff.
 
 - [ ] Get known to Asynchronous/Concurrency **Future**, **CompletableFuture** and Flow API.
@@ -71,7 +69,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] Remove numbers from packages and from lecture notes `.md` if there is.
 
 <p align="center">
-    <img id="Build Reactive MicroServices using Spring WebFluxSpringBoot" src="Build Reactive MicroServices using Spring WebFluxSpringBoot caption.png" height=80>
+    <img id="Build Reactive MicroServices using Spring WebFluxSpringBoot" src="Build Reactive MicroServices using Spring WebFluxSpringBoot caption.png" style="width:1000px;height:80px;">
 </p>
 
 ![Build Reactive MicroServices using Spring WebFlux/SpringBoot](Build%20Reactive%20MicroServices%20using%20Spring%20WebFluxSpringBoot%20caption%20description.PNG)
@@ -182,19 +180,19 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 - [ ] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2001#section-01-introduction) - Introduction. ✅
 - [ ] [Section 02](#) - Mono.
-- [ ] [Section 03](#) -
-- [ ] [Section 04](#) -
-- [ ] [Section 05](#) -
-- [ ] [Section 06](#) -
-- [ ] [Section 07](#) -
-- [ ] [Section 08](#) -
+- [ ] [Section 03](#) - Flux.
+- [ ] [Section 04](#) - Flux - Emitting Items Programmatically.
+- [ ] [Section 05](#) - Operators.
+- [ ] [Section 06](#) - Hot & Cold Publishers.
+- [ ] [Section 07](#) - [OPTIONAL] - Threading & Schedulers.
+- [ ] [Section 08](#) - [OPTIONAL] - Back Pressure / Overflow Strategy.
 - [ ] [Section 09](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#section-09-combining-publishers) - Combining Publishers.
-- [ ] [Section 10](#) -
-- [ ] [Section 11](#) -
-- [ ] [Section 12](#) -
-- [ ] [Section 13](#) -
-- [ ] [Section 14](#) -
-- [ ] [Section 15](#) -
+- [ ] [Section 10](#) - [OPTIONAL] - Batching / Windowing / Grouping.
+- [ ] [Section 11](#) - Repeat & Retry.
+- [ ] [Section 12](#) - Sinks.
+- [ ] [Section 13](#) - [OPTIONAL] - Context.
+- [ ] [Section 14](#) - Unit Testing With Step Verifier.
+- [ ] [Section 15](#) - What's Next?
 
 #### Additional stuff.
 
@@ -203,7 +201,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] You can check the [Virtaul Thread](https://www.udemy.com/course/java-virtual-thread/) vs reactive programming.
 
 <p align="center">
-    <img src="Spring WebFlux Masterclass Reactive Microservices new caption.png" alt="reactive programming" width="1000" height="80"/>    
+    <img src="Spring WebFlux Masterclass Reactive Microservices new caption.png" alt="reactive programming" style="width:1000px;height:80px;"/>    
 </p>
 
 ![Spring WebFlux Masterclass: Reactive Microservices](Spring%20WebFlux%20Masterclass%20Reactive%20Microservices%20New%20desc.PNG)

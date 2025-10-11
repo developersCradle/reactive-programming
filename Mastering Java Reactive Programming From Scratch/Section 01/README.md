@@ -184,7 +184,8 @@ Mono<Result> uploadData(@RequestBody Flux<Input> data) { ... }
 @MessageMapping("chat")
 Flux<Message> chat(Flux<Message> incoming) { ... }
 ````
-#  [THEORY] - What Is Reactive Programming?
+
+# [THEORY] - What Is Reactive Programming?
 
 <div align="center">
     <img src="microserviceCommunication.PNG" alt="reactive programming" width="700"/>
@@ -198,38 +199,28 @@ Flux<Message> chat(Flux<Message> incoming) { ... }
     <img src="reactiveSpesification.PNG" alt="reactive programming" width="700"/>
 </div>
 
-1. There is **Specification** for the **Reactive programming model**.
-
-
--Todo jatka tästä
-
-
-# [THEORY] - Reactive Streams Specification.
+1. There is **Specification** for the **Reactive Programming model**.
 
 <div align="center">
-    <img src="observerPattern.PNG" alt="reactive programming" width="700"/>
+    <img src="whatIsReactiveProgramming.PNG" alt="reactive programming" width="700"/>
 </div>
 
+1. **Reactive Programming paradigm** is designed to *process stream of messages in a non-blocking and asynchronous manner*, all this while *handling backpressure*.
+    - Non-blocking.
+    - Back pressure.
+    - Asynchronous.
+    - Stream of data.
+
 <div align="center">
-    <img src="reactiveProgramming.JPG" alt="reactive programming" width="700"/>
+    <img src="whatIsReactiveProgrammingSecond.PNG" alt="reactive programming" width="700"/>
 </div>
 
-1. **Reactive programming** 
-
-# [THEORY] - What Is Reactive Programming?
-
-<div align="center">
-    <img src="reactiveStream.JPG" alt="reactive programming" width="700"/>
-</div>
- 
- - Back pressure is important also.
+1. **C** was supporting to be robust and scalable.
+    - Example, there were no **Data Structures** in **C** by default.
+2. **Java** did not have tools to **simplify** the non-blocking async IO calls!!
 
 <div align="center">
-    <img src="reactiveStream1.JPG" alt="reactive programming" width="700"/>
-</div>
-
-<div align="center">
-    <img src="reactiveStream2.JPG" alt="reactive programming" width="700"/>
+    <img src="reactiveProgrammingComplimentsOOP.jpg" alt="reactive programming" width="500"/>
 </div>
 
 <div align="center">
@@ -237,6 +228,8 @@ Flux<Message> chat(Flux<Message> incoming) { ... }
 </div>
 
 1. **Reactive Programming** is for **IO** calls.
+    -  In **Java** the Reactive frameworks simplify asynchronous `I/O`.
+2. **Reactive Programming** complements **OOP** programming style! 
 
 # [THEORY] - Reactive Streams Specification.
 
@@ -245,14 +238,21 @@ Flux<Message> chat(Flux<Message> incoming) { ... }
 </div>
 
 - **Reactive programming** is based on **Observer Pattern**.
+    - Example **Twitter/X**, this is below:
 
-- Example **Twitter/X**. One example below:
-
-1. We write comment or re-tweet in **Twitter/X**.
-2. My Flowers can see and **react** to written comments. 
+1. We write comment or re-tweet. In example in **Twitter/X**.
+2. My Flowers can see this and **react** to written comments. 
 
 - Just **Observer** and **React** for changes.
-    - This in high end image.
+    - This in big picture.
+
+- Todo jatka tästä.
+
+
+<div align="center">
+    <img src="exampleOfExplainingTheRequestAndResponse.JPG" alt="reactive programming" width="400"/>
+</div>
+
 
 <div align="center">
     <img src="reactiveStreamSpesification.PNG" alt="reactive programming" width="700"/>
