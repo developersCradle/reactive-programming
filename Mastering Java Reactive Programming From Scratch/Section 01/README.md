@@ -246,13 +246,21 @@ Flux<Message> chat(Flux<Message> incoming) { ... }
 - Just **Observer** and **React** for changes.
     - This in big picture.
 
-- Todo jatka tästä.
-
+- Here will be the example if the, why we would need the **Reactive Programming**.
 
 <div align="center">
     <img src="exampleOfExplainingTheRequestAndResponse.JPG" alt="reactive programming" width="400"/>
 </div>
 
+1. We need service to call service.
+2. There will be the following **business logic**
+
+<div align="center">
+    <img src="exelHasGoodExampleForTheReactiveness.JPG" alt="reactive programming" width="400"/>
+</div>
+
+1. The **Exel** cells **reacts** to the others cells!
+    - This is same kind of reactiveness comes from **Reactive Programming**.
 
 <div align="center">
     <img src="reactiveStreamSpesification.PNG" alt="reactive programming" width="700"/>
@@ -301,19 +309,24 @@ Flux<Message> chat(Flux<Message> incoming) { ... }
 
 # [THEORY] - Publisher/Subscriber Communication - Step By Step.
 
-# This concept is very important!
+> [!IMPORTANT]  
+> This concept is very important!
 
 <div align="center">
     <img src="publisherAndSubscriber.JPG" alt="reactive programming" width="700"/>
 </div>
 
-1. There is **two** instances!  ***Subscriber** wants updates from **Publisher**. 
+1. There is **two** instances!
+    - **Subscriber**. 
+    - **Publisher**. 
+2. The **Subscriber** will be passed to the **Publisher**.
 
 <div align="center">
     <img src="publisherAndSubscriber2.JPG" alt="reactive programming" width="700"/>
 </div>
 
-1. When **publisher** accepts the **Subscriber** object, it handles the **publisher** object to the **Subscriber**.
+1. When **Publisher** **accepts** the **Subscriber** object, it handles the **Subscription object** to the **Subscriber**.
+    - We are giving the Subscription object to the Subscriber via the `onSubscribe()` method.
 
 <div align="center">
     <img src="publisherAndSubscriber3.JPG" alt="reactive programming" width="700"/>
@@ -324,7 +337,6 @@ Flux<Message> chat(Flux<Message> incoming) { ... }
 <div align="center">
     <img src="publisherAndSubscriber4.JPG" alt="reactive programming" width="700"/>
 </div>
-
 
 1. Using **Subscription** object **Subscriber** gets items one by one to the **Subscriber**.
     - It will give only the **request amount** or less.

@@ -69,7 +69,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] Remove numbers from packages and from lecture notes `.md` if there is.
 
 <p align="center">
-    <img id="Build Reactive MicroServices using Spring WebFluxSpringBoot" src="Build Reactive MicroServices using Spring WebFluxSpringBoot caption.png" style="width:1000px;height:80px;">
+    <img id="Build Reactive MicroServices using Spring WebFluxSpringBoot" src="Build Reactive MicroServices using Spring WebFluxSpringBoot caption.png" style="width:1000px;height:90px;">
 </p>
 
 ![Build Reactive MicroServices using Spring WebFlux/SpringBoot](Build%20Reactive%20MicroServices%20using%20Spring%20WebFluxSpringBoot%20caption%20description.PNG)
@@ -196,7 +196,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 #### Additional stuff.
 
-- [ ] Remove numbers from packages(from projects and transfer to IntelliJ).
+- [ ] Remove numbers from packages (from projects and transfer to IntelliJ).
 - [ ] Do the io model chapter for simplicity’s sake.
 - [ ] You can check the [Virtaul Thread](https://www.udemy.com/course/java-virtual-thread/) vs reactive programming.
 
@@ -232,21 +232,24 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 #### Progress/Curriculum.
 
-- [ ] [Section 01](#) -
-- [ ] [Section 02](#) -
-- [ ] [Section 03](#) -
-- [ ] [Section 04](#) -
+
+# Course Outline
+
+- [ ] [Section 01](#) - Introduction.
+- [ ] [Section 02](#) - Traditional vs Reactive APIs.
+- [ ] [Section 03](#) - Spring Data R2DBC.
+- [ ] [Section 04](#) - R2DBC vs JPA/JDBC.
 - [ ] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Masterclass%20Reactive%20Microservices/Section%2005#section-05-reactive-crud-apis) - Reactive CRUD APIs.
 - [ ] [Section 06](#) - Input Validation / Error Handling.
-- [ ] [Section 07](#) -
-- [ ] [Section 08](#) -
-- [ ] [Section 09](#) - 
-- [ ] [Section 10](#) -
-- [ ] [Section 11](#) -
-- [ ] [Section 12](#) -
-- [ ] [Section 13](#) -
-- [ ] [Section 14](#) -
-- [ ] [Section 15](#) -
+- [ ] [Section 07](#) - WebFilter.
+- [ ] [Section 08](#) - Functional Endpoints.
+- [ ] [Section 09](#) - WebClient - Non-Blocking HTTP Client.
+- [ ] [Section 10](#) - Streaming.
+- [ ] [Section 11](#) - Server Sent Events / SSE.
+- [ ] [Section 12](#) - Performance Optimization.
+- [ ] [Section 13](#) - Final Project - Reactive Microservices.
+- [ ] [Section 14](#) - What's Next?
+- [ ] [Section 15](#) - Bonus Section / Articles.
 
 #### Additional stuff.
 
