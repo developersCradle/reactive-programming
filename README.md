@@ -178,7 +178,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 #### Progress/Curriculum.
 
-- [ ] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2001#section-01-introduction) - Introduction. ✅
+- [x] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2001#section-01-introduction) - Introduction. ✅
 - [ ] [Section 02](#) - Mono.
 - [ ] [Section 03](#) - Flux.
 - [ ] [Section 04](#) - Flux - Emitting Items Programmatically.
@@ -196,12 +196,13 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 #### Additional stuff.
 
+- [x] [Original Repository](https://github.com/vinsguru/java-reactive-programming-course). ✅
 - [ ] Remove numbers from packages (from projects and transfer to IntelliJ).
-- [ ] Do the io model chapter for simplicity’s sake.
+- [ ] Do the IO model chapter for simplicity’s sake.
 - [ ] You can check the [Virtaul Thread](https://www.udemy.com/course/java-virtual-thread/) vs reactive programming.
 
 <p align="center">
-    <img src="Spring WebFlux Masterclass Reactive Microservices new caption.png" alt="reactive programming" style="width:1000px;height:80px;"/>    
+    <img src="Spring WebFlux Masterclass Reactive Microservices new caption.PNG" alt="reactive programming" style="width:1000px;height:80px;"/>    
 </p>
 
 ![Spring WebFlux Masterclass: Reactive Microservices](Spring%20WebFlux%20Masterclass%20Reactive%20Microservices%20New%20desc.PNG)
@@ -212,7 +213,8 @@ Contains my own notes with some course material to enforce learning experience.
 
 If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
 
-This repository is made with **Eclipse**, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️.
+This repository is made with [![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)](#) with **Eclipse** hotkeys, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
+
 
 [The course at Udemy](https://www.udemy.com/course/spring-webflux/). 
 
