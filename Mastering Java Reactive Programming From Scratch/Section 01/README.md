@@ -338,14 +338,17 @@ Flux<Message> chat(Flux<Message> incoming) { ... }
     <img src="publisherAndSubscriber4.JPG" alt="reactive programming" width="700"/>
 </div>
 
-1. Using **Subscription** object **Subscriber** gets items one by one to the **Subscriber**.
-    - It will give only the **request amount** or less.
+1. Using **Subscription** object from **Subscriber** gets items one by one using the `.onNext(T t)`.
+    - It will get **three** different the **items**.
+
+> [!IMPORTANT]  
+> Notice that the requested amount will be **three** items! Nothing more!
 
 <div align="center">
     <img src="publisherAndSubscriber5.JPG" alt="reactive programming" width="700"/>
 </div>
 
-- **Publisher** has no items to send, it will invoke `onComplete()`.
+- When **Publisher** has **no items** to send, it **can** invoke `onComplete()`.
 
 <div align="center">
     <img src="publisherAndSubscriber6.JPG" alt="reactive programming" width="700"/>
@@ -353,9 +356,19 @@ Flux<Message> chat(Flux<Message> incoming) { ... }
 
 - If **Publisher**, is having error returning items to **Subscriber**.
 
+1. We have the following **Error** handling implementations for the `.onError()`
+    - `onErrorResume()`.
+    - `.onErrorReturn()`.
+    - `.onErrorContinue()`.
+
 <div align="center">
     <img src="summary.JPG" alt="reactive programming" width="700"/>
 </div>
+
+1. Following signals can be sent to the **Subscriber**!
+    - `onNext(T t)`: A data element is available.
+    - `onComplete()`: The sequence has finished successfully.
+    - `onError(Throwable t)`: The sequence has failed (a terminal event).
 
 <div align="center">
     <img src="terminologia.JPG" alt="reactive programming" width="700"/>
@@ -365,7 +378,11 @@ Flux<Message> chat(Flux<Message> incoming) { ... }
     <img src="pubSub.JPG" alt="reactive programming" width="700"/>
 </div>
 
-1. We model this using **classes**.
+1. In **Reactive paradigm model** we use 
+    - **Subscriber** and **Consumer**.
+        - Anything that can ask for the **data**, can be called **Publisher** and **Subscriber**.
+
+- In **Reflection** in **OOP**, we use **classes**!
 
 # Summary.
 
@@ -373,17 +390,27 @@ Flux<Message> chat(Flux<Message> incoming) { ... }
     <img src="summary2.JPG" alt="reactive programming" width="700"/>
 </div>
 
-1. If we use **non-blocking** communication, we just need **one Thread**.
+1. Non-blocking IO + async commutation is hard!
+    - That's why we have the **Reactive Programming**!
 
 <div align="center">
     <img src="summary3.JPG" alt="reactive programming" width="700"/>
 </div>
 
-1. **Reactive Programming** is having more communication pattern.
+1. **Reactive Programming** is having **mixes** of different communication patterns!
 
 <div align="center">
     <img src="summary4.JPG" alt="reactive programming" width="700"/>
 </div>
+
+1. **Rules in Reactive Programming**:
+    - Subscriber has to subscribe and request for producer to produce items! Till then producer does NOT produce anything. Be lazy as much as possible.
+    - Subscriber can cancel anytime. (Producer should NOT produce data after that)
+    - Producer will produce items via `.onNext()`.
+    - Producer will call `.onComplete()` after emitting `0..N` data.
+    - Producer will call `.onError()` in case of issues.
+    - Producer will NOT invoke anything after `onComplete`/`onError`.
+    - Subscription request/cancel will have NO effect after that.
 
 
 
