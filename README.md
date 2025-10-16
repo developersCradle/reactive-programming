@@ -179,8 +179,8 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 #### Progress/Curriculum.
 
 - [x] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2001#section-01-introduction) - Introduction. ✅
-- [ ] [Section 02](#) - Mono.
-- [ ] [Section 03](#) - Flux.
+- [ ] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2002#section-02-mono) - Mono.
+- [ ] [Section 03](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2003/README.md#section-03-flux) - Flux.
 - [ ] [Section 04](#) - Flux - Emitting Items Programmatically.
 - [ ] [Section 05](#) - Operators.
 - [ ] [Section 06](#) - Hot & Cold Publishers.

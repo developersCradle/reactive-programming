@@ -14,7 +14,7 @@ Introduction.
 
 - This is for you, if you are working on **Microservices**.
 
-- This will be Slow-paced Course.
+- This will be slow paced course.
 
 <div align="center">
     <img src="OOPpillars.JPG" alt="reactive programming" width="700"/>
@@ -320,6 +320,7 @@ Flux<Message> chat(Flux<Message> incoming) { ... }
     - **Subscriber**. 
     - **Publisher**. 
 2. The **Subscriber** will be passed to the **Publisher**.
+    - We would be implementing the **subscribe(...)** on the **Publisher** class.
 
 <div align="center">
     <img src="publisherAndSubscriber2.JPG" alt="reactive programming" width="700"/>

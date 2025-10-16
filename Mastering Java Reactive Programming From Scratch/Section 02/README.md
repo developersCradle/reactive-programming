@@ -123,7 +123,163 @@ Mono.
 
 # Publisher/Subscriber Implementation - Part 1.
 
+<div align="center">
+    <img src="planToBuildOurOwnPublisherOrSubscriber.JPG" alt="reactive programming" width="700"/>
+</div>
+
+1. We **Don't** implement these ourselves in normal case!
+    - We will be doing to gain understanding!
+
+<div align="center">
+    <img src="subscriberImplemented.JPG" alt="reactive programming" width="400"/>
+</div>
+
+1. We will be implementing this below:
+
+````
+package org.java.reactive.sec01.subscriber;
+
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class SubscriberImpl implements Subscriber<String> {
+
+    private static final Logger log = LoggerFactory.getLogger(SubscriberImpl.class);
+    private Subscription subscription;
+
+    public Subscription getSubscription() {
+        return subscription;
+    }
+
+    @Override
+    public void onSubscribe(Subscription subscription) {
+        this.subscription = subscription;
+    }
+
+    @Override
+    public void onNext(String email) {
+        log.info("received: {}", email);
+    }
+
+    @Override
+    public void onError(Throwable throwable) {
+        log.error("error", throwable);
+    }
+
+    @Override
+    public void onComplete() {
+        log.info("completed!");
+    }
+}
+````
+
+<div align="center">
+    <img src="weAreCreatingThePublisher.JPG" alt="reactive programming" width="700"/>
+</div>
+
+- `1.` We are defining the **Publisher** and implementing the `public void subscribe(Subscriber<? super String> subscriber)`.
+    - This will accept the **Subscriber**, so we could be passing the caller the **Subscription** object!
+
+<div align="center">
+    <img src="passingTheSubscriptionObject.JPG" alt="reactive programming" width="700"/>
+</div>
+
+- `2.` We are creating the **Subscription object** and passing to the **Subscriber**.
+
+- We are implementing the **Publisher** `1.` below:
+
+````
+package org.java.reactive.sec01.publisher;
+
+import org.reactivestreams.Publisher;
+import org.reactivestreams.Subscriber;
+
+public class PublisherImpl implements Publisher<String> {
+
+    @Override
+    public void subscribe(Subscriber<? super String> subscriber) {
+        var subscription = new SubscriptionImpl(subscriber); // This will be passed as Subscription object!
+        subscriber.onSubscribe(subscription);
+    }
+
+}
+````
+
+<div align="center">
+    <img src="connectingTheStuff.jpeg" alt="reactive programming" width="600"/>
+</div>
+
+
+
+
+<div align="center">
+    <img src="weAreImplemtingTheSubscriptionObject.JPG" alt="reactive programming" width="600"/>
+</div>
+
+1. We are implanting the `SubscriptionImpl`, this is with the:
+    - `public void request(long requested)`.
+    - `public void cancel()`.
+
+````
+package org.java.reactive.sec01.publisher;
+
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class SubscriptionImpl implements Subscription {
+
+    private static final Logger log = LoggerFactory.getLogger(SubscriptionImpl.class);
+
+    // We are holding the subscription.
+    private final Subscriber<? super String> subscriber;
+
+    public SubscriptionImpl(Subscriber<? super String> subscriber){
+        this.subscriber = subscriber;
+    }
+
+    @Override
+    public void request(long requested) {
+    }
+
+    @Override
+    public void cancel() {
+    }
+
+}
+````
+
 # Publisher/Subscriber Implementation - Part 2.
+
+
+
+- We are **producing** item using Faker.
+
+````
+        for (int i = 0; i < requested && count < MAX_ITEMS; i++) {
+            count++;
+            this.subscriber.onNext(this.faker.internet().emailAddress());
+        }
+````
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Publisher/Subscriber Demo.
 
