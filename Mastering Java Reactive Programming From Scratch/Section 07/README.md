@@ -1,1 +1,3 @@
-# Section 12: 
+# Section 07: [OPTIONAL] - Threading & Schedulers.
+
+# What I learned.

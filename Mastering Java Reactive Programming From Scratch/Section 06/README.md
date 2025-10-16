@@ -1,1 +1,3 @@
-# Section 12: 
+# Section 06: Hot & Cold Publishers. 
+
+# What I learned.

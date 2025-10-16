@@ -1,1 +1,3 @@
-# Section 12: 
+# Section 05: Operators. 
+
+# What I learned.

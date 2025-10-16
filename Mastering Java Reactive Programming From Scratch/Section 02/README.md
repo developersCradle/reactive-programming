@@ -134,7 +134,11 @@ Mono.
     <img src="subscriberImplemented.JPG" alt="reactive programming" width="400"/>
 </div>
 
-1. We will be implementing this below:
+1. We will be implementing:
+    - `public void onComplete()`.
+    - `public void onError(Throwable throwable)`.
+    - `public void onNext(String email)`.
+    - `public void onSubscribe(Subscription subscription)`.
 
 ````
 package org.java.reactive.sec01.subscriber;
@@ -179,8 +183,10 @@ public class SubscriberImpl implements Subscriber<String> {
     <img src="weAreCreatingThePublisher.JPG" alt="reactive programming" width="700"/>
 </div>
 
-- `1.` We are defining the **Publisher** and implementing the `public void subscribe(Subscriber<? super String> subscriber)`.
-    - This will accept the **Subscriber**, so we could be passing the caller the **Subscription** object!
+- `1.` We are defining the **Publisher**.
+    - We are implementing the:
+        - `public void subscribe(Subscriber<? super String> subscriber)`.
+            - This will accept the **Subscriber**, so we could be passing the caller the **Subscription** object!
 
 <div align="center">
     <img src="passingTheSubscriptionObject.JPG" alt="reactive programming" width="700"/>
@@ -210,9 +216,6 @@ public class PublisherImpl implements Publisher<String> {
 <div align="center">
     <img src="connectingTheStuff.jpeg" alt="reactive programming" width="600"/>
 </div>
-
-
-
 
 <div align="center">
     <img src="weAreImplemtingTheSubscriptionObject.JPG" alt="reactive programming" width="600"/>
@@ -254,23 +257,118 @@ public class SubscriptionImpl implements Subscription {
 
 # Publisher/Subscriber Implementation - Part 2.
 
-
-
-- We are **producing** item using Faker.
+- The `request(long requested)`. We are **producing** item using **Faker**.
 
 ````
+    @Override
+    public void request(long requested) {
+        if(isCancelled){
+            return;
+        }
+
+        log.info("subscriber has requested {} items", requested);
+        if(requested > MAX_ITEMS){
+            this.subscriber.onError(new RuntimeException("validation failed"));
+            this.isCancelled = true;
+
+            return;
+        }
         for (int i = 0; i < requested && count < MAX_ITEMS; i++) {
             count++;
             this.subscriber.onNext(this.faker.internet().emailAddress());
         }
+        if(count == MAX_ITEMS){
+            log.info("no more data to produce");
+            this.subscriber.onComplete();
+            this.isCancelled = true;
+        }
+    }
 ````
 
+- The `cancel()`.
+
+````
+
+    @Override
+    public void cancel() {
+        log.info("subscriber has cancelled");
+        this.isCancelled = true;
+    }
+
+````
+
+- The currently **Subscription**:
+
+````
+package org.java.reactive.sec01.publisher;
+
+import com.github.javafaker.Faker;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class SubscriptionImpl implements Subscription {
+
+    private static final Logger log = LoggerFactory.getLogger(SubscriptionImpl.class);
+    private static final int MAX_ITEMS = 10;
+    private final Faker faker;
+    // We are holding the subscription.
+    private final Subscriber<? super String> subscriber;
+
+    private boolean isCancelled;
+    private int count = 0;
+
+    public SubscriptionImpl(Subscriber<? super String> subscriber){
+        this.subscriber = subscriber;
+        this.faker = Faker.instance();
+    }
+
+    @Override
+    public void request(long requested) {
+        if(isCancelled){
+            return;
+        }
+
+        log.info("subscriber has requested {} items", requested);
+        if(requested > MAX_ITEMS){
+            this.subscriber.onError(new RuntimeException("validation failed"));
+            this.isCancelled = true;
+
+            return;
+        }
+        for (int i = 0; i < requested && count < MAX_ITEMS; i++) {
+            count++;
+            this.subscriber.onNext(this.faker.internet().emailAddress());
+        }
+        if(count == MAX_ITEMS){
+            log.info("no more data to produce");
+            this.subscriber.onComplete();
+            this.isCancelled = true;
+        }
+    }
+
+    @Override
+    public void cancel() {
+        log.info("subscriber has cancelled");
+        this.isCancelled = true;
+    }
+
+}
+````
+
+# Publisher/Subscriber Demo.
 
 
+- We are testing the `1.` publisher does not produce data unless subscriber requests for it:
 
-
-
-
+````
+private static void demo1() {
+        var publisher = new PublisherImpl();
+        var subscriber = new SubscriberImpl();
+        publisher.subscribe(subscriber);
+    }
+````
 
 
 
