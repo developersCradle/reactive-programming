@@ -424,6 +424,9 @@ private static void demo1() {
 
 # Mono / Flux - Introduction.
 
+<div align="center">
+    <img src="monoDifferentFunctions.JPG" alt="reactive programming" width="600"/>
+</div>
 
 - **Reactive Stream** is the specification and **Project Reactor** is the library.
     - **Project Reactor** would be the same as the **Hibernate** for the **JPA**.
@@ -556,12 +559,70 @@ mono.subscribe(t -> System.out.println(t));
 
 # Mono Subscribe - Overloaded Methods.
 
-- TODO
+<div align="center">
+    <img src="subscribeNotLoggingALl.JPG" alt="reactive programming" width="600"/>
+</div>
+
+1. Two points to figure out:
+    - There was no `completed` message this time?
+    - We only `.subscribed()`, we did not `.request()`.
+
+- We can use overloaded methods to solve these:
+
+````
+       mono.subscribe(
+                i -> log.info("received: {}", i),
+                err -> log.error("error", err),
+                () -> log.info("Completed"),
+                subscription -> subscription.request(1)
+                );
+````
+
+- With following, we **transform** every data that is **emitted** by this **publisher**. 
+
+````
+        var mono = Mono.just(1)
+                .map(i -> i + "a");
+
+        mono.subscribe(
+                i -> log.info("received: {}", i),
+                err -> log.error("error", err),
+                () -> log.info("Completed"),
+                subscription -> subscription.request(1)
+                );
+````
+
+- This will log:
+
+````
+00:03:03.101 INFO  [           main] o.j.r.sec02.Lec03MonoSubscribe : received: 1a
+00:03:03.106 INFO  [           main] o.j.r.sec02.Lec03MonoSubscribe : Completed
+````
+
+- Illustrating the error handling also works:
+
+````
+        var mono = Mono.just(1)
+                .map(i -> i / 0);
+
+        mono.subscribe(
+                i -> log.info("received: {}", i),
+                err -> log.error("error", err),
+                () -> log.info("Completed"),
+                subscription -> subscription.request(1)
+                );
+````
 
 
 # Creating Default Subscriber.
 
+
+- TOdo 
+
+
 # Mono - Empty / Error.
+
+- We are going to make publisher that will emit empty value.
 
 # On Error Dropped - Problem.
 
