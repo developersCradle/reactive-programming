@@ -181,18 +181,18 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [x] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2001#section-01-introduction) - Introduction. ✅
 - [ ] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2002#section-02-mono) - Mono.
 - [ ] [Section 03](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2003/README.md#section-03-flux) - Flux.
-- [ ] [Section 04](#) - Flux - Emitting Items Programmatically.
-- [ ] [Section 05](#) - Operators.
-- [ ] [Section 06](#) - Hot & Cold Publishers.
-- [ ] [Section 07](#) - [OPTIONAL] - Threading & Schedulers.
-- [ ] [Section 08](#) - [OPTIONAL] - Back Pressure / Overflow Strategy.
+- [ ] [Section 04](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2004#section-04-flux---emitting-items-programmatically) - Flux - Emitting Items Programmatically.
+- [ ] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2005#section-05-operators) - Operators.
+- [ ] [Section 06](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2006#section-06-hot--cold-publishers) - Hot & Cold Publishers.
+- [ ] [Section 07](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2007#section-07-optional---threading--schedulers) - [OPTIONAL] - Threading & Schedulers.
+- [ ] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2008#section-08-optional---back-pressure--overflow-strategy) - [OPTIONAL] - Back Pressure / Overflow Strategy.
 - [ ] [Section 09](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#section-09-combining-publishers) - Combining Publishers.
-- [ ] [Section 10](#) - [OPTIONAL] - Batching / Windowing / Grouping.
-- [ ] [Section 11](#) - Repeat & Retry.
-- [ ] [Section 12](#) - Sinks.
-- [ ] [Section 13](#) - [OPTIONAL] - Context.
-- [ ] [Section 14](#) - Unit Testing With Step Verifier.
-- [ ] [Section 15](#) - What's Next?
+- [ ] [Section 10](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2010/README.md#section-10-optional---batching--windowing--grouping) - [OPTIONAL] - Batching / Windowing / Grouping.
+- [ ] [Section 11](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2011/README.md#section-11-repeat--retry) - Repeat & Retry.
+- [ ] [Section 12](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2012#section-12-sinks) - Sinks.
+- [ ] [Section 13](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2013#section-13-optional---context) - [OPTIONAL] - Context.
+- [ ] [Section 14](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2014#section-14-unit-testing-with-step-verifier) - Unit Testing With Step Verifier.
+- [ ] [Section 15](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2015#section-15-whats-next) - What's Next?
 
 #### Additional stuff.
 
@@ -202,7 +202,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] You can check the [Virtaul Thread](https://www.udemy.com/course/java-virtual-thread/) vs reactive programming.
 
 <p align="center">
-    <img src="Spring WebFlux Masterclass Reactive Microservices new caption.PNG" alt="reactive programming" style="width:1000px;height:80px;"/>    
+    <img src="Spring%20WebFlux%20Masterclass%20Reactive%20Microservices%20New%20CAPTION.PNG" alt="reactive programming" style="width:1000px;height:80px;"/>    
 </p>
 
 ![Spring WebFlux Masterclass: Reactive Microservices](Spring%20WebFlux%20Masterclass%20Reactive%20Microservices%20New%20desc.PNG)

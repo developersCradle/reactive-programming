@@ -364,32 +364,200 @@ public class SubscriptionImpl implements Subscription {
 
 ````
 private static void demo1() {
-        var publisher = new PublisherImpl();
-        var subscriber = new SubscriberImpl();
-        publisher.subscribe(subscriber);
+    var publisher = new PublisherImpl();
+    var subscriber = new SubscriberImpl();
+    publisher.subscribe(subscriber);
     }
 ````
 
+- Nothing should happen!
 
+- We are testing the `2.` publisher will produce only <= subscriber requested items. publisher can also produce 0 items!:
 
+````
 
+ private static void demo2() throws InterruptedException {
+    var publisher = new PublisherImpl();
+    var subscriber = new SubscriberImpl();
+    publisher.subscribe(subscriber);
+    subscriber.getSubscription().request(3);
+    Thread.sleep(Duration.ofSeconds(2));
+    subscriber.getSubscription().request(3);
+    Thread.sleep(Duration.ofSeconds(2));
+    subscriber.getSubscription().request(3);
+    Thread.sleep(Duration.ofSeconds(2));
+    subscriber.getSubscription().request(3);
+    Thread.sleep(Duration.ofSeconds(2));
+    subscriber.getSubscription().request(3);
+    }
+````
 
+- It can provide data:
 
+````
+23:18:28.396 INFO  [           main] o.j.r.s.p.SubscriptionImpl     : subscriber has requested 3 items
+23:18:28.747 INFO  [           main] o.j.r.s.s.SubscriberImpl       : received: nyla.turner@yahoo.com
+23:18:28.748 INFO  [           main] o.j.r.s.s.SubscriberImpl       : received: jorge.spencer@gmail.com
+23:18:28.749 INFO  [           main] o.j.r.s.s.SubscriberImpl       : received: shayna.nicolas@yahoo.com
+23:18:30.763 INFO  [           main] o.j.r.s.p.SubscriptionImpl     : subscriber has requested 3 items
+23:18:30.763 INFO  [           main] o.j.r.s.s.SubscriberImpl       : received: thurman.trantow@hotmail.com
+23:18:30.764 INFO  [           main] o.j.r.s.s.SubscriberImpl       : received: spencer.runolfsson@hotmail.com
+23:18:30.764 INFO  [           main] o.j.r.s.s.SubscriberImpl       : received: margarite.wehner@gmail.com
+23:18:32.766 INFO  [           main] o.j.r.s.p.SubscriptionImpl     : subscriber has requested 3 items
+23:18:32.767 INFO  [           main] o.j.r.s.s.SubscriberImpl       : received: donya.lubowitz@yahoo.com
+23:18:32.767 INFO  [           main] o.j.r.s.s.SubscriberImpl       : received: qiana.tromp@yahoo.com
+23:18:32.768 INFO  [           main] o.j.r.s.s.SubscriberImpl       : received: reagan.rath@hotmail.com
+23:18:34.769 INFO  [           main] o.j.r.s.p.SubscriptionImpl     : subscriber has requested 3 items
+23:18:34.769 INFO  [           main] o.j.r.s.s.SubscriberImpl       : received: briana.hegmann@hotmail.com
+23:18:34.769 INFO  [           main] o.j.r.s.p.SubscriptionImpl     : no more data to produce
+23:18:34.769 INFO  [           main] o.j.r.s.s.SubscriberImpl       : completed!
+````
 
+- The case: publisher can also produce 0 items!:
+    - When we set `private static final int MAX_ITEMS = 0;`.
 
+````
 
+````
 
-# Publisher/Subscriber Demo.
+- Todo tee tämä loppuun.
 
 # Mono / Flux - Introduction.
 
+
+- **Reactive Stream** is the specification and **Project Reactor** is the library.
+    - **Project Reactor** would be the same as the **Hibernate** for the **JPA**.
+
+<div align="center">
+    <img src="reactorIsImplementingTheReactiveStandard.JPG" alt="reactive programming" width="600"/>
+</div>
+
+1. The **Project reactor** provides **two** different implementation of the
+**Publisher<T>**.
+
+<div align="center">
+    <img src="mono.JPG" alt="reactive programming" width="600"/>
+</div>
+
+1. `Mono` can **emit** `0` or `1` item!
+    - There can be case when there are **no items** to **emit**, then there will be the `onComplete()`.
+
+<div align="center">
+    <img src="flux.JPG" alt="reactive programming" width="600"/>
+</div>
+
+1. **Flux** can emit **multiple data**.
+2. There can be **error** emitted at **any point** in the stream, when the emission is being happened!
+
 # Why We Need Mono!
+
+> [!TIP]
+> Why we need to have **different** Mono and the Flux, if the Flux have the necessary things!
+
+- Simple answer, it's **convenient**.
+
+<div align="center">
+    <img src="whyToUseMonoAndFlux.JPG" alt="reactive programming" width="600"/>
+</div>
+
+1. The **database** can return one or more data.
+    - **Traditional way**, they have `Optional<Customer>`
+    - **Reactive Stream way**, they have `Mono<Customer>`.
+
+2. The same for the **many elements**, there will be 
+    - **A Traditional way**, they have `List<Cusomer>`
+    - **Reactive Stream way**, they have `Flux<Customer>`.
+
+<div align="center">
+    <img src="whyToUseMonoAndFluxSecond.JPG" alt="reactive programming" width="600"/>
+</div>
+
+1. There will be many different methods in the `Flux`.
+2. Example for handling the multiple data, **back pressure**.
+3. The `Mono` is great for **simple cases**. 
+    - For this case there can be **one value**, if its coming.
+    - Request and response pattern.
 
 # Stream Lazy Behavior.
 
+
+- Like in below example, the **Java 8** streams are lazy. 
+    - `.toList(); // This will be resolved as soon as there is terminal operator.`
+        - This is one example of the terminal operator.
+
+````
+package org.java.reactive.sec02;
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.stream.Stream;
+
+public class Lec01LazyStream {
+    private static final Logger log = LoggerFactory.getLogger(Lec01LazyStream.class);
+
+    public static void main(String[] args) {
+
+        // This is not reactive programming
+        // Streams are Lazy.
+        Stream.of("One", "Two")
+                .peek(action -> log.info(" received : {}", action))
+                .toList(); // This will be resolved as soon as there is terminal operator.
+    }
+}
+
+````
+
+- This same concept applies to the **Reactor Streams**, there will be no result, until there is **subscription**.  
+    - Reactive Streams are **lazy**.
+
+<div align="center">
+    <img src="reactiveStreamAreLazy.jpeg" alt="reactive programming" width="600"/>
+</div>
+
 # Mono Just.
 
+- `Mono.just<T value>` is the factory method for creating the exactly creating **Mono** of **one item**.
+
+- This will **emit** the **value**, once **Publisher subscribes** for this **publisher**.
+    - As following `Mono<String> mono = Mono.just("First");`.
+        - This does not be any specific type. Example: `Mono.just(1); // Mono.just can be publisher of any type.`.
+
+<div align="center">
+    <img src="loggingMono.JPG" alt="reactive programming" width="600"/>
+</div>
+
+1. The logging would **not work** the `First`, since the publisher has not been **subscribed**.
+
+- To get the logging working, we need to subscribe to the **Reactive Stream**.
+    - Also notice, we are using our own **Reactive Stream** implementation with the **Project Reactor**. 
+
+````
+Mono<String> mono = Mono.just("First");
+var subscriber = new SubscriberImpl();
+mono.subscribe(subscriber);
+
+subscriber.getSubscription().request(3);
+````
+
+- We can use the **Project Reactors** methods for logging, as following:
+
+````
+Mono<String> mono = Mono.just("First");
+mono.subscribe(t -> System.out.println(t));
+````
+
+> [!NOTE]  
+> In **Reactive World** we need to think in terms `Publisher`'s and `Subscriver`'s.
+
+- `Mono.just()` is a **convenient** way to create a reactive Publisher
+    - We need start passing these to **Reactive methods**.
+
 # Mono Subscribe - Overloaded Methods.
+
+- TODO
+
 
 # Creating Default Subscriber.
 

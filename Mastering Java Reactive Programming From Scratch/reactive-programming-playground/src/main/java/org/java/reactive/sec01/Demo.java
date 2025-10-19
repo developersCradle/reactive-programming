@@ -17,7 +17,7 @@ public class Demo {
 
     public static void main(String[] args) throws InterruptedException {
 
-        demo1();
+        demo3();
 
     }
 

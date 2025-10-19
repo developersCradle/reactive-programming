@@ -30,7 +30,7 @@ public class SubscriptionImpl implements Subscription {
 
         log.info("subscriber has requested {} items", requested);
         if(requested > MAX_ITEMS){
-            this.subscriber.onError(new RuntimeException("validation failed"));
+//            this.subscriber.onError(new RuntimeException("validation failed"));
             this.isCancelled = true;
 
             return;
