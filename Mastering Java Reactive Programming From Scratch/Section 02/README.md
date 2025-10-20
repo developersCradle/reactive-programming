@@ -613,20 +613,179 @@ mono.subscribe(t -> System.out.println(t));
                 );
 ````
 
-
 # Creating Default Subscriber.
 
+- There can be multiple subscribers.
 
-- TOdo 
+- Below **default Subscriber**.
 
+````
+package org.java.reactive.common;
+
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class DefaultSubscriber<T> implements Subscriber<T> {
+
+    private static final Logger log = LoggerFactory.getLogger(DefaultSubscriber.class);
+    private final String name;
+
+    public DefaultSubscriber(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void onSubscribe(Subscription subscription) {
+        subscription.request(Long.MAX_VALUE);
+        
+    }
+
+    @Override
+    public void onNext(T item) {
+        log.info("{} received: {}", this.name, item);
+    }
+
+    @Override
+    public void onError(Throwable throwable) {
+        log.error("{} error", this.name, throwable);
+    }
+
+    @Override
+    public void onComplete() {
+        log.info("{} received complete!", this.name);
+    }
+
+}
+````
+
+- The util class:
+
+````
+package org.java.reactive.common;
+
+import com.github.javafaker.Faker;
+import org.reactivestreams.Subscriber;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import reactor.core.publisher.Flux;
+
+import java.time.Duration;
+import java.util.function.UnaryOperator;
+
+public class Util {
+
+    private static final Logger log = LoggerFactory.getLogger(Util.class);
+    private static final Faker faker = Faker.instance();
+
+    public static <T> Subscriber<T> subscriber(){
+        return new DefaultSubscriber<>("");
+    }
+
+    public static <T> Subscriber<T> subscriber(String name){
+        return new DefaultSubscriber<>(name);
+    }
+
+    public static Faker faker(){
+        return faker;
+    }
+
+    public static void sleepSeconds(int seconds){
+        try {
+            Thread.sleep(Duration.ofSeconds(seconds));
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    public static void sleep(Duration duration){
+        try {
+            Thread.sleep(duration);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static <T> UnaryOperator<Flux<T>> fluxLogger(String name){
+        return flux -> flux
+                .doOnSubscribe(s -> log.info("subscribing to {}", name))
+                .doOnCancel(() -> log.info("cancelling {}", name))
+                .doOnComplete(() -> log.info("{} completed", name));
+    }
+
+}
+````
 
 # Mono - Empty / Error.
 
 - We are going to make publisher that will emit empty value.
 
+- Below the example creating **Empty** and **Error** Publishers.
+
+````
+package org.java.reactive.sec02;
+
+
+import org.java.reactive.common.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import reactor.core.publisher.Mono;
+
+public class Lec04MonoEmptyError {
+
+    private static final Logger log = LoggerFactory.getLogger(Lec04MonoEmptyError.class);
+
+    public static void main(String[] args) {
+        getUsername(3)
+                .subscribe(Util.subscriber());
+    }
+
+    private static Mono<String> getUsername(int userId)
+    {
+        return switch (userId)
+        {
+            case 1 -> Mono.just("same");
+            case 2 -> Mono.empty(); // normally we would say null.
+            default -> Mono.error(new RuntimeException("Invalid input")); // This block when there is error.
+        };
+    }
+}
+````
+
+- Using **empty** or **error**.
+    - Returning some value in **Reactive Streams**
+        - `Mono.just("same");`.
+    - The way how we say the `null` in **Reactive Streams**.
+        - `Mono.empty(); // normally we would say null.`
+    - The normal way how we will be **throwing the errors** inside **Reactive Streams**
+        - `Mono.error(new RuntimeException("Invalid input")); // This block when there is error.`.
+
 # On Error Dropped - Problem.
 
+- We have following:
+
+````
+getUsername(3)
+    .subscribe(s -> System.out.println(s));
+````
+
+- If there is **no error handlers** defined when there will be error, there will be `onErrorDropped` thrown!
+
+````
+19:03:04.502 ERROR [           main] r.core.publisher.Operators     : Operator called default onErrorDropped
+reactor.core.Exceptions$ErrorCallbackNotImplemented: java.lang.RuntimeException: Invalid input
+Caused by: java.lang.RuntimeException: Invalid input
+````
+
+- Project Reactor wants error handler!
+
+
 # Mono - From Supplier.
+
+- In **Reactive Programming** in general, we want work as **lazy** as possible, meaning the data should be coming only when the data is needed!
+
 
 # Mono - From Callable.
 
