@@ -781,15 +781,211 @@ Caused by: java.lang.RuntimeException: Invalid input
 
 - Project Reactor wants error handler!
 
-
 # Mono - From Supplier.
 
 - In **Reactive Programming** in general, we want work as **lazy** as possible, meaning the data should be coming only when the data is needed!
 
+| Method | Evaluation | When Value is Computed |
+|---------|-------------|-------------------------|
+| `Mono.just(value)` | **Eager** | **Immediately**, when the Mono is created |
+| `Mono.fromSupplier(() -> value)` | **Lazy** | Only **when** a **subscriber** subscribes |
+
+- Example where the values are known when ran:
+
+````
+    public static void main(String[] args) {
+         var list = List.of(1,2,3);
+         // Since list on memory.
+        // This will be calculated immiteadetly, there can be also the case when the data will be later to be know, then use the subcriber.
+        // Mono.just(sum(list))
+        // .subscribe(Util.subscriber());
+    }
+
+    private  static int sum(List<Integer> list)
+    {
+        log.info("finding the sum of {}", list);
+        return list.stream().mapToInt(a -> a).sum();
+    }
+````
+
+- We can also make it so, when the result is ready with following:
+
+````
+package org.java.reactive.sec02;
+
+import org.java.reactive.common.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import reactor.core.publisher.Mono;
+
+import java.util.List;
+
+public class Lec05MonoFromSupplier {
+
+    /*
+        To delay the execution using supplied / callable.
+     */
+    private static final Logger log = LoggerFactory.getLogger(Lec05MonoFromSupplier.class);
+
+    public static void main(String[] args) {
+        var list = List.of(1,2,3);
+
+        // This will yield value, when someone is subscribed.
+        Mono.fromSupplier(() -> sum(list))
+                .subscribe(Util.subscriber());
+    }
+
+    private  static int sum(List<Integer> list)
+    {
+        log.info("finding the sum of {}", list);
+        return list.stream().mapToInt(a -> a).sum();
+    }
+}
+````
 
 # Mono - From Callable.
 
+- Interface `Callable<V>`.
+    - We can see that `Exception` is **thrown** form the method.
+    - **Callable** can be used wrapper for some **task**!
+
+````
+/*
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+ *
+ * This code is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 only, as
+ * published by the Free Software Foundation.  Oracle designates this
+ * particular file as subject to the "Classpath" exception as provided
+ * by Oracle in the LICENSE file that accompanied this code.
+ *
+ * This code is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+ * version 2 for more details (a copy is included in the LICENSE file that
+ * accompanied this code).
+ *
+ * You should have received a copy of the GNU General Public License version
+ * 2 along with this work; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+ *
+ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
+ * or visit www.oracle.com if you need additional information or have any
+ * questions.
+ */
+
+/*
+ * This file is available under and governed by the GNU General Public
+ * License version 2 only, as published by the Free Software Foundation.
+ * However, the following notice accompanied the original version of this
+ * file:
+ *
+ * Written by Doug Lea with assistance from members of JCP JSR-166
+ * Expert Group and released to the public domain, as explained at
+ * http://creativecommons.org/publicdomain/zero/1.0/
+ */
+
+package java.util.concurrent;
+
+/**
+ * A task that returns a result and may throw an exception.
+ * Implementors define a single method with no arguments called
+ * {@code call}.
+ *
+ * <p>The {@code Callable} interface is similar to {@link
+ * java.lang.Runnable}, in that both are designed for classes whose
+ * instances are potentially executed by another thread.  A
+ * {@code Runnable}, however, does not return a result and cannot
+ * throw a checked exception.
+ *
+ * <p>The {@link Executors} class contains utility methods to
+ * convert from other common forms to {@code Callable} classes.
+ *
+ * @see Executor
+ * @since 1.5
+ * @author Doug Lea
+ * @param <V> the result type of method {@code call}
+ */
+@FunctionalInterface
+public interface Callable<V> {
+    /**
+     * Computes a result, or throws an exception if unable to do so.
+     *
+     * @return computed result
+     * @throws Exception if unable to compute a result
+     */
+    V call() throws Exception;
+}
+````
+
+## ☕ Java `Callable<V>` Interface.
+
+### 🧩 Overview.
+
+The `Callable` interface is part of the **`java.util.concurrent`** package.  
+It represents a task that can be **executed asynchronously** and **returns a result**.
+
+It’s similar to `Runnable`, but with two key differences:
+
+1. It **returns a value**.
+2. It **can throw checked exceptions**.
+
+````java
+@FunctionalInterface
+public interface Callable<V> {
+    V call() throws Exception;
+}
+
+    V → The result type returned by this callable.
+
+    call() → The method to be implemented, can throw any exception.
+````
+
+- `Callable<V>` has **throws** exception.
+
+- With, `Mono.fromSupplier` we need to catch the exception.
+
+````
+package org.java.reactive.sec02;
+
+
+import org.java.reactive.common.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import reactor.core.publisher.Mono;
+
+import java.util.List;
+
+public class Lec06MonoFromCallable {
+    /*
+        To delay the execution using supplied / callable.
+     */
+    private static final Logger log = LoggerFactory.getLogger(Lec06MonoFromCallable.class);
+
+    public static void main(String[] args) {
+        var list = List.of(1,2,3);
+        Mono.fromSupplier(() -> {
+                    try {
+                        return sum(list);
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                })
+                .subscribe(Util.subscriber());
+    }
+
+    private  static int sum(List<Integer> list) throws Exception
+    {
+        log.info("finding the sum of {}", list);
+        return list.stream().mapToInt(a -> a).sum();
+    }
+}
+````
+
 # Mono - From Runnable.
+
+
+
 
 # Mono - From Future.
 

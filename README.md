@@ -3,6 +3,133 @@
     <img id="nordea" src="reactive programming in general caption.gif" width=600>
 </p>
 
+<details>
+
+<summary id="refactoring the progress" open="true"> <b> Reactive course series by Vinoth Selvaraj! </b> </summary>
+
+<br>
+
+<p align="center">
+    <img src="reactiveSeries.JPG" alt="reactive programming" width="700"/>
+</p>
+
+</details>
+
+<div align="center">
+    <img id="Mastering Java Reactive Programming [From Scratch] caption" src="Mastering Java Reactive Programming [ From Scratch ] caption.png" alt="Mastering Java Reactive Programming [From Scratch]" style="width:1000px;height:90px;"/>
+</div>
+
+![Mastering Java Reactive Programming [From Scratch]](Mastering%20Java%20Reactive%20Programming%20%20From%20Scratch%20%20caption.PNG)
+
+All course material from Mastering Java Reactive Programming [From Scratch] **Vinoth Selvaraj**.
+
+Contains my own notes with some course material to enforce learning experience.
+
+If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
+
+This repository is made with **Eclipse**, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️.
+
+[The course at Udemy](https://www.udemy.com/course/complete-java-reactive-programming/). 
+
+[Website of maker](https://www.vinsguru.com/).
+
+<!-- 
+Linkedin puts this shit front, when clicking from private mode x(. Need to put this to make jump working every case
+?trk=public_profile_see-credential 
+-->
+
+<div align="center">
+    Insert certificate here when completed
+</div>
+
+**Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
+
+#### Progress/Curriculum.
+
+- [x] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2001#section-01-introduction) - Introduction. ✅
+- [ ] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2002#section-02-mono) - Mono.
+- [ ] [Section 03](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2003/README.md#section-03-flux) - Flux.
+- [ ] [Section 04](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2004#section-04-flux---emitting-items-programmatically) - Flux - Emitting Items Programmatically.
+- [ ] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2005#section-05-operators) - Operators.
+- [ ] [Section 06](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2006#section-06-hot--cold-publishers) - Hot & Cold Publishers.
+- [ ] [Section 07](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2007#section-07-optional---threading--schedulers) - [OPTIONAL] - Threading & Schedulers.
+- [ ] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2008#section-08-optional---back-pressure--overflow-strategy) - [OPTIONAL] - Back Pressure / Overflow Strategy.
+- [ ] [Section 09](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#section-09-combining-publishers) - Combining Publishers.
+- [ ] [Section 10](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2010/README.md#section-10-optional---batching--windowing--grouping) - [OPTIONAL] - Batching / Windowing / Grouping.
+- [ ] [Section 11](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2011/README.md#section-11-repeat--retry) - Repeat & Retry.
+- [ ] [Section 12](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2012#section-12-sinks) - Sinks.
+- [ ] [Section 13](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2013#section-13-optional---context) - [OPTIONAL] - Context.
+- [ ] [Section 14](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2014#section-14-unit-testing-with-step-verifier) - Unit Testing With Step Verifier.
+- [ ] [Section 15](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2015#section-15-whats-next) - What's Next?
+
+#### Additional stuff.
+
+- [x] [Original Repository](https://github.com/vinsguru/java-reactive-programming-course). ✅
+- [ ] Remove numbers from packages (from projects and transfer to IntelliJ).
+- [ ] Do the IO model chapter for simplicity’s sake.
+- [ ] You can check the [Virtaul Thread](https://www.udemy.com/course/java-virtual-thread/) vs reactive programming.
+
+<p align="center">
+    <img id="Build Reactive MicroServices using Spring WebFluxSpringBoot" src="Spring WebFlux Masterclass Reactive Microservices caption.PNG" style="width:900px;height:90px;">
+</p>
+
+
+![Spring WebFlux Masterclass: Reactive Microservices](Spring%20WebFlux%20Masterclass%20Reactive%20Microservices%20New%20desc.PNG)
+
+All course material from Spring WebFlux Masterclass: Reactive Microservices [New] by **Vinoth Selvaraj**.
+
+Contains my own notes with some course material to enforce learning experience.
+
+If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
+
+This repository is made with [![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)](#) with **Eclipse** hotkeys, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
+
+
+[The course at Udemy](https://www.udemy.com/course/spring-webflux/). 
+
+[Website of maker](https://www.vinsguru.com/).
+
+<!-- 
+Linkedin puts this shit front, when clicking from private mode x(. Need to put this to make jump working every case
+?trk=public_profile_see-credential 
+-->
+
+<div align="center">
+    Insert certificate here when completed
+</div>
+
+
+**Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
+
+#### Progress/Curriculum.
+
+
+# Course Outline
+
+- [ ] [Section 01](#) - Introduction.
+- [ ] [Section 02](#) - Traditional vs Reactive APIs.
+- [ ] [Section 03](#) - Spring Data R2DBC.
+- [ ] [Section 04](#) - R2DBC vs JPA/JDBC.
+- [ ] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Masterclass%20Reactive%20Microservices/Section%2005#section-05-reactive-crud-apis) - Reactive CRUD APIs.
+- [ ] [Section 06](#) - Input Validation / Error Handling.
+- [ ] [Section 07](#) - WebFilter.
+- [ ] [Section 08](#) - Functional Endpoints.
+- [ ] [Section 09](#) - WebClient - Non-Blocking HTTP Client.
+- [ ] [Section 10](#) - Streaming.
+- [ ] [Section 11](#) - Server Sent Events / SSE.
+- [ ] [Section 12](#) - Performance Optimization.
+- [ ] [Section 13](#) - Final Project - Reactive Microservices.
+- [ ] [Section 14](#) - What's Next?
+- [ ] [Section 15](#) - Bonus Section / Articles.
+
+#### Additional stuff.
+
+- [ ] Read thought [Manifesto](https://www.reactivemanifesto.org/).
+- [ ] Intro to [Reactive Programming](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754).
+- [ ] Read thought [Manifesto](https://www.reactivemanifesto.org/).
+- [ ] Some about Reactive Programming [PDF](https://soft.vub.ac.be/Publications/2012/vub-soft-tr-12-13.pdf).
+- [ ] Remove numbers from packages and from lecture notes `.md` if there is.
+
 <p align="center">
     <img id="nordea" src="Reactive Programming in Modern Java using Project Reactor caption real.png" style="width:1000px;height:80px;">
 </p>
@@ -141,125 +268,6 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] Refresh again `71. How does Netty handle the Request?`.
 - [ ] Read `Netty in Action` book.
 - [ ] Do chapter Functional Web 20-25.
-- [ ] Remove numbers from packages and from lecture notes `.md` if there is.
-
-# Reactive course series by Vinoth Selvaraj.
-
-<p align="center">
-    <img src="reactiveSeries.JPG" alt="reactive programming" width="700"/>
-</p>
-
-# Mastering Java Reactive Programming [ From Scratch ].
-
-![Mastering Java Reactive](Mastering%20Java%20Reactive%20Programming%20%20From%20Scratch%20%20caption.PNG)
-
-All course material from Mastering Java Reactive Programming [From Scratch] **Vinoth Selvaraj**.
-
-Contains my own notes with some course material to enforce learning experience.
-
-If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
-
-This repository is made with **Eclipse**, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️.
-
-[The course at Udemy](https://www.udemy.com/course/complete-java-reactive-programming/). 
-
-[Website of maker](https://www.vinsguru.com/).
-
-<!-- 
-Linkedin puts this shit front, when clicking from private mode x(. Need to put this to make jump working every case
-?trk=public_profile_see-credential 
--->
-
-<div align="center">
-    Insert certificate here when completed
-</div>
-
-**Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
-
-#### Progress/Curriculum.
-
-- [x] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2001#section-01-introduction) - Introduction. ✅
-- [ ] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2002#section-02-mono) - Mono.
-- [ ] [Section 03](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2003/README.md#section-03-flux) - Flux.
-- [ ] [Section 04](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2004#section-04-flux---emitting-items-programmatically) - Flux - Emitting Items Programmatically.
-- [ ] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2005#section-05-operators) - Operators.
-- [ ] [Section 06](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2006#section-06-hot--cold-publishers) - Hot & Cold Publishers.
-- [ ] [Section 07](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2007#section-07-optional---threading--schedulers) - [OPTIONAL] - Threading & Schedulers.
-- [ ] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2008#section-08-optional---back-pressure--overflow-strategy) - [OPTIONAL] - Back Pressure / Overflow Strategy.
-- [ ] [Section 09](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#section-09-combining-publishers) - Combining Publishers.
-- [ ] [Section 10](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2010/README.md#section-10-optional---batching--windowing--grouping) - [OPTIONAL] - Batching / Windowing / Grouping.
-- [ ] [Section 11](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2011/README.md#section-11-repeat--retry) - Repeat & Retry.
-- [ ] [Section 12](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2012#section-12-sinks) - Sinks.
-- [ ] [Section 13](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2013#section-13-optional---context) - [OPTIONAL] - Context.
-- [ ] [Section 14](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2014#section-14-unit-testing-with-step-verifier) - Unit Testing With Step Verifier.
-- [ ] [Section 15](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2015#section-15-whats-next) - What's Next?
-
-#### Additional stuff.
-
-- [x] [Original Repository](https://github.com/vinsguru/java-reactive-programming-course). ✅
-- [ ] Remove numbers from packages (from projects and transfer to IntelliJ).
-- [ ] Do the IO model chapter for simplicity’s sake.
-- [ ] You can check the [Virtaul Thread](https://www.udemy.com/course/java-virtual-thread/) vs reactive programming.
-
-<p align="center">
-    <img id="Build Reactive MicroServices using Spring WebFluxSpringBoot" src="Spring WebFlux Masterclass Reactive Microservices caption.PNG" style="width:900px;height:90px;">
-</p>
-
-
-![Spring WebFlux Masterclass: Reactive Microservices](Spring%20WebFlux%20Masterclass%20Reactive%20Microservices%20New%20desc.PNG)
-
-All course material from Spring WebFlux Masterclass: Reactive Microservices [New] by **Vinoth Selvaraj**.
-
-Contains my own notes with some course material to enforce learning experience.
-
-If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
-
-This repository is made with [![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)](#) with **Eclipse** hotkeys, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
-
-
-[The course at Udemy](https://www.udemy.com/course/spring-webflux/). 
-
-[Website of maker](https://www.vinsguru.com/).
-
-<!-- 
-Linkedin puts this shit front, when clicking from private mode x(. Need to put this to make jump working every case
-?trk=public_profile_see-credential 
--->
-
-<div align="center">
-    Insert certificate here when completed
-</div>
-
-
-**Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
-
-#### Progress/Curriculum.
-
-
-# Course Outline
-
-- [ ] [Section 01](#) - Introduction.
-- [ ] [Section 02](#) - Traditional vs Reactive APIs.
-- [ ] [Section 03](#) - Spring Data R2DBC.
-- [ ] [Section 04](#) - R2DBC vs JPA/JDBC.
-- [ ] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Masterclass%20Reactive%20Microservices/Section%2005#section-05-reactive-crud-apis) - Reactive CRUD APIs.
-- [ ] [Section 06](#) - Input Validation / Error Handling.
-- [ ] [Section 07](#) - WebFilter.
-- [ ] [Section 08](#) - Functional Endpoints.
-- [ ] [Section 09](#) - WebClient - Non-Blocking HTTP Client.
-- [ ] [Section 10](#) - Streaming.
-- [ ] [Section 11](#) - Server Sent Events / SSE.
-- [ ] [Section 12](#) - Performance Optimization.
-- [ ] [Section 13](#) - Final Project - Reactive Microservices.
-- [ ] [Section 14](#) - What's Next?
-- [ ] [Section 15](#) - Bonus Section / Articles.
-
-#### Additional stuff.
-
-- [ ] Read thought [Manifesto](https://www.reactivemanifesto.org/).
-- [ ] Intro to [Reactive Programming](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754).
-- [ ] Read thought [Manifesto](https://www.reactivemanifesto.org/).
-- [ ] Some about Reactive Programming [PDF](https://soft.vub.ac.be/Publications/2012/vub-soft-tr-12-13.pdf).
 - [ ] Remove numbers from packages and from lecture notes `.md` if there is.
 
 ## Reactive Microservices Architecture & Design Patterns.

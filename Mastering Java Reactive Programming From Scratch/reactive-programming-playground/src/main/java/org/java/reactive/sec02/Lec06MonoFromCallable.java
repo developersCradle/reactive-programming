@@ -8,29 +8,20 @@ import reactor.core.publisher.Mono;
 
 import java.util.List;
 
-public class Lec05MonoFromSupplier {
+public class Lec06MonoFromCallable {
 
     /*
         To delay the execution using supplied / callable.
      */
-    private static final Logger log = LoggerFactory.getLogger(Lec05MonoFromSupplier.class);
+    private static final Logger log = LoggerFactory.getLogger(Lec06MonoFromCallable.class);
 
     public static void main(String[] args) {
         var list = List.of(1,2,3);
-        // Since list on memory.
-        // This will yield value, when this is used.
-//         Mono.just(sum(list))
-//         .subscribe(Util.subscriber());
-
-        // This will yield value, when someone is subscribed.
-        Mono.fromSupplier(() -> sum(list))
+        Mono.fromCallable(() -> sum(list))
                 .subscribe(Util.subscriber());
-
     }
 
-
-
-    private  static int sum(List<Integer> list)
+    private  static int sum(List<Integer> list) throws Exception
     {
         log.info("finding the sum of {}", list);
         return list.stream().mapToInt(a -> a).sum();
