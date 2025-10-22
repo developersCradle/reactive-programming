@@ -3,6 +3,9 @@
     <img id="nordea" src="reactive programming in general caption.gif" width=600>
 </p>
 
+> In reactive programming, you generally want:
+> *“Nothing happens until there is a subscriber.”*
+
 <details>
 
 <summary id="refactoring the progress" open="true"> <b> Reactive course series by Vinoth Selvaraj! </b> </summary>
@@ -16,10 +19,10 @@
 </details>
 
 <div align="center">
-    <img id="Mastering Java Reactive Programming [From Scratch] caption" src="Mastering Java Reactive Programming [ From Scratch ] caption.png" alt="Mastering Java Reactive Programming [From Scratch]" style="width:1000px;height:90px;"/>
+    <img id="Mastering Java Reactive Programming [From Scratch] caption" src="Mastering Java Reactive Programming caption.png" alt="Mastering Java Reactive Programming [From Scratch]" style="width:1000px;height:90px;"/>
 </div>
 
-![Mastering Java Reactive Programming [From Scratch]](Mastering%20Java%20Reactive%20Programming%20%20From%20Scratch%20%20caption.PNG)
+![Mastering Java Reactive Programming [From Scratch]](Mastering%20Java%20Reactive%20Programming%20%20desc.PNG)
 
 All course material from Mastering Java Reactive Programming [From Scratch] **Vinoth Selvaraj**.
 
@@ -68,6 +71,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] Remove numbers from packages (from projects and transfer to IntelliJ).
 - [ ] Do the IO model chapter for simplicity’s sake.
 - [ ] You can check the [Virtaul Thread](https://www.udemy.com/course/java-virtual-thread/) vs reactive programming.
+- [ ] Do the `Mono - From Future` after the done with the multithreading.
 
 <p align="center">
     <img id="Build Reactive MicroServices using Spring WebFluxSpringBoot" src="Spring WebFlux Masterclass Reactive Microservices caption.PNG" style="width:900px;height:90px;">
@@ -126,7 +130,6 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 - [ ] Read thought [Manifesto](https://www.reactivemanifesto.org/).
 - [ ] Intro to [Reactive Programming](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754).
-- [ ] Read thought [Manifesto](https://www.reactivemanifesto.org/).
 - [ ] Some about Reactive Programming [PDF](https://soft.vub.ac.be/Publications/2012/vub-soft-tr-12-13.pdf).
 - [ ] Remove numbers from packages and from lecture notes `.md` if there is.
 
@@ -264,7 +267,6 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 - [x] Example which using Maven. [Link To GitHub](https://github.com/ferfujikawa/reactive-spring?tab=readme-ov-file). 
 - [ ] Do section 08 as refresher. Same content as in **Reactive Programming in Modern Java using Project Reactor**.
-- [ ] Go through full course. [WireMock Full Course](https://www.udemy.com/course/wiremock-for-java-developers/).
 - [ ] Refresh again `71. How does Netty handle the Request?`.
 - [ ] Read `Netty in Action` book.
 - [ ] Do chapter Functional Web 20-25.

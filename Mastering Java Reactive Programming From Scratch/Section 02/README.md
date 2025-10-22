@@ -297,7 +297,7 @@ public class SubscriptionImpl implements Subscription {
 
 ````
 
-- The currently **Subscription**:
+- The current **Subscription**:
 
 ````
 package org.java.reactive.sec01.publisher;
@@ -372,7 +372,7 @@ private static void demo1() {
 
 - Nothing should happen!
 
-- We are testing the `2.` publisher will produce only <= subscriber requested items. publisher can also produce 0 items!:
+- We are testing the `2.` publisher will produce only <= subscriber requested items. Publisher can also produce 0 items!:
 
 ````
 
@@ -790,6 +790,8 @@ Caused by: java.lang.RuntimeException: Invalid input
 | `Mono.just(value)` | **Eager** | **Immediately**, when the Mono is created |
 | `Mono.fromSupplier(() -> value)` | **Lazy** | Only **when** a **subscriber** subscribes |
 
+- Remember the **Supplier** does **not take** arguments and does **not return** result.
+
 - Example where the values are known when ran:
 
 ````
@@ -984,16 +986,157 @@ public class Lec06MonoFromCallable {
 
 # Mono - From Runnable.
 
+- We can use **Runnable** for the logging in the **reactive programming**, when constructing the reactive chains.
+
+- The main differences using the `Supplier`, `Callable` and `Runnable`.
+
+| Type | Returns a value? | Can throw checked exceptions? | Typical Use | Reactive Wrapper | Emits | Return Type |
+|------|------------------|-------------------------------|--------------|------------------|--------|--------------|
+| **Supplier<T>** | ✅ Yes | ❌ No | Return a value (no checked exception) | `Mono.fromSupplier()` | Emits the value from `get()` | `Mono<T>` |
+| **Callable<T>** | ✅ Yes | ✅ Yes | Return a value and may throw exceptions | `Mono.fromCallable()` | Emits the value or an error | `Mono<T>` |
+| **Runnable** | ❌ No | ❌ No | Perform a side-effect (void) | `Mono.fromRunnable()` | Emits **completion only** | `Mono<Void>` |
 
 
+- Example of in usage:
+    - See the usage `private  static void notifyBusiness(int productId)`.
+        - Also, `return Mono.fromRunnable(()-> notifyBusiness(productId));`. 
+
+````
+package org.java.reactive.sec02;
+
+
+import org.java.reactive.common.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import reactor.core.publisher.Mono;
+
+public class Lec07MonoFromRunnable {
+
+    private static final Logger log = LoggerFactory.getLogger(Lec07MonoFromRunnable.class);
+
+    /*
+     Emitting empty after some method invocation.
+     */
+    public static void main(String[] args) {
+
+    getProductName(2)
+            .subscribe(Util.subscriber());
+
+    }
+
+
+    private static Mono<String> getProductName(int productId)
+    {
+        if (productId == 1)
+        {
+            return Mono.fromSupplier(() -> Util.faker().commerce().productName());
+        }
+        // Returning empty is not always the best from the business side.
+        // return Mono.empty();
+        // we can use Runnable for logging
+        return Mono.fromRunnable(()-> notifyBusiness(productId));
+    }
+
+
+    /*
+    Rather than returning, we can notify with following method.
+     */
+    private  static void notifyBusiness(int productId)
+    {
+        log.info("notifying business on unlivable product {} ", productId);
+    }
+
+}
+````
 
 # Mono - From Future.
 
+- Do this after Vanilla multithreading chapter.
+
 # Publisher - Create Vs Execute.
+
+- The executions is not happening until the `.subscribe`. 
+
+````
+package org.java.reactive.sec02;
+
+import org.java.reactive.common.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import reactor.core.publisher.Mono;
+
+/*
+    Creating publisher is a lightweight operation.
+    Executing time-consuming business logic can be delayed
+ */
+
+public class Lec09PublisherCreateVsExecution {
+
+    private static final Logger log = LoggerFactory.getLogger(Lec09PublisherCreateVsExecution.class);
+
+    public static void main(String[] args) {
+        getName();
+//                .subscribe(Util.subscriber());
+    }
+
+    private static Mono<String> getName(){
+
+        log.info("entered the method");
+        
+        return Mono.fromSupplier(() -> {
+            log.info("generating name");
+            Util.sleepSeconds(3);
+            return Util.faker().name().firstName();
+        });
+    }
+
+}
+````
 
 # Mono - Defer.
 
+- In **general,** we have the following list for the **lazy** and **instant methods**:
+
+### 💤 Lazy Methods.
+
+| Method | Execution Timing | Description |
+|--------|------------------|--------------|
+| `Mono.fromSupplier(Supplier<T>)` | Lazy (on subscription) | The supplier is **not executed** until someone subscribes. |
+| `Mono.fromCallable(Callable<T>)` | Lazy | The callable runs **only when subscribed**. |
+| `Mono.fromRunnable(Runnable)` | Lazy | The runnable executes **only on subscription**, no return value. |
+| `Mono.defer(Supplier<Mono<T>>)` | Lazy | Defers the creation of the Mono itself until subscription. |
+| `Flux.defer(Supplier<Flux<T>>)` | Lazy | Same as above but for Flux. |
+| `Mono.justOrEmpty(T)` | Lazy | Emits the value only when subscribed. |
+| `Mono.fromFuture(CompletableFuture<T>)` | Lazy (starts on subscription) | The future’s computation begins when subscribed. |
+| `Flux.range(int start, int count)` | Lazy | The range is generated on subscription. |
+| `Flux.fromIterable(Iterable<T>)` | Lazy | Iteration begins on subscription. |
+
+---
+
+### ⚡ Instant (Eager) Methods.
+
+| Method | Execution Timing | Description |
+|--------|------------------|--------------|
+| `Mono.just(T)` | Instant | The value is **created immediately**, though emitted lazily when subscribed. |
+| `Flux.just(T...)` | Instant | The values are captured immediately. |
+| `Mono.error(Throwable)` | Instant | The error is created instantly, though emitted lazily. |
+| `Mono.empty()` | Instant | The empty Mono exists immediately. |
+| `Mono.never()` | Instant | Creates a Mono that never emits, immediately. |
+| `Flux.empty()` | Instant | Eagerly creates an empty Flux. |
+| `Flux.never()` | Instant | Eagerly creates a never-emitting Flux. |
+
+---
+
+### 💡 Summary.
+
+- **Lazy methods** delay computation or object creation until `subscribe()`.
+- **Instant methods** create or capture their data immediately, even though emission still waits for subscription.
+
 # What About Data From Remote Service?  
+
+<div align="center">
+    <img src="monoRemoteService.JPG" alt="reactive programming" width="600"/>
+</div>
 
 # [Resource] - External Services.
 
