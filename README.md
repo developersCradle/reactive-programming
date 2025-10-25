@@ -16,6 +16,9 @@
     <img src="reactiveSeries.JPG" alt="reactive programming" width="700"/>
 </p>
 
+1. The [First](https://www.udemy.com/course/complete-java-reactive-programming/). 
+2. The [Second](https://www.udemy.com/course/spring-webflux/).
+
 </details>
 
 <div align="center">
@@ -302,7 +305,18 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 #### Progress/Curriculum.
 
-- [ ] [Section 01](#) -
+- [ ] [Introduction](#).
+- [ ] [Gateway Aggregator Pattern](#).
+- [ ] [Scatter Gather Pattern](#).
+- [ ] [Orchestrator Pattern (For Parallel Workflow)](#).
+- [ ] [Orchestrator Pattern (For Sequential Workflow)](#).
+- [ ] [Splitter Pattern](#).
+- [ ] [Timeout Pattern](#).
+- [ ] [Retry Pattern](#).
+- [ ] [Circuit Breaker Pattern](#). 
+- [ ] [Rate Limiter Pattern](#). 
+- [ ] [Bulkhead Pattern](#). 
+- [ ] [What's Next?](#). 
 
 #### Additional stuff.
 

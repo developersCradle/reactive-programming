@@ -1130,6 +1130,7 @@ public class Lec09PublisherCreateVsExecution {
 ### 💡 Summary.
 
 - **Lazy methods** delay computation or object creation until `subscribe()`.
+
 - **Instant methods** create or capture their data immediately, even though emission still waits for subscription.
 
 # What About Data From Remote Service?  
@@ -1138,15 +1139,412 @@ public class Lec09PublisherCreateVsExecution {
     <img src="monoRemoteService.JPG" alt="reactive programming" width="600"/>
 </div>
 
+1. When the value is in memory already, no computation is required! 
+2. No item to emit.
+3. Emit error. 
+4. Delay execution by using `Supplier<T>`.
+5. Delay execution by using `Callable<T>`.
+6. Publisher from `CompletableFuture<T>`.
+7. Emitting empty after method invocation.
+
+<div align="center">
+    <img src="monoT.JPG" alt="reactive programming" width="600"/>
+</div>
+
+1. The principle is following:
+    - There will be some data providing **publishers** here.
+
+<div align="center">
+    <img src="dataFromTheRemoteService.JPG" alt="reactive programming" width="600"/>
+</div>
+
+1. `Mono.fromSupplier()` and remote calls like HTTP or database access are not asynchronous together — unless you explicitly make them so.
+2. There is other drives/tools needed for the embrace the **reactiveness**.
+
 # [Resource] - External Services.
+
+- Do the following for the **External Services**:
+    - The project is from [here](https://github.com/vinsguru/java-reactive-programming-course/blob/master/02-external-services/external-services-instructions.md).
+
+<div align="center">
+    <img src="howToRunExternalService.JPG" width="600"/>
+</div>
 
 # External Services.
 
+
+- We can run the service, with the following:
+
+````
+java -jar external-services.jar
+````
+
+- After running the `.jar`, the service will be hosted in the: `http://localhost:7070`.
+
+- We introduced to the API what to call.
+
 # Non-Blocking IO Client.
+
+- We are using **Reactor Netty** for the IO non-blocking query.
+
+- Normally the **Reactor Netty** will be creating **One** thread per **CPU**! 
+    - Modern laptops will be having many cores in one PC.
+        - We will be having **one** thread in action.
+
+- This will do the **abstract** version:
+
+````
+package org.java.reactive.common;
+
+import reactor.netty.http.client.HttpClient;
+import reactor.netty.resources.LoopResources;
+
+public abstract class AbstractHttpClient {
+
+    private static final String BASE_URL = "http://localhost:7070";
+    protected HttpClient httpClient;
+
+    public AbstractHttpClient() {
+        var loopResources = LoopResources.create("ScoopiDoo", 1 , true);
+
+        // We can provide the other attributes in the HttpClient.create() section.
+        this.httpClient = HttpClient.create().runOn(loopResources).baseUrl(BASE_URL);
+
+    }
+}
+````
+
+- `LoopResources` is a Reactor Netty utility class that manages event loop threads. These threads are the backbone of all non-blocking network IO in Reactor Netty.
+
+- Client here as it was:
+
+````
+package org.java.reactive.sec02;
+
+import org.java.reactive.common.AbstractHttpClient;
+import reactor.core.publisher.Mono;
+
+public class ExternalServiceClient extends AbstractHttpClient {
+
+    /*
+        Correction: When the method is invoked, we create a Mono which
+        is capable of sending a request. But the actual HTTP request is sent, only when it is subscribed.
+     */
+
+    public Mono<String> getProductName(int productId) {
+        return this.httpClient
+                .get() // for Get.
+                .uri("/demo01/product" + productId) // The Base URI, will be getted.
+                .responseContent() // Will be getting as Flux<ByteBuf>.
+                .asString() // We need to tell that its Flux of the String.
+                .next(); // We create the Flux to Mono, with the First Mono.
+    }
+}
+````
+
+- When using with the **Reactor Netty Client** the following will `.responseContent()` will return **Flux** of `Flux<ByteBuf>`.
+    - We don't need to **worrying** about deserializing of different **Objects**
+
+<div align="center">
+    <img src="callingInOrder.JPG" alt="reactive programming" width="600"/>
+</div>
+
+1. Calling happens only when the `.subscribe` is called!
 
 # Non-Blocking IO Demo.
 
+> [!TIP]
+> Normally, we would not be **needing** the `sleep()`, since this serves as blocking call! 
+
+- The Below code won't be logging, because the main thread exists imminently.
+
+````
+package org.java.reactive.sec02;
+
+import org.java.reactive.common.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+/*
+    To demo non-blocking IO
+    Ensure that the external service is up and running!
+ */
+public class Lec11NonBlockingIO {
+
+    private static final Logger log = LoggerFactory.getLogger(Lec11NonBlockingIO.class);
+
+    public static void main(String[] args) {
+
+        var client = new ExternalServiceClient();
+
+        log.info("starting");
+
+        client.getProductName(1)
+                .subscribe(Util.subscriber());
+    }
+
+}
+````
+
+- We get the answer with the folllowing:
+
+````
+package org.java.reactive.sec02;
+
+import org.java.reactive.common.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+/*
+    To demo non-blocking IO
+    Ensure that the external service is up and running!
+ */
+public class Lec11NonBlockingIO {
+
+    private static final Logger log = LoggerFactory.getLogger(Lec11NonBlockingIO.class);
+
+    public static void main(String[] args) {
+
+        var client = new ExternalServiceClient();
+
+        log.info("starting");
+
+        client.getProductName(1)
+                .subscribe(Util.subscriber());
+
+        Util.sleepSeconds(2);
+    }
+}
+````
+
+- The result:
+
+````
+SLF4J(I): Connected with provider of type [ch.qos.logback.classic.spi.LogbackServiceProvider]
+19:00:55.961 INFO  [           main] o.j.r.sec02.Lec11NonBlockingIO : starting
+19:00:56.638 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:00:56.536+00:00","path":"/demo01/product1","status":404,"error":"Not Found","requestId":"1200b601-1"}
+19:00:56.641 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+````
+
+- We can see that, all these are executed by one **Thread**:
+    - `ScoopiDoo-nio-1`.
+````
+19:09:01.744 INFO  [           main] o.j.r.sec02.Lec11NonBlockingIO : starting
+19:09:02.299 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.188+00:00","path":"/demo01/product1","status":404,"error":"Not Found","requestId":"267a4633-2"}
+19:09:02.304 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.306 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.193+00:00","path":"/demo01/product1","status":404,"error":"Not Found","requestId":"97ccd6f6-3"}
+19:09:02.307 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.307 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.194+00:00","path":"/demo01/product2","status":404,"error":"Not Found","requestId":"3acc479b-4"}
+19:09:02.307 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.308 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.194+00:00","path":"/demo01/product3","status":404,"error":"Not Found","requestId":"3f75395a-5"}
+19:09:02.308 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.309 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.195+00:00","path":"/demo01/product4","status":404,"error":"Not Found","requestId":"73e16cf2-6"}
+19:09:02.309 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.309 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.196+00:00","path":"/demo01/product5","status":404,"error":"Not Found","requestId":"84d4d5e2-7"}
+19:09:02.309 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.310 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.206+00:00","path":"/demo01/product6","status":404,"error":"Not Found","requestId":"24f545ee-9"}
+19:09:02.310 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.311 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.200+00:00","path":"/demo01/product7","status":404,"error":"Not Found","requestId":"df8365c3-8"}
+19:09:02.311 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.312 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.201+00:00","path":"/demo01/product8","status":404,"error":"Not Found","requestId":"6a23936e-10"}
+19:09:02.312 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.312 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.204+00:00","path":"/demo01/product9","status":404,"error":"Not Found","requestId":"5c434532-13"}
+19:09:02.313 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.313 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.207+00:00","path":"/demo01/product10","status":404,"error":"Not Found","requestId":"83dc24a7-14"}
+19:09:02.313 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.314 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.204+00:00","path":"/demo01/product11","status":404,"error":"Not Found","requestId":"ecee7120-11"}
+19:09:02.314 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.314 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.204+00:00","path":"/demo01/product12","status":404,"error":"Not Found","requestId":"0417e62f-12"}
+19:09:02.314 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.315 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.209+00:00","path":"/demo01/product13","status":404,"error":"Not Found","requestId":"65456867-15"}
+19:09:02.315 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.315 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.211+00:00","path":"/demo01/product14","status":404,"error":"Not Found","requestId":"9ebedd12-18"}
+19:09:02.316 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.316 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.212+00:00","path":"/demo01/product15","status":404,"error":"Not Found","requestId":"dd9aaaf4-16"}
+19:09:02.317 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.317 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.211+00:00","path":"/demo01/product16","status":404,"error":"Not Found","requestId":"18548de1-17"}
+19:09:02.317 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.318 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.213+00:00","path":"/demo01/product17","status":404,"error":"Not Found","requestId":"c31712e6-19"}
+19:09:02.318 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.319 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.218+00:00","path":"/demo01/product18","status":404,"error":"Not Found","requestId":"7a7de676-21"}
+19:09:02.319 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.319 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.214+00:00","path":"/demo01/product19","status":404,"error":"Not Found","requestId":"4518471d-20"}
+19:09:02.319 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.320 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.216+00:00","path":"/demo01/product20","status":404,"error":"Not Found","requestId":"776fc63c-22"}
+19:09:02.320 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.321 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.223+00:00","path":"/demo01/product21","status":404,"error":"Not Found","requestId":"deee8525-25"}
+19:09:02.321 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.322 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.221+00:00","path":"/demo01/product22","status":404,"error":"Not Found","requestId":"8054cb55-26"}
+19:09:02.322 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.323 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.220+00:00","path":"/demo01/product23","status":404,"error":"Not Found","requestId":"65165f1f-23"}
+19:09:02.323 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.324 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.218+00:00","path":"/demo01/product24","status":404,"error":"Not Found","requestId":"b8d0b057-24"}
+19:09:02.324 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.324 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.225+00:00","path":"/demo01/product25","status":404,"error":"Not Found","requestId":"d5dd04fb-27"}
+19:09:02.324 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.325 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.226+00:00","path":"/demo01/product26","status":404,"error":"Not Found","requestId":"8dfae4f9-28"}
+19:09:02.325 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.325 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.226+00:00","path":"/demo01/product27","status":404,"error":"Not Found","requestId":"02abc3e9-29"}
+19:09:02.325 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.326 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.227+00:00","path":"/demo01/product28","status":404,"error":"Not Found","requestId":"6038f877-30"}
+19:09:02.326 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.326 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.232+00:00","path":"/demo01/product29","status":404,"error":"Not Found","requestId":"c7f183b3-31"}
+19:09:02.326 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.327 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.234+00:00","path":"/demo01/product30","status":404,"error":"Not Found","requestId":"7c74db3b-33"}
+19:09:02.327 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.327 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.234+00:00","path":"/demo01/product31","status":404,"error":"Not Found","requestId":"4120a0c5-32"}
+19:09:02.327 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.328 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.234+00:00","path":"/demo01/product32","status":404,"error":"Not Found","requestId":"384fb67d-34"}
+19:09:02.328 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.328 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.239+00:00","path":"/demo01/product33","status":404,"error":"Not Found","requestId":"9cdb06ba-37"}
+19:09:02.328 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.329 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.241+00:00","path":"/demo01/product34","status":404,"error":"Not Found","requestId":"77d90012-36"}
+19:09:02.329 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.330 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.239+00:00","path":"/demo01/product35","status":404,"error":"Not Found","requestId":"8bad9694-35"}
+19:09:02.330 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.330 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.240+00:00","path":"/demo01/product36","status":404,"error":"Not Found","requestId":"c8c2706c-38"}
+19:09:02.330 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.331 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.245+00:00","path":"/demo01/product37","status":404,"error":"Not Found","requestId":"a20056ad-39"}
+19:09:02.331 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.332 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.248+00:00","path":"/demo01/product38","status":404,"error":"Not Found","requestId":"935a9e58-41"}
+19:09:02.332 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.333 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.248+00:00","path":"/demo01/product39","status":404,"error":"Not Found","requestId":"24e54491-42"}
+19:09:02.333 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.334 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.247+00:00","path":"/demo01/product40","status":404,"error":"Not Found","requestId":"450ffd37-40"}
+19:09:02.334 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.335 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.251+00:00","path":"/demo01/product41","status":404,"error":"Not Found","requestId":"3e49803a-44"}
+19:09:02.335 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.335 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.255+00:00","path":"/demo01/product42","status":404,"error":"Not Found","requestId":"1df212f5-46"}
+19:09:02.335 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.336 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.248+00:00","path":"/demo01/product43","status":404,"error":"Not Found","requestId":"f046e3e5-43"}
+19:09:02.336 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.336 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.255+00:00","path":"/demo01/product44","status":404,"error":"Not Found","requestId":"00370d01-45"}
+19:09:02.336 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.337 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.255+00:00","path":"/demo01/product45","status":404,"error":"Not Found","requestId":"989e7829-47"}
+19:09:02.337 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.338 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.268+00:00","path":"/demo01/product46","status":404,"error":"Not Found","requestId":"7e96fefc-48"}
+19:09:02.338 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.338 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.270+00:00","path":"/demo01/product47","status":404,"error":"Not Found","requestId":"8e5beacb-49"}
+19:09:02.338 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.339 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.266+00:00","path":"/demo01/product48","status":404,"error":"Not Found","requestId":"ca7f1494-50"}
+19:09:02.339 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.339 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.274+00:00","path":"/demo01/product49","status":404,"error":"Not Found","requestId":"9c080258-51"}
+19:09:02.339 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.340 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.271+00:00","path":"/demo01/product50","status":404,"error":"Not Found","requestId":"12507168-54"}
+19:09:02.340 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.341 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.268+00:00","path":"/demo01/product51","status":404,"error":"Not Found","requestId":"da2e062c-52"}
+19:09:02.341 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.341 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.270+00:00","path":"/demo01/product52","status":404,"error":"Not Found","requestId":"3760951d-53"}
+19:09:02.342 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.401 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.346+00:00","path":"/demo01/product53","status":404,"error":"Not Found","requestId":"8901efae-55"}
+19:09:02.401 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.402 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.345+00:00","path":"/demo01/product54","status":404,"error":"Not Found","requestId":"8281c7fe-56"}
+19:09:02.402 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.402 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.349+00:00","path":"/demo01/product55","status":404,"error":"Not Found","requestId":"c5569cfe-57"}
+19:09:02.402 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.403 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.345+00:00","path":"/demo01/product56","status":404,"error":"Not Found","requestId":"8be533ce-58"}
+19:09:02.403 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.404 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.347+00:00","path":"/demo01/product57","status":404,"error":"Not Found","requestId":"cb5c79f1-59"}
+19:09:02.404 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.405 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.349+00:00","path":"/demo01/product58","status":404,"error":"Not Found","requestId":"cb026139-60"}
+19:09:02.405 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.405 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.348+00:00","path":"/demo01/product59","status":404,"error":"Not Found","requestId":"bbb6e262-61"}
+19:09:02.405 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.406 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.350+00:00","path":"/demo01/product60","status":404,"error":"Not Found","requestId":"6e292cc1-62"}
+19:09:02.406 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.407 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.351+00:00","path":"/demo01/product61","status":404,"error":"Not Found","requestId":"b2509b69-63"}
+19:09:02.407 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.408 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.353+00:00","path":"/demo01/product62","status":404,"error":"Not Found","requestId":"46ad3be3-64"}
+19:09:02.408 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.409 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.355+00:00","path":"/demo01/product63","status":404,"error":"Not Found","requestId":"841c6148-65"}
+19:09:02.409 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.410 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.356+00:00","path":"/demo01/product64","status":404,"error":"Not Found","requestId":"8c64b18c-66"}
+19:09:02.411 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.412 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.356+00:00","path":"/demo01/product65","status":404,"error":"Not Found","requestId":"1a2f6c74-67"}
+19:09:02.412 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.413 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.358+00:00","path":"/demo01/product66","status":404,"error":"Not Found","requestId":"b89fc5c2-68"}
+19:09:02.413 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.413 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.359+00:00","path":"/demo01/product67","status":404,"error":"Not Found","requestId":"924d8338-69"}
+19:09:02.414 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.414 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.360+00:00","path":"/demo01/product68","status":404,"error":"Not Found","requestId":"a2e6f9a6-70"}
+19:09:02.414 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.415 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.361+00:00","path":"/demo01/product69","status":404,"error":"Not Found","requestId":"fd4ee072-71"}
+19:09:02.415 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.416 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.361+00:00","path":"/demo01/product70","status":404,"error":"Not Found","requestId":"efeac8c4-72"}
+19:09:02.416 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.417 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.364+00:00","path":"/demo01/product71","status":404,"error":"Not Found","requestId":"6ca175d1-73"}
+19:09:02.417 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.418 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.364+00:00","path":"/demo01/product72","status":404,"error":"Not Found","requestId":"11fd2775-74"}
+19:09:02.418 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.419 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.365+00:00","path":"/demo01/product73","status":404,"error":"Not Found","requestId":"418fc008-75"}
+19:09:02.419 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.420 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.366+00:00","path":"/demo01/product74","status":404,"error":"Not Found","requestId":"d598cb0b-76"}
+19:09:02.420 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.421 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.369+00:00","path":"/demo01/product75","status":404,"error":"Not Found","requestId":"43d8899d-77"}
+19:09:02.421 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.421 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.371+00:00","path":"/demo01/product76","status":404,"error":"Not Found","requestId":"85ea79bc-78"}
+19:09:02.422 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.422 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.370+00:00","path":"/demo01/product77","status":404,"error":"Not Found","requestId":"aeea4924-79"}
+19:09:02.422 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.423 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.371+00:00","path":"/demo01/product78","status":404,"error":"Not Found","requestId":"f5585b13-80"}
+19:09:02.423 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.424 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.371+00:00","path":"/demo01/product79","status":404,"error":"Not Found","requestId":"7895e22c-81"}
+19:09:02.424 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.424 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.374+00:00","path":"/demo01/product80","status":404,"error":"Not Found","requestId":"69762abd-82"}
+19:09:02.424 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.425 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.375+00:00","path":"/demo01/product81","status":404,"error":"Not Found","requestId":"aa3eb5c5-83"}
+19:09:02.426 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.426 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.376+00:00","path":"/demo01/product82","status":404,"error":"Not Found","requestId":"3b1ad001-84"}
+19:09:02.426 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.427 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.376+00:00","path":"/demo01/product83","status":404,"error":"Not Found","requestId":"dc6e847a-85"}
+19:09:02.427 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.427 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.379+00:00","path":"/demo01/product84","status":404,"error":"Not Found","requestId":"89cec535-86"}
+19:09:02.427 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.428 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.381+00:00","path":"/demo01/product85","status":404,"error":"Not Found","requestId":"e4c15ee5-87"}
+19:09:02.428 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.429 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.382+00:00","path":"/demo01/product86","status":404,"error":"Not Found","requestId":"75d7b65f-88"}
+19:09:02.429 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.429 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.382+00:00","path":"/demo01/product87","status":404,"error":"Not Found","requestId":"64bd1266-89"}
+19:09:02.429 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.430 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.384+00:00","path":"/demo01/product88","status":404,"error":"Not Found","requestId":"42b44e32-90"}
+19:09:02.430 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.431 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.385+00:00","path":"/demo01/product89","status":404,"error":"Not Found","requestId":"7af2ca59-91"}
+19:09:02.431 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.431 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.386+00:00","path":"/demo01/product90","status":404,"error":"Not Found","requestId":"0a00e765-92"}
+19:09:02.432 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.432 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.390+00:00","path":"/demo01/product91","status":404,"error":"Not Found","requestId":"0cf460d9-96"}
+19:09:02.432 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.433 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.389+00:00","path":"/demo01/product92","status":404,"error":"Not Found","requestId":"3033d259-93"}
+19:09:02.433 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.434 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.390+00:00","path":"/demo01/product93","status":404,"error":"Not Found","requestId":"4e3bbd11-94"}
+19:09:02.434 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.434 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.390+00:00","path":"/demo01/product94","status":404,"error":"Not Found","requestId":"04bcffa2-95"}
+19:09:02.434 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.435 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.394+00:00","path":"/demo01/product95","status":404,"error":"Not Found","requestId":"926f4c44-97"}
+19:09:02.435 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.436 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.395+00:00","path":"/demo01/product96","status":404,"error":"Not Found","requestId":"79da80d6-98"}
+19:09:02.436 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.437 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.396+00:00","path":"/demo01/product97","status":404,"error":"Not Found","requestId":"d626ef45-99"}
+19:09:02.437 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.437 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.398+00:00","path":"/demo01/product98","status":404,"error":"Not Found","requestId":"ff3ef87d-100"}
+19:09:02.437 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.438 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.398+00:00","path":"/demo01/product99","status":404,"error":"Not Found","requestId":"41b31049-101"}
+19:09:02.438 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+19:09:02.438 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.399+00:00","path":"/demo01/product100","status":404,"error":"Not Found","requestId":"4a02f656-102"}
+19:09:02.438 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+````
+
 # ***FAQ*** - How Event Loop Works.
+
+<div align="center">
+    <img src="addingToQue.JPG" alt="reactive programming" width="600"/>
+</div>
+
+1. When giving **Reactor Netty** these `tasks` or `queries`, these will go the **queue**. 
+2. **Event Loop thread** is constantly looking task in the
+
+
+
 
 # ***FAQ*** - Why We Should NOT Use Block.
 
