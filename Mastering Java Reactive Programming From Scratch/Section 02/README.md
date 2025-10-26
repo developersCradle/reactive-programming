@@ -1541,16 +1541,112 @@ SLF4J(I): Connected with provider of type [ch.qos.logback.classic.spi.LogbackSer
 </div>
 
 1. When giving **Reactor Netty** these `tasks` or `queries`, these will go the **queue**. 
-2. **Event Loop thread** is constantly looking task in the
+2. **Event Loop thread** is constantly looking task in the form the **queue**.
+
+<div align="center">
+    <img src="addingToQueNextJob.JPG" alt="reactive programming" width="600"/>
+</div>
+
+1. The jobs is getting picked.
+
+<div align="center">
+    <img src="addingToQueNextJobNext.JPG" alt="reactive programming" width="600"/>
+</div>
+
+1. The previous job is not getting waited, then next job is getting picked up.
 
 
+- The which result is returned, is not **guaranteed**.
+    - Is it the first or the second.
 
+<div align="center">
+    <img src="inBoundAndOutBoundQues.JPG" alt="reactive programming" width="600"/>
+</div>
+
+1. Incoming requests are here.
+2. Outgoing responses are here.
+    - As soon as there is the **response** it will be notifying the **Thread**.
+
+<div align="center">
+    <img src="oneThreadIsEnought.jpeg" alt="reactive programming" width="400"
+    00"/>
+</div>
 
 # ***FAQ*** - Why We Should NOT Use Block.
 
+- `.block()` — forces the **Mono** to resolve synchronously, i.e., waits for the result and returns the **actual value**.
+    - In examples:
+        - If its Mono of **Strings**, it will be giving **Sting**
+        - If its Mono of the **Customer**, it will give the **Customer**
+
+- So, it does the:
+    - **Subscribes** to the **Mono** (so it starts the async operation).
+    - **Blocks** the **current thread** until a value (or error) is emitted.
+
+- Example using the `.block`;
+
+
+````
+package org.java.reactive.sec02;
+
+import org.java.reactive.common.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+/*
+    To demo non-blocking IO
+    Ensure that the external service is up and running!
+ */
+public class Lec11NonBlockingIO {
+
+    private static final Logger log = LoggerFactory.getLogger(Lec11NonBlockingIO.class);
+
+    public static void main(String[] args) {
+
+        var client = new ExternalServiceClient();
+
+        log.info("starting");
+
+        for (int i = 1; i <= 100; i++) {
+            var name = client.getProductName(i)
+                    .block();
+
+            log.info(name);
+        }
+        Util.sleepSeconds(2);
+    }
+
+}
+````
+
+- This will not be the **Reactiveness approach**.
+
+- In **Unit Test** `.block` is fine.
+
 # Why Reactive Netty?
 
-# ***Assignment***.
+- Why we should not be using the **non-blocking IO** from Java. 
+
+<div align="center">
+    <img src="nonBlockingIo.JPG" alt="reactive programming" width="500"/>
+</div>
+
+1. This is at high level how we would need to be implementing the **Setting up**!
+    - This looks very complex to set up.
+
+# Assignment.
+
+<div align="center">
+    <img src="assigment.JPG" alt="reactive programming" width="500"/>
+</div>
+
+<div align="center">
+    <img src="assigment2.JPG" alt="reactive programming" width="500"/>
+</div>
+
+<div align="center">
+    <img src="assigment3.JPG" alt="reactive programming" width="500"/>
+</div>
 
 # Assignment Solution.
 

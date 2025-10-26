@@ -19,8 +19,10 @@ public class Lec11NonBlockingIO {
         log.info("starting");
 
         for (int i = 1; i <= 100; i++) {
-            client.getProductName(i)
-                    .subscribe(Util.subscriber());
+            var name = client.getProductName(i)
+                    .block();
+
+            log.info(name);
         }
         Util.sleepSeconds(2);
     }

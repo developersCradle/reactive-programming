@@ -16,8 +16,9 @@
     <img src="reactiveSeries.JPG" alt="reactive programming" width="700"/>
 </p>
 
-1. The [First](https://www.udemy.com/course/complete-java-reactive-programming/). 
-2. The [Second](https://www.udemy.com/course/spring-webflux/).
+
+1. About **Complete Java Reactive Programming**. [Course](https://www.udemy.com/course/complete-java-reactive-programming/). 
+2. About **Spring Webflux**. [Course](https://www.udemy.com/course/spring-webflux/).
 
 </details>
 
@@ -33,7 +34,7 @@ Contains my own notes with some course material to enforce learning experience.
 
 If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
 
-This repository is made with **Eclipse**, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️.
+[![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)](#) with **Eclipse** hotkeys, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
 
 [The course at Udemy](https://www.udemy.com/course/complete-java-reactive-programming/). 
 
@@ -234,7 +235,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 #### Progress/Curriculum.
 
-- [x] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2001#section-1-getting-started-with-the-course) - Getting Started with the Course. ✅ 
+- [x] [Section 01](https://github.com/rishi-analytics/ESG-Specialization-Project-Portfolio/blob/main/Course_1/ESG_Essentials_for_Sustainable_Business.md#esg-essentials-for-sustainable-business) - Getting Started with the Course. ✅ 
 - [x] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2002#section-2-source-code-and-course-slides-for-this-course) - Source Code and Course Slides for this Course. ✅
 - [x] [Section 03](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2003#section-3-why-reactive-programming-) - Why Reactive Programming? ✅
 - [x] [Section 04](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2004#section-04-introduction-to-reactive-programming) - Introduction to Reactive Programming. ✅

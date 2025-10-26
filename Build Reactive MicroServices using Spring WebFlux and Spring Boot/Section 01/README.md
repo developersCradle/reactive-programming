@@ -19,6 +19,6 @@ Getting Started with the Course
 # Prerequisites.
 
 <div align="center">
-    <img src="Prerequisites.PNG" alt="reactive programming" width="700"/>
+    <img src="prerequisites.PNG" alt="reactive programming" width="700"/>
 </div>
 
