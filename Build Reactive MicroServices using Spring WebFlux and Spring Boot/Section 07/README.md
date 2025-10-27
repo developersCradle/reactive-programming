@@ -1,4 +1,4 @@
-# Section 7: Setting up the base project for this course 
+# Section 07: Setting up the base project for this course 
 
 Setting up the base project for this course.
 

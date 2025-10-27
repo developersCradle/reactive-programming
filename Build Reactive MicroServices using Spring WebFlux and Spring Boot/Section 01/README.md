@@ -1,4 +1,4 @@
-# Section 1: Getting Started with the Course.
+# Section 01: Getting Started with the Course.
 
 Getting Started with the Course
 

@@ -1,4 +1,4 @@
-# Section 3: Why Reactive Programming? 
+# Section 03: Why Reactive Programming? 
 
 Why Reactive Programming?
 

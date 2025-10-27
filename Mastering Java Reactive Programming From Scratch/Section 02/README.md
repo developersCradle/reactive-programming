@@ -1637,18 +1637,245 @@ public class Lec11NonBlockingIO {
 # Assignment.
 
 <div align="center">
-    <img src="assigment.JPG" alt="reactive programming" width="500"/>
+    <img src="FileInterfaceAssigment.JPG" alt="reactive programming" width="500"/>
 </div>
+
+````
+ 1. Create FileService.
+    - read file & return content.
+    - create file & write content.
+    - delete file.
+````
+ 
+ 1. **Requirement 1**:
+    - **Answer:** We create following `interface`:
+
+````
+package org.java.reactive.sec02.assigment;
+
+import reactor.core.publisher.Mono;
+
+public interface FileService {
+    Mono<String> read(String fileName);
+    Mono<Void> write(String fileName, String content);
+    Mono<Void> delete(String fileName);
+}
+````
+
+- Todo tässä malli jatka tästä
 
 <div align="center">
-    <img src="assigment2.JPG" alt="reactive programming" width="500"/>
+    <img src="FileInterfaceAssigment2.JPG" alt="reactive programming" width="500"/>
 </div>
+
+> **1.** `work only when subscribers subscribe to that.`
+
+1. **Requirement**:
+    - Answer: We utilize the `.subcribe()`:
+
+````
+package org.java.reactive.sec02;
+
+import org.java.reactive.common.Util;
+import org.java.reactive.sec02.assigment.FileServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class Lec12Assigment {
+
+    private static final Logger log = LoggerFactory.getLogger(Lec12Assigment.class);
+
+    public static void main(String[] args) {
+
+        var fileservice = new FileServiceImpl();
+
+        fileservice.write("file.txt", "This is the test file!")
+                .subscribe(Util.subscriber());
+        fileservice.read("file.txt")
+                .subscribe(Util.subscriber());
+    }
+
+}
+`````
+
+> **2.** `File service methods should do the work only when subscribers subscribe to that.`
+
+````
+package org.java.reactive.sec02.assigment;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import reactor.core.publisher.Mono;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class FileServiceImpl implements FileService {
+
+    private static final Logger log = LoggerFactory.getLogger(FileServiceImpl.class);
+    private static final Path PATH = Path.of("src/main/resources");
+
+    @Override
+    public Mono<String> read(String fileName) {
+        return Mono.fromCallable(() -> Files.readString(PATH.resolve(fileName)));
+    }
+
+    @Override
+    public Mono<Void> write(String fileName, String content) {
+        return Mono.fromRunnable(() -> this.writeFile(fileName, content));
+    }
+
+    @Override
+    public Mono<Void> delete(String fileName) {
+        return Mono.fromRunnable(() -> this.deleteFile(fileName));
+    }
+
+    private void writeFile(String fileName, String content){
+        try {
+            Files.writeString(PATH.resolve(fileName), content);
+            log.info("created {}", fileName);
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void deleteFile(String fileName){
+        try {
+            Files.delete(PATH.resolve(fileName));
+            log.info("deleted {}", fileName);
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }
+    }
+
+}
+````
 
 <div align="center">
-    <img src="assigment3.JPG" alt="reactive programming" width="500"/>
+    <img src="FileInterfaceAssigment3.JPG" alt="reactive programming" width="500"/>
 </div>
 
-# Assignment Solution.
+
+
+
+- We use the `Path` for interoperability for different systems.
+    - Also, this allows backend to be secure against the **Traversal vulnerability**.
+
+- As below, we will be writing to file:
+
+````
+    private void writeFile(String filename, String content){
+        try {
+            log.info("Writing to the file.");
+            Files.writeString(PATH.resolve(filename), content);
+        } catch (IOException e) {
+            log.info("Something went wrong with the writing to the file!");
+            throw new RuntimeException(e);
+        }
+    }
+````
+
+- The `AssigmentFileService`:
+
+````
+package org.java.reactive.sec02.assigment;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import reactor.core.publisher.Mono;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class AssigmentFileService implements FileService {
+
+    private static final Logger log = LoggerFactory.getLogger(AssigmentFileService.class);
+    private static final Path PATH = Path.of("src/main/resources");
+
+    @Override
+    public Mono<String> read(String fileName) {
+        return Mono.fromCallable(() -> Files.readString(PATH.resolve(fileName)));
+    }
+
+    @Override
+    public Mono<Void> write(String fileName, String content) {
+       return Mono.fromRunnable(() -> this.writeFile(fileName,content));
+    }
+
+    @Override
+    public Mono<Void> delete(String fileName) {
+        log.info("Deleting a file.");
+        return  Mono.fromRunnable(() -> deleteFile(fileName));
+    }
+
+    private void deleteFile(String filename){
+        try {
+            log.info("Deleting to the file.");
+            Files.delete(PATH.resolve(filename));
+        } catch (IOException e) {
+            log.info("Something went wrong with the deleting the file!");
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void writeFile(String filename, String content){
+        try {
+            log.info("Writing to the file.");
+            Files.writeString(PATH.resolve(filename), content);
+        } catch (IOException e) {
+            log.info("Something went wrong with the writing to the file!");
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
+}
+````
+
+
+
+# Lab Exercise - Component Mapping.
+
+<div align="center">
+    <img src="labExerciseComponentMapping.PNG"  alt="hibernate course" width="600"/>
+</div>
+
+1. **Question 1:**
+	- **Answer:** Entity.
+
+
+- The full exercise:
+
+````
+package org.java.reactive.sec02;
+
+import org.java.reactive.common.Util;
+import org.java.reactive.sec02.assigment.FileServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class Lec12Assigment {
+
+    private static final Logger log = LoggerFactory.getLogger(Lec12Assigment.class);
+
+    public static void main(String[] args) {
+
+        var fileservice = new FileServiceImpl();
+
+        fileservice.write("file.txt", "This is the test file!")
+                .subscribe(Util.subscriber());
+
+        fileservice.read("file.txt")
+                .subscribe(Util.subscriber());
+
+
+    }
+
+}
+````
+
 
 # What About Unit Testing?
 

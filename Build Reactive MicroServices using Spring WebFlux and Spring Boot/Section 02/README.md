@@ -1,4 +1,4 @@
-# Section 2: Source Code and Course Slides for this Course.
+# Section 02: Source Code and Course Slides for this Course.
 
 Source Code and Course Slides for this Course
 
