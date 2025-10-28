@@ -4,7 +4,7 @@
 </p>
 
 > In reactive programming, you generally want:
-> *“Nothing happens until there is a subscriber.”*
+> *“Nothing happens until there is a subscriber.”* ~ Art of Reactive Programming, Me.
 
 <details>
 
@@ -52,7 +52,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 #### Progress/Curriculum.
 
 - [x] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2001#section-01-introduction) - Introduction. ✅
-- [ ] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2002#section-02-mono) - Mono.
+- [x] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2002#section-02-mono) - Mono. ✅
 - [ ] [Section 03](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2003/README.md#section-03-flux) - Flux.
 - [ ] [Section 04](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2004#section-04-flux---emitting-items-programmatically) - Flux - Emitting Items Programmatically.
 - [ ] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2005#section-05-operators) - Operators.
@@ -332,7 +332,7 @@ If the content sparked :fire: your interest, please consider buying the course a
 
 This repository is made with **Eclipse**, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️.
 
-[The course at Udemy](https://nordea.udemy.com/course/spring-webflux-redis/). 
+[The course at Udemy](https://www.udemy.com/course/spring-webflux-redis/). 
 
 [Website of maker](https://www.vinsguru.com/).
 

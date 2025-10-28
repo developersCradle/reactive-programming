@@ -1621,7 +1621,7 @@ public class Lec11NonBlockingIO {
 
 - This will not be the **Reactiveness approach**.
 
-- In **Unit Test** `.block` is fine.
+- In **Unit Tests** usage of the `.block()` is fine.
 
 # Why Reactive Netty?
 
@@ -1647,7 +1647,7 @@ public class Lec11NonBlockingIO {
     - delete file.
 ````
  
- 1. **Requirement 1**:
+1. **Requirement 1**:
     - **Answer:** We create following `interface`:
 
 ````
@@ -1662,15 +1662,15 @@ public interface FileService {
 }
 ````
 
-- Todo tässä malli jatka tästä
-
 <div align="center">
     <img src="FileInterfaceAssigment2.JPG" alt="reactive programming" width="500"/>
 </div>
 
-> **1.** `work only when subscribers subscribe to that.`
+```
+1. Work only when subscribers subscribe to that.
+```
 
-1. **Requirement**:
+1. **Requirement 1**:
     - Answer: We utilize the `.subcribe()`:
 
 ````
@@ -1696,11 +1696,33 @@ public class Lec12Assigment {
     }
 
 }
-`````
-
-> **2.** `File service methods should do the work only when subscribers subscribe to that.`
-
 ````
+
+```
+2. File service methods.
+```
+
+2. **Requirement 2**:
+    - Answer: We are implementing file service methods:
+
+- We use the `Path` for **interoperability** for **different systems**.
+    - Also, this allows backend to be secure against the **Traversal vulnerability**.
+
+- As below, we will be writing to file:
+
+```
+    private void writeFile(String filename, String content){
+        try {
+            log.info("Writing to the file.");
+            Files.writeString(PATH.resolve(filename), content);
+        } catch (IOException e) {
+            log.info("Something went wrong with the writing to the file!");
+            throw new RuntimeException(e);
+        }
+    }
+```
+
+```
 package org.java.reactive.sec02.assigment;
 
 import org.slf4j.Logger;
@@ -1749,31 +1771,34 @@ public class FileServiceImpl implements FileService {
     }
 
 }
-````
+```
+
+```
+3. Communicate the error to the subscriber in case of issues.
+```
+
+3. **Requirement 3**:
+    - Answer: We are implementing try catch blocks:
+
+```
+try {
+            Files.writeString(PATH.resolve(fileName), content);
+            log.info("created {}", fileName);
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }
+```
+
+```
+4. Use the library from the java.nio.file.*
+```
+
+4. **Requirement 4**:
+    - Answer: We are utilizing `Path` and `Files` from `java.nio.file.*`.
 
 <div align="center">
     <img src="FileInterfaceAssigment3.JPG" alt="reactive programming" width="500"/>
 </div>
-
-
-
-
-- We use the `Path` for interoperability for different systems.
-    - Also, this allows backend to be secure against the **Traversal vulnerability**.
-
-- As below, we will be writing to file:
-
-````
-    private void writeFile(String filename, String content){
-        try {
-            log.info("Writing to the file.");
-            Files.writeString(PATH.resolve(filename), content);
-        } catch (IOException e) {
-            log.info("Something went wrong with the writing to the file!");
-            throw new RuntimeException(e);
-        }
-    }
-````
 
 - The `AssigmentFileService`:
 
@@ -1828,57 +1853,15 @@ public class AssigmentFileService implements FileService {
             throw new RuntimeException(e);
         }
     }
-
-
-
 }
 ````
-
-
-
-# Lab Exercise - Component Mapping.
-
-<div align="center">
-    <img src="labExerciseComponentMapping.PNG"  alt="hibernate course" width="600"/>
-</div>
-
-1. **Question 1:**
-	- **Answer:** Entity.
-
-
-- The full exercise:
-
-````
-package org.java.reactive.sec02;
-
-import org.java.reactive.common.Util;
-import org.java.reactive.sec02.assigment.FileServiceImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-public class Lec12Assigment {
-
-    private static final Logger log = LoggerFactory.getLogger(Lec12Assigment.class);
-
-    public static void main(String[] args) {
-
-        var fileservice = new FileServiceImpl();
-
-        fileservice.write("file.txt", "This is the test file!")
-                .subscribe(Util.subscriber());
-
-        fileservice.read("file.txt")
-                .subscribe(Util.subscriber());
-
-
-    }
-
-}
-````
-
 
 # What About Unit Testing?
 
-# Summary.
+<div align="center">
+    <img src="unitTesting.JPG" alt="reactive programming" width="300"/>
+</div>
 
-# Quiz 2: Quiz.
+- Unit test will be done later.
+
+# Summary.
