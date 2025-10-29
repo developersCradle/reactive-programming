@@ -72,6 +72,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [x] [Original Repository](https://github.com/vinsguru/java-reactive-programming-course). ✅
 - [ ] Remove numbers from packages (from projects and transfer to IntelliJ).
 - [ ] Do the IO model chapter for simplicity’s sake.
+- [ ] Add exercises after every coding chapter.
 - [ ] You can check the [Virtaul Thread](https://www.udemy.com/course/java-virtual-thread/) vs reactive programming.
 - [ ] Do the `Mono - From Future` after the done with the multithreading.
 
