@@ -20,6 +20,6 @@
 
 # Summary.
 
-# ***Assignment***.
+# Assignment.
 
 # Assignment Solution.

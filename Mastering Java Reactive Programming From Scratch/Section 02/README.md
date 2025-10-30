@@ -1534,7 +1534,7 @@ SLF4J(I): Connected with provider of type [ch.qos.logback.classic.spi.LogbackSer
 19:09:02.438 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
 ````
 
-# ***FAQ*** - How Event Loop Works.
+# FAQ - How Event Loop Works.
 
 <div align="center">
     <img src="addingToQue.JPG" alt="reactive programming" width="600"/>

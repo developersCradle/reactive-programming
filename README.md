@@ -4,7 +4,7 @@
 </p>
 
 > In reactive programming, you generally want:
-> *“Nothing happens until there is a subscriber.”* ~ Art of Reactive Programming, Me.
+> *“Nothing happens until there is a subscriber.”* ~ Art of Reactive Programming ~ *DevelopersCradle*.
 
 <details>
 

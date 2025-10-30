@@ -13,11 +13,14 @@ public class Lec02MultipleSubscribers {
 
     public static void main(String[] args) {
 
-        var flux = Flux.just(1,2 ,3 , "sam");
+        var flux = Flux.just(1,2 ,3 , 4);
 
         flux.subscribe(Util.subscriber("sub1"));
         flux.subscribe(Util.subscriber("sub2"));
-        flux.subscribe(Util.subscriber("sub3"));
+        // This Subscription will do some extra logic!
+        flux.filter(i -> i % 2 == 0)
+                .subscribe(Util.subscriber("sub3"));
+
     }
 
 
