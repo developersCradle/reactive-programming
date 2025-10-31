@@ -102,7 +102,7 @@ Introduction.
 - Different types of **Inbound** in **Outbound**.
 
 <div align="center">
-     <img src="inboundOutbound.JPG" alt="reactive programming" width="700"/>
+     <img src="inboundOutbound.JPG" alt="reactive programming" width="600"/>
 </div>
 
 <div align="center">
@@ -281,7 +281,7 @@ Flux<Message> chat(Flux<Message> incoming) { ... }
 1. **Processor** is acting like **Subscriber** and **Publisher**.
 
 <div align="center">
-    <img src="ProcessorExample.PNG" alt="reactive programming" width="700"/>
+    <img src="ProcessorExample.PNG" alt="reactive programming" width="800"/>
 </div>
 
 1. This user would be **Processor**.
@@ -302,7 +302,7 @@ Flux<Message> chat(Flux<Message> incoming) { ... }
 4. **Subscribes** which one is top.
 
 <div align="center">
-    <img src="goodCommunity.PNG" alt="reactive programming" width="700"/>
+    <img src="goodCommunity.PNG" alt="reactive programming" width="600"/>
 </div>
 
 1. Reactor specification is having multiple implementations.

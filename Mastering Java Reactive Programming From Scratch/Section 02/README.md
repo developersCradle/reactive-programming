@@ -1136,7 +1136,7 @@ public class Lec09PublisherCreateVsExecution {
 # What About Data From Remote Service?  
 
 <div align="center">
-    <img src="monoRemoteService.JPG" alt="reactive programming" width="600"/>
+    <img src="monoRemoteService.JPG" alt="reactive programming" width="700"/>
 </div>
 
 1. When the value is in memory already, no computation is required! 
@@ -1547,7 +1547,7 @@ SLF4J(I): Connected with provider of type [ch.qos.logback.classic.spi.LogbackSer
     <img src="addingToQueNextJob.JPG" alt="reactive programming" width="600"/>
 </div>
 
-1. The jobs is getting picked.
+1. The jobs are getting picked from the **queue**.
 
 <div align="center">
     <img src="addingToQueNextJobNext.JPG" alt="reactive programming" width="600"/>
@@ -1568,11 +1568,11 @@ SLF4J(I): Connected with provider of type [ch.qos.logback.classic.spi.LogbackSer
     - As soon as there is the **response** it will be notifying the **Thread**.
 
 <div align="center">
-    <img src="oneThreadIsEnought.jpeg" alt="reactive programming" width="400"
+    <img src="oneThreadIsEnought.jpeg" alt="reactive programming" width="600"
     00"/>
 </div>
 
-# ***FAQ*** - Why We Should NOT Use Block.
+# FAQ - Why We Should NOT Use Block.
 
 - `.block()` — forces the **Mono** to resolve synchronously, i.e., waits for the result and returns the **actual value**.
     - In examples:
@@ -1628,7 +1628,7 @@ public class Lec11NonBlockingIO {
 - Why we should not be using the **non-blocking IO** from Java. 
 
 <div align="center">
-    <img src="nonBlockingIo.JPG" alt="reactive programming" width="500"/>
+    <img src="nonBlockingIo.JPG" alt="reactive programming" width="600"/>
 </div>
 
 1. This is at high level how we would need to be implementing the **Setting up**!
@@ -1637,7 +1637,7 @@ public class Lec11NonBlockingIO {
 # Assignment.
 
 <div align="center">
-    <img src="FileInterfaceAssigment.JPG" alt="reactive programming" width="500"/>
+    <img src="FileInterfaceAssigment.JPG" alt="reactive programming" width="600"/>
 </div>
 
 ````
@@ -1797,7 +1797,7 @@ try {
     - Answer: We are utilizing `Path` and `Files` from `java.nio.file.*`.
 
 <div align="center">
-    <img src="FileInterfaceAssigment3.JPG" alt="reactive programming" width="500"/>
+    <img src="FileInterfaceAssigment3.JPG" alt="reactive programming" width="600"/>
 </div>
 
 - The `AssigmentFileService`:
@@ -1859,25 +1859,28 @@ public class AssigmentFileService implements FileService {
 # What About Unit Testing?
 
 <div align="center">
-    <img src="unitTesting.JPG" alt="reactive programming" width="300"/>
+    <img src="unitTesting.JPG" alt="reactive programming" width="400"/>
 </div>
 
-- Unit test will be done later.
+- We will be creating **Unit test**, since we will be focusing to the logic!
+    - This will be done later.
 
 # Summary.
 
 <div align="center">
-    <img src="summary.JPG" alt="reactive programming" width="300"/>
+    <img src="summary.JPG" alt="reactive programming" width="500"/>
 </div>
 
-1. For **Mono** fine its fine not to have **back pressure**.
+1. For **Mono** to have **back pressure**.
 
 <div align="center">
-    <img src="summary2.JPG" alt="reactive programming" width="300"/>
+    <img src="summary2.JPG" alt="reactive programming" width="500"/>
 </div>
 
-1. We are thinking.
+1. We were having the following philosophies.
 
 <div align="center">
-    <img src="summary3.JPG" alt="reactive programming" width="300"/>
+    <img src="summary3.JPG" alt="reactive programming" width="500"/>
 </div>
+
+1. The Main ways to make **Publishers** from the **Mono**. 

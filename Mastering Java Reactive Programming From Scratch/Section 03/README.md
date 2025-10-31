@@ -7,7 +7,7 @@ Flux.
 # Flux - Just.
 
 <div align="center">
-    <img src="fluxEmmitting.JPG" alt="reactive programming" width="500"/>
+    <img src="fluxEmmitting.JPG" alt="reactive programming" width="700"/>
 </div>
 
 1. **Flux** can emit 0 or more items followed by the `.onComplete()` or the `.onError()`!
@@ -234,7 +234,7 @@ java.lang.IllegalStateException: stream has already been operated upon or closed
 ````
 
 > [!IMPORTANT]
-> A Java Stream (from list.stream()) can only be consumed once.
+> A **Java Stream** (from `list.stream()`) can only be consumed **once**.
 
 
 - We can create **Flux** from **Stream** of **supplier**.
@@ -273,9 +273,145 @@ public class Lec04FluxFromStream {
 
 # Flux - Range.
 
+- **Flux.range(...)** is for loop for Reactive Programming.
+
+- Assignments **Faker** 10 random names: 
+
+````
+        Flux.range(1,10)
+                .map(i -> Faker.instance().name().firstName())
+                .subscribe(Util.subscriber());
+````
+
+- The Exercise `Lec05FluxFromRange.java`:
+
+````
+package org.java.reactive.sec03;
+
+import com.github.javafaker.Faker;
+import org.java.reactive.common.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import reactor.core.publisher.Flux;
+
+public class Lec05FluxFromRange {
+
+    private static final Logger log = LoggerFactory.getLogger(Lec05FluxFromRange.class);
+
+    public static void main(String[] args)
+    {
+        Flux.range(1,10)
+                .subscribe(Util.subscriber());
+
+        // Faker 10 random names
+        Flux.range(1,10)
+                .map(i -> Faker.instance().name().firstName())
+                .subscribe(Util.subscriber());
+    }
+}
+````
+
 # Log Operator. 
 
+- Reminder of the **Reactive Stream** roles:
+
+| Interface | Role | Description |
+|------------|------|-------------|
+| `Publisher<T>` | 🟢 **Producer** | Emits data items (`onNext`), completion (`onComplete`), or errors (`onError`). |
+| `Subscriber<T>` | 🟣 **Consumer** | Receives data from the publisher. |
+| `Subscription` | 🔄 **Link** | Connects Publisher and Subscriber; allows backpressure control (`request(n)` / `cancel()`). |
+| `Processor<T, R>` | ⚙️ **Both** | Acts as both a `Subscriber` (consuming) and a `Publisher` (producing) — used for data transformation. |
+---
+
+- Between `Publisher` and `Subcriber`, there can be multiple **Processors**!
+
+````
+Flux.range(1,5)
+                //We can have here processors.
+                .subscribe(Util.subscriber());
+````
+
+<div align="center">
+    <img src="log.JPG" alt="reactive programming" width="600"/>
+</div>
+
+1. Log implements `Publisher` and `Subscriber`.
+2. `.log()` will act as **middleman**. **Producer** for `Flux.range(1,5)` and **Consumer** for `Subscriber(...)`.
+
+- As below, the `.log()`:
+    - Will be between **Producer** and **Consumer**.
+        - Belows example it will be:
+            - **Producer**: `Flux.range(1,5)`.
+            - **Consumer**: `.map(i -> Util.faker().name().firstName())`.
+                - ❌ Notice ❌, the `.subscribe(Util.subscriber());` will not be in scope!
+````
+Flux.range(1,3)
+                .log("log-map")
+                //We can have here processors.
+                .map(i -> Util.faker().name().firstName())
+                .subscribe(Util.subscriber());
+````
+
+- If you want full **logging** you need to add second `.log()` as following:
+    - You can add also **names** for the **loggers**!
+
+````
+    Flux.range(1,3)
+                .log("log-map")
+                //We can have here processors.
+                .map(i -> Util.faker().name().firstName())
+                .log("log-subscriber")
+                .subscribe(Util.subscriber());
+````
+
+<div align="center">
+    <img src="loggingInStream.JPG" alt="reactive programming" width="900"/>
+</div>
+
+1. You can see these logging line **first**. Logger name: `log-map`.
+2. **Second** comes this line. Logger name: `log-subscriber`.
+
+- The Exercise `Lec06Log.java`:
+
+````
+package org.java.reactive.sec03;
+
+import org.java.reactive.common.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import reactor.core.publisher.Flux;
+
+public class Lec06Log {
+
+    private static final Logger log = LoggerFactory.getLogger(Lec06Log.class);
+
+    public static void main(String[] args)
+    {
+        Flux.range(1,3)
+                .log("log-map")
+                //We can have here processors.
+                .map(i -> Util.faker().name().firstName())
+                .subscribe(Util.subscriber());
+    }
+}
+````
+
 # Flux Vs List.
+
+
+
+
+
+- The Exercise `.java`:
+
+````
+
+
+
+````
+
+
+
 
 # ChatGPT vs Gemini.
 

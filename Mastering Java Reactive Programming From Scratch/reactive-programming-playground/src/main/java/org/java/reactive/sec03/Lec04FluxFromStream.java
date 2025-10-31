@@ -17,7 +17,7 @@ public class Lec04FluxFromStream {
     var stream = list.stream();
 
     // This will be having error, when subscribing to multiple
-//    var flux = Flux.fromStream(stream);
+    // var flux = Flux.fromStream(stream);
 
         var flux = Flux.fromStream(() -> List.of().stream());
     flux.subscribe(Util.subscriber("sub1"));

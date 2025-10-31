@@ -14,6 +14,10 @@ public class DefaultSubscriber<T> implements Subscriber<T> {
         this.name = name;
     }
 
+    /*
+        subscription.request(Long.MAX_VALUE);
+        “Send me as many items as you can, without limit.”
+     */
     @Override
     public void onSubscribe(Subscription subscription) {
         subscription.request(Long.MAX_VALUE);

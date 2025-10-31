@@ -17,6 +17,7 @@ public class Lec03FluxFromIterableOrArray {
         var list = List.of("a","b","c");
         Flux.fromIterable(list)
                 .subscribe(Util.subscriber());
+
         // Form Java array:
         Integer[] arr = {1,2,3,4,5,6,7};
         Flux.fromArray(arr)
