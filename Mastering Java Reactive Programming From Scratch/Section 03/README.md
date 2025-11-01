@@ -398,6 +398,33 @@ public class Lec06Log {
 
 # Flux Vs List.
 
+- This example there will be **long waiting** line, and we don't know what **Producer** will be doing.
+
+````
+    var list = NameGenerator.getNameList(10);
+    System.out.println(list);
+````   
+
+- After while the logging will be printing:
+
+<div align="center">
+    <img src="LoggingWithNormalWay.gif" alt="reactive programming" width="600"/>
+</div>
+
+- Logging with **Reactive Approach**.
+
+````
+        // This is the reactive way of logging
+        NameGenerator.getNameListAsReactiveSecond(10)
+                .subscribe(Util.subscriber());
+````
+
+- Will produce the logs, when they are ready.
+    - We will be having idea what is happening under the hood.
+
+<div align="center">
+    <img src="LoggingWithReactive.gif" alt="reactive programming" width="600"/>
+</div>
 
 
 

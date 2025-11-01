@@ -1286,7 +1286,7 @@ public class Lec11NonBlockingIO {
 }
 ````
 
-- We get the answer with the folllowing:
+- We get the answer with the following:
 
 ````
 package org.java.reactive.sec02;
