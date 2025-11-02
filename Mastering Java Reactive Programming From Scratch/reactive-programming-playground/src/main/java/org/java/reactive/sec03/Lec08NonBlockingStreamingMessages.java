@@ -13,13 +13,15 @@ public class Lec08NonBlockingStreamingMessages {
 
     public static void main(String[] args)
     {
-
-
         var client = new ExternalServiceClient();
 
         client.getNames()
-                .subscribe(Util.subscriber());
+                .subscribe(Util.subscriber("Sub1"));
 
+        client.getNames()
+                .subscribe(Util.subscriber("Sub2"));
+
+        Util.sleepSeconds(12);
 
         // This example there will be long waiting line and we don't know what Producer will be doing.
 //        var list = NameGenerator.getNameList(10);
@@ -37,17 +39,14 @@ public class Lec08NonBlockingStreamingMessages {
 //                .subscribe(Util.subscriber());
 
 
-
-
-
         // They way where we can cancel the elements.
-        var subscriber = new SubscriberImpl();
-        NameGenerator.getNameListAsReactiveSecond(10)
-                .subscribe(subscriber);
-
-        subscriber.getSubscription().request(3);
-        subscriber.getSubscription().request(3);
-        subscriber.getSubscription().cancel();
+//        var subscriber = new SubscriberImpl();
+//        NameGenerator.getNameListAsReactiveSecond(10)
+//                .subscribe(subscriber);
+//
+//        subscriber.getSubscription().request(3);
+//        subscriber.getSubscription().request(3);
+//        subscriber.getSubscription().cancel();
 
     }
 }

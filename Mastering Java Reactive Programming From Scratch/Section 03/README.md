@@ -22,8 +22,6 @@ Flux.
     - `Flux.fromArray(...)`. From *Java Array*. 
     - `Flux.fromStream(...)`. . From *Java 8 Stream*.
 
-
-
 - We can make **multiple** of something:
     - We can make **List** of using **Java 8** feature `List.of(1,2,3,4); `
     - Same, with the **Flux** 
@@ -547,13 +545,108 @@ public class Lec07FluxList {
     <img src="requestingStreamOfDataInBrowser.gif" alt="reactive programming" width="800"/>
 </div>
 
+- We will be having following **Client** for the `Flux<Strings>`.
+
+````
+    public Flux<String> getNames() {
+        return this.httpClient
+                .get() // for Get.
+                .uri("/demo02/name/stream" ) // The Base URI, will be getted.
+                .responseContent() // Will be getting as Flux<ByteBuf>.
+                .asString(); // We need to tell that its Flux of the String.
+    }
+````
+
+- This will be **requested** by the `HttpClient` from **Reactor Netty**. We will be querying when this is needed, when there is emitted messages!
+
+````
+var client = new ExternalServiceClient();
+        client.getNames()
+                .subscribe(Util.subscriber());
+        Util.sleepSeconds(6);
+````
+
+<div align="center">
+    <img src="Lec08NonBlockingStreamingMessages.gif" alt="reactive programming" width="800"/>
+</div>
+
+- You can see that messages in server: 
+    - `streaming completed`
+    - `streaming request received`
+
+- We can query with same `Http Netty client`, when there is two `.subscribers(...)`.
+
+````
+        var client = new ExternalServiceClient();
+
+        client.getNames()
+                .subscribe(Util.subscriber("Sub1"));
+
+        client.getNames()
+                .subscribe(Util.subscriber("Sub2"));
+
+        Util.sleepSeconds(12);
+````
+
+<div align="center">
+    <img src="Lec08NonBlockingStreamingMessagesMultipleSubscribers.gif" alt="reactive programming" width="800"/>
+</div>
+
+- The Exercise `Lec08NonBlockingStreamingMessages.java`:
+
+````
+package org.java.reactive.sec03;
+
+import org.java.reactive.common.Util;
+import org.java.reactive.sec01.subscriber.SubscriberImpl;
+import org.java.reactive.sec03.client.ExternalServiceClient;
+import org.java.reactive.sec03.helper.NameGenerator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class Lec08NonBlockingStreamingMessages {
+
+    private static final Logger log = LoggerFactory.getLogger(Lec07FluxList.class);
+
+    public static void main(String[] args)
+    {
+        var client = new ExternalServiceClient();
+
+        client.getNames()
+                .subscribe(Util.subscriber("Sub1"));
+
+        client.getNames()
+                .subscribe(Util.subscriber("Sub2"));
+
+        Util.sleepSeconds(12);
+
+        // This example there will be long waiting line and we don't know what Producer will be doing.
+//        var list = NameGenerator.getNameList(10);
+//        System.out.println(list);
 
 
+        // This is the reactive way of logging
+//        NameGenerator.getNameListAsReactiveSecond(10)
+//                .subscribe(Util.subscriber());
 
 
+//         This is the reactive way of logging
+//        NameGenerator.getNameListAsReactiveSecond(10)
+//                .subscribe(Util.subscriber());
 
 
+        // They way where we can cancel the elements.
+//        var subscriber = new SubscriberImpl();
+//        NameGenerator.getNameListAsReactiveSecond(10)
+//                .subscribe(subscriber);
+//
+//        subscriber.getSubscription().request(3);
+//        subscriber.getSubscription().request(3);
+//        subscriber.getSubscription().cancel();
 
+    }
+}
+````
 
 # Flux - Interval.
 
