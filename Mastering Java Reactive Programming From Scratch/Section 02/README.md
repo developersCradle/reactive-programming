@@ -1234,7 +1234,7 @@ public class ExternalServiceClient extends AbstractHttpClient {
     public Mono<String> getProductName(int productId) {
         return this.httpClient
                 .get() // for Get.
-                .uri("/demo01/product" + productId) // The Base URI, will be getted.
+                .uri("/demo01/product/" + productId) // The Base URI, will be getted.
                 .responseContent() // Will be getting as Flux<ByteBuf>.
                 .asString() // We need to tell that its Flux of the String.
                 .next(); // We create the Flux to Mono, with the First Mono.
@@ -1328,6 +1328,10 @@ SLF4J(I): Connected with provider of type [ch.qos.logback.classic.spi.LogbackSer
 
 - We can see that, all these are executed by one **Thread**:
     - `ScoopiDoo-nio-1`.
+
+
+- TODO tee tämä uudestaan.
+
 ````
 19:09:01.744 INFO  [           main] o.j.r.sec02.Lec11NonBlockingIO : starting
 19:09:02.299 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: {"timestamp":"2025-10-25T16:09:02.188+00:00","path":"/demo01/product1","status":404,"error":"Not Found","requestId":"267a4633-2"}
@@ -1610,18 +1614,20 @@ public class Lec11NonBlockingIO {
         for (int i = 1; i <= 100; i++) {
             var name = client.getProductName(i)
                     .block();
-
             log.info(name);
         }
         Util.sleepSeconds(2);
     }
-
 }
 ````
 
-- This will not be the **Reactiveness approach**.
+- This will not be the **Reactiveness approach**. Loggings are as in below:
 
-- In **Unit Tests** usage of the `.block()` is fine.
+<div align="center">
+    <img src="Lec11NonBlockingIOReactiveCall.gif" alt="reactive programming" width="700"/>
+</div>
+
+- For the **Unit Tests** usage of the `.block()` is fine.
 
 # Why Reactive Netty?
 

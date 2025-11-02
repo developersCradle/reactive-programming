@@ -408,7 +408,7 @@ public class Lec06Log {
 - After while the logging will be printing:
 
 <div align="center">
-    <img src="LoggingWithNormalWay.gif" alt="reactive programming" width="600"/>
+    <img src="LoggingWithNormalWay.gif" alt="reactive programming" width="800"/>
 </div>
 
 - Logging with **Reactive Approach**.
@@ -423,28 +423,137 @@ public class Lec06Log {
     - We will be having idea what is happening under the hood.
 
 <div align="center">
-    <img src="LoggingWithReactive.gif" alt="reactive programming" width="600"/>
+    <img src="LoggingWithReactive.gif" alt="reactive programming" width="800"/>
+</div>
+
+- The **Reactive logging** will be more responsible!
+    - Logs will happen when the **producer** produces some logs.
+
+
+- We can request for the items in the reactive style, with following approach:
+    - There will be **request** for **3** items. `subscriber.getSubscription().request(3);` 
+    - And in the end there is the `.cancel()` for **controlling** the items by calling `cancel()`.
+        - I am satisfied by the name, which was provided at first.
+
+````
+        var subscriber = new SubscriberImpl();
+        NameGenerator.getNameListAsReactiveSecond(10)
+                .subscribe(subscriber);
+
+        subscriber.getSubscription().request(3);
+        subscriber.getSubscription().request(3);
+        subscriber.getSubscription().cancel();
+````
+
+<div align="center">
+    <img src="ReactingEarlyByCallingCancel.gif" alt="reactive programming" width="800"/>
+</div>
+
+- We can react **early** and cancel **emitting** the 
+**elements**!
+
+<div align="center">
+    <img src="listVsFlux.PNG" alt="reactive programming" width="800"/>
+</div>
+
+1. **Tradition** approach the list will be returned as **one** list.
+    - We **cannot** stop if we want to.
+2. **Reactive** the items are provided one by one, when they are requested.
+    - We **can** stop, if we want to.
+
+- The Exercise `Lec07FluxList.java`:
+
+````
+package org.java.reactive.sec03;
+
+import org.java.reactive.common.Util;
+import org.java.reactive.sec01.subscriber.SubscriberImpl;
+import org.java.reactive.sec03.helper.NameGenerator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class Lec07FluxList {
+
+    private static final Logger log = LoggerFactory.getLogger(Lec07FluxList.class);
+
+    public static void main(String[] args)
+    {
+        // This example there will be long waiting line and we don't know what Producer will be doing.
+//        var list = NameGenerator.getNameList(10);
+//        System.out.println(list);
+
+
+
+        // This is the reactive way of logging
+//        NameGenerator.getNameListAsReactiveSecond(10)
+//                .subscribe(Util.subscriber());
+
+
+//         This is the reactive way of logging
+//        NameGenerator.getNameListAsReactiveSecond(10)
+//                .subscribe(Util.subscriber());
+
+
+
+
+
+        // They way where we can cancel the elements.
+        var subscriber = new SubscriberImpl();
+        NameGenerator.getNameListAsReactiveSecond(10)
+                .subscribe(subscriber);
+
+        subscriber.getSubscription().request(3);
+        subscriber.getSubscription().request(3);
+        subscriber.getSubscription().cancel();
+
+    }
+}
+````
+
+# ChatGPT vs Gemini.
+
+ - The Comparison ✅.
+
+# FAQ - Are Mono & Flux Data Structures?
+
+<div align="center">
+    <img src="monoFluxAreTheyDatastructures.PNG" alt="reactive programming" width="800"/>
+</div>
+
+1. These are like places to store data, to store data.
+2. There are like **transfer thought**.
+
+<div align="center">
+    <img src="imageRepresentation.PNG" alt="reactive programming" width="800"/>
+</div>
+
+1. **Real Life example**: Some bottles to store the data.
+    - Sizes can wary!
+2. **Real Life example**: Pipe that transfers the water.
+
+<div align="center">
+    <img src="transferringTroughtFlux.PNG" alt="reactive programming" width="800"/>
+</div>
+
+1. We can transfer data to another **App1** to **App2**.
+
+# Flux - Non-Blocking IO Stream - Demo.
+
+- Consuming **Stream of messages**, with **Reactor Netty**.
+
+- We can request stream of the data thought browser, as seen below:
+
+<div align="center">
+    <img src="requestingStreamOfDataInBrowser.gif" alt="reactive programming" width="800"/>
 </div>
 
 
 
 
-- The Exercise `.java`:
-
-````
-
-
-
-````
 
 
 
 
-# ChatGPT vs Gemini.
-
-# FAQ - Are Mono & Flux Data Structures?
-
-# Flux - Non-Blocking IO Stream - Demo.
 
 # Flux - Interval.
 

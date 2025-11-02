@@ -69,6 +69,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 #### Additional stuff.
 
+- Use the `.gif` tool for making illustrations! Check the chapters and make GIFs out of it,
 - [x] [Original Repository](https://github.com/vinsguru/java-reactive-programming-course). ✅
 - [ ] Remove numbers from packages (from projects and transfer to IntelliJ).
 - [ ] Do the IO model chapter for simplicity’s sake.
@@ -130,10 +131,12 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 #### Additional stuff.
 
+- [ ] Make the `.gif` out of the screen if available.
 - [ ] Read thought [Manifesto](https://www.reactivemanifesto.org/).
 - [ ] Intro to [Reactive Programming](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754).
 - [ ] Some about Reactive Programming [PDF](https://soft.vub.ac.be/Publications/2012/vub-soft-tr-12-13.pdf).
 - [ ] Remove numbers from packages and from lecture notes `.md` if there is.
+
 
 <p align="center">
     <img id="nordea" src="Reactive Programming in Modern Java using Project Reactor caption real.png" style="width:1000px;height:80px;">
@@ -193,6 +196,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 #### Additional stuff.
 
+- Use the `.gif` tool for making illustrations! Check the chapters and make GIFs out of it,
 - [ ] Get known to Asynchronous/Concurrency **Future**, **CompletableFuture** and Flow API.
 - [ ] Read thought Reactor 3 Reference Guide. [Link](https://projectreactor.io/docs/core/release/reference/).
 - [ ] Make some concept to drive in `flatMapMany()` concept.
@@ -267,6 +271,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 #### Additional stuff.
 
+- Use the `.gif` tool for making illustrations! Check the chapters and make GIFs out of it.
 - [x] Example which using Maven. [Link To GitHub](https://github.com/ferfujikawa/reactive-spring?tab=readme-ov-file). 
 - [ ] Do section 08 as refresher. Same content as in **Reactive Programming in Modern Java using Project Reactor**.
 - [ ] Refresh again `71. How does Netty handle the Request?`.
