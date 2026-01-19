@@ -140,7 +140,7 @@ Mono.
     - `public void onNext(String email)`.
     - `public void onSubscribe(Subscription subscription)`.
 
-````
+````Java
 package org.java.reactive.sec01.subscriber;
 
 import org.reactivestreams.Subscriber;
@@ -196,7 +196,7 @@ public class SubscriberImpl implements Subscriber<String> {
 
 - We are implementing the **Publisher** `1.` below:
 
-````
+````Java
 package org.java.reactive.sec01.publisher;
 
 import org.reactivestreams.Publisher;
@@ -225,7 +225,7 @@ public class PublisherImpl implements Publisher<String> {
     - `public void request(long requested)`.
     - `public void cancel()`.
 
-````
+````Java
 package org.java.reactive.sec01.publisher;
 
 import org.reactivestreams.Subscriber;
@@ -259,7 +259,7 @@ public class SubscriptionImpl implements Subscription {
 
 - The `request(long requested)`. We are **producing** item using **Faker**.
 
-````
+````Java
     @Override
     public void request(long requested) {
         if(isCancelled){
@@ -287,8 +287,7 @@ public class SubscriptionImpl implements Subscription {
 
 - The `cancel()`.
 
-````
-
+````Java
     @Override
     public void cancel() {
         log.info("subscriber has cancelled");
@@ -299,7 +298,7 @@ public class SubscriptionImpl implements Subscription {
 
 - The current **Subscription**:
 
-````
+````Java
 package org.java.reactive.sec01.publisher;
 
 import com.github.javafaker.Faker;
@@ -362,7 +361,7 @@ public class SubscriptionImpl implements Subscription {
 
 - We are testing the `1.` publisher does not produce data unless subscriber requests for it:
 
-````
+````Java
 private static void demo1() {
     var publisher = new PublisherImpl();
     var subscriber = new SubscriberImpl();
@@ -374,7 +373,7 @@ private static void demo1() {
 
 - We are testing the `2.` publisher will produce only <= subscriber requested items. Publisher can also produce 0 items!:
 
-````
+````Java
 
  private static void demo2() throws InterruptedException {
     var publisher = new PublisherImpl();
@@ -455,7 +454,7 @@ private static void demo1() {
 # Why We Need Mono!
 
 > [!TIP]
-> Why we need to have **different** Mono and the Flux, if the Flux have the necessary things!
+> 💡 Why we need to have **different** Mono and the Flux, if the Flux have the necessary things! 💡
 
 - Simple answer, it's **convenient**.
 
@@ -488,7 +487,7 @@ private static void demo1() {
     - `.toList(); // This will be resolved as soon as there is terminal operator.`
         - This is one example of the terminal operator.
 
-````
+````Java
 package org.java.reactive.sec02;
 
 
@@ -536,7 +535,7 @@ public class Lec01LazyStream {
 - To get the logging working, we need to subscribe to the **Reactive Stream**.
     - Also notice, we are using our own **Reactive Stream** implementation with the **Project Reactor**. 
 
-````
+````Java
 Mono<String> mono = Mono.just("First");
 var subscriber = new SubscriberImpl();
 mono.subscribe(subscriber);
@@ -546,7 +545,7 @@ subscriber.getSubscription().request(3);
 
 - We can use the **Project Reactors** methods for logging, as following:
 
-````
+````Java
 Mono<String> mono = Mono.just("First");
 mono.subscribe(t -> System.out.println(t));
 ````
@@ -569,7 +568,7 @@ mono.subscribe(t -> System.out.println(t));
 
 - We can use overloaded methods to solve these:
 
-````
+````Java
        mono.subscribe(
                 i -> log.info("received: {}", i),
                 err -> log.error("error", err),
@@ -580,7 +579,7 @@ mono.subscribe(t -> System.out.println(t));
 
 - With following, we **transform** every data that is **emitted** by this **publisher**. 
 
-````
+````Java
         var mono = Mono.just(1)
                 .map(i -> i + "a");
 
@@ -601,7 +600,7 @@ mono.subscribe(t -> System.out.println(t));
 
 - Illustrating the error handling also works:
 
-````
+````Java
         var mono = Mono.just(1)
                 .map(i -> i / 0);
 
@@ -619,7 +618,7 @@ mono.subscribe(t -> System.out.println(t));
 
 - Below **default Subscriber**.
 
-````
+````Java
 package org.java.reactive.common;
 
 import org.reactivestreams.Subscriber;
@@ -662,7 +661,7 @@ public class DefaultSubscriber<T> implements Subscriber<T> {
 
 - The util class:
 
-````
+````Java
 package org.java.reactive.common;
 
 import com.github.javafaker.Faker;
@@ -724,7 +723,7 @@ public class Util {
 
 - Below the example creating **Empty** and **Error** Publishers.
 
-````
+````Java
 package org.java.reactive.sec02;
 
 
@@ -746,7 +745,7 @@ public class Lec04MonoEmptyError {
     {
         return switch (userId)
         {
-            case 1 -> Mono.just("same");
+            case 1 -> Mono.just("sam!");
             case 2 -> Mono.empty(); // normally we would say null.
             default -> Mono.error(new RuntimeException("Invalid input")); // This block when there is error.
         };
@@ -756,7 +755,7 @@ public class Lec04MonoEmptyError {
 
 - Using **empty** or **error**.
     - Returning some value in **Reactive Streams**
-        - `Mono.just("same");`.
+        - `Mono.just("sam!");`.
     - The way how we say the `null` in **Reactive Streams**.
         - `Mono.empty(); // normally we would say null.`
     - The normal way how we will be **throwing the errors** inside **Reactive Streams**
@@ -766,7 +765,7 @@ public class Lec04MonoEmptyError {
 
 - We have following:
 
-````
+````Java
 getUsername(3)
     .subscribe(s -> System.out.println(s));
 ````
@@ -812,7 +811,7 @@ Caused by: java.lang.RuntimeException: Invalid input
 
 - We can also make it so, when the result is ready with following:
 
-````
+````Java
 package org.java.reactive.sec02;
 
 import org.java.reactive.common.Util;
@@ -851,7 +850,7 @@ public class Lec05MonoFromSupplier {
     - We can see that `Exception` is **thrown** form the method.
     - **Callable** can be used wrapper for some **task**!
 
-````
+````Java
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
@@ -947,7 +946,7 @@ public interface Callable<V> {
 
 - With, `Mono.fromSupplier` we need to catch the exception.
 
-````
+````Java
 package org.java.reactive.sec02;
 
 
@@ -1001,7 +1000,7 @@ public class Lec06MonoFromCallable {
     - See the usage `private  static void notifyBusiness(int productId)`.
         - Also, `return Mono.fromRunnable(()-> notifyBusiness(productId));`. 
 
-````
+````Java
 package org.java.reactive.sec02;
 
 
@@ -1057,7 +1056,7 @@ public class Lec07MonoFromRunnable {
 
 - The executions is not happening until the `.subscribe`. 
 
-````
+````Java
 package org.java.reactive.sec02;
 
 import org.java.reactive.common.Util;
@@ -1175,7 +1174,7 @@ public class Lec09PublisherCreateVsExecution {
 
 - We can run the service, with the following:
 
-````
+````bash
 java -jar external-services.jar
 ````
 
@@ -1193,7 +1192,7 @@ java -jar external-services.jar
 
 - This will do the **abstract** version:
 
-````
+````Java
 package org.java.reactive.common;
 
 import reactor.netty.http.client.HttpClient;
@@ -1218,7 +1217,7 @@ public abstract class AbstractHttpClient {
 
 - Client here as it was:
 
-````
+````Java
 package org.java.reactive.sec02;
 
 import org.java.reactive.common.AbstractHttpClient;
@@ -1254,11 +1253,11 @@ public class ExternalServiceClient extends AbstractHttpClient {
 # Non-Blocking IO Demo.
 
 > [!TIP]
-> Normally, we would not be **needing** the `sleep()`, since this serves as blocking call! 
+> 💡 Normally, we would not be **needing** the `sleep()`, since this serves as blocking call! 💡 
 
 - The Below code won't be logging, because the main thread exists imminently.
 
-````
+````Java
 package org.java.reactive.sec02;
 
 import org.java.reactive.common.Util;
@@ -1288,7 +1287,7 @@ public class Lec11NonBlockingIO {
 
 - We get the answer with the following:
 
-````
+````Java
 package org.java.reactive.sec02;
 
 import org.java.reactive.common.Util;
@@ -1590,7 +1589,7 @@ SLF4J(I): Connected with provider of type [ch.qos.logback.classic.spi.LogbackSer
 - Example using the `.block`;
 
 
-````
+````Java
 package org.java.reactive.sec02;
 
 import org.java.reactive.common.Util;
@@ -1656,7 +1655,7 @@ public class Lec11NonBlockingIO {
 1. **Requirement 1**:
     - **Answer:** We create following `interface`:
 
-````
+````Java
 package org.java.reactive.sec02.assigment;
 
 import reactor.core.publisher.Mono;
@@ -1679,7 +1678,7 @@ public interface FileService {
 1. **Requirement 1**:
     - Answer: We utilize the `.subcribe()`:
 
-````
+````Java
 package org.java.reactive.sec02;
 
 import org.java.reactive.common.Util;
@@ -1808,7 +1807,7 @@ try {
 
 - The `AssigmentFileService`:
 
-````
+````Java
 package org.java.reactive.sec02.assigment;
 
 import org.slf4j.Logger;

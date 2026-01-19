@@ -15,7 +15,7 @@ public class Lec01FluxJust {
 
         List.of(1,2,3,4); // We can make List of using Java 8 feature.
 
-        Flux.just(1,2 ,3 , "sam") // Same concept applies for the Flux.
+        Flux.just(1,2 ,3 , "sam!") // Same concept applies for the Flux.
                 .subscribe(Util.subscriber());
     }
 

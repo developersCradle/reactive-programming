@@ -11,7 +11,7 @@ Combining Publishers.
 </div>
 
 1. Often times **microarchitecture** has multiple sources of data.
-    - Many time back end will ask **multiple sources** and collects aggregate data for the **front end**.
+    - Many times backend will ask from **multiple sources** and collects aggregate data for the **front end**.
 
 - The **point** here is that:
     - For one front end request.

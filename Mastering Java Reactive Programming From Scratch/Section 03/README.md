@@ -7,7 +7,7 @@ Flux.
 # Flux - Just.
 
 <div align="center">
-    <img src="fluxEmmitting.JPG" alt="reactive programming" width="700"/>
+    <img src="Flux_Emmitting_Elements.JPG" alt="reactive programming" width="700"/>
 </div>
 
 1. **Flux** can emit 0 or more items followed by the `.onComplete()` or the `.onError()`!
@@ -42,7 +42,7 @@ Flux.
 
 - The Exercise `Lec01FluxJust.java`:
 
-````
+````Java
 package org.java.reactive.sec03;
 
 import org.java.reactive.common.Util;
@@ -60,7 +60,7 @@ public class Lec01FluxJust {
 
         List.of(1,2,3,4); // We can make List of using Java 8 feature.
 
-        Flux.just(1,2 ,3 , "sam") // Same concept applies for the Flux.
+        Flux.just(1,2 ,3 , "sam!") // Same concept applies for the Flux.
                 .subscribe(Util.subscriber());
     }
 }
@@ -72,7 +72,7 @@ public class Lec01FluxJust {
 
 - We can **filter** per **Subscriber**.
 
-````
+````Java
    var flux = Flux.just(1,2 ,3 , 4);
 
         flux.subscribe(Util.subscriber("sub1"));
@@ -102,7 +102,7 @@ public class Lec01FluxJust {
 
 - The Exercise `Lec02MultipleSubscribers.java`:
 
-````
+````Java
 package org.java.reactive.sec03;
 
 import org.java.reactive.common.Util;
@@ -232,7 +232,7 @@ java.lang.IllegalStateException: stream has already been operated upon or closed
 ````
 
 > [!IMPORTANT]
-> A **Java Stream** (from `list.stream()`) can only be consumed **once**.
+> ⚠️ A **Java Stream** (from `list.stream()`) can only be consumed **once**. ⚠️
 
 
 - We can create **Flux** from **Stream** of **supplier**.
@@ -545,7 +545,7 @@ public class Lec07FluxList {
     <img src="requestingStreamOfDataInBrowser.gif" alt="reactive programming" width="800"/>
 </div>
 
-- We will be having following **Client** for the `Flux<Strings>`.
+- We will be having the following **Client** for the `Flux<Strings>`.
 
 ````
     public Flux<String> getNames() {
@@ -655,6 +655,112 @@ public class Lec08NonBlockingStreamingMessages {
 # Flux - Defer.
 
 # Mono/Flux Conversion.
+
+- When would this **conversion** situation be occurring?
+    - If one would be using some **library**, which requires using the types as `Mono` or `Flux`, this requires the **transformation**! 
+
+- We will be emulating **library** as following:
+
+````Java
+    private static Mono<String> getUsername(int userId)
+    {
+        return switch (userId)
+        {
+            case 1 -> Mono.just("sam!");
+            case 2 -> Mono.empty(); // normally we would say null.
+            default -> Mono.error(new RuntimeException("Invalid input")); // This block when there is error.
+        };
+    }
+````
+
+- Some other **Class** expects following:
+
+````Java
+private static void save(Flux<String> flux)
+    {
+        flux.subscribe(Util.subscriber());
+    }
+````
+
+- One can see that, would need to **Convert** this reactive type! Following would give error:
+
+````Java
+    public static void main(String[] args)
+    {
+        save(getUsername(1)); // Gives error.
+    }
+````
+
+- We can fix this **converting** the `Mono<>` to the `Flux<>`, with following `Flux.from(... Publisher ...)`.
+    
+````Java
+save(Flux.from(mono));
+````
+
+````Java
+package org.java.reactive.sec03;
+
+import org.java.reactive.common.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+/**
+ *  This lecture is about converting Flux <---> Mono.
+ */
+public class Lec11FluxMono {
+
+    private static final Logger log = LoggerFactory.getLogger(Lec11FluxMono.class);
+
+    public static void main(String[] args)
+    {
+        save(getUsername(1));
+    }
+
+    private static Mono<String> getUsername(int userId)
+    {
+        return switch (userId)
+        {
+            case 1 -> Mono.just("sam!");
+            case 2 -> Mono.empty(); // normally we would say null.
+            default -> Mono.error(new RuntimeException("Invalid input")); // This block when there is error.
+        };
+    }
+
+    private static void save(Flux<String> flux)
+    {
+        flux.subscribe(Util.subscriber());
+    }
+
+}
+````
+
+- We can see the
+
+<div align="center">
+    <img src="We_Are_Converting_Mono_To_Flux.gif" alt="reactive programming" width="800"/>
+</div>
+
+1. We can see the `Mono` **converted** to the `Flux`. Sam will be as **result** `Sam!`
+
+
+- Todo the other covertions
+
+
+<details>
+<summary id="Reactive programming course.
+" open="true"> <b>The Mono/Flux conversion code finished !</b> </summary>
+
+````Java
+
+add here to finished code
+
+````
+</details>
+
+
+
 
 # Assignment.
 

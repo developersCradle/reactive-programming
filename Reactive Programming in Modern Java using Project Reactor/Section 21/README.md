@@ -33,7 +33,7 @@ Build NonBlocking RestClient using WebClient.
 
 - We need to have same names, what are returned from API. Its for getting **serialization** and **deserialization** working.
 
-# 69. Unit Test NonBlocking Client using StepVerifier and JUnit
+# Unit Test NonBlocking Client using StepVerifier and JUnit.
 
 - The logic for **service**.
 

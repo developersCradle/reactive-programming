@@ -95,7 +95,7 @@ Introduction.
 1. We should be using threads and CPU efficiently.
 
 > [!IMPORTANT]
-> **Reactive Programming** is to simplify this io model.
+> ⚠️ **Reactive Programming** is to simplify this IO model. ⚠️
 
 # [THEORY] - IO Models.
  
@@ -167,7 +167,7 @@ Introduction.
 
 - Example in code:
 
-````
+`````Java
 // 1. Request → Response
 @GetMapping("/user/{id}")
 Mono<User> getUser(@PathVariable String id) { ... }
@@ -310,7 +310,7 @@ Flux<Message> chat(Flux<Message> incoming) { ... }
 # [THEORY] - Publisher/Subscriber Communication - Step By Step.
 
 > [!IMPORTANT]  
-> This concept is very important!
+> ⚠️ This concept is very important! ⚠️
 
 <div align="center">
     <img src="publisherAndSubscriber.JPG" alt="reactive programming" width="700"/>
@@ -343,7 +343,7 @@ Flux<Message> chat(Flux<Message> incoming) { ... }
     - It will get **three** different the **items**.
 
 > [!IMPORTANT]  
-> Notice that the requested amount will be **three** items! Nothing more!
+> ⚠️ Notice that the requested amount will be **three** items! Nothing more! ⚠️
 
 <div align="center">
     <img src="publisherAndSubscriber5.JPG" alt="reactive programming" width="700"/>

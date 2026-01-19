@@ -4,13 +4,14 @@
 </p>
 
 > In reactive programming, you generally want:
-> *“Nothing happens until there is a subscriber.”* ~ Art of Reactive Programming ~ *DevelopersCradle*.
+> *“Nothing happens until there is a subscriber.”* ~ Art of Reactive Programming <br><br>~ *DevelopersCradle*.
 
 <details>
 
 <summary id="refactoring the progress" open="true"> <b> Reactive course series by Vinoth Selvaraj! </b> </summary>
 
 <br>
+
 <p align="center">
     <img src="reactiveSeries.JPG" alt="reactive programming" width="700"/>
 </p>
@@ -20,13 +21,22 @@
 
 </details>
 
-<div align="center">
-    <img id="Mastering Java Reactive Programming [From Scratch] caption" src="Mastering Java Reactive Programming caption.png" alt="Mastering Java Reactive Programming [From Scratch]" style="width:1000px;height:90px;"/>
-</div>
+<p align="center">
+    <img src="Mastering_Java_Reactive_Programming_From Scratch_Caption.png" alt="Mastering Java Reactive Programming [From Scratch] Caption" style="width:1600px;height:90px;" />
+</p>
 
-![Mastering Java Reactive Programming [From Scratch]](Mastering%20Java%20Reactive%20Programming%20%20desc.PNG)
+<p align="center">
+    <img src="Mastering_Java_Reactive_Programming_Description.PNG" alt="Mastering Java Reactive Programming [From Scratch] Caption" style="width: 680px;"/>
+</p>
 
-All course material from Mastering Java Reactive Programming [From Scratch] **Vinoth Selvaraj**.
+
+
+
+
+All course material from *Mastering Java Reactive Programming [From Scratch]* **Vinoth Selvaraj**.
+
+> Add here some story <br><br>
+~ *DevelopersCradle*
 
 Contains my own notes with some course material to enforce learning experience.
 
@@ -69,13 +79,59 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 #### Additional stuff.
 
-- Use the `.gif` tool for making illustrations! Check the chapters and make GIFs out of it,
 - [x] [Original Repository](https://github.com/vinsguru/java-reactive-programming-course). ✅
 - [ ] Remove numbers from packages (from projects and transfer to IntelliJ).
 - [ ] Do the IO model chapter for simplicity’s sake.
-- [ ] Add exercises after every coding chapter.
 - [ ] You can check the [Virtaul Thread](https://www.udemy.com/course/java-virtual-thread/) vs reactive programming.
 - [ ] Do the `Mono - From Future` after the done with the multithreading.
+
+<details>
+
+<summary id="Add to the block." open="true"> <b>Add the code examples into the block!</b></summary>
+<br>
+
+- Checked chapters, this will be chapter by chapter:
+    - [ ] Chapter 01. 
+    - [ ] Chapter 02.
+    - [ ] Chapter 03.
+    - [ ] Chapter 04.
+    - [ ] Chapter 05.
+    - [ ] Chapter 06.
+    - [ ] Chapter 07.
+    - [ ] Chapter 08.
+    - [ ] Chapter 09.
+    - [ ] Chapter 10.
+    - [ ] Chapter 11.
+    - [ ] Chapter 12.
+</details>
+
+<details>
+
+<summary id="Add to the block." open="true"> <b>Use the gifs for the chapters!</b></summary>
+<br>
+
+- .gif transferring in progress, this will be chapter by chapter:
+    - [ ] Chapter 01. 
+    - [ ] Chapter 02.
+    - [ ] Chapter 03.
+    - [ ] Chapter 04.
+    - [ ] Chapter 05.
+    - [ ] Chapter 06.
+    - [ ] Chapter 07.
+    - [ ] Chapter 08.
+    - [ ] Chapter 09.
+    - [ ] Chapter 10.
+    - [ ] Chapter 11.
+    - [ ] Chapter 12.
+</details>
+
+#### The Quizzes and Labs.
+
+* **Section 01**:
+    * *Quiz*:
+        * [Some here](#).
+    * *Coding Exercise*:
+        * [Some here](#).
 
 <p align="center">
     <img id="Build Reactive MicroServices using Spring WebFluxSpringBoot" src="Spring WebFlux Masterclass Reactive Microservices caption.PNG" style="width:900px;height:90px;">
@@ -84,6 +140,9 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 ![Spring WebFlux Masterclass: Reactive Microservices](Spring%20WebFlux%20Masterclass%20Reactive%20Microservices%20New%20desc.PNG)
 
 All course material from Spring WebFlux Masterclass: Reactive Microservices [New] by **Vinoth Selvaraj**.
+
+> Add here some story <br><br>
+~ *DevelopersCradle*
 
 Contains my own notes with some course material to enforce learning experience.
 
@@ -137,7 +196,13 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] Some about Reactive Programming [PDF](https://soft.vub.ac.be/Publications/2012/vub-soft-tr-12-13.pdf).
 - [ ] Remove numbers from packages and from lecture notes `.md` if there is.
 
+#### The Quizzes and Labs.
 
+* **Section 01**:
+    * *Quiz*:
+        * [Some here](#).
+    * *Coding Exercise*:
+        * [Some here](#).
 <p align="center">
     <img id="nordea" src="Reactive Programming in Modern Java using Project Reactor caption real.png" style="width:1000px;height:80px;">
 </p>
@@ -145,6 +210,9 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 ![Reactive programming](Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor%20caption.PNG)
 
 All course material from Reactive Programming in Modern Java using Project Reactor by **Pragmatic Code School**.
+
+> Add here some story <br><br>
+~ *DevelopersCradle*
 
 Contains my own notes with some course material to enforce learning experience.
 
@@ -204,6 +272,14 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] Explore with more concepts `26. Handling empty data using defaultIfEmpty and switchIfEmpty() Operators`.
 - [ ] Remove numbers from packages and from lecture notes `.md` if there is.
 
+#### The Quizzes and Labs.
+
+* **Section 01**:
+    * *Quiz*:
+        * [Some here](#).
+    * *Coding Exercise*:
+        * [Some here](#).
+
 <p align="center">
     <img id="Build Reactive MicroServices using Spring WebFluxSpringBoot" src="Build Reactive MicroServices using Spring WebFluxSpringBoot caption.png" style="width:1000px;height:90px;">
 </p>
@@ -211,6 +287,9 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 ![Build Reactive MicroServices using Spring WebFlux/SpringBoot](Build%20Reactive%20MicroServices%20using%20Spring%20WebFluxSpringBoot%20caption%20description.PNG)
 
 All course material from Build Reactive MicroServices using Spring WebFlux/SpringBoot by **Pragmatic Code School**.
+
+> Add here some story <br><br>
+~ *DevelopersCradle*
 
 Contains my own notes with some course material to enforce learning experience.
 
@@ -244,7 +323,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [x] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2005#section-5-introduction-to-spring-webflux) - Introduction to Spring WebFlux. ✅
 - [x] [Section 06](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2006#section-6-getting-started-with-project-reactor) - Getting Started with Project Reactor. ✅
 - [x] [Section 07](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2007#section-7-setting-up-the-base-project-for-this-course) - Setting up the base project for this course. ✅
-- [x] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2008#section-8-lets-explore-flux-and-mono---hands-on) - Lets Explore Flux and Mono - Hands On. Same as  in **Reactive Programming in Modern Java using Project Reactor** course. ✅
+- [x] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2008#section-8-lets-explore-flux-and-mono---hands-on) - Lets Explore Flux and Mono - Hands On. Same as in **Reactive Programming in Modern Java using Project Reactor** course. ✅
 - [x] [Section 09](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2009#section-9-introduction-to-spring-webflux) - Introduction to Spring WebFlux. ✅
 - [x] [Section 10](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2010#section-10-set-up-the-moviesinfoservice-service) - Build Movie ReactiveService using Project Reactor. ✅
 - [x] [Section 11](https://github.com/developersCradle/reactive-programming/tree/main/Build%20Reactive%20MicroServices%20using%20Spring%20WebFlux%20and%20Spring%20Boot/Section%2011#section-11-simple-non-blocking-restful-api-using-annotated-controller-approach) - Simple Non Blocking RESTFUL API using Annotated Controller Approach. ✅
@@ -279,11 +358,22 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] Do chapter Functional Web 20-25.
 - [ ] Remove numbers from packages and from lecture notes `.md` if there is.
 
+#### The Quizzes and Labs.
+
+* **Section 01**:
+    * *Quiz*:
+        * [Some here](#).
+    * *Coding Exercise*:
+        * [Some here](#).
+
 ## Reactive Microservices Architecture & Design Patterns.
 
 ![Reactive Microservices Architecture & Design Patterns](Reactive%20Microservices%20Architecture%20&%20Design%20Patterns%20caption.PNG)
 
 All course material from Reactive Microservices Architecture & Design Patterns by **Vinoth Selvaraj**.
+
+> Add here some story <br><br>
+~ *DevelopersCradle*
 
 Contains my own notes with some course material to enforce learning experience.
 
@@ -332,6 +422,9 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 All course material from Reactive Redis Masterclass For Java Spring Boot Developers by **Vinoth Selvaraj**.
 
+> Add here some story <br><br>
+~ *DevelopersCradle*
+
 Contains my own notes with some course material to enforce learning experience.
 
 If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
@@ -367,6 +460,9 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 ![Reactive Programming with Spring Framework 5](Reactive%20Programming%20with%20Spring%20Framework%205%20caption.PNG)
 
 All course material from Reactive Programming with Spring Framework 5 by **John Thompson**.
+
+> Add here some story <br><br>
+~ *DevelopersCradle*
 
 Contains my own notes with some course material to enforce learning experience.
 

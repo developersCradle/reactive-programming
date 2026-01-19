@@ -58,7 +58,7 @@ Using ResponseEntity with Reactive Types.
 
 - Custom response whenever data is returned or not.
 
-# Assignment 4: Implement 404 Response for the getMovieInfoById Endpoint.
+# Assignment 04: Implement 404 Response for the getMovieInfoById Endpoint.
 
 ```
 Use the same technique that's been used for the updateMovieInfo.

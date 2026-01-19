@@ -186,7 +186,7 @@ public class MoviesInfoControllerUnitTest {
 
 ```
 
-# Assignment 2: Unit Test for getMovieInfoById.
+# Assignment 02: Unit Test for getMovieInfoById.
 
 ```
 Follow the same patterns as the other one unit test that we wrote for getAllMovieInfos
@@ -298,7 +298,7 @@ Questions for this assignment
 
 ```
 
-# Assignment 3: Assignment : Unit Test for Delete Movie Info.
+# Assignment 03: Assignment : Unit Test for Delete Movie Info.
 
 ```
 Use the same pattern as the other Unit tests and mock the deleteMovieInfo method call in the MoviesInfoService

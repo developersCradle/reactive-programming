@@ -283,7 +283,7 @@ public class MoviesInfoService {
 
 ```
 
-# Assignment 1: Write an Integration Test for Delete Endpoint.
+# Assignment 01: Write an Integration Test for Delete Endpoint.
 
 ```
 Use the same testing techniques that we have been following so far.
@@ -296,7 +296,7 @@ Questions for this assignment
 
 - My answer:
 
-```
+```Java
     @Test
     void deleteMovieInfo() {
 

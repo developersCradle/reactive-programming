@@ -20,7 +20,7 @@ public class Lec04MonoEmptyError {
     {
         return switch (userId)
         {
-            case 1 -> Mono.just("same");
+            case 1 -> Mono.just("sam!");
             case 2 -> Mono.empty(); // normally we would say null.
             default -> Mono.error(new RuntimeException("Invalid input")); // This block when there is error.
         };

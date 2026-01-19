@@ -149,8 +149,8 @@
 1. Subscriber **invokes** `subscribe(this)` of the **Publisher**.
 2. **Publisher** returns **Subscriber** object by invoking `onSubscribe()` on the **Subscriber**.
 3. When **Subscriber** has hold of the **Subscription** object, it will invoke `request(n)` for **Publisher** to send the data.
-4. When **Publisher** is rdy for sending data, it will send the data using `onNext()` as **events**.
-5. When all data is sent,**Publisher** will send `onComplete()`.
+4. When **Publisher** is ready for sending data, it will send the data using `onNext()` as **events**.
+5. When all data is sent, **Publisher** will send `onComplete()`.
 
 ### Reactive Stream works in error scenario.
 

@@ -385,7 +385,7 @@ Exception/Error Handling in Flux and Mono.
 1. When **Recovering** from exceptions.
 2. When **Catching** exception and doing something.
 
-# 43. Error Handling Operators in Mono
+# Error Handling Operators in Mono.
 
 - Flux and mono has the same error handling
 
@@ -426,7 +426,7 @@ Exception/Error Handling in Flux and Mono.
 ```
 
 
-# Practice Test 1: Explore onErrorMap() in Mono
+# Practice Test 01: Explore onErrorMap() in Mono
 
 
 ```
