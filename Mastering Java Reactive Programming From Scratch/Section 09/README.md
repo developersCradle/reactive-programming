@@ -27,13 +27,49 @@ Combining Publishers.
 # FlatMap - Introduction.
 
 <div align="center">
-    <img src="FlatMapOperation.PNG" alt="reactive programming" width="400"/>
+    <img src="What_Is_Flat_Map_Operation.PNG" alt="reactive programming" width="500"/>
 </div>
 
-1. These operations will **not** work, if there are multiple sources of calls.
+1. These operations will **not** work for the **dependent sequential calls!** 
+    - These are producing results as **independent**! Meaning the results, **don't rely** on an others results!
+        - Example of independent producers:
+            - `startWith`.
+            - `concat`.
+            - `merge`.
+            - `zip`.
+
+- What **independent** means in this context:
+    - **Request A** does not need data from **Request B**.
+    - **Request B** does not need data from **Request A**.
+
+2. What is happening when we want something from **previous call**? We can use `.flatMap()` in such cases!
+
+- In **project reactor** `.flatMap()` is used when the next call depends on a **value produced** by the previous call. Example below:
+
+ ````Java
+getUser()
+.flatMap(user -> getOrdersByUserId(user.getId()))
+.flatMap(orders -> calculateDiscount(orders))
+.flatMap(discount -> saveDiscount(discount))
+.subscribe();
+````
+
+- `getUser()` is executed and **emits** a `User`
+    - The **first** `.flatMap()`:
+        - Receives the `User`
+        extracts `user.getId()` and
+        calls `getOrdersByUserId(user.getId())` and emits `Orders`.
+    - The **second** `.flatMap()`:
+        - Receives the `Orders`
+        passes them to `calculateDiscount(orders)` and emits a `Discount`
+    - The **third** `.flatMap()`:
+        - Receives the `Discount`
+        passes it to `saveDiscount(discount)` emits the final result!
+
+<br>
+
+- Todo make links for these operations
 
 <div align="center">
     <img src="dependentSequantialCall.PNG" alt="reactive programming" width="400"/>
 </div>
-
-1. We want user **ID**, do we need to wait previous one finish to call the next microservice call?

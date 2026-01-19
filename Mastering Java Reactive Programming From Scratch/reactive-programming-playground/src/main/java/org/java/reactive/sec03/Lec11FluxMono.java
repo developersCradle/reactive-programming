@@ -20,6 +20,7 @@ public class Lec11FluxMono {
         save(Flux.from(mono));
 
 //        save(getUsername(1)); Wont work!
+
     }
 
     private static Mono<String> getUsername(int userId)

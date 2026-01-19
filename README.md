@@ -29,10 +29,6 @@
     <img src="Mastering_Java_Reactive_Programming_Description.PNG" alt="Mastering Java Reactive Programming [From Scratch] Caption" style="width: 680px;"/>
 </p>
 
-
-
-
-
 All course material from *Mastering Java Reactive Programming [From Scratch]* **Vinoth Selvaraj**.
 
 > Add here some story <br><br>
@@ -110,7 +106,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 <summary id="Add to the block." open="true"> <b>Use the gifs for the chapters!</b></summary>
 <br>
 
-- .gif transferring in progress, this will be chapter by chapter:
+- `.gif` transferring in progress, this will be chapter by chapter:
     - [ ] Chapter 01. 
     - [ ] Chapter 02.
     - [ ] Chapter 03.
