@@ -1,4 +1,5 @@
-package org.java.reactive.sec01;
+
+// package org.java.reactive.sec01;
 
 /*
    1. publisher does not produce data unless subscriber requests for it.
@@ -7,6 +8,7 @@ package org.java.reactive.sec01;
    4. producer can send the error signal
  */
 
+/*
 
 import org.java.reactive.sec01.publisher.PublisherImpl;
 import org.java.reactive.sec01.subscriber.SubscriberImpl;
@@ -65,3 +67,6 @@ public class Demo {
         Thread.sleep(Duration.ofSeconds(2));
     }
 }
+
+
+*/
