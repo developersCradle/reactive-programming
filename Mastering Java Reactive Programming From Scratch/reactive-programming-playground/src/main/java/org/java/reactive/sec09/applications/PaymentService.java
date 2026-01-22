@@ -17,7 +17,12 @@ public class PaymentService {
             3, 300
     );
 
-    public static Mono<Integer> getUserBalance(Integer userId) {
+
+    /**
+     *  Endpoint to get the users balance form the given {@code userId}!
+     */
+    public static Mono<Integer> getUserBalance(Integer userId)
+    {
         return Mono.fromSupplier(() -> userBalanceTable.get(userId));
     }
 

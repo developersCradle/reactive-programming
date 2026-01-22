@@ -19,7 +19,9 @@ public  class UserService {
             "jake", 3
     );
 
-    // Simulations of the webservice call!
+    /**
+     *  Endpoint to get all users!
+     */
     public static Flux<User> getAllUsers() {
         return Flux.fromIterable(userTable.entrySet())
                     // We need map here, since the entrySet is Map.Entry<String, Integer> from the map!
@@ -27,6 +29,9 @@ public  class UserService {
                    .map(entry -> new User(entry.getValue(), entry.getKey()));
     }
 
+    /**
+     *  Endpoint to get the {@code userId} for the given {@code username}!
+     */
     public static Mono<Integer> getUserId(String username){
 
         return Mono.fromSupplier(() -> userTable.get(username));
