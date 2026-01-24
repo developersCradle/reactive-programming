@@ -2,7 +2,6 @@ package org.java.reactive.sec09;
 
 
 import org.java.reactive.common.Util;
-import org.java.reactive.sec09.applications.PaymentService;
 import org.java.reactive.sec09.applications.UserService;
 import reactor.core.publisher.Mono;
 
@@ -10,7 +9,7 @@ import reactor.core.publisher.Mono;
 /*
     We are demonstrating here .flatmap() operation with different microservice calls!
 */
-public class Lec09FlatMap {
+public class Lec09MonoFlatMap {
 
     public static void main(String[] args) {
 
@@ -41,14 +40,12 @@ public class Lec09FlatMap {
 
 
         /*
-             We are using .flatmap as it should to. todo jatka
-        */
+         * We are using flatMap to flatten the inner Publisher.
+         */
         UserService.getUserId("sam")
                 // In memory computing
                 .flatMap(userId -> Mono.just("Hello there user ID: " + userId))
                 .subscribe(Util.subscriber());
-
-
     }
 
 

@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img id="nordea" src="reactive programming in general caption.gif" width=600>
+    <img id="nordea" src="reactive_cat_2.png" style="width:590px;height:410px;">
 </p>
 
 > In reactive programming, you generally want:

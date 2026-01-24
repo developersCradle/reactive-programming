@@ -24,10 +24,26 @@ Combining Publishers.
     <img src="options.PNG" alt="reactive programming" width="400"/>
 </div>
 
+# Start With.
+
+# Start With - Usecases.
+
+# Concat With.
+
+# Concat Delay Error.
+
+# Merge.
+
+# Merge - Usecases.
+
+# Zip.
+
+# Zip - Assignment.
+
 # FlatMap - Introduction.
 
 <div align="center">
-    <img src="What_Is_Flat_Map_Operation.PNG" alt="reactive programming" width="500"/>
+    <img src="What_Is_Flat_Map_Operation.PNG" alt="reactive programming" width="600"/>
 </div>
 
 1. These operations will **not** work for the **dependent sequential calls!** 
@@ -71,7 +87,7 @@ getUser()
 - Todo make links for these operations
 
 <div align="center">
-    <img src="What_About_Dependent_Sequential_Calls.PNG" alt="reactive programming" width="500"/>
+    <img src="What_About_Dependent_Sequential_Calls.PNG" alt="reactive programming" width="600"/>
 </div>
 
 1. **User Service**, the endpoints:
@@ -239,7 +255,7 @@ public  class UserService {
                 3, List.of()
         );
         ````
-    - Endpoint `Flux<Order> getUserOrders(Integer userId)`:
+    - Endpoint `getUserOrders(Integer userId)`:
         
         ````Java
         public static Flux<Order> getUserOrders(Integer userId) {
@@ -248,7 +264,9 @@ public  class UserService {
                     .transform(Util.fluxLogger("order-for-user" + userId));
         }
         ````
-    
+
+    - Example of `getUserOrders(Integer userId)` endpoint working:
+
     <div align="center">
         <img src="Endpoint_GetUserOrders_Working_Independently.gif" alt="reactive programming" width="600"/>
     </div>
@@ -284,13 +302,15 @@ public  class UserService {
         }
         ````
 
+    - Example of `getUserBalance(Integer userId)` in context of **reactive programming** working:
+
     <div align="center">
         <img src="Endpoint_GetUserBalance_Working_Independently.gif" alt="reactive programming" width="600"/>
     </div>
 
 <details>
 
-<summary id="Thread progress
+<summary id="Reactive programming
 " open="true" alt="reactive programming"> <b>Order Service implementation!</b> </summary>
 
 ````Java
@@ -332,8 +352,10 @@ public class OrderService {
 ````
 </details>
 
+# Mono - flatMap.
+
 <div align="center">
-    <img src="Flatmap_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+    <img src="Mono_Flatmap_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
 - Next we will be illustrating the **two sequential** calls:
@@ -368,7 +390,7 @@ public class OrderService {
 1. You can see the `Mono<Mono<...>>` coming out of the `.map(...)` and the log `received: MonoSupplier`.
 
 > [!TIP]
-> 💡 `.map` in context of reactive programming, is perfect for **in-memory**, **synchronous transformations** of the value **inside a Mono**. Illustration below: 💡
+> 💡 In context of **reactive programming** the operation `.map` is perfect for **in-memory**, **synchronous transformations** of the value **inside a Mono**. 💡
 
 - Next, we will explore how `.map` should be used in **project reactor** context:
 
@@ -382,7 +404,7 @@ public class OrderService {
                 .subscribe(Util.subscriber());
 ````
 
-- Illustration of `.map` how it should be used:
+- Illustration of `.map` how it should be used, in the context of `UserService.getUserId(...)`:
 
 <div align="center">
     <img src="Using_Map_As_Intermediate_Operation.gif" alt="reactive programming" width="600"/>
@@ -390,7 +412,7 @@ public class OrderService {
 
 1. You can see that `received: Hello there user ID: 1` is successfully manipulated! 
 
-- Another use case where we make **Mono** inside of **Mono**:
+- Another use case, where we make **Mono** inside of **Mono**:
 
 ````Java
    /*
@@ -403,8 +425,154 @@ public class OrderService {
     }
 ````
 
+- Example of `getUserId()` **not** working, where the **Mono** inside of **Mono**:
+
 <div align="center">
     <img src="Subscribing_Mono_Of_Mono_In_Two_Sequential_Call.gif" alt="reactive programming" width="600"/>
 </div>
 
 1. When **Mono** inside **Mono**, the log `received: MonoSupplier`.
+
+
+- We are using `.flatMap(...)` to flatten the inner publisher! Example code below:
+
+
+````Java
+        /*
+        * We are using flatMap to flatten the inner Publisher.
+        */
+        UserService.getUserId("sam")
+                // In memory computing
+                .flatMap(userId -> Mono.just("Hello there user ID: " + userId))
+                .subscribe(Util.subscriber());
+````
+
+- Example of `.flatMap(...)` in context of **reactive programming** working:
+
+<div align="center">
+    <img src="Using_FlatMap_With_The_Publisher.gif" alt="reactive programming" width="600"/>
+</div>
+
+1. You can see the 
+
+<div align="center">
+    <img src="FlatMap_In_The_IDE_With_The_Two_Publishers.PNG" alt="reactive programming" width="600"/>
+</div>
+
+1. You can also see that the **IDE** is giving hint of the `.flatMap(...)` working. One can see the **two** publisher, being flattened as it written as `Mono<String>`
+
+
+# Mono - flatMapMany.
+
+# Flux - flatMap.
+
+# FlatMap - How it works.
+
+# FlatMap - Assignment.
+
+# ConcatMap.
+
+# Operator - Collect List.
+
+# Operator - Then.
+
+# *** Assignment ***.
+
+# Summary.
+
+# Quiz 08.
+
+<details>
+
+<summary id="Thread progress
+" open="true"> <b>Question 01.</b> </summary>
+
+````Yaml
+Question 01:
+Add here the question
+````
+
+````Java
+add here the code
+````
+
+- My answer:
+
+<div align="center">
+    <img src="Quiz 05/Q1.PNG" width="700"/>
+</div>
+
+
+1. Add here the explanation
+
+</details>
+
+<details>
+
+<summary id="Reactive programming course" open="true"> <b>Question 02.</b> </summary>
+
+````Yaml
+Question 02:
+The question goes here
+````
+
+````Java
+add here the code
+
+````
+
+- My answer:
+
+<div align="center">
+    <img src="Quiz 05/Q2.PNG" width="400"/>
+</div>
+
+1. Add here the explanation.
+
+</details>
+
+<details>
+
+<summary id="Reactive programming course" open="true"> <b>Question 03.</b> </summary>
+
+````Yaml
+Question 03:
+Add here the question
+````
+
+````Java
+add here the code
+````
+- My answer:
+
+<div align="center">
+    <img src="Quiz 05/Q3.PNG" width="700"/>
+</div>
+
+
+1. add here the answer
+
+</details>
+
+
+<details>
+
+<summary id="Reactive programming course" open="true"> <b>Question 04.</b> </summary>
+
+````Yaml
+Question 04:
+Add here the question.
+````
+
+````Java
+ add here the code
+````
+- My answer:
+
+<div align="center">
+    <img src="Quiz 05/Q4.PNG" width="700"/>
+</div>
+
+1. Add here the answer.
+
+</details>
