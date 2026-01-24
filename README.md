@@ -1,10 +1,8 @@
 
 <p align="center">
-    <img id="nordea" src="reactive_cat_2.png" style="width:590px;height:410px;">
+    <img id="studying" src="Reactive_Cat_Courses_Caption.png" style="width:590px;height:410px;">
+    <text>Attempt to study <b>Reactive Programming</b> and related topics!</text>
 </p>
-
-> In reactive programming, you generally want:
-> *“Nothing happens until there is a subscriber.”* ~ Art of Reactive Programming <br><br>~ *DevelopersCradle*.
 
 <details>
 
@@ -128,6 +126,13 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
         * [Some here](#).
     * *Coding Exercise*:
         * [Some here](#).
+
+
+* **Section 09**:
+    * *Quiz*:
+        * [Quiz 08](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#quiz-08).
+
+
 
 <p align="center">
     <img id="Build Reactive MicroServices using Spring WebFlux Spring" src="Spring_WebFlux_Masterclass_High_Performance_Reactive_APIs_Caption.png" style="width:900px;height:90px;">

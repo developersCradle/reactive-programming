@@ -7,28 +7,41 @@ Combining Publishers.
 # Introduction.
 
 <div align="center">
-    <img src="multiplePublishers.PNG" alt="reactive programming" width="700"/>
+    <img src="Combining_Publishers.PNG" alt="reactive programming" width="700"/>
 </div>
 
-1. Often times **microarchitecture** has multiple sources of data.
-    - Many times backend will ask from **multiple sources** and collects aggregate data for the **front end**.
+1. It will be **super** important to **combine** the **multiple publishers**!
 
-- The **point** here is that:
-    - For one front end request.
-        - There is usually multiple smaller request in backend.
-            - These minor request can have specific order and shape of data.
+<div align="center">
+    <img src="Multiple_Publishers_Microservices.PNG" alt="reactive programming" width="700"/>
+</div>
+
+1. Let's image the **front end** will be making one **request** to the `product aggregator` **microservice**. 
+    - Let's say, its **product view** request!
+
+2. Often times **microservice architecture** has **multiple sources of data**.
+    - Many times' backend will ask from **multiple sources** and **aggregates** data for the **front end**!
+
+
+> [!TIP]
+> 💡 There is usually **multiple** smaller request in backend for **one** front end request! 💡
+>    - These smaller requests can be in different shapes and sizes!  
+
+- todo jatka tästä
             
-- Some popular options for transforming data.
 
 <div align="center">
     <img src="options.PNG" alt="reactive programming" width="400"/>
 </div>
+
+- Some popular options for transforming data.
 
 # Start With.
 
 # Start With - Usecases.
 
 # Concat With.
+
 
 # Concat Delay Error.
 
@@ -49,10 +62,10 @@ Combining Publishers.
 1. These operations will **not** work for the **dependent sequential calls!** 
     - These are producing results as **independent**! Meaning the results, **don't rely** on an others results!
         - Example of independent producers:
-            - `startWith`.
-            - `concat`.
-            - `merge`.
-            - `zip`.
+            - `.startWith(...)`. [startWith operation](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#start-with).
+            - `.concat(...)`. [Concat operation](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#concat-with).
+            - `.merge(...)`. [Merge operation](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#merge).
+            - `.zip(...)`. [Zip operation](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#zip).
 
 - What **independent** means in this context:
     - **Request A** does not need data from **Request B**.
@@ -83,8 +96,6 @@ getUser()
         passes it to `saveDiscount(discount)` emits the final result!
 
 <br>
-
-- Todo make links for these operations
 
 <div align="center">
     <img src="What_About_Dependent_Sequential_Calls.PNG" alt="reactive programming" width="600"/>
@@ -178,7 +189,7 @@ getUser()
 
 <details>
 
-<summary id="Thread progress
+<summary id="reactive programming
 " open="true" alt="reactive programming"> <b> User Service implementation </b> </summary>
 
 ````Java
@@ -355,7 +366,7 @@ public class OrderService {
 # Mono - flatMap.
 
 <div align="center">
-    <img src="Mono_Flatmap_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+    <img src="Mono_FlatMap_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
 - Next we will be illustrating the **two sequential** calls:
@@ -412,7 +423,7 @@ public class OrderService {
 
 1. You can see that `received: Hello there user ID: 1` is successfully manipulated! 
 
-- Another use case, where we make **Mono** inside of **Mono**:
+- Another use case, where we make **Mono** inside of **Mono**, as below:
 
 ````Java
    /*
@@ -433,9 +444,7 @@ public class OrderService {
 
 1. When **Mono** inside **Mono**, the log `received: MonoSupplier`.
 
-
-- We are using `.flatMap(...)` to flatten the inner publisher! Example code below:
-
+- We are using `.flatMap(...)` to flatten the inner publisher! Which makes from `Mono<Mono<String>>` to `Mono<String>`.  Example code below:
 
 ````Java
         /*
@@ -453,18 +462,122 @@ public class OrderService {
     <img src="Using_FlatMap_With_The_Publisher.gif" alt="reactive programming" width="600"/>
 </div>
 
-1. You can see the 
+1. You can see that `.getUserId(...)` is working as it should. The returned value `received: Hello there user ID: 1` as **and not** the `received: MonoSupplier`.
 
 <div align="center">
-    <img src="FlatMap_In_The_IDE_With_The_Two_Publishers.PNG" alt="reactive programming" width="600"/>
+    <img src="FlatMap_In_The_IDE_With_The_Two_Publishers.PNG" alt="reactive programming" width="700"/>
 </div>
 
-1. You can also see that the **IDE** is giving hint of the `.flatMap(...)` working. One can see the **two** publisher, being flattened as it written as `Mono<String>`
+1. You can also see that the **IDE** is giving hint of the `.flatMap(...)` working. One can see the **two** publisher, being flattened as it written as `Mono<String>`!
+
+- We are using the `.flatMap(...)` we were planning to use it in the beginning! 
+
+````Java
+/*
+            Get user ID then fetch balance asynchronously, flattening nested streams with flatMap.
+        */
+        UserService.getUserId("sam")
+                // In memory computing
+                .flatMap(userId -> PaymentService.getUserBalance(userId))
+                .subscribe(Util.subscriber());
+````
+
+- Example of using `.flatMap(..)` with the **two** different services being called! 
+
+<div align="center">
+    <img src="Using_FlatMap_With_The_Another_Service_Succesfull.gif" alt="reactive programming" width="700"/>
+</div>
+
+1. We can see that `.flatMap(...)` working, with `UserService.getUserId("sam")`, which returns the `userId` and feeds it to the `PaymentService.getUserBalance(userId)`, which in regards checks the **User Balance Service**, which returns as it was defined in the `Map<Integer, Integer> userBalanceTable` 
+    - The returned value: `received: 100`.
+
+
+<details>
+
+<summary id="reactive programming
+" open="true" alt="reactive programming"> <b> Mono .flatMap(...) working source code! </b> </summary>
+
+````Java
+
+package org.java.reactive.sec09;
+
+
+import org.java.reactive.common.Util;
+import org.java.reactive.sec09.applications.PaymentService;
+import org.java.reactive.sec09.applications.UserService;
+import reactor.core.publisher.Mono;
+
+import static reactor.core.publisher.Signal.subscribe;
+
+
+/*
+    We are demonstrating here .flatmap() operation with different microservice calls!
+*/
+public class Lec09MonoFlatMap {
+
+    public static void main(String[] args) {
+
+        /*
+            We have the example of calling with the .map, which is wrong!
+         */
+//       UserService.getUserId("sam")
+//                // Here it will be Mono<Interger>
+//                .map(userId -> PaymentService.getUserBalance(userId))
+//                .subscribe(Util.subscriber());
+
+        /*
+            We have the example of calling with the .map, where is supposed to be used! This is as
+         */
+//       UserService.getUserId("sam")
+//                // In memory computing
+//                .map(userId -> "Hello there user ID: " + userId)
+//                .subscribe(Util.subscriber());
+
+        /*
+             We have the example of calling with the .map, with making it inside Mono, which is  also wrong!
+        */
+//       UserService.getUserId("sam")
+//                // In memory computing
+//                .map(userId -> Mono.just("Hello there user ID: " + userId))
+//                .subscribe(Util.subscriber());
+
+        /*
+            Get user ID then fetch balance asynchronously, flattening nested streams with flatMap.
+        */
+        UserService.getUserId("sam")
+                // In memory computing
+                .flatMap(userId -> PaymentService.getUserBalance(userId))
+                .subscribe(Util.subscriber());
+    }
+}
+````
+</details>
 
 
 # Mono - flatMapMany.
 
+<div align="center">
+    <img src="Mono_FlatMapMany_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+</div>
+
+
+
+<details>
+
+<summary id="reactive programming
+" open="true" alt="reactive programming"> <b> Mono .flatMapMany(...) working source code! </b> </summary>
+
+````Java
+
+````
+</details>
+
+
 # Flux - flatMap.
+
+<div align="center">
+    <img src="Flux_FlatMap_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+</div>
 
 # FlatMap - How it works.
 
@@ -484,7 +597,7 @@ public class OrderService {
 
 <details>
 
-<summary id="Thread progress
+<summary id="reactive programming
 " open="true"> <b>Question 01.</b> </summary>
 
 ````Yaml

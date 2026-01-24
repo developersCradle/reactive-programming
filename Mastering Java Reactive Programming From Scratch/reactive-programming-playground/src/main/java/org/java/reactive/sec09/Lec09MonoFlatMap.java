@@ -2,8 +2,11 @@ package org.java.reactive.sec09;
 
 
 import org.java.reactive.common.Util;
+import org.java.reactive.sec09.applications.PaymentService;
 import org.java.reactive.sec09.applications.UserService;
 import reactor.core.publisher.Mono;
+
+import static reactor.core.publisher.Signal.subscribe;
 
 
 /*
@@ -16,7 +19,7 @@ public class Lec09MonoFlatMap {
         /*
             We have the example of calling with the .map, which is wrong!
          */
-//        UserService.getUserId("sam")
+//       UserService.getUserId("sam")
 //                // Here it will be Mono<Interger>
 //                .map(userId -> PaymentService.getUserBalance(userId))
 //                .subscribe(Util.subscriber());
@@ -24,7 +27,7 @@ public class Lec09MonoFlatMap {
         /*
             We have the example of calling with the .map, where is supposed to be used! This is as
          */
-//        UserService.getUserId("sam")
+//       UserService.getUserId("sam")
 //                // In memory computing
 //                .map(userId -> "Hello there user ID: " + userId)
 //                .subscribe(Util.subscriber());
@@ -32,19 +35,17 @@ public class Lec09MonoFlatMap {
         /*
              We have the example of calling with the .map, with making it inside Mono, which is  also wrong!
         */
-//        UserService.getUserId("sam")
+//       UserService.getUserId("sam")
 //                // In memory computing
 //                .map(userId -> Mono.just("Hello there user ID: " + userId))
 //                .subscribe(Util.subscriber());
-//
-
 
         /*
-         * We are using flatMap to flatten the inner Publisher.
-         */
+            Get user ID then fetch balance asynchronously, flattening nested streams with flatMap.
+        */
         UserService.getUserId("sam")
                 // In memory computing
-                .flatMap(userId -> Mono.just("Hello there user ID: " + userId))
+                .flatMap(userId -> PaymentService.getUserBalance(userId))
                 .subscribe(Util.subscriber());
     }
 
