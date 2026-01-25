@@ -17,12 +17,18 @@ public class Lec10MonoFlatMapMany {
 
     public static void main(String[] args)
     {
+
         /*
             We have username, we want to get all user orders!
          */
-        
         UserService.getUserId("sam")
                 .flatMap(userId -> OrderService.getUserOrders(userId));
+
+        /*
+            We have username, we want to get all user orders!
+         */
+        Flux<Order> fluxOfOrders = UserService.getUserId("sam")
+                .flatMapMany(userId -> OrderService.getUserOrders(userId));
     }
 
 }

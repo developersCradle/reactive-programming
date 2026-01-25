@@ -1,7 +1,9 @@
 
 <p align="center">
-    <img id="studying" src="Reactive_Cat_Courses_Caption.png" style="width:590px;height:410px;">
-    <text>Attempt to study <b>Reactive Programming</b> and related topics!</text>
+    <img id="studying" src="Reactive_Cat_Courses_Caption.png" style="width:790px;height:410px;">
+    <p align="center">
+    Attempt to study <b>Reactive Programming</b> and related topics!
+    </p>
 </p>
 
 <details>
@@ -142,7 +144,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
     <img src="Spring_WebFlux_Masterclass_High_Performance_Reactive_APIs_Description.PNG" alt="Mastering Java Reactive Programming [From Scratch] Caption" style="width: 680px;"/>
 </p>
 
-All course material from Spring WebFlux Masterclass: Reactive Microservices [New] by **Vinoth Selvaraj**.
+All course material from *Spring WebFlux Masterclass: Reactive Microservices [New]* by **Vinoth Selvaraj**.
 
 > Add here some story <br><br>
 ~ *DevelopersCradle*
@@ -171,9 +173,6 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 **Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
 
 #### Progress/Curriculum.
-
-
-# Course Outline
 
 - [ ] [Section 01](#) - Introduction.
 - [ ] [Section 02](#) - Traditional vs Reactive APIs.
@@ -206,13 +205,17 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
         * [Some here](#).
     * *Coding Exercise*:
         * [Some here](#).
+
 <p align="center">
-    <img id="nordea" src="Reactive Programming in Modern Java using Project Reactor caption real.png" style="width:1000px;height:80px;">
+    <img id="nordea" src="Reactive_Programming_In_Modern_Java_Using_Project_Reactor_Caption.png" style="width:1000px;height:80px;">
 </p>
 
-![Reactive programming](Reactive%20Programming%20in%20Modern%20Java%20using%20Project%20Reactor%20caption.PNG)
+<p align="center">
+    <img src="Reactive_Programming_In Modern_Java_Using_Project_Reactor_Caption.PNG" alt="Mastering Java Reactive Programming [From Scratch] Caption" style="width: 680px;"/>
+</p>
 
-All course material from Reactive Programming in Modern Java using Project Reactor by **Pragmatic Code School**.
+
+All course material from *Reactive Programming in Modern Java using Project Reactor* by **Pragmatic Code School**.
 
 > Add here some story <br><br>
 ~ *DevelopersCradle*
@@ -235,7 +238,6 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 <div align="center">
     Insert certificate here when completed
 </div>
-
 
 **Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
 
@@ -284,12 +286,14 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
         * [Some here](#).
 
 <p align="center">
-    <img id="Build Reactive MicroServices using Spring WebFluxSpringBoot" src="Build Reactive MicroServices using Spring WebFluxSpringBoot caption.png" style="width:1000px;height:90px;">
+    <img id="Build Reactive MicroServices using Spring WebFluxSpringBoot" src="Build_Reactive_MicroServices_Using_Spring_WebFlux_SpringBoot_Caption.png" style="width:1000px;height:130px;">
 </p>
 
-![Build Reactive MicroServices using Spring WebFlux/SpringBoot](Build%20Reactive%20MicroServices%20using%20Spring%20WebFluxSpringBoot%20caption%20description.PNG)
+<p align="center">
+    <img src="Build_Reactive_MicroServices_Using_Spring_WebFluxSpringBoot_Description.PNG" alt="Mastering Java Reactive Programming [From Scratch] Caption" style="width: 680px;"/>
+</p>
 
-All course material from Build Reactive MicroServices using Spring WebFlux/SpringBoot by **Pragmatic Code School**.
+All course material from *Build Reactive MicroServices using Spring WebFlux/SpringBoot* by **Pragmatic Code School**.
 
 > Add here some story <br><br>
 ~ *DevelopersCradle*

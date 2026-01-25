@@ -16,25 +16,22 @@ Combining Publishers.
     <img src="Multiple_Publishers_Microservices.PNG" alt="reactive programming" width="700"/>
 </div>
 
-1. Let's image the **front end** will be making one **request** to the `product aggregator` **microservice**. 
+1. Let's image that the **front end** will be making one **request** to the `product aggregator` **microservice**. 
     - Let's say, its **product view** request!
 
 2. Often times **microservice architecture** has **multiple sources of data**.
-    - Many times' backend will ask from **multiple sources** and **aggregates** data for the **front end**!
-
+    - Many times' backend will ask from **multiple sources** and **aggregates** data and send it back to the **front end**!
+    - Also, notice that returned types can be different, **Flux** or **Mono**!
 
 > [!TIP]
 > 💡 There is usually **multiple** smaller request in backend for **one** front end request! 💡
 >    - These smaller requests can be in different shapes and sizes!  
 
-- todo jatka tästä
-            
-
 <div align="center">
-    <img src="options.PNG" alt="reactive programming" width="400"/>
+    <img src="Different_Options_That_Project_Reactor_Provides.PNG" alt="reactive programming" width="400"/>
 </div>
 
-- Some popular options for transforming data.
+1. **Project Reactor** provides, operations to achieve the business requirements in **specific order**!
 
 # Start With.
 
@@ -561,6 +558,20 @@ public class Lec09MonoFlatMap {
 </div>
 
 
+- Illustration for the **Receive types** below:
+
+````Java
+Mono<Flux<Order>> example = UserService.getUserId("sam")
+                .map(userId -> OrderService.getUserOrders(userId));
+````
+
+OrderService.getUserOrders(
+
+- `.flatMap(...)` assum
+
+Your source is a Mono
+Your lambda returns a Flux
+You want a Flux as the result
 
 <details>
 
