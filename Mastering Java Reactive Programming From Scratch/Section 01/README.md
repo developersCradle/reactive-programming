@@ -167,22 +167,34 @@ Introduction.
 
 - Example in code:
 
-`````Java
-// 1. Request → Response
+````Java
+// 1. Request → Response.
 @GetMapping("/user/{id}")
-Mono<User> getUser(@PathVariable String id) { ... }
+Mono<User> getUser(@PathVariable String id)
+{
+     ... code here ...
+}
 
-// 2. Request → Streaming Response
+// 2. Request → Streaming Response.
 @GetMapping(value = "/prices", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-Flux<Price> streamPrices() { ... }
-+
-// 3. Streaming Request → Response
-@PostMapping("/aggregate")
-Mono<Result> uploadData(@RequestBody Flux<Input> data) { ... }
+Flux<Price> streamPrices()
+{
+    ... code here ...
+}
 
-// 4. Bidirectional Streaming (WebSocket or RSocket)
+// 3. Streaming Request → Response.
+@PostMapping("/aggregate")
+Mono<Result> uploadData(@RequestBody Flux<Input> data) 
+{ 
+    ... code here ...
+}
+
+// 4. Bidirectional Streaming (WebSocket or RSocket).
 @MessageMapping("chat")
-Flux<Message> chat(Flux<Message> incoming) { ... }
+Flux<Message> chat(Flux<Message> incoming)
+{ 
+    ... code here ...
+}
 ````
 
 # [THEORY] - What Is Reactive Programming?

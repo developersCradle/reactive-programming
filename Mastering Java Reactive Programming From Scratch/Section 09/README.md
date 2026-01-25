@@ -10,7 +10,7 @@ Combining Publishers.
     <img src="Combining_Publishers.PNG" alt="reactive programming" width="700"/>
 </div>
 
-1. It will be **super** important to **combine** the **multiple publishers**!
+1. This is **super** important lecture. It's to **combine** the **multiple publishers**!
 
 <div align="center">
     <img src="Multiple_Publishers_Microservices.PNG" alt="reactive programming" width="700"/>
@@ -159,7 +159,7 @@ getUser()
     - Example of `getAllUsers()` working:
 
         <div align="center">
-            <img src="Endpoint_GetAllUsers_Working_Independently.gif" alt="reactive programming" width="600"/>
+            <img src="Endpoint_GetAllUsers_Working_Independently.gif" alt="reactive programming" width="800"/>
         </div>
 
         1. As you can see there are **three** different users returned!
@@ -182,7 +182,7 @@ getUser()
     - Example of `getUserId()` working:
 
     <div align="center">
-        <img src="Endpoint_GetUserId_Working_Independently.gif" alt="reactive programming" width="600"/>
+        <img src="Endpoint_GetUserId_Working_Independently.gif" alt="reactive programming" width="800"/>
     </div>
 
     1. As you can see the `"Jake"`, is returning `3` as defined in the table!
@@ -279,7 +279,7 @@ public  class UserService {
     - Example of `getUserOrders(Integer userId)` endpoint working:
 
     <div align="center">
-        <img src="Endpoint_GetUserOrders_Working_Independently.gif" alt="reactive programming" width="600"/>
+        <img src="Endpoint_GetUserOrders_Working_Independently.gif" alt="reactive programming" width="800"/>
     </div>
 
     1. As you can see there are **three** orders returned!
@@ -316,7 +316,7 @@ public  class UserService {
     - Example of `getUserBalance(Integer userId)` in context of **reactive programming** working:
 
     <div align="center">
-        <img src="Endpoint_GetUserBalance_Working_Independently.gif" alt="reactive programming" width="600"/>
+        <img src="Endpoint_GetUserBalance_Working_Independently.gif" alt="reactive programming" width="800"/>
     </div>
 
 <details>
@@ -390,7 +390,7 @@ public class OrderService {
 - We will be **subscribing** into such **Mono** of **Mono**, example below:
 
 <div align="center">
-    <img src="Subscribing_Mono_Of_Mono_In_Two_Sequential_Call.gif" alt="reactive programming" width="600"/>
+    <img src="Subscribing_Mono_Of_Mono_In_Two_Sequential_Call.gif" alt="reactive programming" width="800"/>
 </div>
 
 1. We are **not** getting the **user balance values**, we are getting the **inner publisher** `received: MonoSupplier`! 
@@ -398,7 +398,7 @@ public class OrderService {
 - Same thing form **IDE**, it's trying to give hint:
 
 <div align="center">
-    <img src="Mono_Inside_Mono.PNG" alt="reactive programming" width="600"/>
+    <img src="Mono_Inside_Mono.PNG" alt="reactive programming" width="800"/>
 </div>
 
 1. You can see the `Mono<Mono<...>>` coming out of the `.map(...)` and the log `received: MonoSupplier`.
@@ -421,7 +421,7 @@ public class OrderService {
 - Illustration of `.map` how it should be used, in the context of `UserService.getUserId(...)`:
 
 <div align="center">
-    <img src="Using_Map_As_Intermediate_Operation.gif" alt="reactive programming" width="600"/>
+    <img src="Using_Map_As_Intermediate_Operation.gif" alt="reactive programming" width="800"/>
 </div>
 
 1. You can see that `received: Hello there user ID: 1` is successfully manipulated! 
@@ -442,7 +442,7 @@ public class OrderService {
 - Example of `getUserId()` **not** working, where the **Mono** inside of **Mono**:
 
 <div align="center">
-    <img src="Subscribing_Mono_Of_Mono_In_Two_Sequential_Call.gif" alt="reactive programming" width="600"/>
+    <img src="Subscribing_Mono_Of_Mono_In_Two_Sequential_Call.gif" alt="reactive programming" width="800"/>
 </div>
 
 1. When **Mono** inside **Mono**, the log `received: MonoSupplier`.
@@ -454,7 +454,7 @@ public class OrderService {
         * We are using flatMap to flatten the inner Publisher.
         */
         UserService.getUserId("sam")
-                // In memory computing
+                // In memory computing.
                 .flatMap(userId -> Mono.just("Hello there user ID: " + userId))
                 .subscribe(Util.subscriber());
 ````
@@ -728,11 +728,9 @@ public class Lec10MonoFlatMapMany {
 
         Util.sleepSeconds(5);
     }
-
 }
 ````
 </details>
-
 
 # Flux - flatMap.
 
@@ -740,9 +738,9 @@ public class Lec10MonoFlatMapMany {
     <img src="Flux_FlatMap_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
-- The requirement is to get **all** the **Users** and, then get **all** the **Orders**, for them!
+- The idea here is to get **all** the **Users**, and then get **all** the **Orders**, for them!
 
-- We **explore** that there is two `Flux<Flux<Order>>`, perfect place for the `.flatMap(...)`.
+- We **explore** case, when there is two `Flux<Flux<Order>>`, perfect place for the `.flatMap(...)`.
 
 ````Java
         /*
@@ -752,7 +750,6 @@ public class Lec10MonoFlatMapMany {
                 .map(user -> OrderService.getUserOrders(user.id()));
 
 ````
-
 
 - We can flatten the `Flux<Flux<Order>>` to the `Flux<Order>`, with the `Flux.flatMap(...)`!
 
@@ -791,40 +788,77 @@ public class Lec10MonoFlatMapMany {
 - Add the rest here todo
 
 1. We are receiving **two** `Order`'s:
-````Java
- received: Order[userId=1, productName=Aerodynamic Plastic Clock, price=21]
+````Bash
+ 17:28:36.194 INFO  [     parallel-1] o.j.r.common.DefaultSubscriber :  received: Order[userId=1, productName=Aerodynamic Plastic Clock, price=21]
  ... logs here ...
- received: Order[userId=1, productName=Intelligent Wool Clock, price=99]
+ 17:28:36.726 INFO  [     parallel-4] o.j.r.common.DefaultSubscriber :  received: Order[userId=1, productName=Intelligent Wool Clock, price=99]
 ````
 2. We are receiving **three** `Order`'s:
-````Java
-
+````Bash
+17:28:36.220 INFO  [     parallel-1] o.j.r.common.DefaultSubscriber :  received: Order[userId=2, productName=Heavy Duty Leather Lamp, price=41]
+17:28:36.710 INFO  [     parallel-3] o.j.r.common.DefaultSubscriber :  received: Order[userId=2, productName=Ergonomic Leather Knife, price=66]
+... logs here ...
+17:28:37.213 INFO  [     parallel-5] o.j.r.common.DefaultSubscriber :  received: Order[userId=2, productName=Sleek Plastic Plate, price=58]
 ```` 
-
 3. We are receiving **empty** `Order`'s:
-````Java
-org.java.reactive.common.Util  : order-for-user3 completed
+````Bash
+17:28:35.667 INFO  [           main] org.java.reactive.common.Util  : subscribing to order-for-user3
+17:28:35.681 INFO  [           main] org.java.reactive.common.Util  : order-for-user3 completed
 ````
-
 
 # FlatMap - How it works.
 
-> [!TIP]
-> `.flatMap(...)` subscribes to **all inner publishers** at the same time.
-
 <div align="center">
-    <img src="flatMap_Illustration.PNG" alt="reactive programming" width="200"/>
+    <img src="FlatMap_How_It_Works_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
+> [!TIP]
+> `.flatMap(...)` subscribes to **all inner publishers** at the same time!
 
-1. Lest say that, we have **multiple** `Flux`'s. Here is **three**.
-2. Then there will be `.flatMap(..)` opertion!
+<div align="center">
+    <img src="FlatMap_Illustration.PNG" alt="reactive programming" width="200"/>
+</div>
+
+1. We have **multiple elements** in this `Flux`. `Flux` of `userId`'s, like in previous example `UserService.getAllUsers(...)`!
+2. Then there will be `.flatMap(...)` operation!
+
+<div align="center">
+    <img src="Using_FlatMap_With_Flux_And_Flux.gif" alt="reactive programming" width="300"/>
+</div>
+
+1. Each emitted `userId` triggers a call to `OrderService.getUserOrders(userId)`, which returns a `Flux<Order>`.
+2. `OrderService.getUserOrders(userId)` will be **returning** `Flux` of `Order`'s.
+    - When will this `Flux` request end, so the another can be processed?
+        - `.flatMap(...)` operator will **not wait** for `Flux` to **complete**! Instead, as soon as another request comes to the `.flatMap(...)` operator, it will start the **query**!
+3. `.flatMap(...)`: As soon as a `Flux` emits an item, it creates an **inner publisher** for that item and **immediately subscribes** to it.
+    - It does **not wait** for one **inner publisher to finish** before starting the next!
+
+<div align="center">
+    <img src="FlatMap_Collecting_As_Soon_As_Emits_Are_Coming.PNG" alt="reactive programming" width="600"/>
+</div>
+
+1. As soon as an inner publisher emits elements, they are immediately forwarded downstream to the subscriber.
+
+- Todo check mergewith.
+
+<details>
+
+<summary id="reactive programming
+" open="true" alt="reactive programming"> <b> FlatMap source code! </b> </summary>
+
+````Java
 
 
+````
+</details>
 
 # FlatMap - Assignment.
 
 # ConcatMap.
+
+<div align="center">
+    <img src="Flux_ConcatMap_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+</div>
 
 # Operator - Collect List.
 
