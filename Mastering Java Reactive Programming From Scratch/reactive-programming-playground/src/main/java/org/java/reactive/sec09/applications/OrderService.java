@@ -32,7 +32,7 @@ public class OrderService {
      */
     public static Flux<Order> getUserOrders(Integer userId) {
         return Flux.fromIterable(orderTable.get(userId))
-//                   .delayElements(Duration.ofMillis(500))
+                   .delayElements(Duration.ofMillis(500))
                    .transform(Util.fluxLogger("order-for-user" + userId));
     }
 

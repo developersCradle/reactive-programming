@@ -33,6 +33,9 @@ Combining Publishers.
 
 1. **Project Reactor** provides, operations to achieve the business requirements in **specific order**!
 
+> [!IMPORTANT]
+> Notice that `Mono` and `Flux` **share most methods**!
+
 # Start With.
 
 # Start With - Usecases.
@@ -366,6 +369,9 @@ public class OrderService {
     <img src="Mono_FlatMap_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
+> [!NOTE]
+> Avoid nested publishers (`Mono<Flux<T>>, Flux<Mono<T>>`) **unless** you have a very specific reason.
+
 - Next we will be illustrating the **two sequential** calls:
     - **First** `UserService.getUserId(...)`
     - **Second** with that's **result** the `PaymentService.getUserBalance(...)` in called next!
@@ -492,7 +498,7 @@ public class OrderService {
 <details>
 
 <summary id="reactive programming
-" open="true" alt="reactive programming"> <b> Mono .flatMap(...) working source code! </b> </summary>
+" open="true" alt="reactive programming"> <b> Mono.flatMap(...) working source code! </b> </summary>
 
 ````Java
 
@@ -550,36 +556,180 @@ public class Lec09MonoFlatMap {
 ````
 </details>
 
-
 # Mono - flatMapMany.
 
 <div align="center">
     <img src="Mono_FlatMapMany_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
+> [!NOTE]
+> `Mono.flatMap(...)` always expects the function to return a `Mono`, not a `Flux` or plain value. We will be **exploring** where there will be `Flux` publisher inside the `Mono` publisher!
 
-- Illustration for the **Receive types** below:
+- Illustration for the multiple **reactive types** below:
 
 ````Java
 Mono<Flux<Order>> example = UserService.getUserId("sam")
                 .map(userId -> OrderService.getUserOrders(userId));
 ````
 
-OrderService.getUserOrders(
+- We can see that:
+    - `UserService.getUserId("sam")` return the `Mono<Intger>`.
+    - `OrderService.getUserOrders(userId)` returns the `Flux<Order>`.
 
-- `.flatMap(...)` assum
+- In the **end result** will be `Mono<Flux<Order>> exampleAnswerFirst`, which will be having nested type
 
-Your source is a Mono
-Your lambda returns a Flux
-You want a Flux as the result
+<br>
+
+- Todo add here why nested types are not wanted
+
+<br>
+
+- Add here picture of the identifying process.
+
+<br>
+
+- We can **identify** the **operation**, which will be correct, by checking the **source type** and the **lambda expression**.
+    - **Step 1: Identify the source type**.
+    Look at the expression **before the dot**.
+    `UserService.getUserId("sam")`
+    Check its return type:
+    `Mono<Integer>`
+        - ➡️ **source** is a **Mono**.
+    - **Step 2: Identify what your lambda returns**.
+    Look at the method inside your lambda.
+    `userId -> OrderService.getUserOrders(userId)`
+    Check its return type:
+    `Flux<Order>`
+        - ➡️ **Lambda returns** = **Flux**
+    - **Step 3: Apply the operator rule**.
+
+    | Source    | Lambda returns | Operator      | Result    |
+    | --------- | -------------- | ------------- | --------- |
+    | `Mono<T>` | `T`            | `map`         | `Mono<T>` |
+    | `Mono<T>` | `Mono<R>`      | `flatMap`     | `Mono<R>` |
+    | `Mono<T>` | `Flux<R>`      | `flatMapMany` | `Flux<R>` |
+    | `Flux<T>` | `Publisher<R>` | `flatMap`     | `Flux<R>` |
+
+
+- `.flatMap` is used to **flatten** an **inner publisher** so you don’t end up with nested `Mono<Mono<T>>` or `Flux<Flux<T>>`.
+    - Notice that the both `Mono` and the `Flux` shares the same methods, and it's needed to identify, which one is going to be needed!
+
+````Java
+        /*
+            We have username, we want to get all user orders!
+            This case is not working, since the inner publisher is the Flux and we are using .flatMap(...).
+            This will be giving the error!
+         */
+        UserService.getUserId("sam")
+                .flatMap(userId -> OrderService.getUserOrders(userId));
+````
+
+- The ⚠️**error**⚠️ will be:
+    ````Bash
+    no instance(s) of type variable(s) R exist so that Flux<Order> conforms to Mono<? extends R>
+    - There will be case, where the `.flatMap(...)` is not working since `Mono.flatMap(...)` expects the **result** being **Mono**. Example below:
+    ````
+<div align="center">
+    <img src="Mismatching_The_Internal_Publisher_Flatting_Operation.PNG" alt="reactive programming" width="400"/>
+</div>
+
+1. You can see that error coming from `Mono.flatMap(...)` **expects** the **lambda to return** a `Mono<R>`, not a `Flux<R>`
+    - `UserService.getUserId("sam")` → returns `Mono<String>`
+    - `OrderService.getUserOrders(userId)` → returns `Flux<Order>`
+
+- We can solve this using `Mono.flatMapMany(...)`, we get `Flux<Order>`, as following:
+
+````Java
+    /*
+            We have username, we want to get all user orders!
+            We can solve this using Mono.flatMapMany(...) to return the Flux.
+         */
+        Flux<Order> resultWithTheFlatMapMany = UserService.getUserId("sam")
+                .flatMapMany(userId -> OrderService.
+                        getUserOrders(userId));
+````
+
+- You can see that `Flux<Order>`! Illustration below:
+
+````Java
+    /*
+            We have username, we want to get all user orders!
+            We can solve this using Mono.flatMapMany(...) to return the Flux.
+         */
+        UserService.getUserId("sam")
+                .flatMapMany(userId -> OrderService.getUserOrders(userId))
+                .subscribe(Util.subscriber());
+
+        Util.sleepSeconds(5);
+````
+
+- We are illustrating `Mono.flatMapMany(...)` with **two** services, which have the different reactive types returned `Mono` and `Flux`!
+
+<div align="center">
+    <img src="Using_FlatMapMany_With_The_Another_Service_Succesfull_Case.gif" alt="reactive programming" width="500"/>
+</div>
+
+1. We can also see the logs is having **two order entries** for the `userId:1`!  
+
+````Bash
+16:32:07.500 INFO  [     parallel-1] o.j.r.common.DefaultSubscriber :  received: Order[userId=1, productName=Ergonomic Leather Hat, price=11]
+16:32:08.054 INFO  [     parallel-2] o.j.r.common.DefaultSubscriber :  received: Order[userId=1, productName=Enormous Marble Plate, price=67]
+````
 
 <details>
 
 <summary id="reactive programming
-" open="true" alt="reactive programming"> <b> Mono .flatMapMany(...) working source code! </b> </summary>
+" open="true" alt="reactive programming"> <b> Mono.flatMapMany(...) working source code! </b> </summary>
 
 ````Java
+package org.java.reactive.sec09;
 
+
+import org.java.reactive.common.Util;
+import org.java.reactive.sec09.applications.Order;
+import org.java.reactive.sec09.applications.OrderService;
+import org.java.reactive.sec09.applications.PaymentService;
+import org.java.reactive.sec09.applications.UserService;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+
+/*
+
+*/
+public class Lec10MonoFlatMapMany {
+
+    public static void main(String[] args)
+    {
+
+        /*
+            We have username, we want to get all user orders!
+            This example has multiple publishers, which is not wanted!
+         */
+        Mono<Flux<Order>> sam = UserService.getUserId("sam")
+                .map(userId -> OrderService.getUserOrders(userId));
+
+        /*
+            We have username, we want to get all user orders!
+            This case is not working, since the inner publisher is the Flux, and we are using .flatMap(...).
+            This will be giving the error!
+         */
+//        UserService.getUserId("sam")
+//                .flatMap(userId -> OrderService.
+//                        getUserOrders(userId));
+
+    /*
+            We have username, we want to get all user orders!
+            We can solve this using Mono.flatMapMany(...) to return the Flux.
+         */
+        UserService.getUserId("sam")
+                .flatMapMany(userId -> OrderService.getUserOrders(userId))
+                .subscribe(Util.subscriber());
+
+        Util.sleepSeconds(5);
+    }
+
+}
 ````
 </details>
 
@@ -590,7 +740,87 @@ You want a Flux as the result
     <img src="Flux_FlatMap_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
+- The requirement is to get **all** the **Users** and, then get **all** the **Orders**, for them!
+
+- We **explore** that there is two `Flux<Flux<Order>>`, perfect place for the `.flatMap(...)`.
+
+````Java
+        /*
+            We can explore the that there is two Fluxes publishers inside.
+        */
+        Flux<Flux<Order>> map = UserService.getAllUsers()
+                .map(user -> OrderService.getUserOrders(user.id()));
+
+````
+
+
+- We can flatten the `Flux<Flux<Order>>` to the `Flux<Order>`, with the `Flux.flatMap(...)`!
+
+````Java
+        /*
+            Flux.flatMap can flatten Flux<Flux<Order>> into Flux<Order>
+        */
+        Flux<Order> orderFlux = UserService.getAllUsers()
+                .flatMap(user -> OrderService.getUserOrders(user.id()));
+````
+
+- Even the more **elegant** version, where we don't send the `user`, we just **map** the needed fields for the next **publisher**. This will be `.map(user -> user.id())` and `.flatMap(...)` is receiving only the `userId`.
+
+````Java
+        /*
+            Flux.flatMap can flatten Flux<Flux<Order>> into Flux<Order>.
+            Just more elegant version!
+
+        */
+        UserService.getAllUsers()
+                .map(user -> user.id())
+                .flatMap(userId -> OrderService.getUserOrders(userId))
+                .subscribe(Util.subscriber());
+
+        Util.sleepSeconds(5);
+````
+
+- We will be illustration that this works as indented.
+
+
+<div align="center">
+    <img src="FlatMap_On_Flux_Working_IDE.PNG" width="900"/>
+</div>
+
+
+- Add the rest here todo
+
+1. We are receiving **two** `Order`'s:
+````Java
+ received: Order[userId=1, productName=Aerodynamic Plastic Clock, price=21]
+ ... logs here ...
+ received: Order[userId=1, productName=Intelligent Wool Clock, price=99]
+````
+2. We are receiving **three** `Order`'s:
+````Java
+
+```` 
+
+3. We are receiving **empty** `Order`'s:
+````Java
+org.java.reactive.common.Util  : order-for-user3 completed
+````
+
+
 # FlatMap - How it works.
+
+> [!TIP]
+> `.flatMap(...)` subscribes to **all inner publishers** at the same time.
+
+<div align="center">
+    <img src="flatMap_Illustration.PNG" alt="reactive programming" width="200"/>
+</div>
+
+
+1. Lest say that, we have **multiple** `Flux`'s. Here is **three**.
+2. Then there will be `.flatMap(..)` opertion!
+
+
 
 # FlatMap - Assignment.
 
