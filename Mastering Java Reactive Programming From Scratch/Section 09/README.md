@@ -51,6 +51,34 @@ Combining Publishers.
 
 # Zip.
 
+- Add here the zip picture!
+
+<div align="center">
+    <img src="Zip_For_The_Car_Building_Manifacturing_Line.PNG" alt="reactive programming" width="700"/>
+</div>
+
+1. We are **illustrating** manufacturing **car** from pieces!
+2. With, **these pieces** we are **building a car** and giving it to the **subscriber**!
+3. Each **producer** is **producing pieces independently** and in various intervals!
+    - **First** is producing **two** pieces! Car Frames!
+    - **Second** is producing **one** pieces! Motors!
+    - **Third** is producing **two** pieces! Wheels!
+
+- With `.zip(...)` it will be **all or nothing**!
+    - Meaning with following picture, we can build **one** car, since there is no pieces for the another car!
+
+- **Zip**
+    - We will subscribe to all the producers at the same time!
+    - All or nothing!
+    - All producers will have to emit an item!
+
+- Comparison to the **merge**, which we have been introduced before! 
+
+| Function | Waits for all sources?? | Notes |
+|----------|-----------------------------|-------|
+| **zip**      | ✅ Yes (one from each)       | Tuples |
+| **merge**    | ❌ No                        | Individual items |
+
 # Zip - Assignment.
 
 # FlatMap - Introduction.
@@ -62,7 +90,7 @@ Combining Publishers.
 1. These operations will **not** work for the **dependent sequential calls!** 
     - These are producing results as **independent**! Meaning the results, **don't rely** on an others results!
         - Example of independent producers:
-            - `.startWith(...)`. [startWith operation](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#start-with).
+            - `.startWith(...)`. [StartWith operation](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#start-with).
             - `.concat(...)`. [Concat operation](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#concat-with).
             - `.merge(...)`. [Merge operation](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#merge).
             - `.zip(...)`. [Zip operation](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#zip).
@@ -184,11 +212,9 @@ getUser()
     <div align="center">
         <img src="Endpoint_GetUserId_Working_Independently.gif" alt="reactive programming" width="800"/>
     </div>
-
     1. As you can see the `"Jake"`, is returning `3` as defined in the table!
 
 <details>
-
 <summary id="reactive programming
 " open="true" alt="reactive programming"> <b> User Service implementation </b> </summary>
 
@@ -278,11 +304,10 @@ public  class UserService {
 
     - Example of `getUserOrders(Integer userId)` endpoint working:
 
-    <div align="center">
-        <img src="Endpoint_GetUserOrders_Working_Independently.gif" alt="reactive programming" width="800"/>
-    </div>
-
-    1. As you can see there are **three** orders returned!
+        <div align="center">
+            <img src="Endpoint_GetUserOrders_Working_Independently.gif" alt="reactive programming" width="800"/>
+        </div>
+        1. As you can see there are <b>three</b> orders returned!
 
     ````Bash
     18:33:39.875 INFO  [           main] org.java.reactive.common.Util  : subscribing to order-for-user2
@@ -304,7 +329,7 @@ public  class UserService {
             );
         ````
 
-    - Endpoint `Flux<User> getAllUsers()`:
+    - Endpoint `Mono<Integer> getUserBalance(Integer userId)`:
     
         ````
         public static Mono<Integer> getUserBalance(Integer userId)
@@ -315,49 +340,39 @@ public  class UserService {
 
     - Example of `getUserBalance(Integer userId)` in context of **reactive programming** working:
 
-    <div align="center">
-        <img src="Endpoint_GetUserBalance_Working_Independently.gif" alt="reactive programming" width="800"/>
-    </div>
+        <div align="center">
+            <img src="Endpoint_GetUserBalance_Working_Independently.gif" alt="reactive programming" width="800"/>
+        </div>
 
 <details>
-
 <summary id="Reactive programming
-" open="true" alt="reactive programming"> <b>Order Service implementation!</b> </summary>
+" open="true" alt="reactive programming"> <b>Payment Service implementation!</b> </summary>
 
 ````Java
 package org.java.reactive.sec09.applications;
 
-import com.vinsguru.common.Util;
-import reactor.core.publisher.Flux;
-
-import java.time.Duration;
-import java.util.List;
+import reactor.core.publisher.Mono;
 import java.util.Map;
 
 /*
     Just for demo.
-    Imagine order-service, as an application, has an endpoint.
+    Imagine payment-service, as an application, has an endpoint.
     This is a client class to make a call to the endpoint (IO request).
  */
-public class OrderService {
+public class PaymentService {
 
-    private static final Map<Integer, List<Order>> orderTable = Map.of(
-            1, List.of(
-                    new Order(1, Util.faker().commerce().productName(), Util.faker().random().nextInt(10, 100)),
-                    new Order(1, Util.faker().commerce().productName(), Util.faker().random().nextInt(10, 100))
-            ),
-            2, List.of(
-                    new Order(2, Util.faker().commerce().productName(), Util.faker().random().nextInt(10, 100)),
-                    new Order(2, Util.faker().commerce().productName(), Util.faker().random().nextInt(10, 100)),
-                    new Order(2, Util.faker().commerce().productName(), Util.faker().random().nextInt(10, 100))
-            ),
-            3, List.of()
+    private static final Map<Integer, Integer> userBalanceTable = Map.of(
+            1, 100,
+            2, 200,
+            3, 300
     );
 
-    public static Flux<Order> getUserOrders(Integer userId) {
-        return Flux.fromIterable(orderTable.get(userId))
-                   .delayElements(Duration.ofMillis(500))
-                   .transform(Util.fluxLogger("order-for-user" + userId));
+    /**
+     *  Endpoint to get the users balance form the given {@code userId}!
+     */
+    public static Mono<Integer> getUserBalance(Integer userId)
+    {
+        return Mono.fromSupplier(() -> userBalanceTable.get(userId));
     }
 }
 ````
@@ -630,7 +645,7 @@ Mono<Flux<Order>> example = UserService.getUserId("sam")
     - There will be case, where the `.flatMap(...)` is not working since `Mono.flatMap(...)` expects the **result** being **Mono**. Example below:
     ````
 <div align="center">
-    <img src="Mismatching_The_Internal_Publisher_Flatting_Operation.PNG" alt="reactive programming" width="400"/>
+    <img src="Mismatching_The_Internal_Publisher_Flatting_Operation.PNG" alt="reactive programming" width="500"/>
 </div>
 
 1. You can see that error coming from `Mono.flatMap(...)` **expects** the **lambda to return** a `Mono<R>`, not a `Flux<R>`
@@ -841,18 +856,116 @@ public class Lec10MonoFlatMapMany {
 
 - Todo check mergewith.
 
+- We can define the `concurrency` for the `.flatmap(..)`, example as below:
+
+````Java
+        /*
+            Flux.flatMap can flatten Flux<Flux<Order>> into Flux<Order>.
+            Just more elegant version! We can also define the concurrency here, one subscription at the time!
+
+        */
+        UserService.getAllUsers()
+                .map(user -> user.id())
+                .flatMap(userId -> OrderService.getUserOrders(userId),1)
+                .subscribe(Util.subscriber());
+
+        Util.sleepSeconds(5);
+````
+
+- We are illustrating the **one** `concurrency` defined in the `.flatmap(...)`.
+
+<div align="center">
+    <img src="Using_FlatMap_With_Flux_And_Flux_Where_There_Is_One_Concurrency_Defined.gif" alt="reactive programming" width="400"/>
+</div>
+
+- As you can see there is one **connection** at the tine defined!
+
 <details>
 
 <summary id="reactive programming
 " open="true" alt="reactive programming"> <b> FlatMap source code! </b> </summary>
 
 ````Java
+package org.java.reactive.sec09;
 
 
+import org.java.reactive.common.Util;
+import org.java.reactive.sec09.applications.Order;
+import org.java.reactive.sec09.applications.OrderService;
+import org.java.reactive.sec09.applications.UserService;
+import reactor.core.publisher.Flux;
+
+/*
+    Sequential non-blocking IO calls!
+    flatMap is used to flatten the inner publisher / to subscribe to the inner publisher
+ */
+public class Lec11FluxFlatMap {
+
+    public static void main(String[] args)
+    {
+        /*
+            The requirement is to get all the Users and then get all the Orders, which there are!
+         */
+
+        /*
+            We can explore the that there is two Fluxes publishers inside.
+        */
+//        Flux<Flux<Order>> map = UserService.getAllUsers()
+//                .map(user -> OrderService.getUserOrders(user.id()));
+
+        /*
+            Flux.flatMap can flatten Flux<Flux<Order>> into Flux<Order>
+        */
+        Flux<Order> orderFlux = UserService.getAllUsers()
+                .flatMap(user -> OrderService.getUserOrders(user.id()));
+
+
+
+        /*
+            Flux.flatMap can flatten Flux<Flux<Order>> into Flux<Order>.
+            Just more elegant version!
+
+        */
+//        UserService.getAllUsers()
+//                .map(user -> user.id())
+//                .flatMap(userId -> OrderService.getUserOrders(userId),1)
+//                .subscribe(Util.subscriber());
+//
+//        Util.sleepSeconds(5);
+
+
+
+
+        /*
+            Flux.flatMap can flatten Flux<Flux<Order>> into Flux<Order>.
+            Just more elegant version! We can also define the concurrency here, one subscription at the time!
+
+        */
+        UserService.getAllUsers()
+                .map(user -> user.id())
+                .flatMap(userId -> OrderService.getUserOrders(userId),1)
+                .subscribe(Util.subscriber());
+
+        Util.sleepSeconds(5);
+    }
+
+}
 ````
 </details>
 
 # FlatMap - Assignment.
+
+- Todo after you finish with the `.zip` operation!
+
+<summary id="reactive programming
+" open="true" alt="reactive programming"> <b> FlatMap source code! </b> </summary>
+
+````Java
+
+````
+
+</details>
+
 
 # ConcatMap.
 

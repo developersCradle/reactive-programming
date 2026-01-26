@@ -38,9 +38,24 @@ public class Lec11FluxFlatMap {
             Just more elegant version!
 
         */
+//        UserService.getAllUsers()
+//                .map(user -> user.id())
+//                .flatMap(userId -> OrderService.getUserOrders(userId),1)
+//                .subscribe(Util.subscriber());
+//
+//        Util.sleepSeconds(5);
+
+
+
+
+        /*
+            Flux.flatMap can flatten Flux<Flux<Order>> into Flux<Order>.
+            Just more elegant version! We can also define the concurrency here, one subscription at the time!
+
+        */
         UserService.getAllUsers()
                 .map(user -> user.id())
-                .flatMap(userId -> OrderService.getUserOrders(userId))
+                .flatMap(userId -> OrderService.getUserOrders(userId),1)
                 .subscribe(Util.subscriber());
 
         Util.sleepSeconds(5);
