@@ -51,7 +51,9 @@ Combining Publishers.
 
 # Zip.
 
-- Add here the zip picture!
+<div align="center">
+    <img src="Zip_In_Project_Reactor.png" alt="reactive programming" width="700"/>
+</div>
 
 <div align="center">
     <img src="Zip_For_The_Car_Building_Manifacturing_Line.PNG" alt="reactive programming" width="700"/>
@@ -60,9 +62,9 @@ Combining Publishers.
 1. We are **illustrating** manufacturing **car** from pieces!
 2. With, **these pieces** we are **building a car** and giving it to the **subscriber**!
 3. Each **producer** is **producing pieces independently** and in various intervals!
-    - **First** is producing **two** pieces! Car Frames!
-    - **Second** is producing **one** pieces! Motors!
-    - **Third** is producing **two** pieces! Wheels!
+    - **First** is producing **two** pieces! Car body!
+    - **Second** is producing **one** pieces! Car engine!
+    - **Third** is producing **two** pieces! Tires!
 
 - With `.zip(...)` it will be **all or nothing**!
     - Meaning with following picture, we can build **one** car, since there is no pieces for the another car!
@@ -74,10 +76,196 @@ Combining Publishers.
 
 - Comparison to the **merge**, which we have been introduced before! 
 
-| Function | Waits for all sources?? | Notes |
-|----------|-----------------------------|-------|
-| **zip**      | ✅ Yes (one from each)       | Tuples |
-| **merge**    | ❌ No                        | Individual items |
+    | Function | Waits for all sources?? | Notes |
+    |----------|-----------------------------|-------|
+    | **zip**      | ✅ Yes (one from each)       | Tuples |
+    | **merge**    | ❌ No                        | Individual items |
+
+- We can have multiple **publishers**, here we have **three**:
+    - One for **body**.
+        ````Java
+
+            /**
+             * This will emmit Body!
+            */
+            private static Flux<String> getBody() {
+                return Flux.range(1, 5)
+                        .map(i -> "body-" + i)
+                        .delayElements(Duration.ofMillis(100));
+            }
+        ````
+    - One for **engine**.
+        ````Java
+            /**
+             * This emmit Engine!
+            */
+            private static Flux<String> getEngine() {
+                return Flux.range(1, 3)
+                        .map(i -> "engine-" + i)
+                        .delayElements(Duration.ofMillis(200));
+            }
+        ````
+    - One for **tires**.
+        ````Java
+            /**
+             * This emmit Tires!
+            */
+            private static Flux<String> getTires() {
+                return Flux.range(1, 10)
+                        .map(i -> "tires-" + i)
+                        .delayElements(Duration.ofMillis(300));
+            }
+        ````
+
+- The data types can be **different** and the **rates** for the **publishers**.
+
+- We can the **types** for each of the car parts!
+    - `getBody()` → `Sting`.
+    - `getTires()` → `String`.
+    - `getEngine()` → `String`.
+
+> [!TIP]
+> **What is a Tuple?**
+> A **tuple** is a small, ordered container that holds a fixed number of values, possibly of different types.
+
+````Java
+Flux<Tuple3<String, String, String>> zip = Flux.zip(getBody(), getTires(), getEngine());
+````
+
+<div align="center">
+    <img src="Checking_How_To_Get_Parts_From_Tuple.PNG" alt="reactive programming" width="600"/>
+</div>
+
+1. We can get items from the producer!
+    - `getT1()` item created by **first** producer!
+    - `getT2()` item created by **second** producer!
+    - `getT3()` item created by **third** producer!
+
+- We are building following **Car record**.
+
+````Java
+    record Car(String body, String engine, String tires)
+    {
+
+    }
+````
+
+- We are building **Car**.
+
+````Java
+Flux.zip(getBody(), getEngine(), getTires())
+                .map(tuple -> new Car(tuple.getT1(), tuple.getT2(), tuple.getT3()))
+                .subscribe(Util.subscriber());
+
+        Util.sleepSeconds(5);
+````
+
+- Using `.zip(...)` illustration.
+
+<div align="center">
+    <img src="Using_Zip.gif" alt="reactive programming" width="600"/>
+</div>
+
+1. We can see **three** cars getting built!
+
+````Bash
+00:36:59.886 INFO  [     parallel-3] o.j.r.common.DefaultSubscriber :  received: Car[body=body-1, engine=engine-1, tires=tires-1]
+00:37:00.234 INFO  [     parallel-7] o.j.r.common.DefaultSubscriber :  received: Car[body=body-2, engine=engine-2, tires=tires-2]
+00:37:00.551 INFO  [     parallel-2] o.j.r.common.DefaultSubscriber :  received: Car[body=body-3, engine=engine-3, tires=tires-3]
+00:37:00.555 INFO  [     parallel-2] o.j.r.common.DefaultSubscriber :  received complete!
+````
+
+- `.zip(...)` is **all or nothing**, if we change the emission to `Flux.empty()`:
+
+````Java
+    /**
+     * This emmit Engine!
+     */
+    private static Flux<String> getEngine() {
+        return Flux.empty()
+                .map(i -> "engine-" + i)
+                .delayElements(Duration.ofMillis(200));
+    }
+````
+
+- We can see there is **car** done, if one **producer** is missing an item.
+
+<div align="center">
+    <img src="Using_Zip_Where_One_Producer_Is_Empty.gif" alt="reactive programming" width="600"/>
+</div>
+
+1. No **car** being built!
+
+
+<details>
+<summary id="reactive programming
+" open="true" alt="reactive programming"> <b> zip code implementation!</b> </summary>
+
+````Java
+package org.java.reactive.sec09;
+
+import org.java.reactive.common.Util;
+import reactor.core.publisher.Flux;
+import reactor.util.function.Tuple3;
+import reactor.util.function.Tuple4;
+
+import java.time.Duration;
+
+/*
+    Zip:
+    - We will subscribe to all the producers at the same time.
+    - All or nothing.
+    - All producers will have to emit an item.
+*/
+public class Lec07Zip {
+
+    record Car(String body, String engine, String tires)
+    {
+
+    }
+
+    public static void main(String[] args)
+    {
+        Flux.zip(getBody(), getEngine(), getTires())
+                .map(tuple -> new Car(tuple.getT1(), tuple.getT2(), tuple.getT3()))
+                .subscribe(Util.subscriber());
+
+        Util.sleepSeconds(5);
+    }
+
+
+    /**
+     * This will emmit Body!
+     */
+    private static Flux<String> getBody() {
+        return Flux.range(1, 5)
+                .map(i -> "body-" + i)
+                .delayElements(Duration.ofMillis(100));
+    }
+
+    /**
+     * This emmit Engine!
+     */
+    private static Flux<String> getEngine() {
+        return Flux.range(1, 3)
+                .map(i -> "engine-" + i)
+                .delayElements(Duration.ofMillis(200));
+    }
+
+    /**
+     * This emmit Tires!
+     */
+    private static Flux<String> getTires() {
+        return Flux.range(1, 10)
+                .map(i -> "tires-" + i)
+                .delayElements(Duration.ofMillis(300));
+    }
+}
+````
+</details>
+
+
+
 
 # Zip - Assignment.
 
@@ -209,10 +397,10 @@ getUser()
 
     - Example of `getUserId()` working:
 
-    <div align="center">
-        <img src="Endpoint_GetUserId_Working_Independently.gif" alt="reactive programming" width="800"/>
-    </div>
-    1. As you can see the `"Jake"`, is returning `3` as defined in the table!
+        <div align="center">
+            <img src="Endpoint_GetUserId_Working_Independently.gif" alt="reactive programming" width="800"/>
+        </div>
+        1. As you can see the `"Jake"`, is returning `3` as defined in the table!
 
 <details>
 <summary id="reactive programming
@@ -794,11 +982,9 @@ public class Lec10MonoFlatMapMany {
 
 - We will be illustration that this works as indented.
 
-
 <div align="center">
     <img src="FlatMap_On_Flux_Working_IDE.PNG" width="900"/>
 </div>
-
 
 - Add the rest here todo
 
@@ -965,7 +1151,6 @@ public class Lec11FluxFlatMap {
 ````
 
 </details>
-
 
 # ConcatMap.
 
