@@ -264,10 +264,150 @@ public class Lec07Zip {
 ````
 </details>
 
-
-
-
 # Zip - Assignment.
+
+<div align="center">
+    <img src="Zip_Assigment.PNG" alt="reactive programming" width="600"/>
+</div>
+
+1. `Mono.zip(...)` is also possible, not just `Flux.zip()`.
+2. We will call these services for **front end**.
+
+<div align="center">
+    <img src="Zip_Assigment_How_We_Are_Dealing_With_It.PNG" alt="reactive programming" width="600"/>
+</div>
+
+1. Code as following:
+    ````Java
+    var client = new ExternalServiceClient();
+
+    client.getProduct(1) // should return Mono<Product>
+
+    for(int i = 1; i <= 10; i++){
+        client.getProduct(i)
+            .subscribe(Util.subscriber());
+    }
+    ````
+
+<div align="center">
+    <img src="Task_Takes_Against_Task_05.PNG" alt="reactive programming" width="600"/>
+</div>
+
+1. Task will be running against these endpoints!
+
+
+<details>
+<summary id="zip assignment" open="true"> <b> zip - Assignment - My Answer!</b> </summary>
+ 
+````Java
+package org.java.reactive.sec09;
+
+import org.java.reactive.common.Util;
+import org.java.reactive.sec09.client.ExternalServiceClient;
+
+/*
+    Ensure that the external service is up and running!
+ */
+public class Lec07ZipExercise
+{
+
+    public static void main(String[] args)
+    {
+        var client = new ExternalServiceClient();
+
+        for(int i = 1; i <= 10; i++){
+            client.getProduct(i)
+                    .subscribe(Util.subscriber());
+        }
+
+        Util.sleepSeconds(4);
+    }
+}
+````
+
+````Java
+package org.java.reactive.sec09.client;
+
+import org.java.reactive.common.AbstractHttpClient;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.util.zip.ZipEntry;
+
+import static reactor.core.publisher.Flux.zip;
+
+public class ExternalServiceClient extends AbstractHttpClient {
+
+    public record Product(String productName, String review, String price)
+    {
+
+    }
+
+    public Mono<Product> getProduct(int ammount) {
+
+        for (int i = 0; i < ammount; i++) {
+
+            return Mono.zip(
+                    this.httpClient
+                            .get() // for Get.
+                            .uri("/demo05/product/" + ammount) // The Base URI, will be getted.
+                            .responseContent() // Will be getting as Flux<ByteBuf>.
+                            .asString() // We need to tell that its Flux of the String.
+                            .next()
+                    ,
+                    this.httpClient
+                            .get() // for Get.
+                            .uri("/demo05/review/" + ammount) // The Base URI, will be getted.
+                            .responseContent() // Will be getting as Flux<ByteBuf>.
+                            .asString() // We need to tell that its Flux of the String.
+                            .next()
+                    ,
+                    this.httpClient
+                            .get() // for Get.
+                            .uri("/demo05/price/" + ammount) // The Base URI, will be getted.
+                            .responseContent() // Will be getting as Flux<ByteBuf>.
+                            .asString() // We need to tell that its Flux of the String.
+                            .next()
+
+            ).map(tuple -> new Product(tuple.getT2(), tuple.getT3(), tuple.getT1()));
+
+        }
+        return null;
+    }
+}
+````
+
+````Java
+package org.java.reactive.common;
+
+import reactor.netty.http.client.HttpClient;
+import reactor.netty.resources.LoopResources;
+
+public abstract class AbstractHttpClient {
+
+    private static final String BASE_URL = "http://localhost:7070";
+    protected HttpClient httpClient;
+
+    public AbstractHttpClient() {
+        var loopResources = LoopResources.create("ScoopiDoo", 1 , true);
+
+        // We can provide the other attributes in the HttpClient.create() section.
+        this.httpClient = HttpClient.create().runOn(loopResources).baseUrl(BASE_URL);
+
+    }
+}
+````
+
+</details>
+
+
+<details>
+<summary id="zip assignment" open="true"> <b> zip - Assignment - Teacher's Answer!</b> </summary>
+ 
+````Java
+
+````
+</details>
 
 # FlatMap - Introduction.
 

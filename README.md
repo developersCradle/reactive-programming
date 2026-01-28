@@ -133,8 +133,10 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 * **Section 09**:
     * *Quiz*:
         * [Quiz 08](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#quiz-08).
+    * *Coding Exercise*:
+        * [Zip - Assignment](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#zip---assignment).
 
-
+- add gif
 
 <p align="center">
     <img id="Build Reactive MicroServices using Spring WebFlux Spring" src="Spring_WebFlux_Masterclass_High_Performance_Reactive_APIs_Caption.png" style="width:900px;height:90px;">

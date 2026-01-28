@@ -9,9 +9,9 @@ Mono.
 - [Original Repository](https://github.com/vinsguru/java-reactive-programming-course).
 
 - Use following to set repo:
-- [POM](https://github.com/vinsguru/java-reactive-programming-course/blob/master/01-reactive-programming-playground/pom.xml#L11-L80).
+    - [POM](https://github.com/vinsguru/java-reactive-programming-course/blob/master/01-reactive-programming-playground/pom.xml#L11-L80).
 
-````
+````Xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -98,7 +98,7 @@ Mono.
 
 - [Logback](https://github.com/vinsguru/java-reactive-programming-course/blob/master/01-reactive-programming-playground/src/main/resources/logback.xml).
 
-````
+````Xml
 <!-- http://dev.cs.ovgu.de/java/logback/manual/layouts.html -->
 <configuration>
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
@@ -1124,8 +1124,6 @@ public class Lec09PublisherCreateVsExecution {
 | `Flux.empty()` | Instant | Eagerly creates an empty Flux. |
 | `Flux.never()` | Instant | Eagerly creates a never-emitting Flux. |
 
----
-
 ### 💡 Summary.
 
 - **Lazy methods** delay computation or object creation until `subscribe()`.
@@ -1170,7 +1168,6 @@ public class Lec09PublisherCreateVsExecution {
 </div>
 
 # External Services.
-
 
 - We can run the service, with the following:
 
