@@ -83,6 +83,7 @@ Combining Publishers.
 
 - We can have multiple **publishers**, here we have **three**:
     - One for **body**.
+
         ````Java
 
             /**
@@ -141,7 +142,7 @@ Flux<Tuple3<String, String, String>> zip = Flux.zip(getBody(), getTires(), getEn
     - `getT2()` item created by **second** producer!
     - `getT3()` item created by **third** producer!
 
-- We are building following **Car record**.
+- We are building following `Car record`.
 
 ````Java
     record Car(String body, String engine, String tires)
@@ -150,7 +151,7 @@ Flux<Tuple3<String, String, String>> zip = Flux.zip(getBody(), getTires(), getEn
     }
 ````
 
-- We are building **Car**.
+- We are building **car** object, with `.zip(...)`.
 
 ````Java
 Flux.zip(getBody(), getEngine(), getTires())
@@ -194,8 +195,7 @@ Flux.zip(getBody(), getEngine(), getTires())
     <img src="Using_Zip_Where_One_Producer_Is_Empty.gif" alt="reactive programming" width="600"/>
 </div>
 
-1. No **car** being built!
-
+1. No **car** is being built in this case!
 
 <details>
 <summary id="reactive programming
@@ -295,9 +295,8 @@ public class Lec07Zip {
 
 1. Task will be running against these endpoints!
 
-
 <details>
-<summary id="zip assignment" open="true"> <b> zip - Assignment - My Answer!</b> </summary>
+<summary id="zip assignment my answer" open="true"> <b> zip - Assignment - My Answer!</b> </summary>
  
 ````Java
 package org.java.reactive.sec09;
@@ -397,15 +396,60 @@ public abstract class AbstractHttpClient {
     }
 }
 ````
-
 </details>
 
 
 <details>
-<summary id="zip assignment" open="true"> <b> zip - Assignment - Teacher's Answer!</b> </summary>
+<summary id="zip assignment teacher answer" open="true"> <b> zip - Assignment - Teacher's Answer!</b> </summary>
  
-````Java
+ ````Java
+ package com.vinsguru.sec09.assignment;
 
+public record Product(String name,
+                      String review,
+                      String price) {
+}
+````
+
+````Java
+package com.vinsguru.sec09.assignment;
+
+import com.vinsguru.common.AbstractHttpClient;
+import reactor.core.publisher.Mono;
+
+// just for demo
+public class ExternalServiceClient extends AbstractHttpClient {
+
+    public Mono<Product> getProduct(int productId) {
+        return Mono.zip(
+                           getProductName(productId),
+                           getReview(productId),
+                           getPrice(productId)
+                   )
+                   .map(t -> new Product(t.getT1(), t.getT2(), t.getT3()));
+    }
+
+    private Mono<String> getProductName(int productId) {
+        return get("/demo05/product/" + productId);
+    }
+
+    private Mono<String> getReview(int productId) {
+        return get("/demo05/review/" + productId);
+    }
+
+    private Mono<String> getPrice(int productId) {
+        return get("/demo05/price/" + productId);
+    }
+
+    private Mono<String> get(String path) {
+        return this.httpClient.get()
+                              .uri(path)
+                              .responseContent()
+                              .asString()
+                              .next();
+    }
+
+}
 ````
 </details>
 
@@ -577,10 +621,8 @@ public  class UserService {
     }
 
     public static Mono<Integer> getUserId(String username){
-
         return Mono.fromSupplier(() -> userTable.get(username));
     }
-
 }
 ````
 
@@ -709,7 +751,7 @@ public class PaymentService {
 # Mono - flatMap.
 
 <div align="center">
-    <img src="Mono_FlatMap_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+    <img src="1Mono_FlatMap_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
 > [!NOTE]
@@ -1281,13 +1323,165 @@ public class Lec11FluxFlatMap {
 
 # FlatMap - Assignment.
 
-- Todo after you finish with the `.zip` operation!
-
-<summary id="reactive programming
-" open="true" alt="reactive programming"> <b> FlatMap source code! </b> </summary>
+```
+Question 1: Make this for loop using FLux.
+```
 
 ````Java
+                var client = new ExternalServiceClient();
 
+                for (int i = 1; i < 10; i++) {
+                    client.getProduct(i)
+                            .subscribe(Util.subscriber());
+                }
+                Util.sleepSeconds(2);
+````
+
+- My implementation for this `for` loop:
+
+````Java
+        // new way
+        Flux.range(1, 10)
+                .flatMap(number -> client.getProduct(number))
+                .subscribe(Util.subscriber());
+````
+
+- We can see benefits using `.flatMap(...)` versus the regular call where the `public Mono<Product> getProduct(int ammount) `.
+    - With `.flatMap(...)`:
+        - We will be **subscribing** to only one **Flux**, instead of multiple separate ones!
+        - We can see only **one complete** signal:
+            - `23:54:33.771 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!`.
+        <div align="center">
+            <img src="Using_Zip_Operation_Where_We_Are_Using_FlatMap.gif" alt="reactive programming" width="600"/>
+        </div>
+        1. You can see <b>one complete</b> signal log!
+
+        - We can see the logs:
+
+        ````Bash
+        23:54:33.728 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-1, review=price-1, price=product-1]
+        23:54:33.753 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-3, review=price-3, price=product-3]
+        23:54:33.757 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-2, review=price-2, price=product-2]
+        23:54:33.760 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-8, review=price-8, price=product-8]
+        23:54:33.762 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-5, review=price-5, price=product-5]
+        23:54:33.763 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-10, review=price-10, price=product-10]
+        23:54:33.764 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-4, review=price-4, price=product-4]
+        23:54:33.765 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-6, review=price-6, price=product-6]
+        23:54:33.766 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-7, review=price-7, price=product-7]
+        23:54:33.767 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-9, review=price-9, price=product-9]
+        23:54:33.771 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+        ````
+        - The same with **three** different **concurrent** calls.
+        ````Java
+            // New way.
+            Flux.range(1, 10)
+                    .flatMap(number -> client.getProduct(number), 3)
+                    .subscribe(Util.subscriber());
+        ````
+
+        - We can see these calls being executed as in **groups**:
+
+        <div align="center">
+            <img src="Using_Zip_Operation_Where_We_Are_Concurrency_Variables.gif" alt="reactive programming" width="600"/>
+        </div>
+
+    - With regular `client.getProduct(i)` inside `for` loop.
+        - We will be **subscribing** to multiple **Monos** in the same time!
+            - We can see **multiple complete** signal:
+                <div align="center">
+                    <img src="Using_Zip_Operation_Where_We_Are_Using_Traditional_Way.gif" alt="reactive programming" width="600"/>
+                </div>
+                1. You can see <b>many completes</b> signal logs!
+
+        - We can see the logs:
+
+        ````Bash
+        16:06:25.026 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-1, review=price-1, price=product-1]
+        16:06:25.056 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+        16:06:25.059 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-2, review=price-2, price=product-2]
+        16:06:25.059 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+        16:06:25.060 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-3, review=price-3, price=product-3]
+        16:06:25.060 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+        16:06:25.064 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-5, review=price-5, price=product-5]
+        16:06:25.064 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+        16:06:25.067 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-4, review=price-4, price=product-4]
+        16:06:25.067 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+        16:06:25.070 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-6, review=price-6, price=product-6]
+        16:06:25.070 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+        16:06:25.072 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-7, review=price-7, price=product-7]
+        16:06:25.072 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+        16:06:25.075 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-9, review=price-9, price=product-9]
+        16:06:25.076 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!
+        16:06:25.078 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received: Product[productName=review-8, review=price-8, price=product-8]
+        16:06:25.078 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!                        
+        ````
+<details>
+
+<summary id="flatmap assigment - my answer
+" open="true" alt="reactive programming"> <b> FlatMap assigment - my answer! </b> </summary>
+
+````Java
+package org.java.reactive.sec09;
+
+import org.java.reactive.common.Util;
+import org.java.reactive.sec09.client.ExternalServiceClient;
+import reactor.core.publisher.Flux;
+
+/*
+    Ensure that the external service is up and running!
+ */
+public class Lec12FluxFlatMapExerciseAssignment {
+
+
+    public static void main(String[] args) {
+        var client = new ExternalServiceClient();
+
+        // new way
+        Flux.range(1,10)
+                .flatMap(number -> client.getProduct(number))
+                .subscribe(Util.subscriber());
+
+        // old way
+//      for (int i = 1; i < 10; i++) {
+//            client.getProduct(i)
+//                    .subscribe(Util.subscriber());
+//        }
+
+        Util.sleepSeconds(2);
+    }
+
+}
+````
+</details>
+
+<details>
+
+<summary id="flatmap assigment - teacher answer
+" open="true" alt="reactive programming"> <b> FlatMap assigment - teacher answer! </b> </summary>
+
+````Java
+package com.vinsguru.sec09;
+
+import com.vinsguru.common.Util;
+import com.vinsguru.sec09.assignment.ExternalServiceClient;
+import reactor.core.publisher.Flux;
+
+/*
+    Ensure that the external service is up and running!
+ */
+public class Lec12FluxFlatMapAssignment {
+
+    public static void main(String[] args) {
+
+        var client = new ExternalServiceClient();
+
+        Flux.range(1, 10)
+            .flatMap(client::getProduct, 3)
+            .subscribe(Util.subscriber());
+
+        Util.sleepSeconds(20);
+    }
+}
 ````
 
 </details>
@@ -1298,9 +1492,92 @@ public class Lec11FluxFlatMap {
     <img src="Flux_ConcatMap_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
+> [!NOTE]
+> `.concatMap(...)` = map each item → Publisher (Mono/Flux) and then subscribe one-by-one in order. This is **sequential processing**!
+
+<div align="center">
+    <img src="ConcatMap_Operator_When_Using_Flux.PNG" alt="reactive programming" width="400"/>
+</div>
+
+1. `.concatMap` will be **concatenating** the **inner fluxes** in sequential manner, these are in this order here!
+
+2. The **Flux** processing order will be `3.` → `4.` → `5.`!
+    - **In every step**, it will be waiting previous to finish first before going to next one!
+
+- We can do **Sequential** calls, with the following `.concatMap(number -> client.getProduct(number))`.
+    ````Java
+            Flux.range(1, 10)
+                .concatMap(number -> client.getProduct(number))
+                .subscribe(Util.subscriber());
+    ````
+
+<div align="center">
+    <img src="Using_ConcatMap_For_The_Flux.gif" alt="reactive programming" width="400"/>
+</div>
+
+- We can see that now each **Mono** is subscribed to in **order**!
+
+<details>
+
+<summary id="concatMap" open="true" alt="reactive programming"> <b> ConcatMap assigment! </b> </summary>
+
+````Java
+package org.java.reactive.sec09;
+
+import org.java.reactive.common.Util;
+import org.java.reactive.sec09.client.ExternalServiceClient;
+import reactor.core.publisher.Flux;
+
+/*
+    Ensure that the external service is up and running!
+ */
+public class Lec13ConcatMap {
+
+    public static void main(String[] args) {
+
+        var client = new ExternalServiceClient();
+
+        Flux.range(1, 10)
+            .concatMap(number -> client.getProduct(number))
+            .subscribe(Util.subscriber());
+
+        Util.sleepSeconds(20);
+
+    }
+
+}
+````
+</details>
+
 # Operator - Collect List.
 
+<div align="center">
+    <img src="Flux_CollectList_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+</div>
+
+<details>
+
+<summary id="collect list" open="true" alt="reactive programming"> <b> Collect List assigment! </b> </summary>
+
+````Java
+
+````
+</details>
+
 # Operator - Then.
+
+<div align="center">
+    <img src="Flux_Then_Mono_Then_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+</div>
+
+<details>
+
+<summary id="collect list" open="true" alt="reactive programming"> <b> Operator .then() assigment! </b> </summary>
+
+````Java
+
+````
+</details>
 
 # *** Assignment ***.
 
