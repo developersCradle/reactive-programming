@@ -2,7 +2,7 @@
 
 Reactive CRUD APIs.
 
-# What i learned.
+# What I learned.
 
 # FAQ - Do We Need DTOs?
 

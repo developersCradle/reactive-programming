@@ -38,14 +38,98 @@ Combining Publishers.
 
 # Start With.
 
+<div align="center">
+    <img src="StartWith_With_Mono_And_Flux_In_Project_Reactor.png" alt="reactive programming" width="700"/>
+</div>
+
+> [!TIP]
+> `.startWith(...)` combines **two publishers**, but it does **NOT** `merge` them concurrently.
+
+<div align="center">
+    <img src="StartWith_With_Mono_And_Flux.PNG" width="700"/>
+</div>
+
+1. We have **two** publishers. They can be type `T`, any type!
+2. With the `.startWith(...)` we can combine **two publishers** into **one publisher**!  
+3. From **subscriber** point of view, it will be one **publisher**!
+    - In `3.1`, if the **publisher** wants **6** items, it will check from **first publisher** in `1` and then get rest from **second publisher** in `2`!
+
+<details>
+<summary id="reactive programming
+" open="true" alt="reactive programming"> <b> Flux.startWith(...) and Mono.startWith(...) working source code!</b> </summary>
+
+````Java
+
+````
+
+</details>
+
+
 # Start With - Usecases.
 
+<details>
+<summary id="reactive programming
+" open="true" alt="reactive programming"> <b> Flux.startWith(...) and Mono.startWith(...) usecases working source code!</b> </summary>
+
+````Java
+
+````
+
+</details>
+
 # Concat With.
+
+<div align="center">
+    <img src="ConcatWith_With_Mono_And_Flux_In_Project_Reactor.png" alt="reactive programming" width="700"/>
+</div>
+
+<details>
+<summary id="reactive programming
+" open="true" alt="reactive programming"> <b> Flux.concatWith(...) and Mono.concatWith(...) usecases working source code!</b> </summary>
+
+````Java
+
+````
+
+</details>
 
 
 # Concat Delay Error.
 
+<div align="center">
+    <img src="ConcatDelayError_With_Flux_In_Project_Reactor.png" alt="reactive programming" width="700"/>
+</div>
+
+
+<details>
+<summary id="reactive programming
+" open="true" alt="reactive programming"> <b> Flux.concatDelayError(...) use cases working source code!</b> </summary>
+
+````Java
+
+````
+
+</details>
+
+
 # Merge.
+
+<div align="center">
+    <img src="#" alt="reactive programming" width="700"/>
+</div>
+
+
+<details>
+<summary id="reactive programming
+" open="true" alt="reactive programming"> <b> merge use cases working source code!</b> </summary>
+
+````Java
+
+````
+
+</details>
+
+
 
 # Merge - Usecases.
 
@@ -69,7 +153,7 @@ Combining Publishers.
 - With `.zip(...)` it will be **all or nothing**!
     - Meaning with following picture, we can build **one** car, since there is no pieces for the another car!
 
-- **Zip**
+- **Zip**.
     - We will subscribe to all the producers at the same time!
     - All or nothing!
     - All producers will have to emit an item!
@@ -495,8 +579,6 @@ getUser()
         - Receives the `Discount`
         passes it to `saveDiscount(discount)` emits the final result!
 
-<br>
-
 <div align="center">
     <img src="What_About_Dependent_Sequential_Calls.PNG" alt="reactive programming" width="600"/>
 </div>
@@ -628,25 +710,25 @@ public  class UserService {
 
 </details>
 
-- The `Order` Java `record` as following:
-    ````Java
-    package org.java.reactive.sec09.applications;
+- We are having following `OrderService` **class**:
 
-    // Just for demo.
-    // We have user id in the order to show that it belongs to the user.
+    - The `Order` Java `record` as following:
+        ````Java
+        package org.java.reactive.sec09.applications;
 
-    public record Order(Integer userId,
-                        String productName,
-                        Integer price) {
-    }
-    ````    
+        // Just for demo.
+        // We have user id in the order to show that it belongs to the user.
+
+        public record Order(Integer userId,
+                            String productName,
+                            Integer price) {
+        }
+        ````    
     - Order object, will have fields:
         - Integer `userId`.
         - String `productName`.
         - Integer `price`.
 
-
-- We are having following `OrderService` **class**:
     - We are simulating some `userTorderTableable`, where there will be **Orders** contained in!
         ````Java
         private static final Map<Integer, List<Order>> orderTable = Map.of(
@@ -687,8 +769,58 @@ public  class UserService {
     18:33:39.880 INFO  [           main] org.java.reactive.common.Util  : order-for-user2 completed
     ````
 
+
+
+<details>
+
+<summary id="reactive programming
+" open="true" alt="reactive programming"> <b>Order Service implementation!</b> </summary>
+
+````Java
+package org.java.reactive.sec09.applications;
+
+import org.java.reactive.common.Util;
+import reactor.core.publisher.Flux;
+
+import java.time.Duration;
+import java.util.List;
+import java.util.Map;
+
+/*
+    Just for demo.
+    Imagine order-service, as an application, has an endpoint.
+    This is a client class to make a call to the endpoint (IO request).
+ */
+public class OrderService {
+
+    private static final Map<Integer, List<Order>> orderTable = Map.of(
+            1, List.of(
+                    new Order(1, Util.faker().commerce().productName(), Util.faker().random().nextInt(10, 100)),
+                    new Order(1, Util.faker().commerce().productName(), Util.faker().random().nextInt(10, 100))
+            ),
+            2, List.of(
+                    new Order(2, Util.faker().commerce().productName(), Util.faker().random().nextInt(10, 100)),
+                    new Order(2, Util.faker().commerce().productName(), Util.faker().random().nextInt(10, 100)),
+                    new Order(2, Util.faker().commerce().productName(), Util.faker().random().nextInt(10, 100))
+            ),
+            3, List.of() // Third order does not any info!
+    );
+
+    /**
+     *  Endpoint to get the {@link Order} for the given {@code userId}!
+     */
+    public static Flux<Order> getUserOrders(Integer userId) {
+        return Flux.fromIterable(orderTable.get(userId))
+                   .delayElements(Duration.ofMillis(500))
+                   .transform(Util.fluxLogger("order-for-user" + userId));
+    }
+
+}
+````
+</details>
+
 - We are having following `PaymentService` **class**:
-    - We are simulating some `userBalanceTable`, where there will be **Balances** contained in!
+    - We are simulating some `userBalanceTable`, where there will be **balances** contained in!
 
         ````Java
             // We are simulating some userBalanceTable table!
@@ -699,7 +831,7 @@ public  class UserService {
             );
         ````
 
-    - Endpoint `Mono<Integer> getUserBalance(Integer userId)`:
+    - Endpoint `getUserBalance(Integer userId)`:
     
         ````
         public static Mono<Integer> getUserBalance(Integer userId)
@@ -708,7 +840,7 @@ public  class UserService {
         }
         ````
 
-    - Example of `getUserBalance(Integer userId)` in context of **reactive programming** working:
+    - Example of `getUserBalance(Integer userId)` working:
 
         <div align="center">
             <img src="Endpoint_GetUserBalance_Working_Independently.gif" alt="reactive programming" width="800"/>
@@ -751,7 +883,7 @@ public class PaymentService {
 # Mono - flatMap.
 
 <div align="center">
-    <img src="1Mono_FlatMap_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+    <img src="Mono_FlatMap_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
 > [!NOTE]
@@ -1243,7 +1375,7 @@ public class Lec10MonoFlatMapMany {
 - We are illustrating the **one** `concurrency` defined in the `.flatmap(...)`.
 
 <div align="center">
-    <img src="Using_FlatMap_With_Flux_And_Flux_Where_There_Is_One_Concurrency_Defined.gif" alt="reactive programming" width="400"/>
+    <img src="Using_FlatMap_With_Flux_And_Flux_Where_There_Is_One_Concurrency_Defined.gif" alt="reactive programming" width="500"/>
 </div>
 
 - As you can see there is one **connection** at the tine defined!
@@ -1251,11 +1383,10 @@ public class Lec10MonoFlatMapMany {
 <details>
 
 <summary id="reactive programming
-" open="true" alt="reactive programming"> <b> FlatMap source code! </b> </summary>
+" open="true" alt="reactive programming"> <b> Mono.flatMap(...) and Flux.flatMap(...) working source code! </b> </summary>
 
 ````Java
 package org.java.reactive.sec09;
-
 
 import org.java.reactive.common.Util;
 import org.java.reactive.sec09.applications.Order;
@@ -1496,7 +1627,7 @@ public class Lec12FluxFlatMapAssignment {
 > `.concatMap(...)` = map each item → Publisher (Mono/Flux) and then subscribe one-by-one in order. This is **sequential processing**!
 
 <div align="center">
-    <img src="ConcatMap_Operator_When_Using_Flux.PNG" alt="reactive programming" width="400"/>
+    <img src="ConcatMap_Operator_When_Using_Flux.PNG" alt="reactive programming" width="600"/>
 </div>
 
 1. `.concatMap` will be **concatenating** the **inner fluxes** in sequential manner, these are in this order here!
@@ -1519,7 +1650,7 @@ public class Lec12FluxFlatMapAssignment {
 
 <details>
 
-<summary id="concatMap" open="true" alt="reactive programming"> <b> ConcatMap assigment! </b> </summary>
+<summary id="concatMap" open="true" alt="reactive programming"> <b> Flux.concatMap(...) working source code! </b> </summary>
 
 ````Java
 package org.java.reactive.sec09;
@@ -1555,12 +1686,83 @@ public class Lec13ConcatMap {
     <img src="Flux_CollectList_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
-<details>
-
-<summary id="collect list" open="true" alt="reactive programming"> <b> Collect List assigment! </b> </summary>
+- Operator will collect items from the **Flux** to the **list** `.collectList()`.
+    - `collectList()` is **non-blocking**.
 
 ````Java
+Mono<List<Integer>> listMono = Flux.range(1, 10)
+                .collectList();
+````
 
+- We can see the illustration below:
+
+<div align="center">
+    <img src="Using_CollectToList_In_Flux.gif" alt="reactive programming" width="700"/>
+</div>
+
+1. This will be as in `List`, like shown below:
+
+- We can see that, these are as in the list:
+
+````Bash
+14:26:36.030 INFO  [           main] o.j.r.common.DefaultSubscriber :  received: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+14:26:36.041 INFO  [           main] o.j.r.common.DefaultSubscriber :  received complete!
+````
+
+- Todo get back here when dealt with teh concatwith
+
+- Some world from the **error** handling form the `.collectList()`.
+
+````Java
+         Flux.range(1, 10)
+                 .concatWith(Flux.error(new UnexpectedException("Test")))
+                 .collectList()
+                 .subscribe(Util.subscriber());
+````
+
+- We can see that the `.collecToList()` does not collect if there is exception happened!
+    - Here you can see that the `.concatWith(Flux.error(new UnexpectedException("Test")))` is **throwing exception**, before the `.collectList()` can happen! The logs below:
+
+
+````Bash
+SLF4J(I): Connected with provider of type [ch.qos.logback.classic.spi.LogbackServiceProvider]
+14:35:56.613 ERROR [           main] o.j.r.common.DefaultSubscriber :  error
+java.rmi.UnexpectedException: Test
+	at org.java.reactive.sec09.Lec14CollectList.main(Lec14CollectList.java:19)
+Process finished with exit code 0
+````
+
+<details>
+
+<summary id="collect list" open="true" alt="reactive programming"> <b> Flux.collectToList() working source code! </b> </summary>
+
+````Java
+package org.java.reactive.sec09;
+
+import org.java.reactive.common.Util;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.rmi.UnexpectedException;
+import java.util.List;
+
+import static reactor.core.publisher.Signal.subscribe;
+
+/*
+    To collect the items received via Flux. Assuming we will have finite items!
+ */
+public class Lec14CollectList {
+
+    public static void main(String[] args) {
+
+         Flux.range(1, 10)
+                 .concatWith(Flux.error(new UnexpectedException("Test")))
+                 .collectList()
+                 .subscribe(Util.subscriber());
+
+    }
+
+}
 ````
 </details>
 
@@ -1570,13 +1772,15 @@ public class Lec13ConcatMap {
     <img src="Flux_Then_Mono_Then_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
+
 <details>
 
-<summary id="collect list" open="true" alt="reactive programming"> <b> Operator .then() assigment! </b> </summary>
+<summary id="collect list" open="true" alt="reactive programming"> <b>  Mono.then(...) and Flux.then(...) working source code! </b> </summary>
 
 ````Java
 
 ````
+
 </details>
 
 # *** Assignment ***.
@@ -1604,7 +1808,6 @@ add here the code
 <div align="center">
     <img src="Quiz 05/Q1.PNG" width="700"/>
 </div>
-
 
 1. Add here the explanation
 
@@ -1679,3 +1882,9 @@ Add here the question.
 1. Add here the answer.
 
 </details>
+
+
+
+
+
+
