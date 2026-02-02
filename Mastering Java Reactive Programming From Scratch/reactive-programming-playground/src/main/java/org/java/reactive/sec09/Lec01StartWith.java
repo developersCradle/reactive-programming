@@ -16,12 +16,9 @@ public class Lec01StartWith {
     private static final Logger log = LoggerFactory.getLogger(Lec01StartWith.class);
 
     public static void main(String[] args) {
-
-        demo4();
-
+        demo1();
 
         Util.sleepSeconds(3);
-
     }
 
     private static void demo1(){
@@ -29,6 +26,13 @@ public class Lec01StartWith {
                 .startWith(-1, 0)
                 .subscribe(Util.subscriber());
     }
+
+    private static Flux<Integer> producer1(){
+        return Flux.just(1, 2, 3)
+                .doOnSubscribe(s -> log.info("subscribing to producer1"))
+                .delayElements(Duration.ofMillis(10));
+    }
+
 
     private static void demo2(){
         producer1()
@@ -49,12 +53,6 @@ public class Lec01StartWith {
                 .startWith(producer2())
                 .startWith(49, 50)
                 .subscribe(Util.subscriber());
-    }
-
-    private static Flux<Integer> producer1(){
-        return Flux.just(1, 2, 3)
-                   .doOnSubscribe(s -> log.info("subscribing to producer1"))
-                   .delayElements(Duration.ofMillis(10));
     }
 
     private static Flux<Integer> producer2(){

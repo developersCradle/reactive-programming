@@ -39,11 +39,11 @@ Combining Publishers.
 # Start With.
 
 <div align="center">
-    <img src="StartWith_With_Mono_And_Flux_In_Project_Reactor.png" alt="reactive programming" width="700"/>
+    <img src="1StartWith_With_Mono_And_Flux.PNG" alt="reactive programming" width="400"/>
 </div>
 
 > [!TIP]
-> `.startWith(...)` combines **two publishers**, but it does **NOT** `merge` them concurrently.
+> `.startWith(...)` adds values (or another Publisher) at the **beginning** of a reactive sequence.
 
 <div align="center">
     <img src="StartWith_With_Mono_And_Flux.PNG" width="700"/>
@@ -53,6 +53,49 @@ Combining Publishers.
 2. With the `.startWith(...)` we can combine **two publishers** into **one publisher**!  
 3. From **subscriber** point of view, it will be one **publisher**!
     - In `3.1`, if the **publisher** wants **6** items, it will check from **first publisher** in `1` and then get rest from **second publisher** in `2`!
+
+- First experiment with the `.startWith(-1, 0)`, it should emit `-1, 0` **first**, before going into `.producer1(...)` and **then** emit `1, 2, 3`:
+
+````Java
+    public static void main(String[] args)
+    {
+        demo1();
+
+        Util.sleepSeconds(3);
+    }
+
+    private static void demo1()
+    {
+        producer1()
+                .startWith(-1, 0)
+                .subscribe(Util.subscriber());
+    }
+    private static Flux<Integer> producer1()
+    {
+        return Flux.just(1, 2, 3)
+                   .doOnSubscribe(s -> log.info("subscribing to producer1"))
+                   .delayElements(Duration.ofMillis(10));
+    }
+````
+
+<div align="center">
+    <img src="Using_startWith_In_Flux.gif" alt="reactive programming" width="700"/>
+</div>
+
+- You can see the logs:
+    - `1.` **First** `received: -1` and `received: 0`.
+    - `2.` **Second** logs `subscribing to producer1` and then `received: 1`, `received: 2`, `received: 3` and `received complete!`.
+
+````Bash
+00:14:48.089 INFO  [           main] o.j.r.common.DefaultSubscriber :  received: -1
+00:14:48.100 INFO  [           main] o.j.r.common.DefaultSubscriber :  received: 0
+00:14:48.108 INFO  [           main] o.j.r.sec09.Lec01StartWith     : subscribing to producer1
+00:14:48.138 INFO  [     parallel-1] o.j.r.common.DefaultSubscriber :  received: 1
+00:14:48.153 INFO  [     parallel-2] o.j.r.common.DefaultSubscriber :  received: 2
+00:14:48.169 INFO  [     parallel-3] o.j.r.common.DefaultSubscriber :  received: 3
+00:14:48.179 INFO  [     parallel-3] o.j.r.common.DefaultSubscriber :  received complete!
+````
+
 
 <details>
 <summary id="reactive programming
@@ -80,7 +123,7 @@ Combining Publishers.
 # Concat With.
 
 <div align="center">
-    <img src="ConcatWith_With_Mono_And_Flux_In_Project_Reactor.png" alt="reactive programming" width="700"/>
+    <img src="ConcatWith_With_Mono_And_Flux_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
 <details>
@@ -97,7 +140,7 @@ Combining Publishers.
 # Concat Delay Error.
 
 <div align="center">
-    <img src="ConcatDelayError_With_Flux_In_Project_Reactor.png" alt="reactive programming" width="700"/>
+    <img src="ConcatDelayError_With_Flux_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
 
@@ -136,7 +179,7 @@ Combining Publishers.
 # Zip.
 
 <div align="center">
-    <img src="Zip_In_Project_Reactor.png" alt="reactive programming" width="700"/>
+    <img src="Zip_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
 <div align="center">
