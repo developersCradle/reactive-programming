@@ -16,14 +16,13 @@ public class Lec01StartWith {
     private static final Logger log = LoggerFactory.getLogger(Lec01StartWith.class);
 
     public static void main(String[] args) {
-        demo1();
-
+        demo2();
         Util.sleepSeconds(3);
     }
 
-    private static void demo1(){
+    private static void demo2(){
         producer1()
-                .startWith(-1, 0)
+                .startWith(List.of(-2, -1, 0))
                 .subscribe(Util.subscriber());
     }
 
@@ -33,12 +32,19 @@ public class Lec01StartWith {
                 .delayElements(Duration.ofMillis(10));
     }
 
-
-    private static void demo2(){
+    private static void demo1WithTakeWith(){
         producer1()
-                .startWith(List.of(-2, -1, 0))
+                .startWith(-1, 0)
+                .take(2)
                 .subscribe(Util.subscriber());
     }
+
+    private static void demo1(){
+        producer1()
+                .startWith(-1, 0)
+                .subscribe(Util.subscriber());
+    }
+
 
     private static void demo3(){
         producer1()

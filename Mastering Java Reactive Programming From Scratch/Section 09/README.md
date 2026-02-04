@@ -78,6 +78,8 @@ Combining Publishers.
     }
 ````
 
+- We are using `.startWith(-1, 0)`.
+
 <div align="center">
     <img src="Using_startWith_In_Flux.gif" alt="reactive programming" width="700"/>
 </div>
@@ -96,6 +98,54 @@ Combining Publishers.
 00:14:48.179 INFO  [     parallel-3] o.j.r.common.DefaultSubscriber :  received complete!
 ````
 
+- Another illustration point, is using the `.take(2)`.
+    - `.take(n)` only allows the first **n item to pass** through.
+
+````Java
+    public static void main(String[] args) {
+
+        demo1WithTakeWith();
+
+        Util.sleepSeconds(3);
+    }
+
+    private static void demo1WithTakeWith(){
+        producer1()
+                .startWith(-1, 0)
+                .take(2)
+                .subscribe(Util.subscriber());
+    }
+````
+
+- todo MAKE THIS GIF.
+
+
+- Another example of usage is with `.startWith(...)` added with `.producer1(...)`.
+
+````Java
+
+    public static void main(String[] args) {
+        demo2();
+        Util.sleepSeconds(3);
+    }
+
+    private static void demo2(){
+        producer1()
+                .startWith(List.of(-2, -1, 0))
+                .subscribe(Util.subscriber());
+    }
+
+    private static Flux<Integer> producer1(){
+        return Flux.just(1, 2, 3)
+                .doOnSubscribe(s -> log.info("subscribing to producer1"))
+                .delayElements(Duration.ofMillis(10));
+    }
+````
+
+
+
+
+
 
 <details>
 <summary id="reactive programming
@@ -107,8 +157,13 @@ Combining Publishers.
 
 </details>
 
-
 # Start With - Usecases.
+
+<div align="center">
+    <img src="StartWith_With_Mono_And_Flux_Usecases.PNG" alt="reactive programming" width="400"/>
+</div>
+
+
 
 <details>
 <summary id="reactive programming
@@ -136,7 +191,6 @@ Combining Publishers.
 
 </details>
 
-
 # Concat Delay Error.
 
 <div align="center">
@@ -154,11 +208,10 @@ Combining Publishers.
 
 </details>
 
-
 # Merge.
 
 <div align="center">
-    <img src="#" alt="reactive programming" width="700"/>
+    <img src="Flux_Merge_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
 
@@ -172,9 +225,12 @@ Combining Publishers.
 
 </details>
 
-
-
 # Merge - Usecases.
+
+<div align="center">
+    <img src="#" alt="reactive programming" width="400"/>
+</div>
+
 
 # Zip.
 
