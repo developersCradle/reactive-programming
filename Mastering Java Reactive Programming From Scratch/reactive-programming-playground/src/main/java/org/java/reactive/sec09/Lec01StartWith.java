@@ -16,8 +16,27 @@ public class Lec01StartWith {
     private static final Logger log = LoggerFactory.getLogger(Lec01StartWith.class);
 
     public static void main(String[] args) {
-        demo2();
+        demo3();
         Util.sleepSeconds(3);
+    }
+
+    private static void demo3(){
+        producer1()
+                .startWith(producer2())
+                .subscribe(Util.subscriber());
+    }
+
+    private static Flux<Integer> producer2(){
+        return Flux.just(51, 52, 53)
+                .doOnSubscribe(s -> log.info("subscribing to producer2"))
+                .delayElements(Duration.ofMillis(10));
+    }
+
+
+    private static Flux<Integer> producer1(){
+        return Flux.just(1, 2, 3)
+                .doOnSubscribe(s -> log.info("subscribing to producer1"))
+                .delayElements(Duration.ofMillis(10));
     }
 
     private static void demo2(){
@@ -26,18 +45,6 @@ public class Lec01StartWith {
                 .subscribe(Util.subscriber());
     }
 
-    private static Flux<Integer> producer1(){
-        return Flux.just(1, 2, 3)
-                .doOnSubscribe(s -> log.info("subscribing to producer1"))
-                .delayElements(Duration.ofMillis(10));
-    }
-
-    private static void demo1WithTakeWith(){
-        producer1()
-                .startWith(-1, 0)
-                .take(2)
-                .subscribe(Util.subscriber());
-    }
 
     private static void demo1(){
         producer1()
@@ -46,25 +53,20 @@ public class Lec01StartWith {
     }
 
 
-    private static void demo3(){
+    private static void demo1WithTakeWith(){
         producer1()
-                .startWith(producer2())
+                .startWith(-1, 0)
+                .take(2)
                 .subscribe(Util.subscriber());
     }
-
     // 49,50,51,52,53,0,1,2,3
+
     private static void demo4(){
         producer1()
                 .startWith(0)
                 .startWith(producer2())
                 .startWith(49, 50)
                 .subscribe(Util.subscriber());
-    }
-
-    private static Flux<Integer> producer2(){
-        return Flux.just(51, 52, 53)
-                   .doOnSubscribe(s -> log.info("subscribing to producer2"))
-                   .delayElements(Duration.ofMillis(10));
     }
 
 }

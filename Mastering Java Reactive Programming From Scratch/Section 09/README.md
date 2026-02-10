@@ -22,7 +22,7 @@ Combining Publishers.
 2. Often times **microservice architecture** has **multiple sources of data**.
     - Many times' backend will ask from **multiple sources** and **aggregates** data and send it back to the **front end**!
     - Also, notice that returned types can be different, **Flux** or **Mono**!
-
+ 
 > [!TIP]
 > 💡 There is usually **multiple** smaller request in backend for **one** front end request! 💡
 >    - These smaller requests can be in different shapes and sizes!  
@@ -54,7 +54,7 @@ Combining Publishers.
 3. From **subscriber** point of view, it will be one **publisher**!
     - In `3.1`, if the **publisher** wants **6** items, it will check from **first publisher** in `1` and then get rest from **second publisher** in `2`!
 
-- First experiment with the `.startWith(-1, 0)`, it should emit `-1, 0` **first**, before going into `.producer1(...)` and **then** emit `1, 2, 3`:
+- First experiment with the `.startWith(-1, 0)`, it should emit `-1, 0` **first**, before going into `.producer1(...)` and **then** emits `1, 2, 3`:
 
 ````Java
     public static void main(String[] args)
@@ -78,7 +78,7 @@ Combining Publishers.
     }
 ````
 
-- We are using `.startWith(-1, 0)`.
+- Illustration where, we are using `.startWith(-1, 0)`.
 
 <div align="center">
     <img src="Using_startWith_In_Flux.gif" alt="reactive programming" width="700"/>
@@ -86,7 +86,14 @@ Combining Publishers.
 
 - You can see the logs:
     - `1.` **First** `received: -1` and `received: 0`.
-    - `2.` **Second** logs `subscribing to producer1` and then `received: 1`, `received: 2`, `received: 3` and `received complete!`.
+    - `2.` **Second** logs:
+        - `subscribing to producer1`.
+        - `received: 1`.
+        - `received: 2`.
+        - `received: 3`.
+        - `received complete!`.
+
+- Same as in logs:
 
 ````Bash
 00:14:48.089 INFO  [           main] o.j.r.common.DefaultSubscriber :  received: -1
@@ -98,8 +105,15 @@ Combining Publishers.
 00:14:48.179 INFO  [     parallel-3] o.j.r.common.DefaultSubscriber :  received complete!
 ````
 
-- Another illustration point, is using the `.take(2)`.
-    - `.take(n)` only allows the first **n item to pass** through.
+<div align="center">
+    <img src="Take_Operation_For_Flux_And_Mono.png" alt="reactive programming" width="400"/>
+</div>
+
+> [!NOTE]
+> Usage of `.take(n)` only allows the first **n item to pass** through.
+
+- We will be illustrating the point, is using the `.take(2)`, with following code:
+    
 
 ````Java
     public static void main(String[] args) {
@@ -117,10 +131,25 @@ Combining Publishers.
     }
 ````
 
-- todo MAKE THIS GIF.
+- Here is example of using the `.take(2)`.
 
+<div align="center">
+    <img src="We_Are_Using_The_Take_For_The_Mono_And_For_The_Flux.gif" alt="reactive programming" width="700"/>
+</div>
 
-- Another example of usage is with `.startWith(...)` added with `.producer1(...)`.
+1. The `.take(2)` allows only **two** items to pass.
+    - You can see the `received: -1` and `received: 0`.
+2. The `log.info("subscribing to producer1"))` never gets called!
+
+- The logs from the `.take(2)` operation.
+
+````Bash
+19:16:17.039 INFO  [           main] o.j.r.common.DefaultSubscriber :  received: -1
+19:16:17.046 INFO  [           main] o.j.r.common.DefaultSubscriber :  received: 0
+19:16:17.052 INFO  [           main] o.j.r.common.DefaultSubscriber :  received complete!
+````
+
+- Another example of usage is with `.startWith(...)` accepts the **Iterable**.
 
 ````Java
 
@@ -142,14 +171,85 @@ Combining Publishers.
     }
 ````
 
+- The illustration for `.startWith(...)` accepts the **Iterable**.
+
+<div align="center">
+    <img src="We_Are_Using_The_StartWith_With_The_Iterable.gif" alt="reactive programming" width="700"/>
+</div>
 
 
+1. You can see the values:
+    - First values from `.startWith(List.of(-2, -1, 0))`.
+    - Second values from `producer1`.
+    
 
+- We get following logs:
+
+````Bash
+19:32:28.557 INFO  [           main] o.j.r.common.DefaultSubscriber :  received: -2
+19:32:28.562 INFO  [           main] o.j.r.common.DefaultSubscriber :  received: -1
+19:32:28.562 INFO  [           main] o.j.r.common.DefaultSubscriber :  received: 0
+19:32:28.567 INFO  [           main] o.j.r.sec09.Lec01StartWith     : subscribing to producer1
+19:32:28.594 INFO  [     parallel-1] o.j.r.common.DefaultSubscriber :  received: 1
+19:32:28.610 INFO  [     parallel-2] o.j.r.common.DefaultSubscriber :  received: 2
+19:32:28.626 INFO  [     parallel-3] o.j.r.common.DefaultSubscriber :  received: 3
+19:32:28.630 INFO  [     parallel-3] o.j.r.common.DefaultSubscriber :  received complete!
+````
+
+- Next example we will be chaining producers to the `.startWith(...)`, with following code:
+
+
+````Java
+    public static void main(String[] args) {
+        demo3();
+        Util.sleepSeconds(3);
+    }
+
+    private static void demo3(){
+        producer1()
+                .startWith(producer2())
+                .subscribe(Util.subscriber());
+    }
+
+    private static Flux<Integer> producer2(){
+        return Flux.just(51, 52, 53)
+                .doOnSubscribe(s -> log.info("subscribing to producer2"))
+                .delayElements(Duration.ofMillis(10));
+    }
+
+    private static Flux<Integer> producer1(){
+        return Flux.just(1, 2, 3)
+                .doOnSubscribe(s -> log.info("subscribing to producer1"))
+                .delayElements(Duration.ofMillis(10));
+    }
+````
+
+
+- add here th gix
+
+
+- The logs from the experiment:
+    - We can clearly see the **emitting order**!
+        - **First**
+        - **Second**
+
+````Bash
+20:37:13.053 INFO  [           main] o.j.r.sec09.Lec01StartWith     : subscribing to producer2
+20:37:13.095 INFO  [     parallel-1] o.j.r.common.DefaultSubscriber :  received: 51
+20:37:13.126 INFO  [     parallel-2] o.j.r.common.DefaultSubscriber :  received: 52
+20:37:13.142 INFO  [     parallel-3] o.j.r.common.DefaultSubscriber :  received: 53
+20:37:13.142 INFO  [     parallel-3] o.j.r.sec09.Lec01StartWith     : subscribing to producer1
+20:37:13.158 INFO  [     parallel-4] o.j.r.common.DefaultSubscriber :  received: 1
+20:37:13.174 INFO  [     parallel-5] o.j.r.common.DefaultSubscriber :  received: 2
+20:37:13.190 INFO  [     parallel-6] o.j.r.common.DefaultSubscriber :  received: 3
+20:37:13.201 INFO  [     parallel-6] o.j.r.common.DefaultSubscriber :  received complete!
+````
 
 
 <details>
 <summary id="reactive programming
 " open="true" alt="reactive programming"> <b> Flux.startWith(...) and Mono.startWith(...) working source code!</b> </summary>
+
 
 ````Java
 
@@ -215,6 +315,8 @@ Combining Publishers.
 </div>
 
 
+ - Todo rename this image to mono + flux.
+
 <details>
 <summary id="reactive programming
 " open="true" alt="reactive programming"> <b> merge use cases working source code!</b> </summary>
@@ -228,14 +330,16 @@ Combining Publishers.
 # Merge - Usecases.
 
 <div align="center">
-    <img src="#" alt="reactive programming" width="400"/>
+    <img src="Merge_With_Flux_And_Mono_Use_Cases_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
+
+- Todo this chapter!
 
 # Zip.
 
 <div align="center">
-    <img src="Zip_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+    <img src="Zip_For_Mono_And_Flux_In_Project_Reactor.png" alt="reactive programming" width="400"/>
 </div>
 
 <div align="center">
@@ -453,14 +557,18 @@ public class Lec07Zip {
     <img src="Zip_Assigment.PNG" alt="reactive programming" width="600"/>
 </div>
 
-1. `Mono.zip(...)` is also possible, not just `Flux.zip()`.
-2. We will call these services for **front end**.
+1. For this example, you can see there is **just one mono** being published, hence only **one** car can be produced!
+    -  `Mono.zip(...)` and `Flux.zip()` is also possible!
+2. Often times there is call from the **front end**, like in this case!
 
 <div align="center">
     <img src="Zip_Assigment_How_We_Are_Dealing_With_It.PNG" alt="reactive programming" width="600"/>
 </div>
 
-1. Code as following:
+1. **Task:**
+    - Is to implement this `.zip` for this `external-services.jar` service!
+
+2. It could be as following implementation:
     ````Java
     var client = new ExternalServiceClient();
 
@@ -472,6 +580,8 @@ public class Lec07Zip {
     }
     ````
 
+- The **task** is required to be run against the server! The endpoints below:
+    - `external-services.jar`
 <div align="center">
     <img src="Task_Takes_Against_Task_05.PNG" alt="reactive programming" width="600"/>
 </div>

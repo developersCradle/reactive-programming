@@ -34,7 +34,7 @@ All course material from *Mastering Java Reactive Programming [From Scratch]* **
 > We were building a KYC service that needed to execute multiple verification steps—identity checks, document validation, and compliance screening—using reactive programming. Each step depended on the successful completion of the previous one, making execution order critical while still requiring a non-blocking design.<br><br>
 ~ *DevelopersCradle*
 
-Contains my own notes with some course material to enforce learning experience.
+Contains my own with my own visual notes ✍️ with some course material to enforce learning experience.
 
 If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
 
@@ -59,13 +59,13 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 - [x] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2001#section-01-introduction) - Introduction. ✅
 - [x] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2002#section-02-mono) - Mono. ✅
-- [ ] [Section 03](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2003/README.md#section-03-flux) - Flux.
+- [ ] [Section 03](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2003/README.md#section-03-flux) - Flux. ⚠️ In progress! ⚠️
 - [ ] [Section 04](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2004#section-04-flux---emitting-items-programmatically) - Flux - Emitting Items Programmatically.
 - [ ] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2005#section-05-operators) - Operators.
 - [ ] [Section 06](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2006#section-06-hot--cold-publishers) - Hot & Cold Publishers.
 - [ ] [Section 07](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2007#section-07-optional---threading--schedulers) - [OPTIONAL] - Threading & Schedulers.
 - [ ] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2008#section-08-optional---back-pressure--overflow-strategy) - [OPTIONAL] - Back Pressure / Overflow Strategy.
-- [ ] [Section 09](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#section-09-combining-publishers) - Combining Publishers.
+- [ ] [Section 09](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#section-09-combining-publishers) - Combining Publishers. ⚠️ In progress! ⚠️
 - [ ] [Section 10](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2010/README.md#section-10-optional---batching--windowing--grouping) - [OPTIONAL] - Batching / Windowing / Grouping.
 - [ ] [Section 11](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2011/README.md#section-11-repeat--retry) - Repeat & Retry.
 - [ ] [Section 12](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2012#section-12-sinks) - Sinks.
@@ -80,6 +80,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] Do the IO model chapter for simplicity’s sake.
 - [ ] You can check the [Virtaul Thread](https://www.udemy.com/course/java-virtual-thread/) vs reactive programming.
 - [ ] Do the `Mono - From Future` after the done with the multithreading.
+- [ ] After finishing this, read thought [Solita's Article](https://dev.solita.fi/2020/06/08/introduction-to-spring-webflux.html). ✅
 
 <details>
 
@@ -149,10 +150,17 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 All course material from *Spring WebFlux Masterclass: Reactive Microservices [New]* by **Vinoth Selvaraj**.
 
-> Add here some story <br><br>
+
+
+> We were building a reactive API that had to process complex business workflows without ever blocking a thread.
+>
+> Every incoming request kicked off a multi-step pipeline: validation, enrichment, rule evaluation, and persistence. None of these steps could run out of order, and any failure needed to stop the flow immediately while still returning a meaningful response.
+>
+>**By the end**, we had an API that behaved more like a controlled workflow engine than a traditional request–response service—precise, resilient, and scalable by design.<br><br>
 ~ *DevelopersCradle*
 
-Contains my own notes with some course material to enforce learning experience.
+
+Contains my with own visual notes ✍️ added to some course material to enforce learning experience.
 
 If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
 
@@ -220,10 +228,12 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 All course material from *Reactive Programming in Modern Java using Project Reactor* by **Pragmatic Code School**.
 
-> Add here some story <br><br>
+>We were tasked with building a reactive API for a system that had to juggle multiple, dependent operations—each one critical, each one potentially slow.
+>
+>By the end, the API wasn’t just fast—it was intelligent. It understood dependencies, managed failures elegantly, and scaled effortlessly. Building it wasn’t just about reactive programming; it was about designing a system that moved with the rhythm of the workload, never ahead of it, never behind it.<br><br>
 ~ *DevelopersCradle*
 
-Contains my own notes with some course material to enforce learning experience.
+Contains some course material to enforce learning experience, with my own visual notes. ✍️
 
 If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
 
@@ -301,7 +311,7 @@ All course material from *Build Reactive MicroServices using Spring WebFlux/Spri
 > Add here some story <br><br>
 ~ *DevelopersCradle*
 
-Contains my own notes with some course material to enforce learning experience.
+Contains with my own visual notes ✍️ with some course material to enforce learning experience.
 
 If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
 
