@@ -25,14 +25,14 @@ Flux.
 - We can make **multiple** of something:
     - We can make **List** of using **Java 8** feature `List.of(1,2,3,4); `
     - Same, with the **Flux** 
-    ```
+    ```Java
     Flux.just(1,2 ,3 ) 
         .subscribe(Util.subscriber());`
     ````
 
 - We are getting:
 
-````
+````Bash
 20:09:08.518 INFO  [           main] o.j.r.common.DefaultSubscriber :  received: 1
 20:09:08.524 INFO  [           main] o.j.r.common.DefaultSubscriber :  received: 2
 20:09:08.524 INFO  [           main] o.j.r.common.DefaultSubscriber :  received: 3
@@ -84,7 +84,7 @@ public class Lec01FluxJust {
 
 - The logs:
 
-````
+````Bash
 17:56:47.698 INFO  [           main] o.j.r.common.DefaultSubscriber : sub1 received: 1
 17:56:47.702 INFO  [           main] o.j.r.common.DefaultSubscriber : sub1 received: 2
 17:56:47.702 INFO  [           main] o.j.r.common.DefaultSubscriber : sub1 received: 3
@@ -138,7 +138,7 @@ public class Lec02MultipleSubscribers {
 
 - Converting to from **Collection** to the **Flux**: 
 
-````
+````Java
    // From Java collection:
         var list = List.of("a","b","c");
         Flux.fromIterable(list)
@@ -147,7 +147,7 @@ public class Lec02MultipleSubscribers {
 
 - Converting to from **Array** to the **Flux**:
 
-````
+````Java 
 // Form Java array:
         Integer[] arr = {1,2,3,4,5,6,7};
         Flux.fromArray(arr)
@@ -156,7 +156,7 @@ public class Lec02MultipleSubscribers {
 
 - Logging:
 
-````
+````Bash
 18:11:29.544 INFO  [           main] o.j.r.common.DefaultSubscriber :  received: a
 18:11:29.548 INFO  [           main] o.j.r.common.DefaultSubscriber :  received: b
 18:11:29.548 INFO  [           main] o.j.r.common.DefaultSubscriber :  received: c
@@ -174,7 +174,7 @@ public class Lec02MultipleSubscribers {
 
 - The Exercise `Lec03FluxFromIterableOrArray.java`:
 
-````
+````Java
 package org.java.reactive.sec03;
 
 import org.java.reactive.common.Util;
@@ -206,7 +206,7 @@ public class Lec03FluxFromIterableOrArray {
 
 - We get *error* when **Subscribing** **two times** to the **Flux**, which have has data from the **Stream**:
 
-````
+````Java
     var list = List.of(1,2,3,4);
     var stream = list.stream();
 
@@ -217,7 +217,7 @@ public class Lec03FluxFromIterableOrArray {
 
 - Would throw error:
 
-````
+````Bash
 18:26:36.297 INFO  [           main] o.j.r.common.DefaultSubscriber : sub1 received: 1
 18:26:36.302 INFO  [           main] o.j.r.common.DefaultSubscriber : sub1 received: 2
 18:26:36.302 INFO  [           main] o.j.r.common.DefaultSubscriber : sub1 received: 3

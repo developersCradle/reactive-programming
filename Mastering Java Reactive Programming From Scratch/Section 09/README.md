@@ -580,8 +580,8 @@ public class Lec07Zip {
     }
     ````
 
-- The **task** is required to be run against the server! The endpoints below:
-    - `external-services.jar`
+- The **task** is required to be run against the `external-services.jar` server ! The endpoints below:
+    
 <div align="center">
     <img src="Task_Takes_Against_Task_05.PNG" alt="reactive programming" width="600"/>
 </div>

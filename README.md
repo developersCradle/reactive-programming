@@ -1,6 +1,62 @@
+<!-- 
+
+We are using following structure:
 
 <p align="center">
-    <img id="studying" src="Reactive_Cat_Courses_Caption.png" style="width:790px;height:410px;">
+    <img
+     src="Jackson_Quick_Start_JSON_Serialization_With_Java_Made_Easy_Caption.png"
+    alt="Jackson quick start json serialization with java made easy caption!"
+    style="width:1600px;height:120px;"/>
+</p> 
+<p align="center">
+    <img
+    id="Jackson_Quick_Start_JSON_Serialization_With_Java_Made_Easy_Description?trk=public_profile_see-credential" src="Jackson_Quick_Start_JSON_Serialization_With_Java_Made_Easy_Description.png"
+    alt="Jackson quick start json serialization with java made easy description!"
+    style="width:590px; height:160px;" />
+</p>
+
+-->
+
+
+<!--
+Template for the questions:
+
+# Quiz 07: Atomic Operations, Volatile & Metrics Practical Example.
+
+<details>
+<summary id="Question_01" open="true"> <b>Question 01.</b> </summary>
+````yaml
+Question 01:
+The question comes here!
+
+- My answer:
+
+<div align="center">
+    <img src="Quiz 07/Q1.PNG" width="600"/>
+</div>
+
+1. Add here the answer!
+
+</details>
+-->
+
+<!-- 
+Template for the task/exercies:
+ 
+# Lab Exercise - Mapping Collections of Value Types.
+
+<div align="center">
+    <img src="add here the exercise!" alt="Hibernate java persistence!" width=" 500"/>
+</div>
+
+1. **Question 1:** add here the question from the test!
+	- **Answer:** **D**. here can be the examplaniton!
+ -->
+ 
+ # Reactive programming!
+
+<p align="center">
+    <img id="studying" src="Reactive_Programming.jpg" style="width:500px;height:410px;">
     <p align="center">
     Attempt to study <b>Reactive Programming</b> and related topics!
     </p>
@@ -13,7 +69,7 @@
 <br>
 
 <p align="center">
-    <img src="reactiveSeries.JPG" alt="reactive programming" width="700"/>
+    <img src="Reactive_Course_Series.JPG" alt="Reactive course programming series!" width="700"/>
 </p>
 
 1. About **Complete Java Reactive Programming**. [Course](https://www.udemy.com/course/complete-java-reactive-programming/). 
@@ -34,7 +90,7 @@ All course material from *Mastering Java Reactive Programming [From Scratch]* **
 > We were building a KYC service that needed to execute multiple verification steps—identity checks, document validation, and compliance screening—using reactive programming. Each step depended on the successful completion of the previous one, making execution order critical while still requiring a non-blocking design.<br><br>
 ~ *DevelopersCradle*
 
-Contains my own with my own visual notes ✍️ with some course material to enforce learning experience.
+Contains my own visual notes ✍️ with some course material to enforce learning experience.
 
 If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
 
@@ -80,7 +136,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] Do the IO model chapter for simplicity’s sake.
 - [ ] You can check the [Virtaul Thread](https://www.udemy.com/course/java-virtual-thread/) vs reactive programming.
 - [ ] Do the `Mono - From Future` after the done with the multithreading.
-- [ ] After finishing this, read thought [Solita's Article](https://dev.solita.fi/2020/06/08/introduction-to-spring-webflux.html). ✅
+- [ ] After finishing this, read thought [Solita's Article](https://dev.solita.fi/2020/06/08/introduction-to-spring-webflux.html).
 
 <details>
 
@@ -136,9 +192,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
         * [Quiz 08](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#quiz-08).
     * *Coding Exercise*:
         * [Zip - Assignment](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#zip---assignment).
-        * [Zip - Assignment](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#zip---assignment).
-
-- add gif
+        * [FlatMap - Assignment](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#flatmap---assignment).
 
 <p align="center">
     <img id="Build Reactive MicroServices using Spring WebFlux Spring" src="Spring_WebFlux_Masterclass_High_Performance_Reactive_APIs_Caption.png" style="width:900px;height:90px;">
@@ -149,8 +203,6 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 </p>
 
 All course material from *Spring WebFlux Masterclass: Reactive Microservices [New]* by **Vinoth Selvaraj**.
-
-
 
 > We were building a reactive API that had to process complex business workflows without ever blocking a thread.
 >
@@ -386,11 +438,17 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
     * *Coding Exercise*:
         * [Some here](#).
 
-## Reactive Microservices Architecture & Design Patterns.
+# Reactive Microservices Architecture And Design Patterns.
 
-![Reactive Microservices Architecture & Design Patterns](Reactive%20Microservices%20Architecture%20&%20Design%20Patterns%20caption.PNG)
+<!-- <p align="center">
+    <img id="Build Reactive MicroServices using Spring WebFluxSpringBoot" src="Build_Reactive_MicroServices_Using_Spring_WebFlux_SpringBoot_Caption.png" style="width:1000px;height:130px;">
+</p> -->
 
-All course material from Reactive Microservices Architecture & Design Patterns by **Vinoth Selvaraj**.
+<p align="center">
+    <img src="Reactive_Microservices_Architecture_And_Design_Patterns_Description.PNG" alt="Reactive microservices architecture and design patterns description!" style="width: 680px;"/>
+</p>
+
+All course material from *Reactive Microservices Architecture & Design Patterns* by **Vinoth Selvaraj**.
 
 > Add here some story <br><br>
 ~ *DevelopersCradle*
