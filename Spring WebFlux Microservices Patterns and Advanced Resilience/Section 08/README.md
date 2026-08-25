@@ -53,7 +53,6 @@ Section 08: Reactive Resilience: Retry Pattern for Fault Tolerance.
 
 1. We can see most of these failing, it should be around the **70%** times!
 
-
 # External Services.
 
 # Project Setup.

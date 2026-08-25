@@ -1,5 +1,6 @@
-# Section 02:
+# Section 07: Reactive Resilience: Timeout Pattern.
 
-Some.
+Section 07: Reactive Resilience: Timeout Pattern.
 
-# What I Learned
+# What I Learned.
+

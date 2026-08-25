@@ -1,8 +1,8 @@
-# Section 13: What's Next?.
+# Section 13: What's Next?
 
- What's Next?.
+Section 13: What's Next?
 
-# What I Learned
+# What I Learned.
 
 
 

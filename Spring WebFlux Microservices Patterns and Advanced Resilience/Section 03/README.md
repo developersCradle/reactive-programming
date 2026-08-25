@@ -1,5 +1,8 @@
-# Section 03:
+# Section 03: Scatter Gather Pattern: High-Performance Service Composition.
 
-Some.
+Section 03: Scatter Gather Pattern: High-Performance Service Composition.
 
-# What I Learned
+# What I Learned.
+
+
+

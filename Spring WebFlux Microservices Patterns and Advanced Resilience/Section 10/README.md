@@ -1,5 +1,7 @@
-# Section 02:
+# Section 10: - Rate Limiter Pattern: Protecting APIs and Controlling Traffic.
 
-Some.
+Section 10: Rate Limiter Pattern: Protecting APIs and Controlling Traffic.
 
-# What I Learned
+# What I Learned.
+
+

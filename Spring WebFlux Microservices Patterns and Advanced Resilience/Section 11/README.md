@@ -1,5 +1,5 @@
-# Section 02:
+# Section 11: Bulkhead Pattern: Resource Isolation for High Availability.
 
-Some.
+Section 11: Bulkhead Pattern: Resource Isolation for High Availability.
 
-# What I Learned
+# What I Learned.

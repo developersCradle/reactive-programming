@@ -1,5 +1,5 @@
-# Section 02:
+# Section 09: Reactive Resilience: Circuit Breaker Pattern.
 
-Some.
+Section 09: Reactive Resilience: Circuit Breaker Pattern.
 
-# What I Learned
+# What I Learned.

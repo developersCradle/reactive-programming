@@ -477,7 +477,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 #### Progress/Curriculum.
 
-- [ ] [Section 01](#) - Welcome: Why Master Advanced Microservices Patterns. 
+- [ ] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2001#section-01-welcome-why-master-advanced-microservices-patterns) - Welcome: Why Master Advanced Microservices Patterns. 
 - [ ] [Section 02](#) - API Composition: Gateway Aggregator Pattern. 
 - [ ] [Section 03](#) - Scatter Gather Pattern: High-Performance Service Composition.
 - [ ] [Section 04](#) - Orchestrator Saga: Distributed Transactions & Parallel Workflow.
@@ -494,6 +494,10 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 #### Additional stuff.
 
 - The [repository](https://github.com/vinsguru/webflux-patterns) here!
+
+- [External service .JAR](https://github.com/developersCradle/reactive-programming/blob/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2001/external-services-v2.jar
+)!
+
 
 #### Reactive Redis Masterclass For Java Spring Boot Developers.
 

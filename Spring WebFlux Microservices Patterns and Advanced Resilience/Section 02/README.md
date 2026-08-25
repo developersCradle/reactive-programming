@@ -1,5 +1,6 @@
-# Section 02:
+# Section 02: API Composition: Gateway Aggregator Pattern. 
 
-Some.
+Section 02: API Composition: Gateway Aggregator Pattern. 
 
-# What I Learned
+# What I Learned.
+
