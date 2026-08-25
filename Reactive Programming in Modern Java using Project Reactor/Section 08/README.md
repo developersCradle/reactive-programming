@@ -6,7 +6,7 @@ Transforming Flux and Mono.
 
 # 16. Transform using map() Operator
 
-<img src="mapFunktio.PNG" alt="reactive programming" width="700"/>
+<img src="mapFunktio.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 
 - Flux `.map()` mapping operator.
 
@@ -39,7 +39,7 @@ Transforming Flux and Mono.
 
 # 17. Transforming Data Using Operators in Project Reactor
 
-<img src="whyTransformData.PNG" alt="reactive programming" width="700"/>
+<img src="whyTransformData.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 
 1. Sometimes we want to transform data to another form.
 
@@ -77,7 +77,7 @@ Transforming Flux and Mono.
  
 # 19. Filter using filter() Operator
 
-<img src="filterOperation.PNG" alt="reactive programming" width="700"/>
+<img src="filterOperation.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 
 -  We can chain operations to achieve wanted result. Here usage of `.filter()`.
 
@@ -213,7 +213,7 @@ void namesMono_map_filter() {
 
 # 20. Advanced transform using the flatMap() Operator
 
-<img src="flatMap.PNG" alt="reactive programming" width="600"/>
+<img src="flatMap.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 1. `flatMap()` return always **Flux** of given type.
 
@@ -315,11 +315,11 @@ void namesMono_map_filter() {
     }
 ```
 
-<img src="mapVsFlatMap.PNG" alt="reactive programming" width="600"/>
+<img src="mapVsFlatMap.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 # 22. Advanced transform using the concatMap() Operator
 
-<img src="concatMap.PNG" alt="reactive programming" width="600"/>
+<img src="concatMap.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 - `ConcatMap()` preserves order of elements. If **async** operation and want to preserve order, use this one. One note is that execution time is more.
 
@@ -365,7 +365,7 @@ void namesMono_map_filter() {
 
 # 23. flatMap( ) operator in Mono
 
-<img src="flatMapInMono.PNG" alt="reactive programming" width="600"/>
+<img src="flatMapInMono.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 
 - We can return list of characters in a single list.
@@ -409,7 +409,7 @@ void namesMono_map_filter() {
 
 ```
 
-<img src="flatMapMany.PNG" alt="reactive programming" width="600"/>
+<img src="flatMapMany.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 1. User case with flatmap with mono.
 2. Only flatMap.
@@ -417,7 +417,7 @@ void namesMono_map_filter() {
 
 # 24. flatMapMany() operator in Mono
 
-<img src="flatMapMany.PNG" alt="reactive programming" width="600"/>
+<img src="flatMapMany.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 - Use this when you wan't to return  **Flux** in your **Mono** pipeline.
 
@@ -463,7 +463,7 @@ void namesMono_map_filter() {
 
 # 25. Transform using the transform() Operator
 
-<img src="transform.PNG" alt="reactive programming" width="600"/>
+<img src="transform.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 1. Remember **Publisher** are is either **FLux** or **Mono**.
 
@@ -477,7 +477,7 @@ void namesMono_map_filter() {
 
 # 26. Handling empty data using defaultIfEmpty and switchIfEmpty() Operators
 
-<img src="defaultIfEmpty.PNG" alt="reactive programming" width="600"/>
+<img src="defaultIfEmpty.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 
 - We will return `Flux.empty()` for if there is no `onNext()`. Example like this.

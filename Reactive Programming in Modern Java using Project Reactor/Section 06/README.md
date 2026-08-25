@@ -6,11 +6,11 @@
 
 # 11. Imperative Style vs Functional Style
 
-<img src="whyFunctionalProgramming.PNG" alt="reactive programming" width="700"/>
+<img src="whyFunctionalProgramming.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 
 <br>
 
-<img src="whyFunctionalProgramming2.PNG" alt="reactive programming" width="700"/>
+<img src="whyFunctionalProgramming2.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 
 - Functional programming is huge topic and it can be made own code itself.
 
@@ -19,7 +19,7 @@
 
 - We explore this with following case.
 
-<img src="usercase.PNG" alt="reactive programming" width="700"/>
+<img src="usercase.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 
 ### Imperative Style of Code vs Functional Style of Code: **Imperative Style of Code**.
 

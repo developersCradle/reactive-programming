@@ -7,13 +7,13 @@ Flux.
 # Flux - Just.
 
 <div align="center">
-    <img src="Flux_Emmitting_Elements.JPG" alt="reactive programming" width="700"/>
+    <img src="Flux_Emmitting_Elements.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. **Flux** can emit 0 or more items followed by the `.onComplete()` or the `.onError()`!
 
 <div align="center">
-    <img src="fluxMethods.JPG" alt="reactive programming" width="500"/>
+    <img src="fluxMethods.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="500"/>
 </div>
 
 1. Some useful **Flux** factory methods, we can easily create **Flux** from:
@@ -330,7 +330,7 @@ Flux.range(1,5)
 ````
 
 <div align="center">
-    <img src="log.JPG" alt="reactive programming" width="600"/>
+    <img src="log.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. Log implements `Publisher` and `Subscriber`.
@@ -363,7 +363,7 @@ Flux.range(1,3)
 ````
 
 <div align="center">
-    <img src="loggingInStream.JPG" alt="reactive programming" width="900"/>
+    <img src="loggingInStream.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="900"/>
 </div>
 
 1. You can see these logging line **first**. Logger name: `log-map`.
@@ -406,7 +406,7 @@ public class Lec06Log {
 - After while the logging will be printing:
 
 <div align="center">
-    <img src="LoggingWithNormalWay.gif" alt="reactive programming" width="800"/>
+    <img src="LoggingWithNormalWay.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
 </div>
 
 - Logging with **Reactive Approach**.
@@ -421,7 +421,7 @@ public class Lec06Log {
     - We will be having idea what is happening under the hood.
 
 <div align="center">
-    <img src="LoggingWithReactive.gif" alt="reactive programming" width="800"/>
+    <img src="LoggingWithReactive.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
 </div>
 
 - The **Reactive logging** will be more responsible!
@@ -444,14 +444,14 @@ public class Lec06Log {
 ````
 
 <div align="center">
-    <img src="ReactingEarlyByCallingCancel.gif" alt="reactive programming" width="800"/>
+    <img src="ReactingEarlyByCallingCancel.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
 </div>
 
 - We can react **early** and cancel **emitting** the 
 **elements**!
 
 <div align="center">
-    <img src="listVsFlux.PNG" alt="reactive programming" width="800"/>
+    <img src="listVsFlux.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
 </div>
 
 1. **Tradition** approach the list will be returned as **one** list.
@@ -515,14 +515,14 @@ public class Lec07FluxList {
 # FAQ - Are Mono & Flux Data Structures?
 
 <div align="center">
-    <img src="monoFluxAreTheyDatastructures.PNG" alt="reactive programming" width="800"/>
+    <img src="monoFluxAreTheyDatastructures.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
 </div>
 
 1. These are like places to store data, to store data.
 2. There are like **transfer thought**.
 
 <div align="center">
-    <img src="imageRepresentation.PNG" alt="reactive programming" width="800"/>
+    <img src="imageRepresentation.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
 </div>
 
 1. **Real Life example**: Some bottles to store the data.
@@ -530,7 +530,7 @@ public class Lec07FluxList {
 2. **Real Life example**: Pipe that transfers the water.
 
 <div align="center">
-    <img src="transferringTroughtFlux.PNG" alt="reactive programming" width="800"/>
+    <img src="transferringTroughtFlux.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
 </div>
 
 1. We can transfer data to another **App1** to **App2**.
@@ -542,7 +542,7 @@ public class Lec07FluxList {
 - We can request stream of the data thought browser, as seen below:
 
 <div align="center">
-    <img src="requestingStreamOfDataInBrowser.gif" alt="reactive programming" width="800"/>
+    <img src="requestingStreamOfDataInBrowser.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
 </div>
 
 - We will be having the following **Client** for the `Flux<Strings>`.
@@ -567,7 +567,7 @@ var client = new ExternalServiceClient();
 ````
 
 <div align="center">
-    <img src="Lec08NonBlockingStreamingMessages.gif" alt="reactive programming" width="800"/>
+    <img src="Lec08NonBlockingStreamingMessages.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
 </div>
 
 - You can see that messages in server: 
@@ -589,7 +589,7 @@ var client = new ExternalServiceClient();
 ````
 
 <div align="center">
-    <img src="Lec08NonBlockingStreamingMessagesMultipleSubscribers.gif" alt="reactive programming" width="800"/>
+    <img src="Lec08NonBlockingStreamingMessagesMultipleSubscribers.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
 </div>
 
 - The Exercise `Lec08NonBlockingStreamingMessages.java`:
@@ -739,7 +739,7 @@ public class Lec11FluxMono {
 - We can see the
 
 <div align="center">
-    <img src="We_Are_Converting_Mono_To_Flux.gif" alt="reactive programming" width="800"/>
+    <img src="We_Are_Converting_Mono_To_Flux.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
 </div>
 
 1. We can see the `Mono` **converted** to the `Flux`. Sam will be as **result** `Sam!`

@@ -6,15 +6,15 @@ Cold & Hot Streams.
 
 # 62. Cold & Hot Streams
 
-<img src="coldStream.PNG" alt="reactive programming" width="600"/>
+<img src="coldStream.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 - We been using **Cold Streams** so far.
 
-<img src="coldStream2.PNG" alt="reactive programming" width="200"/>
+<img src="coldStream2.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="200"/>
 
 <br>
 
-<img src="hotStream.PNG" alt="reactive programming" width="600"/>
+<img src="hotStream.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 1. There are two types of **Hot Streams**.
 

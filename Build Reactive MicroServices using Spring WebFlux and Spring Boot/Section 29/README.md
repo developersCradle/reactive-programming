@@ -7,13 +7,13 @@ Retrying Failed HTTP Calls
 # Why Retry failed HTTP calls?
 
 <div align="center">
-    <img src="handlingNetworkErrors.PNG" alt="reactive programming" width="700"/>
+    <img src="handlingNetworkErrors.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. We need to make these ones resilient  and handle these failures.
 
 <div align="center">
-    <img src="retry.PNG" alt="reactive programming" width="700"/>
+    <img src="retry.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. Recommend pattern is **retry pattern**. 

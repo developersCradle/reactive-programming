@@ -7,20 +7,20 @@ Integration Testing External Services using WireMock.
 # Introduction to WireMock.
 
 <div align="center">
-    <img src="wireMockBefore.PNG" alt="reactive programming" width="700"/>
+    <img src="wireMockBefore.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. These needs to be mocked, when we want to integrate test **MoviesService**.
 
 <div align="center">
-    <img src="wireMock.PNG" alt="reactive programming" width="700"/>
+    <img src="wireMock.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. We can mock these ones with **WireMock**.
     - HTTP mocking library **WireMock**.
 
 <div align="center">
-    <img src="benefitOfWireMock.PNG" alt="reactive programming" width="700"/>
+    <img src="benefitOfWireMock.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 - We can easy to test network exceptions and more.   
@@ -226,7 +226,7 @@ public class MoviesControllerIntgTest {
 
 - We will override our server IP-address and ports for integration testing. 
 
-<img src="realIpAdress.PNG" alt="reactive programming" width="600"/>
+<img src="realIpAdress.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 1. These two are read port numbers will be override with following.
 

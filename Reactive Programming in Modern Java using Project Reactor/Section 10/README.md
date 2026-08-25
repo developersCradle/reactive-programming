@@ -10,9 +10,9 @@ Build Movie ReactiveService using Project Reactor.
 
 - **REMEMBER**. `var` should be imported form Java JDK, not from **Lobmok** project.
 
-<img src="enableAnnotationProcessing.PNG" alt="reactive programming" width="600"/>
+<img src="enableAnnotationProcessing.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
-<img src="reactiveMovieService.PNG" alt="reactive programming" width="600"/>
+<img src="reactiveMovieService.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 1. One service calling two different service is pretty common in **Microservice architecture**.
 

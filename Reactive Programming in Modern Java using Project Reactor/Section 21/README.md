@@ -12,11 +12,11 @@ Build NonBlocking RestClient using WebClient.
 
 - To run **.jar** file for external API `java -jar reactive-movies-restful-api.jar`.
 
-<img src="swaggerWorkign.PNG" alt="reactive programming" width="600"/>
+<img src="swaggerWorkign.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 - **Movie Service** will be following.
 
-<img src="movieService.PNG" alt="reactive programming" width="600"/>
+<img src="movieService.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 # 68. Build the non-blocking MovieInfoService RestClient
 
@@ -240,7 +240,7 @@ class ReviewServiceTest {
 
 # 72. Build getAllMovies non-blocking MovieReactiveService Client
 
-<img src="nonBlockingCall.PNG" alt="reactive programming" width="600"/>
+<img src="nonBlockingCall.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 1. As you can see, Reactor calls are non blocking. You can see, as soon as call is made to backend. Call is getting own **thread**.
 

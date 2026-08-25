@@ -7,13 +7,13 @@ Section 15: Unit Testing in Spring WebFlux.
 # Setting up the UnitTest in WebFlux.
 
 <div align="center">
-    <img src="unitTests.PNG " alt="reactive programming" width="600"/>
+    <img src="unitTests.PNG " Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. Our test will be like this.
 
 <div align="center">
-    <img src="benifitsOfUnitTests.PNG " alt="reactive programming" width="600"/>
+    <img src="benifitsOfUnitTests.PNG " Build Reactive MicroServices using Spring WebFlux/SpringBootes using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 - Unit tests.

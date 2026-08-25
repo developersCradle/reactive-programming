@@ -7,13 +7,13 @@ Introduction to Spring WebFlux.
 # Non-Blocking(Reactive) RestFul API using Spring WebFlux.
 
 <div align="center">
-    <img src="nonBlocking.PNG" alt="reactive programming" width="700"/>
+    <img src="nonBlocking.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 - **Non-blocking** means that requests thread are not blocked when there is **request** or **response**.
 
 <div align="center">
-    <img src="SpringWebFluxApp.PNG" alt="reactive programming" width="700"/>
+    <img src="SpringWebFluxApp.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. **Netty** is important to enabled in server level.

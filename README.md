@@ -477,22 +477,23 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 #### Progress/Curriculum.
 
-- [ ] [Introduction](#).
-- [ ] [Gateway Aggregator Pattern](#).
-- [ ] [Scatter Gather Pattern](#).
-- [ ] [Orchestrator Pattern (For Parallel Workflow)](#).
-- [ ] [Orchestrator Pattern (For Sequential Workflow)](#).
-- [ ] [Splitter Pattern](#).
-- [ ] [Timeout Pattern](#).
-- [ ] [Retry Pattern](#).
-- [ ] [Circuit Breaker Pattern](#). 
-- [ ] [Rate Limiter Pattern](#). 
-- [ ] [Bulkhead Pattern](#). 
-- [ ] [What's Next?](#). 
+- [ ] [Section 01](#) - Welcome: Why Master Advanced Microservices Patterns. 
+- [ ] [Section 02](#) - API Composition: Gateway Aggregator Pattern. 
+- [ ] [Section 03](#) - Scatter Gather Pattern: High-Performance Service Composition.
+- [ ] [Section 04](#) - Orchestrator Saga: Distributed Transactions & Parallel Workflow.
+- [ ] [Section 05](#) - Orchestrator Saga: Distributed Transactions & Sequential Workflow.
+- [ ] [Section 06](#) - Splitter Pattern: Routing Messages to Multiple Services.
+- [ ] [Section 07](#) - Reactive Resilience: Timeout Pattern.
+- [ ] [Section 08](#) - Reactive Resilience: Retry Pattern for Fault Tolerance.
+- [ ] [Section 09](#) - Reactive Resilience: Circuit Breaker Pattern.
+- [ ] [Section 10](#) - Rate Limiter Pattern: Protecting APIs and Controlling Traffic.
+- [ ] [Section 11](#) - Bulkhead Pattern: Resource Isolation for High Availability.
+- [ ] [Section 12](#) - Role Play & Practice Test.
+- [ ] [Section 13](#) - What's Next?.
 
 #### Additional stuff.
 
-- [ ] Stuff.
+- The [repository](https://github.com/vinsguru/webflux-patterns) here!
 
 #### Reactive Redis Masterclass For Java Spring Boot Developers.
 

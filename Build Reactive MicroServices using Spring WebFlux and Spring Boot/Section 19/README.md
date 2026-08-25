@@ -14,7 +14,7 @@ Spring WebFlux Under the Hood - Netty and Threading Model.
 - We need to make sure that **threads** are not blocked in aether of these two interactions **1.** or **2.**.
 
 <div align="center">
-    <img src="nettyNonBlocking.PNG " alt="reactive programming" width="600"/>
+    <img src="nettyNonBlocking.PNG " Build Reactive MicroServices using Spring WebFlux/SpringBootes using Spring WebFlux/SpringBootes using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 - There are different threads involved when query is made towards the **Netty**.
@@ -24,7 +24,7 @@ Spring WebFlux Under the Hood - Netty and Threading Model.
 # How does Netty handle the Request?
 
 <div align="center">
-    <img src="netty.PNG" alt="reactive programming" width="600"/>
+    <img src="netty.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBootes using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. When client is making request server, **channel** is open!
@@ -32,7 +32,7 @@ Spring WebFlux Under the Hood - Netty and Threading Model.
 <br>
 
 <div align="center">
-    <img src="channel.PNG" alt="reactive programming" width="600"/>
+    <img src="channel.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBootes using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. In channels **ChannelHandler** takes acre of internal works, such as:
@@ -41,13 +41,13 @@ Spring WebFlux Under the Hood - Netty and Threading Model.
     - Writing data back to client.
 
 <div align="center">
-    <img src="channelAndEventLoop.PNG" alt="reactive programming" width="600"/>
+    <img src="channelAndEventLoop.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 <br>
 
 <div align="center">
-    <img src="requestEventLoop.PNG" alt="reactive programming" width="600"/>
+    <img src="requestEventLoop.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. **Requests** are going into Event Queue.
@@ -56,13 +56,13 @@ Spring WebFlux Under the Hood - Netty and Threading Model.
 <br>
 
 <div align="center">
-    <img src="ChannelAndEventLoopLinked.PNG" alt="reactive programming" width="600"/>
+    <img src="ChannelAndEventLoopLinked.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 <br>
 
 <div align="center">
-    <img src="Channel Lifecycle.PNG" alt="reactive programming" width="600"/>
+    <img src="Channel Lifecycle.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. **ChannelUnregistered** channel is **created**, but not registered with the **Eventloop**.
@@ -73,6 +73,6 @@ Spring WebFlux Under the Hood - Netty and Threading Model.
 - These are handled by **Spring WebFlux**.
 
 <div align="center">
-    <img src="howNettyHandlesRequests.PNG" alt="reactive programming" width="600"/>
+    <img src="howNettyHandlesRequests.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 

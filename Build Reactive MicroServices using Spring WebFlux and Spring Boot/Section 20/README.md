@@ -7,6 +7,6 @@ Introduction to Functional Web Module in Spring WebFlux.
 # Introduction to Functional Web.
 
 <div align="center">
-    <img src="functionalWeb.PNG" alt="reactive programming" width="600"/>
+    <img src="functionalWeb.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 

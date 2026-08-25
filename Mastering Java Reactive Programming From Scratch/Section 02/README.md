@@ -118,20 +118,20 @@ Mono.
 - We are going to **Maven**, **IntelliJ** and **Java21**.
 
 <div align="center">
-    <img src="useFollowingProjectSetup.JPG" alt="reactive programming" width="700"/>
+    <img src="useFollowingProjectSetup.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 # Publisher/Subscriber Implementation - Part 1.
 
 <div align="center">
-    <img src="planToBuildOurOwnPublisherOrSubscriber.JPG" alt="reactive programming" width="700"/>
+    <img src="planToBuildOurOwnPublisherOrSubscriber.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. We **Don't** implement these ourselves in normal case!
     - We will be doing to gain understanding!
 
 <div align="center">
-    <img src="subscriberImplemented.JPG" alt="reactive programming" width="400"/>
+    <img src="subscriberImplemented.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 1. We will be implementing:
@@ -180,7 +180,7 @@ public class SubscriberImpl implements Subscriber<String> {
 ````
 
 <div align="center">
-    <img src="weAreCreatingThePublisher.JPG" alt="reactive programming" width="700"/>
+    <img src="weAreCreatingThePublisher.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 - `1.` We are defining the **Publisher**.
@@ -189,7 +189,7 @@ public class SubscriberImpl implements Subscriber<String> {
             - This will accept the **Subscriber**, so we could be passing the caller the **Subscription** object!
 
 <div align="center">
-    <img src="passingTheSubscriptionObject.JPG" alt="reactive programming" width="700"/>
+    <img src="passingTheSubscriptionObject.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 - `2.` We are creating the **Subscription object** and passing to the **Subscriber**.
@@ -214,11 +214,11 @@ public class PublisherImpl implements Publisher<String> {
 ````
 
 <div align="center">
-    <img src="connectingTheStuff.jpeg" alt="reactive programming" width="600"/>
+    <img src="connectingTheStuff.jpeg" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 <div align="center">
-    <img src="weAreImplemtingTheSubscriptionObject.JPG" alt="reactive programming" width="600"/>
+    <img src="weAreImplemtingTheSubscriptionObject.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. We are implanting the `SubscriptionImpl`, this is with the:
@@ -424,28 +424,28 @@ private static void demo1() {
 # Mono / Flux - Introduction.
 
 <div align="center">
-    <img src="monoDifferentFunctions.JPG" alt="reactive programming" width="600"/>
+    <img src="monoDifferentFunctions.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 - **Reactive Stream** is the specification and **Project Reactor** is the library.
     - **Project Reactor** would be the same as the **Hibernate** for the **JPA**.
 
 <div align="center">
-    <img src="reactorIsImplementingTheReactiveStandard.JPG" alt="reactive programming" width="600"/>
+    <img src="reactorIsImplementingTheReactiveStandard.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. The **Project reactor** provides **two** different implementation of the
 **Publisher<T>**.
 
 <div align="center">
-    <img src="mono.JPG" alt="reactive programming" width="600"/>
+    <img src="mono.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. `Mono` can **emit** `0` or `1` item!
     - There can be case when there are **no items** to **emit**, then there will be the `onComplete()`.
 
 <div align="center">
-    <img src="flux.JPG" alt="reactive programming" width="600"/>
+    <img src="flux.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. **Flux** can emit **multiple data**.
@@ -459,7 +459,7 @@ private static void demo1() {
 - Simple answer, it's **convenient**.
 
 <div align="center">
-    <img src="whyToUseMonoAndFlux.JPG" alt="reactive programming" width="600"/>
+    <img src="whyToUseMonoAndFlux.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. The **database** can return one or more data.
@@ -471,7 +471,7 @@ private static void demo1() {
     - **Reactive Stream way**, they have `Flux<Customer>`.
 
 <div align="center">
-    <img src="whyToUseMonoAndFluxSecond.JPG" alt="reactive programming" width="600"/>
+    <img src="whyToUseMonoAndFluxSecond.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. There will be many different methods in the `Flux`.
@@ -515,7 +515,7 @@ public class Lec01LazyStream {
     - Reactive Streams are **lazy**.
 
 <div align="center">
-    <img src="reactiveStreamAreLazy.jpeg" alt="reactive programming" width="600"/>
+    <img src="reactiveStreamAreLazy.jpeg" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 # Mono Just.
@@ -527,7 +527,7 @@ public class Lec01LazyStream {
         - This does not be any specific type. Example: `Mono.just(1); // Mono.just can be publisher of any type.`.
 
 <div align="center">
-    <img src="loggingMono.JPG" alt="reactive programming" width="600"/>
+    <img src="loggingMono.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. The logging would **not work** the `First`, since the publisher has not been **subscribed**.
@@ -559,7 +559,7 @@ mono.subscribe(t -> System.out.println(t));
 # Mono Subscribe - Overloaded Methods.
 
 <div align="center">
-    <img src="subscribeNotLoggingALl.JPG" alt="reactive programming" width="600"/>
+    <img src="subscribeNotLoggingALl.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. Two points to figure out:
@@ -1133,7 +1133,7 @@ public class Lec09PublisherCreateVsExecution {
 # What About Data From Remote Service?  
 
 <div align="center">
-    <img src="monoRemoteService.JPG" alt="reactive programming" width="700"/>
+    <img src="monoRemoteService.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. When the value is in memory already, no computation is required! 
@@ -1145,14 +1145,14 @@ public class Lec09PublisherCreateVsExecution {
 7. Emitting empty after method invocation.
 
 <div align="center">
-    <img src="monoT.JPG" alt="reactive programming" width="600"/>
+    <img src="monoT.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. The principle is following:
     - There will be some data providing **publishers** here.
 
 <div align="center">
-    <img src="dataFromTheRemoteService.JPG" alt="reactive programming" width="600"/>
+    <img src="dataFromTheRemoteService.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. `Mono.fromSupplier()` and remote calls like HTTP or database access are not asynchronous together — unless you explicitly make them so.
@@ -1242,7 +1242,7 @@ public class ExternalServiceClient extends AbstractHttpClient {
     - We don't need to **worrying** about deserializing of different **Objects**
 
 <div align="center">
-    <img src="callingInOrder.JPG" alt="reactive programming" width="600"/>
+    <img src="callingInOrder.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. Calling happens only when the `.subscribe` is called!
@@ -1537,20 +1537,20 @@ SLF4J(I): Connected with provider of type [ch.qos.logback.classic.spi.LogbackSer
 # FAQ - How Event Loop Works.
 
 <div align="center">
-    <img src="addingToQue.JPG" alt="reactive programming" width="600"/>
+    <img src="addingToQue.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. When giving **Reactor Netty** these `tasks` or `queries`, these will go the **queue**. 
 2. **Event Loop thread** is constantly looking task in the form the **queue**.
 
 <div align="center">
-    <img src="addingToQueNextJob.JPG" alt="reactive programming" width="600"/>
+    <img src="addingToQueNextJob.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. The jobs are getting picked from the **queue**.
 
 <div align="center">
-    <img src="addingToQueNextJobNext.JPG" alt="reactive programming" width="600"/>
+    <img src="addingToQueNextJobNext.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. The previous job is not getting waited, then next job is getting picked up.
@@ -1560,7 +1560,7 @@ SLF4J(I): Connected with provider of type [ch.qos.logback.classic.spi.LogbackSer
     - Is it the first or the second.
 
 <div align="center">
-    <img src="inBoundAndOutBoundQues.JPG" alt="reactive programming" width="600"/>
+    <img src="inBoundAndOutBoundQues.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. Incoming requests are here.
@@ -1568,7 +1568,7 @@ SLF4J(I): Connected with provider of type [ch.qos.logback.classic.spi.LogbackSer
     - As soon as there is the **response** it will be notifying the **Thread**.
 
 <div align="center">
-    <img src="oneThreadIsEnought.jpeg" alt="reactive programming" width="600"
+    <img src="oneThreadIsEnought.jpeg" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"
     00"/>
 </div>
 
@@ -1620,7 +1620,7 @@ public class Lec11NonBlockingIO {
 - This will not be the **Reactiveness approach**. Loggings are as in below:
 
 <div align="center">
-    <img src="Lec11NonBlockingIOReactiveCall.gif" alt="reactive programming" width="700"/>
+    <img src="Lec11NonBlockingIOReactiveCall.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 - For the **Unit Tests** usage of the `.block()` is fine.
@@ -1630,7 +1630,7 @@ public class Lec11NonBlockingIO {
 - Why we should not be using the **non-blocking IO** from Java. 
 
 <div align="center">
-    <img src="nonBlockingIo.JPG" alt="reactive programming" width="600"/>
+    <img src="nonBlockingIo.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. This is at high level how we would need to be implementing the **Setting up**!
@@ -1639,7 +1639,7 @@ public class Lec11NonBlockingIO {
 # Assignment.
 
 <div align="center">
-    <img src="FileInterfaceAssigment.JPG" alt="reactive programming" width="600"/>
+    <img src="FileInterfaceAssigment.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 ````
@@ -1665,7 +1665,7 @@ public interface FileService {
 ````
 
 <div align="center">
-    <img src="FileInterfaceAssigment2.JPG" alt="reactive programming" width="500"/>
+    <img src="FileInterfaceAssigment2.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="500"/>
 </div>
 
 ```
@@ -1799,7 +1799,7 @@ try {
     - Answer: We are utilizing `Path` and `Files` from `java.nio.file.*`.
 
 <div align="center">
-    <img src="FileInterfaceAssigment3.JPG" alt="reactive programming" width="600"/>
+    <img src="FileInterfaceAssigment3.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 - The `AssigmentFileService`:
@@ -1861,7 +1861,7 @@ public class AssigmentFileService implements FileService {
 # What About Unit Testing?
 
 <div align="center">
-    <img src="unitTesting.JPG" alt="reactive programming" width="400"/>
+    <img src="unitTesting.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 - We will be creating **Unit test**, since we will be focusing to the logic!
@@ -1870,19 +1870,19 @@ public class AssigmentFileService implements FileService {
 # Summary.
 
 <div align="center">
-    <img src="summary.JPG" alt="reactive programming" width="500"/>
+    <img src="summary.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="500"/>
 </div>
 
 1. For **Mono** to have **back pressure**.
 
 <div align="center">
-    <img src="summary2.JPG" alt="reactive programming" width="500"/>
+    <img src="summary2.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="500"/>
 </div>
 
 1. We were having the following philosophies.
 
 <div align="center">
-    <img src="summary3.JPG" alt="reactive programming" width="500"/>
+    <img src="summary3.JPG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="500"/>
 </div>
 
 1. The Main ways to make **Publishers** from the **Mono**. 

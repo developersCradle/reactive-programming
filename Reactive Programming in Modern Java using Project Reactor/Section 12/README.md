@@ -6,7 +6,7 @@ Exception/Error Handling in Flux and Mono.
 
 # 36. Exceptions in Reactive Streams
 
-<img src="expectioThrowing.PNG" alt="reactive programming" width="600"/>
+<img src="expectioThrowing.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 - We are going to assume exception throwing is happing from such scenario.
 
@@ -48,7 +48,7 @@ Exception/Error Handling in Flux and Mono.
     
 ```
 
-<img src="expectioThrowingInFlux.PNG" alt="reactive programming" width="600"/>
+<img src="expectioThrowingInFlux.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 1. As you can see the the `D` us not coming from **flux**, since after exception flux is finished.
     - Notice, that we will use `.verify();` not `.verifyComplete();`, since there will be no complete message coming after exceptions.
@@ -95,21 +95,21 @@ Exception/Error Handling in Flux and Mono.
 
 ```
 
-<img src="AnyExpectionsWillEndTheStream.PNG" alt="reactive programming" width="600"/>
+<img src="AnyExpectionsWillEndTheStream.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 # 37. Introduction to Exception Handling Operators
 
-<img src="expectionHandlingInProjectReactor.PNG" alt="reactive programming" width="600"/>
+<img src="expectionHandlingInProjectReactor.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 1. There is two main ways to handle exceptions:
     - **Category 1**: **Recovering**
     - **Category 2**: **Taking action**, this is something like throwing exception in traditional way.
 
-<img src="expectionCategories.PNG" alt="reactive programming" width="600"/>
+<img src="expectionCategories.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 # 38. onErrorReturn() : Exception Handling Operator
 
-<img src="onErrorReturn.PNG" alt="reactive programming" width="700"/>
+<img src="onErrorReturn.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 
 1. We can return **default value** for fallback method. This can be useful for **fault tolerance**.
 
@@ -218,14 +218,14 @@ Exception/Error Handling in Flux and Mono.
     }
 ```
 
-<img src="expectionsAreRecovering.PNG" alt="reactive programming" width="600"/>
+<img src="expectionsAreRecovering.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 1. You can ee that flux is coming normally.
 2. After exaction is noticed, `.onErrorResume` then recovery **flux** is being supplied. 
 
 # 40. onErrorContinue() : Exception Handling Operator
 
-<img src="onErrorContinue.PNG" alt="reactive programming" width="700"/>
+<img src="onErrorContinue.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 
 1. This one drops the exception and continues the emitting. Normally if **flux** fail, whole stream fails. With this one we can continue the **Stream**.
 
@@ -274,7 +274,7 @@ Exception/Error Handling in Flux and Mono.
 
 # 41. onErrorMap() : Exception Handling Operator
 
-<img src="onErrorMap.PNG" alt="reactive programming" width="600"/>
+<img src="onErrorMap.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 1. This is used to transfer **exceptions** to **business exceptions**.
     - The are used to transfer catched exceptions to **business related** ones and return back to caller.
@@ -333,7 +333,7 @@ Exception/Error Handling in Flux and Mono.
 
 # 42. doOnError() : Catching Exceptions and Throw the error
 
-<img src="doOnError.PNG" alt="reactive programming" width="600"/>
+<img src="doOnError.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 1. `doOnError()` works like try-catch block in Java programming.
 
@@ -378,7 +378,7 @@ Exception/Error Handling in Flux and Mono.
     }
 ```
 
-<img src="expectionHandlingInProjectReactor2.PNG" alt="reactive programming" width="600"/>
+<img src="expectionHandlingInProjectReactor2.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 - There is two ways to handle exceptions.
 
@@ -389,7 +389,7 @@ Exception/Error Handling in Flux and Mono.
 
 - Flux and mono has the same error handling
 
-<img src="exeptionHanlingInMoni.PNG" alt="reactive programming" width="600"/>
+<img src="exeptionHanlingInMoni.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 - The Logic:
 
@@ -460,7 +460,7 @@ Follow the below instructions to complete the function
 
 ```
 
-<img src="anwerQ1.PNG" alt="reactive programming" width="600"/>
+<img src="anwerQ1.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 # Assignment 8: Explore onErrorContinue() Operator in Mono
 

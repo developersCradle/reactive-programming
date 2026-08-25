@@ -7,7 +7,7 @@ Reactive Programming in Mongo DB for the MovieInfo Service.
 # Set up the MovieInfo Document.
 
 <div align="center">
-    <img src="weAreImplementingSuchScenario.PNG " alt="reactive programming" width="600"/>
+    <img src="weAreImplementingSuchScenario.PNG " Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 - The **Entity** in **MongoDB**.

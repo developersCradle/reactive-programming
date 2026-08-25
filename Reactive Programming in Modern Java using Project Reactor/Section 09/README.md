@@ -7,7 +7,7 @@ Combining Flux and Mono.
 # Introduction to Combining Reactive Streams.
 
 <div align="center">
-    <img src="whyCombining.PNG" alt="reactive programming" width="600"/>
+    <img src="whyCombining.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. We need to combine results from **multiple sources**. This is very common in **microservice architecture**.
@@ -16,7 +16,7 @@ Combining Flux and Mono.
 # concat() & concatWith() operator.
 
 <div align="center">
-    <img src="concat.PNG" alt="reactive programming" width="600"/>
+    <img src="concat.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. We can combine **fluxes** or **monos** into one stream.   
@@ -24,7 +24,7 @@ Combining Flux and Mono.
 <br>
 
 <div align="center">
-    <img src="concatAndConcatWith.PNG" alt="reactive programming" width="600"/>
+    <img src="concatAndConcatWith.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1.  These happen in **sequence**, meaning **first** one finishes and after this one second starts.
@@ -207,14 +207,14 @@ Questions for this assignment
 - `merge()` and `mergeWith()` are used to combine the publishers.
 
 <div align="center">
-    <img src="merge.PNG" alt="reactive programming" width="700"/>
+    <img src="merge.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. We will merge these two **Flux** to one. 
     - As you can see the two **Flux**:es are combined in interleaved fashion.
 
 <div align="center">
-    <img src="mergeAndMergeWith.PNG" alt="reactive programming" width="600"/>
+    <img src="mergeAndMergeWith.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 - The Logic:
@@ -378,7 +378,7 @@ Write the test case for explore_mergeWith() and explore_mergeWith_mono() methods
 # Combining Reactive Streams using mergeSequential() operator.
 
 <div align="center">
-    <img src="mergeSequential.PNG" alt="reactive programming" width="600"/>
+    <img src="mergeSequential.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 </div>
 
@@ -424,7 +424,7 @@ Write the test case for explore_mergeWith() and explore_mergeWith_mono() methods
 - `zip()` is used to zip multiple publishers into one.
 
 <div align="center">
-    <img src="zip.PNG" alt="reactive programming" width="600"/>
+    <img src="zip.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. Source **Flux**.
@@ -435,13 +435,13 @@ Write the test case for explore_mergeWith() and explore_mergeWith_mono() methods
 - Difference with `zip()` is that, first emitting is waited for all element then its moved to second element.
 
 <div align="center">
-    <img src="zip2.PNG" alt="reactive programming" width="600"/>
+    <img src="zip2.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 <br>
 
 <div align="center">
-    <img src="zip3.PNG" alt="reactive programming" width="600"/>
+    <img src="zip3.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. Will return **Tuple** with 4 values.

@@ -8,11 +8,11 @@ Its important in **microservice architecture** to recover from intermediate netw
 
 # 46. Retry Exceptions using retry() and retry(n)
 
-<img src="retry.PNG" alt="reactive programming" width="600"/>
+<img src="retry.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 - Its common to have application to communicate with external servers.
 
-<img src="retryN.PNG" alt="reactive programming" width="600"/>
+<img src="retryN.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 - Two main ways to retry.
 
@@ -65,7 +65,7 @@ Its important in **microservice architecture** to recover from intermediate netw
     }
 ```
 
-<img src="retryConsole.PNG" alt="reactive programming" width="600"/>
+<img src="retryConsole.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 1. As you can see the **retry** will try infinitely. 
 
@@ -124,7 +124,7 @@ Its important in **microservice architecture** to recover from intermediate netw
 
 # 47. Retry Specific Exceptions using retryWhen()
 
-<img src="retryWhen.PNG" alt="reactive programming" width="600"/>
+<img src="retryWhen.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 - We can use **Retry** with backoff `var retryWhen = Retry.backoff(3, Duration.ofMillis(500));`.
 
@@ -281,11 +281,11 @@ Its important in **microservice architecture** to recover from intermediate netw
 
 # 48. Repeat a Sequence using repeat() and repeat(n)
 
-<img src="repeat.PNG" alt="reactive programming" width="600"/>
+<img src="repeat.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 - We have two variance of `repeat()`.
 
-<img src="repeat2.PNG" alt="reactive programming" width="600"/>
+<img src="repeat2.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 
 
 - Test with `repeat()`

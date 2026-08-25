@@ -7,13 +7,13 @@ Handling Network Exceptions in WebClient.
 # Network Exceptions in Service to Service Communications.
 
 <div align="center">
-    <img src="expectionsThrowing.PNG" alt="reactive programming" width="700"/>
+    <img src="expectionsThrowing.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 - Services can fall for HTTP failures, its common these are throwing executions.
 
 <div align="center">
-    <img src="httpFailures.PNG" alt="reactive programming" width="700"/>
+    <img src="httpFailures.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 - There is two main **Http** failures.

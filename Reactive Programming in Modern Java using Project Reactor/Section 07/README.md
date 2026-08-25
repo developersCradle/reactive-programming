@@ -90,13 +90,13 @@ public class FluxAndMonoGeneratorService {
 
 - Project Reactor library provides `.log()` to peek trough events between **Publisher** and **Subscriber**.
 
-<img src="loggingFlux.PNG" alt="reactive programming" width="700"/>
+<img src="loggingFlux.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 
 1. You can see the events which we discussed in previous lecture.
     - After `onSubscribe` hands back the **Subscription** Object we call `request(unbounded)` asking to request `unbounded`  amount of data.
 > Hey, give me all the data.
 
-<img src="eventAgain.PNG" alt="reactive programming" width="700"/>
+<img src="eventAgain.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 
 1. These events will be logged.
 

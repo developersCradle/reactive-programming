@@ -7,7 +7,7 @@ Server Sent Events (SSE).
 # Catching up on Server Sent Events (SSE).
 
 <div align="center">
-    <img src="serverSentEvents.PNG" alt="reactive programming" width="700"/>
+    <img src="serverSentEvents.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. Request is sent.

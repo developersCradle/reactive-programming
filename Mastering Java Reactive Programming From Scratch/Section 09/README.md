@@ -7,13 +7,13 @@ Combining Publishers.
 # Introduction.
 
 <div align="center">
-    <img src="Combining_Publishers.PNG" alt="reactive programming" width="700"/>
+    <img src="Combining_Publishers.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. This is **super** important lecture. It's to **combine** the **multiple publishers**!
 
 <div align="center">
-    <img src="Multiple_Publishers_Microservices.PNG" alt="reactive programming" width="700"/>
+    <img src="Multiple_Publishers_Microservices.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. Let's image that the **front end** will be making one **request** to the `product aggregator` **microservice**. 
@@ -28,7 +28,7 @@ Combining Publishers.
 >    - These smaller requests can be in different shapes and sizes!  
 
 <div align="center">
-    <img src="Different_Options_That_Project_Reactor_Provides.PNG" alt="reactive programming" width="400"/>
+    <img src="Different_Options_That_Project_Reactor_Provides.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 1. **Project Reactor** provides, operations to achieve the business requirements in **specific order**!
@@ -39,7 +39,7 @@ Combining Publishers.
 # Start With.
 
 <div align="center">
-    <img src="1StartWith_With_Mono_And_Flux.PNG" alt="reactive programming" width="400"/>
+    <img src="1StartWith_With_Mono_And_Flux.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 > [!TIP]
@@ -81,7 +81,7 @@ Combining Publishers.
 - Illustration where, we are using `.startWith(-1, 0)`.
 
 <div align="center">
-    <img src="Using_startWith_In_Flux.gif" alt="reactive programming" width="700"/>
+    <img src="Using_startWith_In_Flux.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 - You can see the logs:
@@ -106,7 +106,7 @@ Combining Publishers.
 ````
 
 <div align="center">
-    <img src="Take_Operation_For_Flux_And_Mono.png" alt="reactive programming" width="400"/>
+    <img src="Take_Operation_For_Flux_And_Mono.png" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 > [!NOTE]
@@ -134,7 +134,7 @@ Combining Publishers.
 - Here is example of using the `.take(2)`.
 
 <div align="center">
-    <img src="We_Are_Using_The_Take_For_The_Mono_And_For_The_Flux.gif" alt="reactive programming" width="700"/>
+    <img src="We_Are_Using_The_Take_For_The_Mono_And_For_The_Flux.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. The `.take(2)` allows only **two** items to pass.
@@ -174,7 +174,7 @@ Combining Publishers.
 - The illustration for `.startWith(...)` accepts the **Iterable**.
 
 <div align="center">
-    <img src="We_Are_Using_The_StartWith_With_The_Iterable.gif" alt="reactive programming" width="700"/>
+    <img src="We_Are_Using_The_StartWith_With_The_Iterable.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 
@@ -248,7 +248,7 @@ Combining Publishers.
 
 <details>
 <summary id="reactive programming
-" open="true" alt="reactive programming"> <b> Flux.startWith(...) and Mono.startWith(...) working source code!</b> </summary>
+" open="true" Build Reactive MicroServices using Spring WebFlux/SpringBoot> <b> Flux.startWith(...) and Mono.startWith(...) working source code!</b> </summary>
 
 
 ````Java
@@ -260,14 +260,14 @@ Combining Publishers.
 # Start With - Usecases.
 
 <div align="center">
-    <img src="StartWith_With_Mono_And_Flux_Usecases.PNG" alt="reactive programming" width="400"/>
+    <img src="StartWith_With_Mono_And_Flux_Usecases.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 
 
 <details>
 <summary id="reactive programming
-" open="true" alt="reactive programming"> <b> Flux.startWith(...) and Mono.startWith(...) usecases working source code!</b> </summary>
+" open="true" Build Reactive MicroServices using Spring WebFlux/SpringBoot> <b> Flux.startWith(...) and Mono.startWith(...) usecases working source code!</b> </summary>
 
 ````Java
 
@@ -278,12 +278,12 @@ Combining Publishers.
 # Concat With.
 
 <div align="center">
-    <img src="ConcatWith_With_Mono_And_Flux_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+    <img src="ConcatWith_With_Mono_And_Flux_In_Project_Reactor.png" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 <details>
 <summary id="reactive programming
-" open="true" alt="reactive programming"> <b> Flux.concatWith(...) and Mono.concatWith(...) usecases working source code!</b> </summary>
+" open="true" Build Reactive MicroServices using Spring WebFlux/SpringBoot> <b> Flux.concatWith(...) and Mono.concatWith(...) usecases working source code!</b> </summary>
 
 ````Java
 
@@ -294,13 +294,13 @@ Combining Publishers.
 # Concat Delay Error.
 
 <div align="center">
-    <img src="ConcatDelayError_With_Flux_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+    <img src="ConcatDelayError_With_Flux_In_Project_Reactor.png" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 
 <details>
 <summary id="reactive programming
-" open="true" alt="reactive programming"> <b> Flux.concatDelayError(...) use cases working source code!</b> </summary>
+" open="true" Build Reactive MicroServices using Spring WebFlux/SpringBoot> <b> Flux.concatDelayError(...) use cases working source code!</b> </summary>
 
 ````Java
 
@@ -311,7 +311,7 @@ Combining Publishers.
 # Merge.
 
 <div align="center">
-    <img src="Flux_Merge_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+    <img src="Flux_Merge_In_Project_Reactor.png" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 
@@ -319,7 +319,7 @@ Combining Publishers.
 
 <details>
 <summary id="reactive programming
-" open="true" alt="reactive programming"> <b> merge use cases working source code!</b> </summary>
+" open="true" Build Reactive MicroServices using Spring WebFlux/SpringBoot> <b> merge use cases working source code!</b> </summary>
 
 ````Java
 
@@ -330,7 +330,7 @@ Combining Publishers.
 # Merge - Usecases.
 
 <div align="center">
-    <img src="Merge_With_Flux_And_Mono_Use_Cases_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+    <img src="Merge_With_Flux_And_Mono_Use_Cases_In_Project_Reactor.png" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 
@@ -339,11 +339,11 @@ Combining Publishers.
 # Zip.
 
 <div align="center">
-    <img src="Zip_For_Mono_And_Flux_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+    <img src="Zip_For_Mono_And_Flux_In_Project_Reactor.png" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 <div align="center">
-    <img src="Zip_For_The_Car_Building_Manifacturing_Line.PNG" alt="reactive programming" width="700"/>
+    <img src="Zip_For_The_Car_Building_Manifacturing_Line.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. We are **illustrating** manufacturing **car** from pieces!
@@ -421,7 +421,7 @@ Flux<Tuple3<String, String, String>> zip = Flux.zip(getBody(), getTires(), getEn
 ````
 
 <div align="center">
-    <img src="Checking_How_To_Get_Parts_From_Tuple.PNG" alt="reactive programming" width="600"/>
+    <img src="Checking_How_To_Get_Parts_From_Tuple.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. We can get items from the producer!
@@ -451,7 +451,7 @@ Flux.zip(getBody(), getEngine(), getTires())
 - Using `.zip(...)` illustration.
 
 <div align="center">
-    <img src="Using_Zip.gif" alt="reactive programming" width="600"/>
+    <img src="Using_Zip.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. We can see **three** cars getting built!
@@ -479,14 +479,14 @@ Flux.zip(getBody(), getEngine(), getTires())
 - We can see there is **car** done, if one **producer** is missing an item.
 
 <div align="center">
-    <img src="Using_Zip_Where_One_Producer_Is_Empty.gif" alt="reactive programming" width="600"/>
+    <img src="Using_Zip_Where_One_Producer_Is_Empty.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. No **car** is being built in this case!
 
 <details>
 <summary id="reactive programming
-" open="true" alt="reactive programming"> <b> zip code implementation!</b> </summary>
+" open="true" Build Reactive MicroServices using Spring WebFlux/SpringBoot> <b> zip code implementation!</b> </summary>
 
 ````Java
 package org.java.reactive.sec09;
@@ -554,7 +554,7 @@ public class Lec07Zip {
 # Zip - Assignment.
 
 <div align="center">
-    <img src="Zip_Assigment.PNG" alt="reactive programming" width="600"/>
+    <img src="Zip_Assigment.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. For this example, you can see there is **just one mono** being published, hence only **one** car can be produced!
@@ -562,7 +562,7 @@ public class Lec07Zip {
 2. Often times there is call from the **front end**, like in this case!
 
 <div align="center">
-    <img src="Zip_Assigment_How_We_Are_Dealing_With_It.PNG" alt="reactive programming" width="600"/>
+    <img src="Zip_Assigment_How_We_Are_Dealing_With_It.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. **Task:**
@@ -583,7 +583,7 @@ public class Lec07Zip {
 - The **task** is required to be run against the `external-services.jar` server ! The endpoints below:
     
 <div align="center">
-    <img src="Task_Takes_Against_Task_05.PNG" alt="reactive programming" width="600"/>
+    <img src="Task_Takes_Against_Task_05.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. Task will be running against these endpoints!
@@ -749,7 +749,7 @@ public class ExternalServiceClient extends AbstractHttpClient {
 # FlatMap - Introduction.
 
 <div align="center">
-    <img src="What_Is_Flat_Map_Operation.PNG" alt="reactive programming" width="600"/>
+    <img src="What_Is_Flat_Map_Operation.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. These operations will **not** work for the **dependent sequential calls!** 
@@ -789,7 +789,7 @@ getUser()
         passes it to `saveDiscount(discount)` emits the final result!
 
 <div align="center">
-    <img src="What_About_Dependent_Sequential_Calls.PNG" alt="reactive programming" width="600"/>
+    <img src="What_About_Dependent_Sequential_Calls.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. **User Service**, the endpoints:
@@ -850,7 +850,7 @@ getUser()
     - Example of `getAllUsers()` working:
 
         <div align="center">
-            <img src="Endpoint_GetAllUsers_Working_Independently.gif" alt="reactive programming" width="800"/>
+            <img src="Endpoint_GetAllUsers_Working_Independently.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
         </div>
 
         1. As you can see there are **three** different users returned!
@@ -873,13 +873,13 @@ getUser()
     - Example of `getUserId()` working:
 
         <div align="center">
-            <img src="Endpoint_GetUserId_Working_Independently.gif" alt="reactive programming" width="800"/>
+            <img src="Endpoint_GetUserId_Working_Independently.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
         </div>
         1. As you can see the `"Jake"`, is returning `3` as defined in the table!
 
 <details>
 <summary id="reactive programming
-" open="true" alt="reactive programming"> <b> User Service implementation </b> </summary>
+" open="true" Build Reactive MicroServices using Spring WebFlux/SpringBoot> <b> User Service implementation </b> </summary>
 
 ````Java
 package org.java.reactive.sec09.applications;
@@ -966,7 +966,7 @@ public  class UserService {
     - Example of `getUserOrders(Integer userId)` endpoint working:
 
         <div align="center">
-            <img src="Endpoint_GetUserOrders_Working_Independently.gif" alt="reactive programming" width="800"/>
+            <img src="Endpoint_GetUserOrders_Working_Independently.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
         </div>
         1. As you can see there are <b>three</b> orders returned!
 
@@ -983,7 +983,7 @@ public  class UserService {
 <details>
 
 <summary id="reactive programming
-" open="true" alt="reactive programming"> <b>Order Service implementation!</b> </summary>
+" open="true" Build Reactive MicroServices using Spring WebFlux/SpringBoot> <b>Order Service implementation!</b> </summary>
 
 ````Java
 package org.java.reactive.sec09.applications;
@@ -1052,12 +1052,12 @@ public class OrderService {
     - Example of `getUserBalance(Integer userId)` working:
 
         <div align="center">
-            <img src="Endpoint_GetUserBalance_Working_Independently.gif" alt="reactive programming" width="800"/>
+            <img src="Endpoint_GetUserBalance_Working_Independently.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
         </div>
 
 <details>
 <summary id="Reactive programming
-" open="true" alt="reactive programming"> <b>Payment Service implementation!</b> </summary>
+" open="true" Build Reactive MicroServices using Spring WebFlux/SpringBoot> <b>Payment Service implementation!</b> </summary>
 
 ````Java
 package org.java.reactive.sec09.applications;
@@ -1092,7 +1092,7 @@ public class PaymentService {
 # Mono - flatMap.
 
 <div align="center">
-    <img src="Mono_FlatMap_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+    <img src="Mono_FlatMap_Operation_In_Project_Reactor.png" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 > [!NOTE]
@@ -1116,7 +1116,7 @@ public class PaymentService {
 - We will be **subscribing** into such **Mono** of **Mono**, example below:
 
 <div align="center">
-    <img src="Subscribing_Mono_Of_Mono_In_Two_Sequential_Call.gif" alt="reactive programming" width="800"/>
+    <img src="Subscribing_Mono_Of_Mono_In_Two_Sequential_Call.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
 </div>
 
 1. We are **not** getting the **user balance values**, we are getting the **inner publisher** `received: MonoSupplier`! 
@@ -1124,7 +1124,7 @@ public class PaymentService {
 - Same thing form **IDE**, it's trying to give hint:
 
 <div align="center">
-    <img src="Mono_Inside_Mono.PNG" alt="reactive programming" width="800"/>
+    <img src="Mono_Inside_Mono.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
 </div>
 
 1. You can see the `Mono<Mono<...>>` coming out of the `.map(...)` and the log `received: MonoSupplier`.
@@ -1147,7 +1147,7 @@ public class PaymentService {
 - Illustration of `.map` how it should be used, in the context of `UserService.getUserId(...)`:
 
 <div align="center">
-    <img src="Using_Map_As_Intermediate_Operation.gif" alt="reactive programming" width="800"/>
+    <img src="Using_Map_As_Intermediate_Operation.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
 </div>
 
 1. You can see that `received: Hello there user ID: 1` is successfully manipulated! 
@@ -1168,7 +1168,7 @@ public class PaymentService {
 - Example of `getUserId()` **not** working, where the **Mono** inside of **Mono**:
 
 <div align="center">
-    <img src="Subscribing_Mono_Of_Mono_In_Two_Sequential_Call.gif" alt="reactive programming" width="800"/>
+    <img src="Subscribing_Mono_Of_Mono_In_Two_Sequential_Call.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="800"/>
 </div>
 
 1. When **Mono** inside **Mono**, the log `received: MonoSupplier`.
@@ -1188,13 +1188,13 @@ public class PaymentService {
 - Example of `.flatMap(...)` in context of **reactive programming** working:
 
 <div align="center">
-    <img src="Using_FlatMap_With_The_Publisher.gif" alt="reactive programming" width="600"/>
+    <img src="Using_FlatMap_With_The_Publisher.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. You can see that `.getUserId(...)` is working as it should. The returned value `received: Hello there user ID: 1` as **and not** the `received: MonoSupplier`.
 
 <div align="center">
-    <img src="FlatMap_In_The_IDE_With_The_Two_Publishers.PNG" alt="reactive programming" width="700"/>
+    <img src="FlatMap_In_The_IDE_With_The_Two_Publishers.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. You can also see that the **IDE** is giving hint of the `.flatMap(...)` working. One can see the **two** publisher, being flattened as it written as `Mono<String>`!
@@ -1214,7 +1214,7 @@ public class PaymentService {
 - Example of using `.flatMap(..)` with the **two** different services being called! 
 
 <div align="center">
-    <img src="Using_FlatMap_With_The_Another_Service_Succesfull.gif" alt="reactive programming" width="700"/>
+    <img src="Using_FlatMap_With_The_Another_Service_Succesfull.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. We can see that `.flatMap(...)` working, with `UserService.getUserId("sam")`, which returns the `userId` and feeds it to the `PaymentService.getUserBalance(userId)`, which in regards checks the **User Balance Service**, which returns as it was defined in the `Map<Integer, Integer> userBalanceTable` 
@@ -1224,7 +1224,7 @@ public class PaymentService {
 <details>
 
 <summary id="reactive programming
-" open="true" alt="reactive programming"> <b> Mono.flatMap(...) working source code! </b> </summary>
+" open="true" Build Reactive MicroServices using Spring WebFlux/SpringBoot> <b> Mono.flatMap(...) working source code! </b> </summary>
 
 ````Java
 
@@ -1285,7 +1285,7 @@ public class Lec09MonoFlatMap {
 # Mono - flatMapMany.
 
 <div align="center">
-    <img src="Mono_FlatMapMany_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+    <img src="Mono_FlatMapMany_Operation_In_Project_Reactor.png" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 > [!NOTE]
@@ -1356,7 +1356,7 @@ Mono<Flux<Order>> example = UserService.getUserId("sam")
     - There will be case, where the `.flatMap(...)` is not working since `Mono.flatMap(...)` expects the **result** being **Mono**. Example below:
     ````
 <div align="center">
-    <img src="Mismatching_The_Internal_Publisher_Flatting_Operation.PNG" alt="reactive programming" width="500"/>
+    <img src="Mismatching_The_Internal_Publisher_Flatting_Operation.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="500"/>
 </div>
 
 1. You can see that error coming from `Mono.flatMap(...)` **expects** the **lambda to return** a `Mono<R>`, not a `Flux<R>`
@@ -1392,7 +1392,7 @@ Mono<Flux<Order>> example = UserService.getUserId("sam")
 - We are illustrating `Mono.flatMapMany(...)` with **two** services, which have the different reactive types returned `Mono` and `Flux`!
 
 <div align="center">
-    <img src="Using_FlatMapMany_With_The_Another_Service_Succesfull_Case.gif" alt="reactive programming" width="500"/>
+    <img src="Using_FlatMapMany_With_The_Another_Service_Succesfull_Case.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="500"/>
 </div>
 
 1. We can also see the logs is having **two order entries** for the `userId:1`!  
@@ -1405,7 +1405,7 @@ Mono<Flux<Order>> example = UserService.getUserId("sam")
 <details>
 
 <summary id="reactive programming
-" open="true" alt="reactive programming"> <b> Mono.flatMapMany(...) working source code! </b> </summary>
+" open="true" Build Reactive MicroServices using Spring WebFlux/SpringBoot> <b> Mono.flatMapMany(...) working source code! </b> </summary>
 
 ````Java
 package org.java.reactive.sec09;
@@ -1461,7 +1461,7 @@ public class Lec10MonoFlatMapMany {
 # Flux - flatMap.
 
 <div align="center">
-    <img src="Flux_FlatMap_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+    <img src="Flux_FlatMap_Operation_In_Project_Reactor.png" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 - The idea here is to get **all** the **Users**, and then get **all** the **Orders**, for them!
@@ -1533,21 +1533,21 @@ public class Lec10MonoFlatMapMany {
 # FlatMap - How it works.
 
 <div align="center">
-    <img src="FlatMap_How_It_Works_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+    <img src="FlatMap_How_It_Works_In_Project_Reactor.png" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 > [!TIP]
 > `.flatMap(...)` subscribes to **all inner publishers** at the same time!
 
 <div align="center">
-    <img src="FlatMap_Illustration.PNG" alt="reactive programming" width="200"/>
+    <img src="FlatMap_Illustration.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="200"/>
 </div>
 
 1. We have **multiple elements** in this `Flux`. `Flux` of `userId`'s, like in previous example `UserService.getAllUsers(...)`!
 2. Then there will be `.flatMap(...)` operation!
 
 <div align="center">
-    <img src="Using_FlatMap_With_Flux_And_Flux.gif" alt="reactive programming" width="300"/>
+    <img src="Using_FlatMap_With_Flux_And_Flux.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="300"/>
 </div>
 
 1. Each emitted `userId` triggers a call to `OrderService.getUserOrders(userId)`, which returns a `Flux<Order>`.
@@ -1558,7 +1558,7 @@ public class Lec10MonoFlatMapMany {
     - It does **not wait** for one **inner publisher to finish** before starting the next!
 
 <div align="center">
-    <img src="FlatMap_Collecting_As_Soon_As_Emits_Are_Coming.PNG" alt="reactive programming" width="600"/>
+    <img src="FlatMap_Collecting_As_Soon_As_Emits_Are_Coming.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. As soon as an inner publisher emits elements, they are immediately forwarded downstream to the subscriber.
@@ -1584,7 +1584,7 @@ public class Lec10MonoFlatMapMany {
 - We are illustrating the **one** `concurrency` defined in the `.flatmap(...)`.
 
 <div align="center">
-    <img src="Using_FlatMap_With_Flux_And_Flux_Where_There_Is_One_Concurrency_Defined.gif" alt="reactive programming" width="500"/>
+    <img src="Using_FlatMap_With_Flux_And_Flux_Where_There_Is_One_Concurrency_Defined.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="500"/>
 </div>
 
 - As you can see there is one **connection** at the tine defined!
@@ -1592,7 +1592,7 @@ public class Lec10MonoFlatMapMany {
 <details>
 
 <summary id="reactive programming
-" open="true" alt="reactive programming"> <b> Mono.flatMap(...) and Flux.flatMap(...) working source code! </b> </summary>
+" open="true" Build Reactive MicroServices using Spring WebFlux/SpringBoot> <b> Mono.flatMap(...) and Flux.flatMap(...) working source code! </b> </summary>
 
 ````Java
 package org.java.reactive.sec09;
@@ -1692,7 +1692,7 @@ Question 1: Make this for loop using FLux.
         - We can see only **one complete** signal:
             - `23:54:33.771 INFO  [ScoopiDoo-nio-1] o.j.r.common.DefaultSubscriber :  received complete!`.
         <div align="center">
-            <img src="Using_Zip_Operation_Where_We_Are_Using_FlatMap.gif" alt="reactive programming" width="600"/>
+            <img src="Using_Zip_Operation_Where_We_Are_Using_FlatMap.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
         </div>
         1. You can see <b>one complete</b> signal log!
 
@@ -1722,14 +1722,14 @@ Question 1: Make this for loop using FLux.
         - We can see these calls being executed as in **groups**:
 
         <div align="center">
-            <img src="Using_Zip_Operation_Where_We_Are_Concurrency_Variables.gif" alt="reactive programming" width="600"/>
+            <img src="Using_Zip_Operation_Where_We_Are_Concurrency_Variables.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
         </div>
 
     - With regular `client.getProduct(i)` inside `for` loop.
         - We will be **subscribing** to multiple **Monos** in the same time!
             - We can see **multiple complete** signal:
                 <div align="center">
-                    <img src="Using_Zip_Operation_Where_We_Are_Using_Traditional_Way.gif" alt="reactive programming" width="600"/>
+                    <img src="Using_Zip_Operation_Where_We_Are_Using_Traditional_Way.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
                 </div>
                 1. You can see <b>many completes</b> signal logs!
 
@@ -1758,7 +1758,7 @@ Question 1: Make this for loop using FLux.
 <details>
 
 <summary id="flatmap assigment - my answer
-" open="true" alt="reactive programming"> <b> FlatMap assigment - my answer! </b> </summary>
+" open="true" Build Reactive MicroServices using Spring WebFlux/SpringBoot> <b> FlatMap assigment - my answer! </b> </summary>
 
 ````Java
 package org.java.reactive.sec09;
@@ -1797,7 +1797,7 @@ public class Lec12FluxFlatMapExerciseAssignment {
 <details>
 
 <summary id="flatmap assigment - teacher answer
-" open="true" alt="reactive programming"> <b> FlatMap assigment - teacher answer! </b> </summary>
+" open="true" Build Reactive MicroServices using Spring WebFlux/SpringBoot> <b> FlatMap assigment - teacher answer! </b> </summary>
 
 ````Java
 package com.vinsguru.sec09;
@@ -1829,14 +1829,14 @@ public class Lec12FluxFlatMapAssignment {
 # ConcatMap.
 
 <div align="center">
-    <img src="Flux_ConcatMap_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+    <img src="Flux_ConcatMap_Operation_In_Project_Reactor.png" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 > [!NOTE]
 > `.concatMap(...)` = map each item → Publisher (Mono/Flux) and then subscribe one-by-one in order. This is **sequential processing**!
 
 <div align="center">
-    <img src="ConcatMap_Operator_When_Using_Flux.PNG" alt="reactive programming" width="600"/>
+    <img src="ConcatMap_Operator_When_Using_Flux.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. `.concatMap` will be **concatenating** the **inner fluxes** in sequential manner, these are in this order here!
@@ -1852,14 +1852,14 @@ public class Lec12FluxFlatMapAssignment {
     ````
 
 <div align="center">
-    <img src="Using_ConcatMap_For_The_Flux.gif" alt="reactive programming" width="400"/>
+    <img src="Using_ConcatMap_For_The_Flux.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 - We can see that now each **Mono** is subscribed to in **order**!
 
 <details>
 
-<summary id="concatMap" open="true" alt="reactive programming"> <b> Flux.concatMap(...) working source code! </b> </summary>
+<summary id="concatMap" open="true" Build Reactive MicroServices using Spring WebFlux/SpringBoot> <b> Flux.concatMap(...) working source code! </b> </summary>
 
 ````Java
 package org.java.reactive.sec09;
@@ -1892,7 +1892,7 @@ public class Lec13ConcatMap {
 # Operator - Collect List.
 
 <div align="center">
-    <img src="Flux_CollectList_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+    <img src="Flux_CollectList_Operation_In_Project_Reactor.png" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 - Operator will collect items from the **Flux** to the **list** `.collectList()`.
@@ -1906,7 +1906,7 @@ Mono<List<Integer>> listMono = Flux.range(1, 10)
 - We can see the illustration below:
 
 <div align="center">
-    <img src="Using_CollectToList_In_Flux.gif" alt="reactive programming" width="700"/>
+    <img src="Using_CollectToList_In_Flux.gif" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. This will be as in `List`, like shown below:
@@ -1943,7 +1943,7 @@ Process finished with exit code 0
 
 <details>
 
-<summary id="collect list" open="true" alt="reactive programming"> <b> Flux.collectToList() working source code! </b> </summary>
+<summary id="collect list" open="true" Build Reactive MicroServices using Spring WebFlux/SpringBoot> <b> Flux.collectToList() working source code! </b> </summary>
 
 ````Java
 package org.java.reactive.sec09;
@@ -1978,13 +1978,13 @@ public class Lec14CollectList {
 # Operator - Then.
 
 <div align="center">
-    <img src="Flux_Then_Mono_Then_Operation_In_Project_Reactor.png" alt="reactive programming" width="400"/>
+    <img src="Flux_Then_Mono_Then_Operation_In_Project_Reactor.png" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="400"/>
 </div>
 
 
 <details>
 
-<summary id="collect list" open="true" alt="reactive programming"> <b>  Mono.then(...) and Flux.then(...) working source code! </b> </summary>
+<summary id="collect list" open="true" Build Reactive MicroServices using Spring WebFlux/SpringBoot> <b>  Mono.then(...) and Flux.then(...) working source code! </b> </summary>
 
 ````Java
 

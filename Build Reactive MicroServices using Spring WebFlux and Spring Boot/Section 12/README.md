@@ -7,25 +7,25 @@ Automated Tests using JUnit5 and @WebFluxTest.
 # Introduction to Automated Tests.
 
 <div align="center">
-    <img src="automatedTest.PNG" alt="reactive programming" width="600"/>
+    <img src="automatedTest.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 <br>
 
 <div align="center">
-    <img src="automatedTest.PNG" alt="reactive programming" width="600"/>
+    <img src="automatedTest.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 <br>
 
 <div align="center">
-    <img src="integrationTest.PNG" alt="reactive programming" width="600"/>
+    <img src="integrationTest.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 1. Integration test interacts from Controller layer to the Repository layer.
 
 <div align="center">
-    <img src="unitTest.PNG" alt="reactive programming" width="600"/>
+    <img src="unitTest.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="600"/>
 </div>
 
 - Different folders for:

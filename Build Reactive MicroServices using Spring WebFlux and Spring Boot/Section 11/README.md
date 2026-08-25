@@ -28,7 +28,7 @@ Simple Non Blocking RESTFUL API using Annotated Controller Approach.
 # Build Infinite Streams API (SSE).
 
 <div align="center">
-  <img src="streamingEndpoint.PNG" alt="reactive programming" width="700"/>
+  <img src="streamingEndpoint.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 - We are streaming data every second.
@@ -42,7 +42,7 @@ Simple Non Blocking RESTFUL API using Annotated Controller Approach.
 ```
 
 <div align="center">
-  <img src="reactorThreadGettingSwithched.PNG" alt="reactive programming" width="700"/>
+  <img src="reactorThreadGettingSwithched.PNG" Build Reactive MicroServices using Spring WebFlux/SpringBoot width="700"/>
 </div>
 
 1. **Request thread** and **Data handling thread** is made in separated treads. As **non-blocking**.
