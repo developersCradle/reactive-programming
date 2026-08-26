@@ -53,7 +53,12 @@ Template for the task/exercies:
 	- **Answer:** **D**. here can be the examplaniton!
  -->
  
- # Reactive programming!
+<p align="center">
+    <img
+     src="Reactive_Programming_Caption.png"
+    alt="Reactive programming caption!"
+    style="width:1600px;height:230px;"/>
+</p> 
 
 <p align="center">
     <img id="studying" src="Reactive_Programming.jpg" style="width:500px;height:410px;">
@@ -478,18 +483,18 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 #### Progress/Curriculum.
 
 - [ ] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2001#section-01-welcome-why-master-advanced-microservices-patterns) - Welcome: Why Master Advanced Microservices Patterns. 
-- [ ] [Section 02](#) - API Composition: Gateway Aggregator Pattern. 
-- [ ] [Section 03](#) - Scatter Gather Pattern: High-Performance Service Composition.
-- [ ] [Section 04](#) - Orchestrator Saga: Distributed Transactions & Parallel Workflow.
-- [ ] [Section 05](#) - Orchestrator Saga: Distributed Transactions & Sequential Workflow.
-- [ ] [Section 06](#) - Splitter Pattern: Routing Messages to Multiple Services.
-- [ ] [Section 07](#) - Reactive Resilience: Timeout Pattern.
-- [ ] [Section 08](#) - Reactive Resilience: Retry Pattern for Fault Tolerance.
-- [ ] [Section 09](#) - Reactive Resilience: Circuit Breaker Pattern.
-- [ ] [Section 10](#) - Rate Limiter Pattern: Protecting APIs and Controlling Traffic.
-- [ ] [Section 11](#) - Bulkhead Pattern: Resource Isolation for High Availability.
-- [ ] [Section 12](#) - Role Play & Practice Test.
-- [ ] [Section 13](#) - What's Next?.
+- [ ] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2002#section-02-api-composition-gateway-aggregator-pattern) - API Composition: Gateway Aggregator Pattern. 
+- [ ] [Section 03](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2003#section-03-scatter-gather-pattern-high-performance-service-composition) - Scatter Gather Pattern: High-Performance Service Composition.
+- [ ] [Section 04](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2004#section-04-orchestrator-saga-distributed-transactions--parallel-workflow) - Orchestrator Saga: Distributed Transactions & Parallel Workflow.
+- [ ] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2005#section-05-orchestrator-saga-distributed-transactions--sequential-workflow) - Orchestrator Saga: Distributed Transactions & Sequential Workflow.
+- [ ] [Section 06](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2006#section-06-splitter-pattern-routing-messages-to-multiple-services) - Splitter Pattern: Routing Messages to Multiple Services.
+- [ ] [Section 07](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2007#section-07-reactive-resilience-timeout-pattern) - Reactive Resilience: Timeout Pattern.
+- [ ] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2008#section-08-reactive-resilience-retry-pattern-for-fault-tolerance) - Reactive Resilience: Retry Pattern for Fault Tolerance.
+- [ ] [Section 09](https://github.com/developersCradle/reactive-programming/blob/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2009/README.md#section-09-reactive-resilience-circuit-breaker-pattern) - Reactive Resilience: Circuit Breaker Pattern.
+- [ ] [Section 10](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2010#section-10---rate-limiter-pattern-protecting-apis-and-controlling-traffic) - Rate Limiter Pattern: Protecting APIs and Controlling Traffic.
+- [ ] [Section 11](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2011#section-11-bulkhead-pattern-resource-isolation-for-high-availability) - Bulkhead Pattern: Resource Isolation for High Availability.
+- [ ] [Section 12](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2012#section-12-role-play--practice-test) - Role Play & Practice Test.
+- [ ] [Section 13](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2013#section-13-whats-next) - What's Next?.
 
 #### Additional stuff.
 
