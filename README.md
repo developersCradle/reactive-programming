@@ -57,11 +57,11 @@ Template for the task/exercies:
     <img
      src="Reactive_Programming_Caption.png"
     alt="Reactive programming caption!"
-    style="width:1600px;height:230px;"/>
+    style="width:1600px;height:130px;"/>
 </p> 
 
 <p align="center">
-    <img id="studying" src="Reactive_Programming.jpg" style="width:500px;height:410px;">
+    <img id="studying" src="Reactive_Programming.jpg" style="width:450px;height:350px;">
     <p align="center">
     Attempt to study <b>Reactive Programming</b> and related topics!
     </p>
@@ -128,7 +128,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2008#section-08-optional---back-pressure--overflow-strategy) - [OPTIONAL] - Back Pressure / Overflow Strategy.
 - [ ] [Section 09](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#section-09-combining-publishers) - Combining Publishers. ⚠️ In progress! ⚠️
 - [ ] [Section 10](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2010/README.md#section-10-optional---batching--windowing--grouping) - [OPTIONAL] - Batching / Windowing / Grouping.
-- [ ] [Section 11](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2011/README.md#section-11-repeat--retry) - Repeat & Retry.
+- [ ] [Section 11](https://github.com/developersCradle/reactive-programming/blob/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2011/README.md#section-11-repeat--retry) - Repeat & Retry. ⚠️ In progress! ⚠️
 - [ ] [Section 12](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2012#section-12-sinks) - Sinks.
 - [ ] [Section 13](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2013#section-13-optional---context) - [OPTIONAL] - Context.
 - [ ] [Section 14](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2014#section-14-unit-testing-with-step-verifier) - Unit Testing With Step Verifier.
@@ -455,8 +455,13 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 All course material from *Reactive Microservices Architecture & Design Patterns* by **Vinoth Selvaraj**.
 
-> Add here some story <br><br>
-~ *DevelopersCradle*
+> At 🔷**Nordea**🔷, we were given an HLD document for a reactive system that had to communicate with multiple downstream services—each one essential, each one capable of slowing down or failing.
+>
+> One recommendation in the design stood out: **Circuit Breaker**. 👨‍💻
+>
+>At first, it was just another pattern on the architecture diagram. But as we looked deeper, the reason became clear. A failure in one service shouldn’t hold the entire system hostage. The API needed to know when to keep trying, when to step back, and when to give a dependency time to recover.
+>
+>Building it wasn’t just about following an HLD recommendation; it was about understanding the thinking behind it and designing a reactive API that could keep moving, even when the services around it couldn’t <br><br> ~ *DevelopersCradle*
 
 Contains my own notes with some course material to enforce learning experience.
 
@@ -489,7 +494,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2005#section-05-orchestrator-saga-distributed-transactions--sequential-workflow) - Orchestrator Saga: Distributed Transactions & Sequential Workflow.
 - [ ] [Section 06](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2006#section-06-splitter-pattern-routing-messages-to-multiple-services) - Splitter Pattern: Routing Messages to Multiple Services.
 - [ ] [Section 07](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2007#section-07-reactive-resilience-timeout-pattern) - Reactive Resilience: Timeout Pattern.
-- [ ] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2008#section-08-reactive-resilience-retry-pattern-for-fault-tolerance) - Reactive Resilience: Retry Pattern for Fault Tolerance.
+- [ ] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2008#section-08-reactive-resilience-retry-pattern-for-fault-tolerance) - Reactive Resilience: Retry Pattern for Fault Tolerance. ⚠️ In progress! ⚠️
 - [ ] [Section 09](https://github.com/developersCradle/reactive-programming/blob/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2009/README.md#section-09-reactive-resilience-circuit-breaker-pattern) - Reactive Resilience: Circuit Breaker Pattern.
 - [ ] [Section 10](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2010#section-10---rate-limiter-pattern-protecting-apis-and-controlling-traffic) - Rate Limiter Pattern: Protecting APIs and Controlling Traffic.
 - [ ] [Section 11](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2011#section-11-bulkhead-pattern-resource-isolation-for-high-availability) - Bulkhead Pattern: Resource Isolation for High Availability.
