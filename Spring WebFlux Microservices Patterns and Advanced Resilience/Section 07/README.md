@@ -4,6 +4,52 @@ Section 07: Reactive Resilience: Timeout Pattern.
 
 # What I Learned.
 
+# Resiliency Pattern - Intro.
+
+<div align="center">
+    <img src="Reactive_Resilience_Patterns.PNG" alt="
+    Spring webFlux: microservices patterns and advanced resilience!" width="700"/>
+</div>
+
+1. Now will focus from **integration patters** to the **resilience patterns**!
+
+<div align="center">
+    <img src="What_Is_Resilience.PNG" alt="
+    Spring webFlux: microservices patterns and advanced resilience!" width="700"/>
+</div>
+
+1. What is resilience:
+    - It means to **respond** even in **case of the failure**!
+
+<div align="center">
+    <img src="Resilience_Illustration.PNG" alt="
+    Spring webFlux: microservices patterns and advanced resilience!" width="700"/>
+</div>
+
+1. If there is **slow responding** or **malfunctioning service**!
+    - The **previous service** would be waiting this service to **respond**!
+        - Our **browser** will wait for the answer!
+2. If there is error in one of service, it would be **propagated** to **others services** ... etc!
+
+<div align="center">
+    <img src="What_Is_Resilient_Service.PNG" alt="
+    Spring webFlux: microservices patterns and advanced resilience!" width="700"/>
+</div>
+
+1. Our system response timely manner, even if there will be error!
+    - **500 error** will be thrown, the previous will handle it goodly!
+        - This can be handled with **default values**, or **cached values** etc!
+
+# Timeout Pattern.
+
+# Project Setup.
+
+# Timeout Pattern Implementation.
+
+# Timeout Pattern Demo.
+
+# Summary.
+
 
 - The project code, for **add here** below!
 
