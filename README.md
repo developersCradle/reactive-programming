@@ -97,13 +97,13 @@ All course material from *Mastering Java Reactive Programming [From Scratch]* **
 
 Contains my own visual notes ✍️ with some course material to enforce learning experience.
 
-If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
-
 This repository is made with [![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)](#) with [![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?logo=Eclipse&logoColor=white)](#) hotkeys, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
 
 [The course at Udemy](https://www.udemy.com/course/complete-java-reactive-programming/). 
 
 [Website of maker](https://www.vinsguru.com/).
+
+If the content sparked 🔥 your interest, please consider buying the course and start learning 📖.
 
 <!-- 
 Linkedin puts this shit front, when clicking from private mode x(. Need to put this to make jump working every case
@@ -218,14 +218,14 @@ All course material from *Spring WebFlux Masterclass: Reactive Microservices [Ne
 
 Contains my with own visual notes ✍️ added to some course material to enforce learning experience.
 
-If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
-
 This repository is made with [![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)](#) with [![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?logo=Eclipse&logoColor=white)](#) hotkeys, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
 
 
 [The course at Udemy](https://www.udemy.com/course/spring-webflux/). 
 
 [Website of maker](https://www.vinsguru.com/).
+
+If the content sparked 🔥 your interest, please consider buying the course and start learning 📖.
 
 <!-- 
 Linkedin puts this shit front, when clicking from private mode x(. Need to put this to make jump working every case
@@ -291,13 +291,13 @@ All course material from *Reactive Programming in Modern Java using Project Reac
 
 Contains some course material to enforce learning experience, with my own visual notes. ✍️
 
-If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
-
 This repository is made with [![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)](#) with [![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?logo=Eclipse&logoColor=white)](#) hotkeys, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
 
 [The course at Udemy](https://www.udemy.com/course/reactive-programming-in-modern-java-using-project-reactor/). 
 
 [Website of maker](https://dilipsundarraj.com/).
+
+If the content sparked 🔥 your interest, please consider buying the course and start learning 📖.
 
 <!-- 
 Linkedin puts this shit front, when clicking from private mode x(. Need to put this to make jump working every case
@@ -369,8 +369,6 @@ All course material from *Build Reactive MicroServices using Spring WebFlux/Spri
 
 Contains with my own visual notes ✍️ with some course material to enforce learning experience.
 
-If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
-
 This repository is made with [![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)](#) with [![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?logo=Eclipse&logoColor=white)](#) hotkeys, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
 
 Also, will be using [![Apache-Maven](https://img.shields.io/badge/apache%20maven.-gray?style=for-the-badge&logo=apachemaven&logoColor=red)](https://maven.apache.org/), even thought in video there is **Gradle** in use.
@@ -378,6 +376,8 @@ Also, will be using [![Apache-Maven](https://img.shields.io/badge/apache%20maven
 [The course at Udemy](https://www.udemy.com/course/build-reactive-restful-apis-using-spring-boot-webflux). 
 
 [Website of maker](https://dilipsundarraj.com/).
+
+If the content sparked 🔥 your interest, please consider buying the course and start learning 📖.
 
 <!-- 
 Linkedin puts this shit front, when clicking from private mode x(. Need to put this to make jump working every case
@@ -443,8 +443,6 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
         * [Some here](#).
 
 
-
-
 <p align="center">
     <img
      src="Spring_WebFlux_Microservices_Patterns_And_Advanced_Resilience_Caption.png"
@@ -468,13 +466,13 @@ All course material from *Reactive Microservices Architecture & Design Patterns*
 
 Contains my own notes with some course material to enforce learning experience.
 
-If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
-
 This repository is made with [![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)](#) with [![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?logo=Eclipse&logoColor=white)](#) hotkeys, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
 
 [The course at Udemy](https://www.udemy.com/course/spring-webflux-patterns/). 
 
 [Website of maker](https://www.vinsguru.com/).
+
+If the content sparked 🔥 your interest, please consider buying the course and start learning 📖.
 
 <!-- 
 Linkedin puts this shit front, when clicking from private mode x(. Need to put this to make jump working every case
@@ -523,13 +521,14 @@ All course material from Reactive Redis Masterclass For Java Spring Boot Develop
 
 Contains my own notes with some course material to enforce learning experience.
 
-If the content sparked :fire: your interest, please consider buying the course and start learning :book:.
 
 This repository is made with [![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)](#) with [![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?logo=Eclipse&logoColor=white)](#) hotkeys, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
 
 [The course at Udemy](https://www.udemy.com/course/spring-webflux-redis/). 
 
 [Website of maker](https://www.vinsguru.com/).
+
+If the content sparked 🔥 your interest, please consider buying the course and start learning 📖.
 
 <!-- 
 Linkedin puts this shit front, when clicking from private mode x(. Need to put this to make jump working every case
