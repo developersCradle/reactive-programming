@@ -92,7 +92,7 @@ Template for the task/exercies:
 
 All course material from *Mastering Java Reactive Programming [From Scratch]* **Vinoth Selvaraj**.
 
-> We were building a KYC service that needed to execute multiple verification steps—identity checks, document validation, and compliance screening—using reactive programming. Each step depended on the successful completion of the previous one, making execution order critical while still requiring a non-blocking design.<br><br>
+> We were building a KYC service that needed to execute multiple verification steps—identity checks, document validation, and compliance screening—using reactive programming. Each step depended on the successful completion of the previous one, making execution order critical while still requiring a non-blocking design. 🐟 <br><br>
 ~ *DevelopersCradle*
 
 Contains my own visual notes ✍️ with some course material to enforce learning experience.
@@ -209,13 +209,12 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 All course material from *Spring WebFlux Masterclass: Reactive Microservices [New]* by **Vinoth Selvaraj**.
 
-> We were building a reactive API that had to process complex business workflows without ever blocking a thread.
+> We were building a reactive API that had to process complex business workflows without ever blocking a thread. 🐟
 >
-> Every incoming request kicked off a multi-step pipeline: validation, enrichment, rule evaluation, and persistence. None of these steps could run out of order, and any failure needed to stop the flow immediately while still returning a meaningful response.
+> Every incoming request kicked off a multi-step pipeline: validation, enrichment, rule evaluation, and persistence. None of these steps could run out of order, and any failure needed to stop the flow immediately while still returning a meaningful response. 🐟
 >
->**By the end**, we had an API that behaved more like a controlled workflow engine than a traditional request–response service—precise, resilient, and scalable by design.<br><br>
+>**By the end**, we had an API that behaved more like a controlled workflow engine than a traditional request–response service—precise, resilient, and scalable by design. 🐟 <br><br>
 ~ *DevelopersCradle*
-
 
 Contains my with own visual notes ✍️ added to some course material to enforce learning experience.
 
@@ -285,9 +284,9 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 All course material from *Reactive Programming in Modern Java using Project Reactor* by **Pragmatic Code School**.
 
->We were tasked with building a reactive API for a system that had to juggle multiple, dependent operations—each one critical, each one potentially slow.
+> We were tasked with building a reactive API for a system that had to juggle multiple, dependent operations—each one critical, each one potentially slow. 🐟
 >
->By the end, the API wasn’t just fast—it was intelligent. It understood dependencies, managed failures elegantly, and scaled effortlessly. Building it wasn’t just about reactive programming; it was about designing a system that moved with the rhythm of the workload, never ahead of it, never behind it.<br><br>
+> By the end, the API wasn’t just fast—it was intelligent. It understood dependencies, managed failures elegantly, and scaled effortlessly. Building it wasn’t just about reactive programming; it was about designing a system that moved with the rhythm of the workload, never ahead of it, never behind it. 🐟 <br><br>
 ~ *DevelopersCradle*
 
 Contains some course material to enforce learning experience, with my own visual notes. ✍️
@@ -374,7 +373,7 @@ If the content sparked :fire: your interest, please consider buying the course a
 
 This repository is made with [![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)](#) with [![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?logo=Eclipse&logoColor=white)](#) hotkeys, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
 
-Also, will be using **Maven**, even thought in video there is **Gradle** in use.
+Also, will be using [![Apache-Maven](https://img.shields.io/badge/apache%20maven.-gray?style=for-the-badge&logo=apachemaven&logoColor=red)](https://maven.apache.org/), even thought in video there is **Gradle** in use.
 
 [The course at Udemy](https://www.udemy.com/course/build-reactive-restful-apis-using-spring-boot-webflux). 
 
@@ -386,7 +385,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 -->
 
 <div align="center">
-    <img id="Build Reactive MicroServices using Spring WebFluxSpringBoot certificate?trk=public_profile_see-credential" src="Build Reactive MicroServices using Spring WebFluxSpringBoot certificate.jpg" alt="Spring WebFluxSpringBoot cert" width="600"/>
+    <img id="Build_Reactive_MicroServices_Using_Spring_WebFluxSpringBoot_Certificate?trk=public_profile_see-credential" src="Build_Reactive_MicroServices_Using_Spring_WebFluxSpringBoot_Certificate.jpg" alt="Build reactive microServices using spring webFluxSpringBoot certificate!" width="600"/>
 </div>
 
 **Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
@@ -443,11 +442,15 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
     * *Coding Exercise*:
         * [Some here](#).
 
-# Reactive Microservices Architecture And Design Patterns.
 
-<!-- <p align="center">
-    <img id="Build Reactive MicroServices using Spring WebFluxSpringBoot" src="Build_Reactive_MicroServices_Using_Spring_WebFlux_SpringBoot_Caption.png" style="width:1000px;height:130px;">
-</p> -->
+
+
+<p align="center">
+    <img
+     src="Spring_WebFlux_Microservices_Patterns_And_Advanced_Resilience_Caption.png"
+    alt="Spring webFlux microservices patterns and advanced resilience caption!"
+    style="width:1600px;height:120px;"/>
+</p> 
 
 <p align="center">
     <img src="Reactive_Microservices_Architecture_And_Design_Patterns_Description.PNG" alt="Reactive microservices architecture and design patterns description!" style="width: 680px;"/>
@@ -455,13 +458,13 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 All course material from *Reactive Microservices Architecture & Design Patterns* by **Vinoth Selvaraj**.
 
-> At 🔷**Nordea**🔷, we were given an HLD document for a reactive system that had to communicate with multiple downstream services—each one essential, each one capable of slowing down or failing.
+> At 🔷**Nordea**🔷, we were given an HLD document for a reactive system that had to communicate with multiple downstream services—each one essential, each one capable of slowing down or failing. 🐟
 >
-> One recommendation in the design stood out: **Circuit Breaker**. 👨‍💻
+> One recommendation in the design stood out: **Circuit Breaker**. 👨‍💻 🐟
 >
->At first, it was just another pattern on the architecture diagram. But as we looked deeper, the reason became clear. A failure in one service shouldn’t hold the entire system hostage. The API needed to know when to keep trying, when to step back, and when to give a dependency time to recover.
+>At first, it was just another pattern on the architecture diagram. But as we looked deeper, the reason became clear. A failure in one service shouldn’t hold the entire system hostage. The API needed to know when to keep trying, when to step back, and when to give a dependency time to recover. 🐟
 >
->Building it wasn’t just about following an HLD recommendation; it was about understanding the thinking behind it and designing a reactive API that could keep moving, even when the services around it couldn’t <br><br> ~ *DevelopersCradle*
+>Building it wasn’t just about following an HLD recommendation; it was about understanding the thinking behind it and designing a reactive API that could keep moving, even when the services around it couldn’t 🐟 <br><br> ~ *DevelopersCradle*
 
 Contains my own notes with some course material to enforce learning experience.
 
@@ -494,9 +497,9 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2005#section-05-orchestrator-saga-distributed-transactions--sequential-workflow) - Orchestrator Saga: Distributed Transactions & Sequential Workflow.
 - [ ] [Section 06](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2006#section-06-splitter-pattern-routing-messages-to-multiple-services) - Splitter Pattern: Routing Messages to Multiple Services.
 - [ ] [Section 07](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2007#section-07-reactive-resilience-timeout-pattern) - Reactive Resilience: Timeout Pattern.
-- [ ] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2008#section-08-reactive-resilience-retry-pattern-for-fault-tolerance) - Reactive Resilience: Retry Pattern for Fault Tolerance. ⚠️ In progress! ⚠️
-- [ ] [Section 09](https://github.com/developersCradle/reactive-programming/blob/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2009/README.md#section-09-reactive-resilience-circuit-breaker-pattern) - Reactive Resilience: Circuit Breaker Pattern.
-- [ ] [Section 10](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2010#section-10---rate-limiter-pattern-protecting-apis-and-controlling-traffic) - Rate Limiter Pattern: Protecting APIs and Controlling Traffic.
+- [x] [Section 08](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2008#section-08-reactive-resilience-retry-pattern-for-fault-tolerance) - Reactive Resilience: Retry Pattern for Fault Tolerance. ✅
+- [ ] [Section 09](https://github.com/developersCradle/reactive-programming/blob/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2009/README.md#section-09-reactive-resilience-circuit-breaker-pattern) - Reactive Resilience: Circuit Breaker Pattern. ⚠️ In progress! ⚠️
+- [ ] [Section 10](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2010#section-10---rate-limiter-pattern-protecting-apis-and-controlling-traffic) - Rate Limiter Pattern: Protecting APIs and Controlling Traffic. 
 - [ ] [Section 11](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2011#section-11-bulkhead-pattern-resource-isolation-for-high-availability) - Bulkhead Pattern: Resource Isolation for High Availability.
 - [ ] [Section 12](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2012#section-12-role-play--practice-test) - Role Play & Practice Test.
 - [ ] [Section 13](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2013#section-13-whats-next) - What's Next?.
