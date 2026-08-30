@@ -4,7 +4,8 @@ We are using following structure:
 
 <p align="center">
     <img
-     src="Jackson_Quick_Start_JSON_Serialization_With_Java_Made_Easy_Caption.png"
+    id="Jackson_Quick_Start_JSON_Serialization_With_Java_Made_Easy_Caption?trk=public_profile_see-credential" 
+    src="Jackson_Quick_Start_JSON_Serialization_With_Java_Made_Easy_Caption.png"
     alt="Jackson quick start json serialization with java made easy caption!"
     style="width:1600px;height:120px;"/>
 </p> 
@@ -52,47 +53,77 @@ Template for the task/exercies:
 1. **Question 1:** add here the question from the test!
 	- **Answer:** **D**. here can be the examplaniton!
  -->
- 
+
 <p align="center">
     <img
-     src="Reactive_Programming_Caption.png"
+    src="Reactive_Programming_Caption.png"
+    id="Reactive_Programming_Caption?trk=public_profile_see-credential"
     alt="Reactive programming caption!"
     style="width:1600px;height:130px;"/>
 </p> 
 
 <p align="center">
-    <img id="studying" src="Reactive_Programming.jpg" style="width:450px;height:350px;">
+    <img 
+    id="Reactive_Programming_Graphic?trk=public_profile_see-credential"
+    src="Reactive_Programming_Graphic.jpg"
+    alt="Reactive programming graphic!"
+    style="width:450px;height:350px;">
     <p align="center">
     Attempt to study <b>Reactive Programming</b> and related topics!
     </p>
 </p>
 
+
+<!-- add the ids -->
+
 <details>
 
-<summary id="refactoring the progress" open="true"> <b> Reactive course series by Vinoth Selvaraj! </b> </summary>
+<summary 
+id="Reactive_Course_Series_Summary?trk=public_profile_see-credential"
+open="true"
+alt="Reactive course series!"
+>
+<b> Reactive course series by Vinoth Selvaraj! </b> </summary>
 
 <br>
 
+#### Proceeding order of reactive courses:
+
 <p align="center">
-    <img src="Reactive_Course_Series.JPG" alt="Reactive course programming series!" width="700"/>
+    <img 
+    src="Reactive_Course_Series.JPG"
+    id="Reactive_Course_Series?trk=public_profile_see-credential"
+    alt="Reactive course programming series!" width="700"/>
 </p>
 
-1. About **Complete Java Reactive Programming**. [Course](https://www.udemy.com/course/complete-java-reactive-programming/). 
-2. About **Spring Webflux**. [Course](https://www.udemy.com/course/spring-webflux/).
+1. 🎓 Course in Udemy: **Complete Java Reactive Programming** 🎓: The [Course](https://www.udemy.com/course/complete-java-reactive-programming/)!
+     - ✍🏻 Course in learning diary: **Add here** ✍🏻: [Learning Diary](https://www.udemy.com/course/complete-java-reactive-programming/)!
+2. 🎓 Course in Udemy: **Spring Webflux** 🎓: The [Course](https://www.udemy.com/course/spring-webflux/)!
+    - ✍🏻 Course in learning diary: **Add here** ✍🏻: [Learning Diary](https://www.udemy.com/course/complete-java-reactive-programming/)!
+3. 🎓 Course in Udemy: **Reactive Microservices Architecture & Design Patterns** 🎓: [Course](https://www.udemy.com/course/spring-webflux-patterns/)!
+    - ✍🏻 Course in learning diary: **Reactive Microservices Architecture & Design Patterns** ✍🏻: [Learning Diary](#)!
 
 </details>
 
 <p align="center">
-    <img src="Mastering_Java_Reactive_Programming_From Scratch_Caption.png" alt="Mastering Java Reactive Programming [From Scratch] Caption" style="width:1600px;height:90px;" />
+    <img 
+    src="Mastering_Java_Reactive_Programming_From Scratch_Caption.png" 
+    alt="Mastering java reactive programming from scratch caption!" 
+    id="Mastering_Java_Reactive_Programming_From Scratch_Caption?trk=public_profile_see-credential"
+    style="width:1600px;height:90px;" />
 </p>
 
 <p align="center">
-    <img src="Mastering_Java_Reactive_Programming_Description.PNG" alt="Mastering Java Reactive Programming [From Scratch] Caption" style="width: 680px;"/>
+    <img 
+    src="Mastering_Java_Reactive_Programming_Description.PNG" 
+    alt="Mastering java reactive programming description!" 
+    id="Mastering_Java_Reactive_Programming_Description?trk=public_profile_see-credential"
+    style="width: 680px;"/>
 </p>
 
 All course material from *Mastering Java Reactive Programming [From Scratch]* **Vinoth Selvaraj**.
 
-> We were building a KYC service that needed to execute multiple verification steps—identity checks, document validation, and compliance screening—using reactive programming. Each step depended on the successful completion of the previous one, making execution order critical while still requiring a non-blocking design. 🐟 <br><br>
+> We were building a **KYC service** that needed to execute multiple verification steps—identity checks, document validation, and compliance screening—using reactive programming. Each step depended on the successful completion of the previous one, making execution order critical while still requiring a non-blocking design. 🐟 <br><br>
 ~ *DevelopersCradle*
 
 Contains my own visual notes ✍️ with some course material to enforce learning experience.
@@ -139,7 +170,8 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [x] [Original Repository](https://github.com/vinsguru/java-reactive-programming-course). ✅
 - [ ] Remove numbers from packages (from projects and transfer to IntelliJ).
 - [ ] Do the IO model chapter for simplicity’s sake.
-- [ ] You can check the [Virtaul Thread](https://www.udemy.com/course/java-virtual-thread/) vs reactive programming.
+- [ ] One can check the [Virtaul Thread](https://www.udemy.com/course/java-virtual-thread/) vs reactive programming.
+    - [x] I checked [Virtaul Thread](https://github.com/developersCradle/data-structures-algorithms-[and-java-multithreading-concurrency-performance-optimization/tree/main#progresscurriculum-2) at this link! ✅
 - [ ] Do the `Mono - From Future` after the done with the multithreading.
 - [ ] After finishing this, read thought [Solita's Article](https://dev.solita.fi/2020/06/08/introduction-to-spring-webflux.html).
 
@@ -200,11 +232,19 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
         * [FlatMap - Assignment](https://github.com/developersCradle/reactive-programming/tree/main/Mastering%20Java%20Reactive%20Programming%20From%20Scratch/Section%2009#flatmap---assignment).
 
 <p align="center">
-    <img id="Build Reactive MicroServices using Spring WebFlux Spring" src="Spring_WebFlux_Masterclass_High_Performance_Reactive_APIs_Caption.png" style="width:900px;height:90px;">
+    <img 
+    src="Spring_WebFlux_Masterclass_High_Performance_Reactive_APIs_Caption.png" 
+    id="Spring_WebFlux_Masterclass_High_Performance_Reactive_APIs_Caption?trk=public_profile_see-credential"
+    alt="Spring webFlux masterclass high performance reactive APIs Caption!"
+    style="width:900px;height:90px;">
 </p>
 
 <p align="center">
-    <img src="Spring_WebFlux_Masterclass_High_Performance_Reactive_APIs_Description.PNG" alt="Mastering Java Reactive Programming [From Scratch] Caption" style="width: 680px;"/>
+    <img 
+    src="Spring_WebFlux_Masterclass_High_Performance_Reactive_APIs_Description.PNG"
+    id="Spring_WebFlux_Masterclass_High_Performance_Reactive_APIs_Description?trk=public_profile_see-credential"
+    alt="Spring webFlux masterclass high performance reactive APIs description!"
+    style="width: 680px;"/>
 </p>
 
 All course material from *Spring WebFlux Masterclass: Reactive Microservices [New]* by **Vinoth Selvaraj**.
@@ -220,7 +260,6 @@ Contains my with own visual notes ✍️ added to some course material to enforc
 
 This repository is made with [![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)](#) with [![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?logo=Eclipse&logoColor=white)](#) hotkeys, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
 
-
 [The course at Udemy](https://www.udemy.com/course/spring-webflux/). 
 
 [Website of maker](https://www.vinsguru.com/).
@@ -235,7 +274,6 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 <div align="center">
     Insert certificate here when completed
 </div>
-
 
 **Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
 
@@ -262,7 +300,7 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - [ ] Make the `.gif` out of the screen if available.
 - [ ] Read thought [Manifesto](https://www.reactivemanifesto.org/).
 - [ ] Intro to [Reactive Programming](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754).
-- [ ] Some about Reactive Programming [PDF](https://soft.vub.ac.be/Publications/2012/vub-soft-tr-12-13.pdf).
+- [ ] Some about Reactive Programming [PDF](https://soft.vub.ac.be/Publications+2-+012/vub-soft-tr-12-13.pdf).
 - [ ] Remove numbers from packages and from lecture notes `.md` if there is.
 
 #### The Quizzes and Labs.
@@ -274,13 +312,20 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
         * [Some here](#).
 
 <p align="center">
-    <img id="nordea" src="Reactive_Programming_In_Modern_Java_Using_Project_Reactor_Caption.png" style="width:1000px;height:80px;">
+    <img 
+    src="Reactive_Programming_In_Modern_Java_Using_Project_Reactor_Caption.png"
+    id="id="Reactive_Programming_In_Modern_Java_Using_Project_Reactor_Caption?trk=public_profile_see-credential" 
+    alt="Reactive programming in modern java using project reactor caption!" 
+    style="width:1000px;height:80px;">
 </p>
 
 <p align="center">
-    <img src="Reactive_Programming_In Modern_Java_Using_Project_Reactor_Caption.PNG" alt="Mastering Java Reactive Programming [From Scratch] Caption" style="width: 680px;"/>
+    <img 
+    src="Reactive_Programming_In Modern_Java_Using_Project_Reactor_Description.PNG" 
+    id="Reactive_Programming_In Modern_Java_Using_Project_Reactor_Description?trk=public_profile_see-credential"
+    alt="Reactive programming in modern java using project reactor description!" 
+    style="width: 680px;"/>
 </p>
-
 
 All course material from *Reactive Programming in Modern Java using Project Reactor* by **Pragmatic Code School**.
 
@@ -355,11 +400,22 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
         * [Some here](#).
 
 <p align="center">
-    <img id="Build Reactive MicroServices using Spring WebFluxSpringBoot" src="Build_Reactive_MicroServices_Using_Spring_WebFlux_SpringBoot_Caption.png" style="width:1000px;height:130px;">
+    <img 
+    src="Build_Reactive_MicroServices_Using_Spring_WebFlux_SpringBoot_Caption.png" 
+    id="Build_Reactive_MicroServices_Using_Spring_WebFlux_SpringBoot_Caption?trk=public_profile_see-credential" 
+    alt="Build reactive microServices using spring webFlux springBoot caption!" 
+    style="width:1000px;height:130px;">
 </p>
 
+
+<!-- todo check if theres is need to have the middle / -->
+
 <p align="center">
-    <img src="Build_Reactive_MicroServices_Using_Spring_WebFluxSpringBoot_Description.PNG" alt="Mastering Java Reactive Programming [From Scratch] Caption" style="width: 680px;"/>
+    <img 
+    src="Build_Reactive_MicroServices_Using_Spring_WebFluxSpringBoot_Description.PNG" 
+    id="Build_Reactive_MicroServices_Using_Spring_WebFluxSpringBoot_Description?trk=public_profile_see-credential"
+    alt="Build reactive microServices using spring WebFlux/SpringBoot description!" 
+    style="width: 680px;"/>
 </p>
 
 All course material from *Build Reactive MicroServices using Spring WebFlux/SpringBoot* by **Pragmatic Code School**.
@@ -385,7 +441,10 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 -->
 
 <div align="center">
-    <img id="Build_Reactive_MicroServices_Using_Spring_WebFluxSpringBoot_Certificate?trk=public_profile_see-credential" src="Build_Reactive_MicroServices_Using_Spring_WebFluxSpringBoot_Certificate.jpg" alt="Build reactive microServices using spring webFluxSpringBoot certificate!" width="600"/>
+    <img 
+    id="Build_Reactive_MicroServices_Using_Spring_WebFluxSpringBoot_Certificate?trk=public_profile_see-credential" src="Build_Reactive_MicroServices_Using_Spring_WebFluxSpringBoot_Certificate.jpg"
+    alt="Build reactive microServices using spring webFluxSpringBoot certificate!"
+    style="width:600px;"/>
 </div>
 
 **Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
@@ -442,16 +501,20 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
     * *Coding Exercise*:
         * [Some here](#).
 
-
 <p align="center">
     <img
-     src="Spring_WebFlux_Microservices_Patterns_And_Advanced_Resilience_Caption.png"
+    src="Spring_WebFlux_Microservices_Patterns_And_Advanced_Resilience_Caption.png"
+    id="Spring_WebFlux_Microservices_Patterns_And_Advanced_Resilience_Caption?trk=public_profile_see-credential"
     alt="Spring webFlux microservices patterns and advanced resilience caption!"
-    style="width:1600px;height:120px;"/>
+    style="width:1600px;height:100px;"/>
 </p> 
 
 <p align="center">
-    <img src="Reactive_Microservices_Architecture_And_Design_Patterns_Description.PNG" alt="Reactive microservices architecture and design patterns description!" style="width: 680px;"/>
+    <img 
+    src="Reactive_Microservices_Architecture_And_Design_Patterns_Description.PNG" 
+    id="Reactive_Microservices_Architecture_And_Design_Patterns_Description?trk=public_profile_see-credential"
+    alt="Reactive microservices architecture and design patterns description!" 
+    style="width: 680px;"/>
 </p>
 
 All course material from *Reactive Microservices Architecture & Design Patterns* by **Vinoth Selvaraj**.
@@ -488,8 +551,8 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 #### Progress/Curriculum.
 
-- [ ] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2001#section-01-welcome-why-master-advanced-microservices-patterns) - Welcome: Why Master Advanced Microservices Patterns. 
-- [ ] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2002#section-02-api-composition-gateway-aggregator-pattern) - API Composition: Gateway Aggregator Pattern. 
+- [x] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2001#section-01-welcome-why-master-advanced-microservices-patterns) - Welcome: Why Master Advanced Microservices Patterns. ✅
+- [ ] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2002#section-02-api-composition-gateway-aggregator-pattern) - API Composition: Gateway Aggregator Pattern. ⚠️ In progress! ⚠️ 
 - [ ] [Section 03](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2003#section-03-scatter-gather-pattern-high-performance-service-composition) - Scatter Gather Pattern: High-Performance Service Composition.
 - [ ] [Section 04](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2004#section-04-orchestrator-saga-distributed-transactions--parallel-workflow) - Orchestrator Saga: Distributed Transactions & Parallel Workflow.
 - [ ] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2005#section-05-orchestrator-saga-distributed-transactions--sequential-workflow) - Orchestrator Saga: Distributed Transactions & Sequential Workflow.
@@ -504,11 +567,104 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 
 #### Additional stuff.
 
-- The [repository](https://github.com/vinsguru/webflux-patterns) here!
+- The [repository](https://github.com/vinsguru/webflux-patterns) of original codes!
 
-- [External service .JAR](https://github.com/developersCradle/reactive-programming/blob/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2001/external-services-v2.jar
-)!
+- [External service ](https://github.com/developersCradle/reactive-programming/blob/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2001/external-services-v2.jar) as `.jar`!
 
+<details>
+
+<summary 
+open="true"
+id="Reactive_Course_Extra_Series_Summary?trk=public_profile_see-credential"
+> 
+<b> Todo addition course for Reactive course series by Vinoth Selvaraj!</b> 
+</summary>
+
+<br>
+
+
+<!-- add the ids -->
+
+#### Proceeding order of reactive courses:
+
+<p align="center">
+    <img 
+    src="Reactive_Course_Extra_Series.JPG"
+    id="Reactive_Course_Extra_Series?trk=public_profile_see-credential"
+    alt="Reactive course extra programming series!"
+    width="700"/>
+</p>
+
+1. 🎓 Course in Udemy: **Spring rSocket Masterclass: High Performance Microservices** 🎓: The [Course](https://www.udemy.com/course/spring-rsocket/)!
+     - ✍🏻 Course in learning diary: **Spring rSocket Masterclass: High Performance Microservices** ✍🏻: [Learning Diary](#)!
+2. 🎓 Course in Udemy: **Reactive Redis Masterclass For Java Spring Boot Developers** 🎓: The [Course](https://www.udemy.com/course/spring-webflux-redis/)!
+    - ✍🏻 Course in learning diary: **Reactive Redis Masterclass For Java Spring Boot Developers** ✍🏻: [Learning Diary](#)!
+
+</details>
+
+#### Spring rSocket Masterclass: High Performance Microservices.
+<!-- 
+<p align="center">
+    <img
+    id="Jackson_Quick_Start_JSON_Serialization_With_Java_Made_Easy_Caption?trk=public_profile_see-credential" 
+    src="Jackson_Quick_Start_JSON_Serialization_With_Java_Made_Easy_Caption.png"
+    alt="Jackson quick start json serialization with java made easy caption!"
+    style="width:1600px;height:120px;"/>
+</p>  -->
+
+<p align="center">
+    <img
+    id="Spring_rSocket_Masterclass_High_Performance_Microservices_Description?trk=public_profile_see-credential" src="Spring_rSocket_Masterclass_High_Performance_Microservices_Description.JPG"
+    alt="Spring rSocket masterclass high performance microservices description!"
+    style="width:590px; height:160px;" />
+</p>
+
+All course material from *Spring rSocket Masterclass: High Performance Microservices* by **Vinoth Selvara**!
+
+> Add here some story <br><br>
+~ *DevelopersCradle*
+
+Contains with my own visual notes ✍️ with some course material to enforce learning experience.
+
+This repository is made with [![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)](#) with [![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?logo=Eclipse&logoColor=white)](#) hotkeys, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
+
+<!-- Check here if needed
+Also, will be using [![Apache-Maven](https://img.shields.io/badge/apache%20maven.-gray?style=for-the-badge&logo=apachemaven&logoColor=red)](https://maven.apache.org/), even thought in video there is **Gradle** in use. -->
+
+[The course at Udemy](https://www.udemy.com/course/build-reactive-restful-apis-using-spring-boot-webflux). 
+
+[Website of maker](https://dilipsundarraj.com/).
+
+If the content sparked 🔥 your interest, please consider buying the course and start learning 📖.
+
+<!-- 
+Linkedin puts this shit front, when clicking from private mode x(. Need to put this to make jump working every case
+?trk=public_profile_see-credential 
+-->
+
+<!-- <div align="center">
+    <img id="Build_Reactive_MicroServices_Using_Spring_WebFluxSpringBoot_Certificate?trk=public_profile_see-credential" src="Build_Reactive_MicroServices_Using_Spring_WebFluxSpringBoot_Certificate.jpg"
+    alt="Build reactive microServices using spring webFluxSpringBoot certificate!"
+    style="width:600px;"/>
+</div> -->
+
+**Note: The material provided in this repository is only for helping those who may get stuck at any point of time in the course. It is very advised that no one should just copy the solutions(violation of Honor Code) presented here.**
+
+#### Progress/Curriculum.
+
+- [x] [Section 01](#) - Add here. ✅ 
+
+#### Additional stuff.
+
+- [ ] Add here!
+
+#### The Quizzes and Labs.
+
+* **Section 01**:
+    * *Quiz*:
+        * [Some here](#).
+    * *Coding Exercise*:
+        * [Some here](#).
 
 #### Reactive Redis Masterclass For Java Spring Boot Developers.
 
@@ -520,7 +676,6 @@ All course material from Reactive Redis Masterclass For Java Spring Boot Develop
 ~ *DevelopersCradle*
 
 Contains my own notes with some course material to enforce learning experience.
-
 
 This repository is made with [![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)](#) with [![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?logo=Eclipse&logoColor=white)](#) hotkeys, therefore it will include configuration files which are related to this IDE this approach will be favored for now. ⚙️
 

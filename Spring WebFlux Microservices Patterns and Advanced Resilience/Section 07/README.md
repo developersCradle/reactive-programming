@@ -42,6 +42,26 @@ Section 07: Reactive Resilience: Timeout Pattern.
 
 # Timeout Pattern.
 
+<div align="center">
+    <img src="Timeout_Pattern.PNG" alt="
+    Spring webFlux: microservices patterns and advanced resilience!" width="700"/>
+</div>
+
+1. This is **simple pattern** to implement!
+2. There will be some **timeout**, in which after we are expected to react, with either **default value** or some other way!
+
+<div align="center">
+    <img src="Product_Details_Page.PNG" alt="
+    Spring webFlux: microservices patterns and advanced resilience!" width="700"/>
+</div>
+
+1. In large organization, there are **multiple services** with the teams!
+2. We can set **timeouts**, into these calls which are going to be called!
+    - If no response, we can define **behavior** for `aggregator` to react!
+
+- return here after gateway aggrigator
+
+
 # Project Setup.
 
 # Timeout Pattern Implementation.
