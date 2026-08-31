@@ -355,7 +355,7 @@ public class Review {
 1. We can see that if there is **error** happening, we are still **retrying**! In the end it will be **success**!
     - `.retry(5)`!
 
-- We will be illustrating **retry** happening!
+- We will be illustrating **retry** should not be happening!
 
 <div align="center">
     <img src="Testing_The_Endpoint_Of_70_Percent_Of_The_Failing_In_The_PostMan_Retry_Pattern_Working_Second_When_There_Is_Client_Error.gif" alt="
