@@ -97,11 +97,11 @@ alt="Reactive course series!"
 </p>
 
 1. 🎓 Course in Udemy: **Complete Java Reactive Programming** 🎓: The [Course](https://www.udemy.com/course/complete-java-reactive-programming/)!
-     - ✍🏻 Course in learning diary: **Add here** ✍🏻: [Learning Diary](https://www.udemy.com/course/complete-java-reactive-programming/)!
-2. 🎓 Course in Udemy: **Spring Webflux** 🎓: The [Course](https://www.udemy.com/course/spring-webflux/)!
-    - ✍🏻 Course in learning diary: **Add here** ✍🏻: [Learning Diary](https://www.udemy.com/course/complete-java-reactive-programming/)!
+     - ✍🏻 Course in learning diary: **Complete Java Reactive Programming** ✍🏻: [Learning Diary](https://github.com/developersCradle/reactive-programming#Mastering_Java_Reactive_Programming_From%20Scratch_Caption?trk=public_profile_see-credential)!
+2. 🎓 Course in Udemy: **Spring WebFlux Masterclass: Reactive Microservices [New]** 🎓: The [Course](https://www.udemy.com/course/spring-webflux/)!
+    - ✍🏻 Course in learning diary: **Spring WebFlux Masterclass: Reactive Microservices [New]** ✍🏻: [Learning Diary](https://github.com/developersCradle/reactive-programming#Spring_WebFlux_Masterclass_High_Performance_Reactive_APIs_Caption?trk=public_profile_see-credential)!
 3. 🎓 Course in Udemy: **Reactive Microservices Architecture & Design Patterns** 🎓: [Course](https://www.udemy.com/course/spring-webflux-patterns/)!
-    - ✍🏻 Course in learning diary: **Reactive Microservices Architecture & Design Patterns** ✍🏻: [Learning Diary](#)!
+    - ✍🏻 Course in learning diary: **Reactive Microservices Architecture & Design Patterns** ✍🏻: [Learning Diary](https://github.com/developersCradle/reactive-programming#Spring_WebFlux_Microservices_Patterns_And_Advanced_Resilience_Caption?trk=public_profile_see-credential)!
 
 </details>
 
@@ -552,8 +552,8 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 #### Progress/Curriculum.
 
 - [x] [Section 01](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2001#section-01-welcome-why-master-advanced-microservices-patterns) - Welcome: Why Master Advanced Microservices Patterns. ✅
-- [ ] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2002#section-02-api-composition-gateway-aggregator-pattern) - API Composition: Gateway Aggregator Pattern. ⚠️ In progress! ⚠️ 
-- [ ] [Section 03](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2003#section-03-scatter-gather-pattern-high-performance-service-composition) - Scatter Gather Pattern: High-Performance Service Composition.
+- [x] [Section 02](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2002#section-02-api-composition-gateway-aggregator-pattern) - API Composition: Gateway Aggregator Pattern. ✅
+- [ ] [Section 03](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2003#section-03-scatter-gather-pattern-high-performance-service-composition) - Scatter Gather Pattern: High-Performance Service Composition. ⚠️ In progress! ⚠️ 
 - [ ] [Section 04](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2004#section-04-orchestrator-saga-distributed-transactions--parallel-workflow) - Orchestrator Saga: Distributed Transactions & Parallel Workflow.
 - [ ] [Section 05](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2005#section-05-orchestrator-saga-distributed-transactions--sequential-workflow) - Orchestrator Saga: Distributed Transactions & Sequential Workflow.
 - [ ] [Section 06](https://github.com/developersCradle/reactive-programming/tree/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2006#section-06-splitter-pattern-routing-messages-to-multiple-services) - Splitter Pattern: Routing Messages to Multiple Services.
@@ -570,6 +570,8 @@ Linkedin puts this shit front, when clicking from private mode x(. Need to put t
 - The [repository](https://github.com/vinsguru/webflux-patterns) of original codes!
 
 - [External service ](https://github.com/developersCradle/reactive-programming/blob/main/Spring%20WebFlux%20Microservices%20Patterns%20and%20Advanced%20Resilience/Section%2001/external-services-v2.jar) as `.jar`!
+
+
 
 <details>
 
