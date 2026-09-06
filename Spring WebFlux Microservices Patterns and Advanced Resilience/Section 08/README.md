@@ -403,11 +403,10 @@ public class Review {
         - Do **NOT** forget to set **Timeout**⚠️
     - Do not retry for **4XX** error!
 
-- The project code, for **retry patter** below!
-
+- Todo add the structure of categories and the order same as in the project!
 
 <details>
-<summary id="retry_patter" open="true"> <b> Retry pattern project files!</b> </summary>
+<summary id="retry_pattern" open="true"> <b> Retry pattern project files!</b> </summary>
 
 #### ReviewClient.java
 

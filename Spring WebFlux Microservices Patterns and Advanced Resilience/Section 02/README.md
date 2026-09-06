@@ -521,11 +521,6 @@ Original Stack Trace:
 1. We can see that `Product 07` is having some error!
 
 
-
-
-
-
-
 # Is our Aggregator resilient?
 
 <div align="center">
@@ -823,12 +818,8 @@ public class ProductClient {
     - The **browser** can have **some restrictions** on the **amount of call** that can handle!
 3. We have reduced a lot of network latency, when we are calling all these **services back** and **forth**, with **aggregator service**!
 
-
-- The project code, for **add here** below!
-
 <details>
-<summary id="changeThis_patter" open="true"> <b> change this pattern project files!</b> </summary>
-
+<summary id="gateway_aggregator_pattern" open="true"> <b>Gateway aggregator patterns project files!</b> </summary>
 
 ## Client
 
@@ -1148,9 +1139,5 @@ public class ProductAggregatorService {
     }
 }
 ```
-
-
-
-
 
 </details>
