@@ -4,13 +4,12 @@ Section 04: Orchestrator Saga: Distributed Transactions & Parallel Workflow.
 
 # What I Learned.
 
-
 <div align="center">
     <img src="Orchestrator_Saga_Distributed_Transactions_And_Parallel_Workflow_Intro.JPG" alt="
     Spring webFlux: microservices patterns and advanced resilience!" width="700"/>
 </div>
 
-1. 
+1. We will be going thought **Orchestrator Pattern**! 
 
 <div align="center">
     <img src="Service_Orchestrator.JPG" alt="
@@ -45,7 +44,48 @@ Section 04: Orchestrator Saga: Distributed Transactions & Parallel Workflow.
     Spring webFlux: microservices patterns and advanced resilience!" width="700"/>
 </div>
 
+1. We have the matrix for actions that will be taken!
+2. There is the **orchestrator actions**, which is being taken!
+3. If, the `product-service` is having the **success** status, all the other should be also be **successful**!
+4. **404** from `product-service`, the orchestrator will take **404** action! 
+
+<div align="center">
+    <img src="Service_Orchestrator_Menu_Second.JPG" alt="
+    Spring webFlux: microservices patterns and advanced resilience!" width="700"/>
+</div>
+
+1. When the `user-service` is failing, We need to **restore inventory** and the **cancel the shipping**!
+2. When the `inventory-service` is failing, We need to **refund the user** and the **cancel shipping**!
+3. add here
+
 # Orchestrator Pattern - Intro.
+
+<div align="center">
+    <img src="In_This_Project_We_Have_Multiple_Enpoints.JPG" alt="
+    Spring webFlux: microservices patterns and advanced resilience!" width="700"/>
+</div>
+
+1. To illustrate this, we will have **multiple endpoints**!
+
+<div align="center">
+    <img src="Get_Endpoint_For_Product_Service.JPG" alt="
+    Spring webFlux: microservices patterns and advanced resilience!" width="700"/>
+</div>
+
+1. We have simple product endpoint for **GET**!
+    ````Java
+    {
+    "id": 1,
+    "category": "Books",
+    "description": "Heavy Duty Paper Table",
+    "price": 37
+    }
+    ````
+
+
+add user
+
+
 
 # Orchestrator Scope.
 
@@ -74,6 +114,25 @@ Section 04: Orchestrator Saga: Distributed Transactions & Parallel Workflow.
 # Order Cancellation Service.
 
 # Order Orchestrator Service.
+
+... add here the other captions
+
+
+# Summary.
+
+- add here the first pic
+
+
+<div align="center">
+    <img src="Summary_Service_Layer_Implementation.JPG" alt="
+    Spring webFlux: microservices patterns and advanced resilience!" width="700"/>
+</div>
+
+1. **Upstream** services! 
+2. The different implementations of the **orchestration implementations**! 
+
+
+
 
 
 

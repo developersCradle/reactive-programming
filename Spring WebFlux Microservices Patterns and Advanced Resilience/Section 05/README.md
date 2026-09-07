@@ -4,6 +4,15 @@ Section 05: Orchestrator Saga: Distributed Transactions & Sequential Workflow.
 
 # What I Learned.
 
+<div align="center">
+    <img src="Orchestrator_Saga_Distributed_Transactions_And_Sequential_Workflow_Intro.JPG" alt="
+    Spring webFlux: microservices patterns and advanced resilience!" width="700"/>
+</div>
+
+1. This is **small variation** of **orchestration patter**! This **chained patter**!
+
+
+
 
 
 - The project code, for **add here** below!
